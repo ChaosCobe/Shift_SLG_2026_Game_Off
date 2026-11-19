@@ -1,38 +1,7 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://views/facilities/facility_room.gd" id="1_room"]
-
-[sub_resource type="StyleBoxFlat" id="BackNormal"]
-bg_color = Color(0.1686, 0.1569, 0.2706, 1.0000)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.7608, 0.6902, 0.8588, 1.0000)
-
-[sub_resource type="StyleBoxFlat" id="BackHover"]
-bg_color = Color(0.2745, 0.2196, 0.3686, 1.0000)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.9059, 0.7961, 0.9922, 1.0000)
-
-[sub_resource type="StyleBoxFlat" id="BackPressed"]
-bg_color = Color(0.1686, 0.1569, 0.2706, 1.0000)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.9059, 0.7961, 0.9922, 1.0000)
-
-[sub_resource type="StyleBoxFlat" id="BackFocus"]
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.9059, 0.7961, 0.9922, 1.0000)
+[ext_resource type="PackedScene" path="res://views/facilities/facility_hud.tscn" id="3_hud"]
 
 [node name="InnerShop" type="Node2D"]
 texture_filter = 1
@@ -663,47 +632,8 @@ color = Color(0.9608, 0.8314, 0.9882, 1.0000)
 
 [node name="Interface" type="CanvasLayer" parent="."]
 
-[node name="Title" type="Label" parent="Interface"]
-offset_left = 24
-offset_top = 14
-offset_right = 264
-offset_bottom = 44
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.9059, 0.7961, 0.9922, 1.0000)
-theme_override_font_sizes/font_size = 24
-text = "奇物商店"
+[node name="FacilityHUD" parent="Interface" instance=ExtResource("3_hud")]
+facility_title = "奇物商店"
+title_color = Color(0.9059, 0.7961, 0.9922, 1.0000)
+detail_color = Color(0.7608, 0.6902, 0.8588, 1.0000)
 
-[node name="World" type="Label" parent="Interface"]
-offset_left = 26
-offset_top = 45
-offset_right = 122
-offset_bottom = 60
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.7608, 0.6902, 0.8588, 1.0000)
-theme_override_font_sizes/font_size = 11
-text = "里世界"
-
-[node name="ShiftHint" type="Label" parent="Interface"]
-offset_left = 514
-offset_top = 336
-offset_right = 622
-offset_bottom = 354
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.7608, 0.6902, 0.8588, 1.0000)
-theme_override_font_sizes/font_size = 12
-text = "Shift 切换世界"
-
-[node name="BackButton" type="Button" parent="Interface"]
-unique_name_in_owner = true
-offset_left = 526
-offset_top = 19
-offset_right = 616
-offset_bottom = 49
-mouse_default_cursor_shape = 2
-text = "返回地图"
-theme_override_colors/font_color = Color(0.9059, 0.7961, 0.9922, 1.0000)
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("BackNormal")
-theme_override_styles/hover = SubResource("BackHover")
-theme_override_styles/pressed = SubResource("BackPressed")
-theme_override_styles/focus = SubResource("BackFocus")

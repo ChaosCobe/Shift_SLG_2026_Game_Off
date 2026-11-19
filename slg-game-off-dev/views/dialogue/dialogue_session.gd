@@ -20,6 +20,10 @@ func current_text() -> String:
 	return _lines[_line_id]["text"]
 
 
+func is_player_line() -> bool:
+	return _lines[_line_id].get("player", false)
+
+
 func options() -> Dictionary:
 	return _lines[_line_id].get("options", {})
 

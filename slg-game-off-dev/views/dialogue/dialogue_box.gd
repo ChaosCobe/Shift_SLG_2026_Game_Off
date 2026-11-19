@@ -4,6 +4,7 @@ signal finished
 signal shift_confirmed
 
 const DialogueSession := preload("res://views/dialogue/dialogue_session.gd")
+const PlayerReply := preload("res://views/dialogue/player_reply.gd")
 
 var _session: DialogueSession
 var _focused_action: Control
@@ -11,6 +12,7 @@ var _focused_action: Control
 @onready var _speaker: Label = %Speaker
 @onready var _portrait: TextureRect = %Portrait
 @onready var _line: Label = %Line
+@onready var _player_reply: PlayerReply = $PlayerReply
 @onready var _actions: HBoxContainer = %Actions
 @onready var _shift_prompt: Control = %ShiftPrompt
 @onready var _cancel_shift: Button = %CancelShift
@@ -18,6 +20,7 @@ var _focused_action: Control
 
 
 func _ready() -> void:
+	_player_reply.finished.connect(_on_reply_finished)
 	_cancel_shift.pressed.connect(dismiss_shift_prompt)
 	_confirm_shift.pressed.connect(_confirm_world_shift)
 
@@ -38,6 +41,7 @@ func show_shift_prompt() -> void:
 		return
 
 	_focused_action = get_viewport().gui_get_focus_owner()
+	_player_reply.set_suspended(true)
 	for action: Button in _actions.get_children():
 		action.disabled = true
 	_shift_prompt.show()
@@ -46,6 +50,7 @@ func show_shift_prompt() -> void:
 
 func dismiss_shift_prompt() -> void:
 	_shift_prompt.hide()
+	_player_reply.set_suspended(false)
 	_confirm_shift.disabled = false
 	_cancel_shift.disabled = false
 	for action: Button in _actions.get_children():
@@ -63,7 +68,11 @@ func _confirm_world_shift() -> void:
 
 
 func _show_line() -> void:
-	_line.text = _session.current_text()
+	if _session.is_player_line():
+		_player_reply.present(_session.current_text())
+	else:
+		_player_reply.dismiss()
+		_line.text = _session.current_text()
 	for action in _actions.get_children():
 		_actions.remove_child(action)
 		action.queue_free()
@@ -97,6 +106,11 @@ func _advance() -> void:
 		_show_line()
 	else:
 		finished.emit()
+
+
+func _on_reply_finished() -> void:
+	if _session.has_next_line() and _session.options().is_empty():
+		_advance()
 
 
 func _choose(option: String) -> void:

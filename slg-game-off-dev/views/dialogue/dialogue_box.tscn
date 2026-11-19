@@ -1,6 +1,7 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://views/dialogue/dialogue_box.gd" id="1_box"]
+[ext_resource type="PackedScene" path="res://views/dialogue/player_reply.tscn" id="2_reply"]
 
 [sub_resource type="StyleBoxFlat" id="PanelStyle"]
 bg_color = Color(0.078, 0.106, 0.137, 0.98)
@@ -117,6 +118,8 @@ mouse_filter = 2
 texture_filter = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="PlayerReply" parent="." instance=ExtResource("2_reply")]
 
 [node name="ShiftPrompt" type="ColorRect" parent="."]
 unique_name_in_owner = true

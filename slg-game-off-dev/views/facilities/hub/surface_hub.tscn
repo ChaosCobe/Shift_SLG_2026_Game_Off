@@ -2,38 +2,14 @@
 
 [ext_resource type="Script" path="res://views/facilities/hub/hub_room.gd" id="1_room"]
 [ext_resource type="TileSet" path="res://assets/tilesets/station_floors.tres" id="2_floors"]
+[ext_resource type="PackedScene" path="res://views/facilities/facility_hud.tscn" id="3_hud"]
+[ext_resource type="PackedScene" path="res://views/facilities/facility_actor.tscn" id="4_actor"]
+[ext_resource type="Texture2D" path="res://assets/third_party/ninja_adventure/characters/researcher_surface.png" id="5_researcher"]
 
-[sub_resource type="StyleBoxFlat" id="BackNormal"]
-bg_color = Color(0.14902, 0.17647, 0.21176, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.50980, 0.43922, 0.35686, 1)
-
-[sub_resource type="StyleBoxFlat" id="BackHover"]
-bg_color = Color(0.20784, 0.23137, 0.25098, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.90588, 0.73725, 0.47059, 1)
-
-[sub_resource type="StyleBoxFlat" id="BackPressed"]
-bg_color = Color(0.09412, 0.10980, 0.14118, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.68235, 0.53725, 0.36078, 1)
-
-[sub_resource type="StyleBoxFlat" id="BackFocus"]
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.90588, 0.73725, 0.47059, 1)
+[sub_resource type="AtlasTexture" id="ResearcherIdle"]
+atlas = ExtResource("5_researcher")
+region = Rect2(0, 0, 16, 16)
+filter_clip = true
 
 [node name="SurfaceHub" type="Node2D"]
 texture_filter = 1
@@ -897,63 +873,17 @@ color = Color(0.64314, 0.58824, 0.49020, 1)
 
 [node name="Interface" type="CanvasLayer" parent="."]
 
-[node name="NpcButton" type="Button" parent="Interface"]
+[node name="Researcher" parent="Interface" instance=ExtResource("4_actor")]
 unique_name_in_owner = true
-offset_left = 266.0
-offset_top = 176.0
-offset_right = 374.0
-offset_bottom = 206.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 13
-theme_override_styles/normal = SubResource("BackNormal")
-theme_override_styles/hover = SubResource("BackHover")
-theme_override_styles/pressed = SubResource("BackPressed")
-theme_override_styles/focus = SubResource("BackFocus")
-text = "年轻研究者"
+offset_left = 296.0
+offset_top = 183.0
+offset_right = 344.0
+offset_bottom = 231.0
+texture = SubResource("ResearcherIdle")
+display_name = "年轻研究者"
 
-[node name="Title" type="Label" parent="Interface"]
-offset_left = 24.0
-offset_top = 14.0
-offset_right = 219.0
-offset_bottom = 44.0
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.93333, 0.85490, 0.70980, 1)
-theme_override_font_sizes/font_size = 24
-text = "空港站房"
-
-[node name="World" type="Label" parent="Interface"]
-offset_left = 26.0
-offset_top = 45.0
-offset_right = 116.0
-offset_bottom = 60.0
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.69412, 0.60392, 0.46275, 1)
-theme_override_font_sizes/font_size = 11
-text = "表世界"
-
-[node name="ShiftHint" type="Label" parent="Interface"]
-offset_left = 514.0
-offset_top = 336.0
-offset_right = 619.0
-offset_bottom = 354.0
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.68627, 0.61961, 0.53725, 1)
-theme_override_font_sizes/font_size = 12
-text = "Shift 切换世界"
-
-[node name="BackButton" type="Button" parent="Interface"]
-unique_name_in_owner = true
-offset_left = 526.0
-offset_top = 19.0
-offset_right = 616.0
-offset_bottom = 49.0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.93333, 0.85490, 0.70980, 1)
-theme_override_colors/font_hover_color = Color(1.00000, 0.94118, 0.81569, 1)
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("BackNormal")
-theme_override_styles/hover = SubResource("BackHover")
-theme_override_styles/pressed = SubResource("BackPressed")
-theme_override_styles/focus = SubResource("BackFocus")
-text = "返回地图"
+[node name="FacilityHUD" parent="Interface" instance=ExtResource("3_hud")]
+facility_title = "空港站房"
+title_color = Color(0.93333, 0.85490, 0.70980, 1)
+detail_color = Color(0.69412, 0.60392, 0.46275, 1)
 

@@ -6,10 +6,12 @@ const NPC_DIALOGUES := {
 
 @export var npc_id: StringName
 
+@onready var _researcher: SpriteHotspot = %Researcher
+
 
 func _ready() -> void:
 	super._ready()
-	%NpcButton.pressed.connect(_talk_to_npc)
+	_researcher.activated.connect(_talk_to_npc)
 
 
 func _talk_to_npc() -> void:

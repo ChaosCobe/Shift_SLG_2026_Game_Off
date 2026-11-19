@@ -1,43 +1,15 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://views/facilities/hub/hub_room.gd" id="1_hub"]
 [ext_resource type="TileSet" path="res://assets/tilesets/station_floors.tres" id="2_floors"]
+[ext_resource type="PackedScene" path="res://views/facilities/facility_hud.tscn" id="3_hud"]
+[ext_resource type="PackedScene" path="res://views/facilities/facility_actor.tscn" id="4_actor"]
+[ext_resource type="Texture2D" path="res://assets/third_party/ninja_adventure/characters/researcher_inner.png" id="5_researcher"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_back"]
-content_margin_left = 10.0
-content_margin_top = 3.0
-content_margin_right = 10.0
-content_margin_bottom = 3.0
-bg_color = Color(0.11, 0.19, 0.22, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.36, 0.51, 0.5, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
-content_margin_left = 10.0
-content_margin_top = 3.0
-content_margin_right = 10.0
-content_margin_bottom = 3.0
-bg_color = Color(0.17, 0.30, 0.29, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.59, 0.83, 0.72, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
-content_margin_left = 10.0
-content_margin_top = 3.0
-content_margin_right = 10.0
-content_margin_bottom = 3.0
-bg_color = Color(0.07, 0.15, 0.17, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.52, 0.75, 0.65, 1)
+[sub_resource type="AtlasTexture" id="ResearcherIdle"]
+atlas = ExtResource("5_researcher")
+region = Rect2(0, 0, 16, 16)
+filter_clip = true
 
 [node name="InnerHub" type="Node2D"]
 texture_filter = 1
@@ -513,61 +485,17 @@ color = Color(0.39, 0.47, 0.36, 1)
 
 [node name="Interface" type="CanvasLayer" parent="."]
 
-[node name="NpcButton" type="Button" parent="Interface"]
+[node name="Researcher" parent="Interface" instance=ExtResource("4_actor")]
 unique_name_in_owner = true
-offset_left = 266.0
-offset_top = 176.0
-offset_right = 374.0
-offset_bottom = 206.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 13
-theme_override_styles/normal = SubResource("StyleBoxFlat_back")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
-text = "年轻研究者"
+offset_left = 296.0
+offset_top = 246.0
+offset_right = 344.0
+offset_bottom = 294.0
+texture = SubResource("ResearcherIdle")
+display_name = "年轻研究者"
 
-[node name="Title" type="Label" parent="Interface"]
-offset_left = 24.0
-offset_top = 12.0
-offset_right = 290.0
-offset_bottom = 41.0
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.86, 0.96, 0.79, 1)
-theme_override_font_sizes/font_size = 24
-text = "法阵中枢"
+[node name="FacilityHUD" parent="Interface" instance=ExtResource("3_hud")]
+facility_title = "法阵中枢"
+title_color = Color(0.86, 0.96, 0.79, 1)
+detail_color = Color(0.54, 0.73, 0.67, 1)
 
-[node name="WorldLabel" type="Label" parent="Interface"]
-offset_left = 24.0
-offset_top = 42.0
-offset_right = 98.0
-offset_bottom = 57.0
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.54, 0.73, 0.67, 1)
-theme_override_font_sizes/font_size = 11
-text = "里世界"
-
-[node name="BackButton" type="Button" parent="Interface"]
-unique_name_in_owner = true
-offset_left = 526.0
-offset_top = 19.0
-offset_right = 616.0
-offset_bottom = 49.0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.88, 0.94, 0.83, 1)
-theme_override_colors/font_hover_color = Color(0.94, 0.99, 0.89, 1)
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxFlat_back")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
-text = "返回地图"
-
-[node name="ShiftHint" type="Label" parent="Interface"]
-offset_left = 453.0
-offset_top = 326.0
-offset_right = 616.0
-offset_bottom = 344.0
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.57, 0.75, 0.70, 1)
-theme_override_font_sizes/font_size = 12
-text = "Shift 切换世界"
-horizontal_alignment = 2

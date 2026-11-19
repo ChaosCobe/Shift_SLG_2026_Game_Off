@@ -3,44 +3,19 @@
 [ext_resource type="Script" path="res://views/facilities/workshop/repair_room.gd" id="1_room"]
 
 [ext_resource type="Texture2D" path="res://assets/third_party/ninja_adventure/Pipes.png" id="2_pipes"]
+[ext_resource type="PackedScene" path="res://views/facilities/facility_hud.tscn" id="3_hud"]
+[ext_resource type="PackedScene" path="res://views/facilities/facility_actor.tscn" id="4_actor"]
+[ext_resource type="Texture2D" path="res://assets/third_party/ninja_adventure/characters/mechanic.png" id="5_mechanic"]
 
 [sub_resource type="AtlasTexture" id="CopperPipe"]
 atlas = ExtResource("2_pipes")
 region = Rect2(16, 0, 48, 16)
 filter_clip = true
 
-[sub_resource type="StyleBoxFlat" id="BackNormal"]
-bg_color = Color(0.14118, 0.17255, 0.19608, 1.00000)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.47843, 0.41176, 0.33725, 1.00000)
-
-[sub_resource type="StyleBoxFlat" id="BackHover"]
-bg_color = Color(0.25098, 0.22745, 0.17647, 1.00000)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.95686, 0.83137, 0.63922, 1.00000)
-
-[sub_resource type="StyleBoxFlat" id="BackPressed"]
-bg_color = Color(0.14118, 0.17255, 0.19608, 1.00000)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.95686, 0.83137, 0.63922, 1.00000)
-
-[sub_resource type="StyleBoxFlat" id="BackFocus"]
-bg_color = Color(0.14118, 0.17255, 0.19608, 1.00000)
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.95686, 0.83137, 0.63922, 1.00000)
+[sub_resource type="AtlasTexture" id="MechanicIdle"]
+atlas = ExtResource("5_mechanic")
+region = Rect2(0, 0, 16, 16)
+filter_clip = true
 
 [node name="SurfaceWorkshop" type="Node2D"]
 texture_filter = 1
@@ -1535,56 +1510,17 @@ mouse_filter = 2
 
 [node name="Interface" type="CanvasLayer" parent="."]
 
-[node name="RepairButton" type="Button" parent="Interface"]
+[node name="Mechanic" parent="Interface" instance=ExtResource("4_actor")]
 unique_name_in_owner = true
-offset_left = 98.0
-offset_top = 211.0
-offset_right = 218.0
-offset_bottom = 241.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 13
-theme_override_styles/normal = SubResource("BackNormal")
-theme_override_styles/hover = SubResource("BackHover")
-theme_override_styles/pressed = SubResource("BackPressed")
-theme_override_styles/focus = SubResource("BackFocus")
-text = "检修稳流器"
+offset_left = 266.0
+offset_top = 209.0
+offset_right = 314.0
+offset_bottom = 257.0
+texture = SubResource("MechanicIdle")
+display_name = "机修师 · 检修稳流器"
 
-[node name="Title" type="Label" parent="Interface"]
-offset_left = 24.0
-offset_top = 14.0
-theme_override_font_sizes/font_size = 24
-theme_override_colors/font_color = Color(0.95686, 0.83137, 0.63922, 1.00000)
-text = "机修所"
-mouse_filter = 2
+[node name="FacilityHUD" parent="Interface" instance=ExtResource("3_hud")]
+facility_title = "机修所"
+title_color = Color(0.95686, 0.83137, 0.63922, 1.00000)
+detail_color = Color(0.72157, 0.59216, 0.44314, 1.00000)
 
-[node name="World" type="Label" parent="Interface"]
-offset_left = 26.0
-offset_top = 44.0
-theme_override_font_sizes/font_size = 11
-theme_override_colors/font_color = Color(0.72157, 0.59216, 0.44314, 1.00000)
-text = "表世界"
-mouse_filter = 2
-
-[node name="ShiftHint" type="Label" parent="Interface"]
-offset_left = 514.0
-offset_top = 335.0
-theme_override_font_sizes/font_size = 12
-theme_override_colors/font_color = Color(0.72157, 0.59216, 0.44314, 1.00000)
-text = "Shift 切换世界"
-mouse_filter = 2
-
-[node name="BackButton" type="Button" parent="Interface"]
-unique_name_in_owner = true
-offset_left = 526.0
-offset_top = 19.0
-offset_right = 616.0
-offset_bottom = 49.0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.95686, 0.83137, 0.63922, 1.00000)
-theme_override_colors/font_hover_color = Color(0.95686, 0.91373, 0.85490, 1.00000)
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("BackNormal")
-theme_override_styles/hover = SubResource("BackHover")
-theme_override_styles/pressed = SubResource("BackPressed")
-theme_override_styles/focus = SubResource("BackFocus")
-text = "返回地图"

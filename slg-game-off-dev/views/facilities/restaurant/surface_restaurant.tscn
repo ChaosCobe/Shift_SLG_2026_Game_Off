@@ -2,30 +2,7 @@
 
 [ext_resource type="Script" path="res://views/facilities/facility_room.gd" id="1_room"]
 [ext_resource type="TileSet" path="res://assets/tilesets/station_floors.tres" id="2_floors"]
-
-[sub_resource type="StyleBoxFlat" id="BackNormal"]
-bg_color = Color(0.223529, 0.156863, 0.164706, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.678431, 0.470588, 0.376471, 1)
-
-[sub_resource type="StyleBoxFlat" id="BackHover"]
-bg_color = Color(0.341176, 0.215686, 0.180392, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.678431, 0.470588, 0.376471, 1)
-
-[sub_resource type="StyleBoxFlat" id="BackPressed"]
-bg_color = Color(0.184314, 0.137255, 0.121569, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.678431, 0.470588, 0.376471, 1)
+[ext_resource type="PackedScene" path="res://views/facilities/facility_hud.tscn" id="3_hud"]
 
 [node name="SurfaceRestaurant" type="Node2D"]
 texture_filter = 1
@@ -1570,47 +1547,8 @@ color = Color(0.984314, 0.780392, 0.466667, 1)
 
 [node name="Interface" type="CanvasLayer" parent="."]
 
-[node name="Title" type="Label" parent="Interface"]
-offset_left = 24.0
-offset_top = 14.0
-offset_right = 219.0
-offset_bottom = 44.0
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.972549, 0.894118, 0.729412, 1)
-theme_override_font_sizes/font_size = 24
-text = "餐馆"
+[node name="FacilityHUD" parent="Interface" instance=ExtResource("3_hud")]
+facility_title = "餐馆"
+title_color = Color(0.972549, 0.894118, 0.729412, 1)
+detail_color = Color(0.803922, 0.690196, 0.592157, 1)
 
-[node name="World" type="Label" parent="Interface"]
-offset_left = 26.0
-offset_top = 45.0
-offset_right = 116.0
-offset_bottom = 60.0
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.803922, 0.690196, 0.592157, 1)
-theme_override_font_sizes/font_size = 11
-text = "表世界"
-
-[node name="ShiftHint" type="Label" parent="Interface"]
-offset_left = 514.0
-offset_top = 336.0
-offset_right = 619.0
-offset_bottom = 354.0
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.803922, 0.690196, 0.592157, 1)
-theme_override_font_sizes/font_size = 12
-text = "Shift 切换世界"
-horizontal_alignment = 2
-
-[node name="BackButton" type="Button" parent="Interface"]
-unique_name_in_owner = true
-offset_left = 526.0
-offset_top = 19.0
-offset_right = 616.0
-offset_bottom = 49.0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.972549, 0.894118, 0.729412, 1)
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("BackNormal")
-theme_override_styles/hover = SubResource("BackHover")
-theme_override_styles/pressed = SubResource("BackPressed")
-text = "返回地图"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3]
 
-[ext_resource type="Script" path="res://views/facilities/facility_room.gd" id="1_hub"]
+[ext_resource type="Script" path="res://views/facilities/hub/hub_room.gd" id="1_hub"]
 [ext_resource type="TileSet" path="res://assets/tilesets/station_floors.tres" id="2_floors"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_back"]
@@ -44,6 +44,7 @@ texture_filter = 1
 script = ExtResource("1_hub")
 facility_id = &"hub"
 world = 1
+npc_id = &"researcher"
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 640.0
@@ -511,6 +512,19 @@ mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
 [node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="NpcButton" type="Button" parent="Interface"]
+unique_name_in_owner = true
+offset_left = 266.0
+offset_top = 176.0
+offset_right = 374.0
+offset_bottom = 206.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_back")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+text = "年轻研究者"
 
 [node name="Title" type="Label" parent="Interface"]
 offset_left = 24.0

@@ -1,0 +1,1527 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://views/facilities/facility_room.gd" id="1_room"]
+
+[sub_resource type="StyleBoxFlat" id="BackNormal"]
+bg_color = Color(0.113725, 0.160784, 0.278431, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.345098, 0.494118, 0.709804, 1)
+
+[sub_resource type="StyleBoxFlat" id="BackHover"]
+bg_color = Color(0.172549, 0.243137, 0.396078, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.345098, 0.494118, 0.709804, 1)
+
+[sub_resource type="StyleBoxFlat" id="BackPressed"]
+bg_color = Color(0.094118, 0.137255, 0.243137, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.345098, 0.494118, 0.709804, 1)
+
+[node name="InnerRestaurant" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_room")
+facility_id = &"restaurant"
+world = 1
+
+[node name="Backdrop" type="ColorRect" parent="."]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+color = Color(0.070588, 0.105882, 0.164706, 1)
+
+[node name="StillWater" type="Polygon2D" parent="."]
+color = Color(0.086275, 0.14902, 0.231373, 1)
+polygon = PackedVector2Array(0, 145, 97, 113, 195, 133, 279, 98, 387, 104, 504, 129, 640, 98, 640, 360, 0, 360)
+
+[node name="HarborReflection" type="Line2D" parent="."]
+points = PackedVector2Array(0, 177, 82, 151, 138, 155, 210, 140, 305, 125, 385, 138, 536, 165, 640, 146)
+width = 2.0
+default_color = Color(0.137255, 0.262745, 0.388235, 1)
+
+[node name="WaterRibbon" type="Line2D" parent="."]
+points = PackedVector2Array(0, 285, 66, 269, 120, 274, 192, 251, 287, 263, 356, 250, 454, 265, 529, 289, 640, 271)
+width = 2.0
+default_color = Color(0.121569, 0.231373, 0.345098, 1)
+
+[node name="FarWaterRibbon" type="Line2D" parent="."]
+points = PackedVector2Array(0, 331, 103, 307, 178, 314, 283, 298, 359, 305, 446, 309, 536, 332, 640, 313)
+width = 2.0
+default_color = Color(0.12549, 0.223529, 0.341176, 1)
+
+[node name="Star0" type="Polygon2D" parent="."]
+color = Color(0.615686, 0.764706, 0.870588, 1)
+polygon = PackedVector2Array(89, 101, 92, 104, 89, 107, 86, 104)
+
+[node name="Star1" type="Polygon2D" parent="."]
+color = Color(0.615686, 0.764706, 0.870588, 1)
+polygon = PackedVector2Array(151, 78, 154, 81, 151, 84, 148, 81)
+
+[node name="Star2" type="Polygon2D" parent="."]
+color = Color(0.341176, 0.462745, 0.580392, 1)
+polygon = PackedVector2Array(184, 64, 186, 66, 184, 68, 182, 66)
+
+[node name="Star3" type="Polygon2D" parent="."]
+color = Color(0.615686, 0.764706, 0.870588, 1)
+polygon = PackedVector2Array(228, 87, 231, 90, 228, 93, 225, 90)
+
+[node name="Star4" type="Polygon2D" parent="."]
+color = Color(0.615686, 0.764706, 0.870588, 1)
+polygon = PackedVector2Array(408, 81, 411, 84, 408, 87, 405, 84)
+
+[node name="Star5" type="Polygon2D" parent="."]
+color = Color(0.615686, 0.764706, 0.870588, 1)
+polygon = PackedVector2Array(462, 73, 465, 76, 462, 79, 459, 76)
+
+[node name="Star6" type="Polygon2D" parent="."]
+color = Color(0.615686, 0.764706, 0.870588, 1)
+polygon = PackedVector2Array(506, 103, 509, 106, 506, 109, 503, 106)
+
+[node name="Star7" type="Polygon2D" parent="."]
+color = Color(0.341176, 0.462745, 0.580392, 1)
+polygon = PackedVector2Array(550, 89, 552, 91, 550, 93, 548, 91)
+
+[node name="Star8" type="Polygon2D" parent="."]
+color = Color(0.615686, 0.764706, 0.870588, 1)
+polygon = PackedVector2Array(581, 129, 584, 132, 581, 135, 578, 132)
+
+[node name="Star9" type="Polygon2D" parent="."]
+color = Color(0.341176, 0.462745, 0.580392, 1)
+polygon = PackedVector2Array(65, 169, 67, 171, 65, 173, 63, 171)
+
+[node name="Star10" type="Polygon2D" parent="."]
+color = Color(0.615686, 0.764706, 0.870588, 1)
+polygon = PackedVector2Array(574, 226, 577, 229, 574, 232, 571, 229)
+
+[node name="Star11" type="Polygon2D" parent="."]
+color = Color(0.615686, 0.764706, 0.870588, 1)
+polygon = PackedVector2Array(69, 278, 72, 281, 69, 284, 66, 281)
+
+[node name="Star12" type="Polygon2D" parent="."]
+color = Color(0.341176, 0.462745, 0.580392, 1)
+polygon = PackedVector2Array(535, 317, 537, 319, 535, 321, 533, 319)
+
+[node name="Star13" type="Polygon2D" parent="."]
+color = Color(0.341176, 0.462745, 0.580392, 1)
+polygon = PackedVector2Array(118, 329, 120, 331, 118, 333, 116, 331)
+
+[node name="SuspendedCrescent" type="Node2D" parent="."]
+position = Vector2(320, 88)
+
+[node name="OuterHalo" type="Polygon2D" parent="SuspendedCrescent"]
+color = Color(0.203922, 0.25098, 0.470588, 1)
+polygon = PackedVector2Array(52, 0, 48, 15, 37, 28, 20, 36, 0, 39, -20, 36, -37, 28, -48, 15, -52, 0, -48, -15, -37, -28, -20, -36, 0, -39, 20, -36, 37, -28, 48, -15)
+
+[node name="OrbitalRing" type="Line2D" parent="SuspendedCrescent"]
+points = PackedVector2Array(49, 0, 45, 14, 35, 25, 19, 33, 0, 36, -19, 33, -35, 25, -45, 14, -49, 0, -45, -14, -35, -25, -19, -33, 0, -36, 19, -33, 35, -25, 45, -14)
+width = 1.0
+default_color = Color(0.321569, 0.427451, 0.690196, 1)
+closed = true
+
+[node name="Moon" type="Polygon2D" parent="SuspendedCrescent"]
+color = Color(0.85098, 0.929412, 1, 1)
+polygon = PackedVector2Array(31, -1, 29, 9, 22, 18, 12, 24, 0, 26, -12, 24, -22, 18, -29, 9, -31, -1, -29, -11, -22, -20, -12, -26, 0, -28, 12, -26, 22, -20, 29, -11)
+
+[node name="MoonShadow" type="Polygon2D" parent="SuspendedCrescent"]
+color = Color(0.203922, 0.25098, 0.470588, 1)
+polygon = PackedVector2Array(38, -9, 36, -1, 30, 7, 21, 11, 11, 13, 1, 11, -8, 7, -14, -1, -16, -9, -14, -17, -8, -25, 1, -29, 11, -31, 21, -29, 30, -25, 36, -17)
+
+[node name="MoonStone0" type="ColorRect" parent="SuspendedCrescent"]
+offset_left = -25.0
+offset_top = 4.0
+offset_right = -21.0
+offset_bottom = 6.0
+mouse_filter = 2
+color = Color(0.572549, 0.737255, 0.901961, 1)
+
+[node name="MoonStone1" type="ColorRect" parent="SuspendedCrescent"]
+offset_left = -18.0
+offset_top = 17.0
+offset_right = -14.0
+offset_bottom = 19.0
+mouse_filter = 2
+color = Color(0.572549, 0.737255, 0.901961, 1)
+
+[node name="MoonStone2" type="ColorRect" parent="SuspendedCrescent"]
+offset_left = -6.0
+offset_top = 22.0
+offset_right = -2.0
+offset_bottom = 24.0
+mouse_filter = 2
+color = Color(0.572549, 0.737255, 0.901961, 1)
+
+[node name="MoonStone3" type="ColorRect" parent="SuspendedCrescent"]
+offset_left = 9.0
+offset_top = 18.0
+offset_right = 13.0
+offset_bottom = 20.0
+mouse_filter = 2
+color = Color(0.572549, 0.737255, 0.901961, 1)
+
+[node name="NorthStar" type="Polygon2D" parent="SuspendedCrescent"]
+color = Color(0.717647, 0.917647, 0.992157, 1)
+polygon = PackedVector2Array(19, -23, 22, -15, 30, -12, 22, -9, 19, -1, 16, -9, 8, -12, 16, -15)
+
+[node name="CenterStar" type="Polygon2D" parent="SuspendedCrescent"]
+color = Color(0.952941, 0.984314, 1, 1)
+polygon = PackedVector2Array(19, -17, 24, -12, 19, -7, 14, -12)
+
+[node name="DockShadow" type="Polygon2D" parent="."]
+color = Color(0.039216, 0.090196, 0.145098, 0.521569)
+polygon = PackedVector2Array(123, 125, 517, 125, 561, 169, 561, 282, 517, 326, 123, 326, 79, 282, 79, 169)
+
+[node name="DockFront" type="Polygon2D" parent="."]
+color = Color(0.156863, 0.219608, 0.368627, 1)
+polygon = PackedVector2Array(121, 115, 519, 115, 561, 157, 561, 277, 519, 319, 121, 319, 79, 277, 79, 157)
+
+[node name="MoonstoneDeck" type="Polygon2D" parent="."]
+color = Color(0.321569, 0.396078, 0.552941, 1)
+polygon = PackedVector2Array(121, 113, 519, 113, 561, 155, 561, 267, 519, 309, 121, 309, 79, 267, 79, 155)
+
+[node name="DeckSteps" type="Line2D" parent="."]
+points = PackedVector2Array(121, 114, 519, 114, 560, 155, 560, 267, 519, 308, 121, 308, 80, 267, 80, 155)
+width = 2.0
+default_color = Color(0.501961, 0.580392, 0.701961, 1)
+closed = true
+
+[node name="SilverInlay" type="Line2D" parent="."]
+points = PackedVector2Array(132, 130, 508, 130, 544, 166, 544, 256, 508, 292, 132, 292, 96, 256, 96, 166)
+width = 1.0
+default_color = Color(0.654902, 0.733333, 0.854902, 1)
+closed = true
+
+[node name="RingInlay" type="Line2D" parent="."]
+points = PackedVector2Array(136, 137, 504, 137, 536, 169, 536, 253, 504, 285, 136, 285, 104, 253, 104, 169)
+width = 1.0
+default_color = Color(0.564706, 0.65098, 0.803922, 1)
+closed = true
+
+[node name="DarkCenter" type="Polygon2D" parent="."]
+color = Color(0.262745, 0.337255, 0.498039, 1)
+polygon = PackedVector2Array(155, 147, 485, 147, 515, 177, 515, 244, 485, 274, 155, 274, 125, 244, 125, 177)
+
+[node name="DeckStud0" type="Polygon2D" parent="."]
+color = Color(0.607843, 0.686275, 0.811765, 1)
+polygon = PackedVector2Array(123, 187, 127, 191, 123, 195, 119, 191)
+
+[node name="DeckStudLight0" type="ColorRect" parent="."]
+offset_left = 122.0
+offset_top = 190.0
+offset_right = 124.0
+offset_bottom = 192.0
+mouse_filter = 2
+color = Color(0.784314, 0.862745, 0.945098, 1)
+
+[node name="DeckStud1" type="Polygon2D" parent="."]
+color = Color(0.607843, 0.686275, 0.811765, 1)
+polygon = PackedVector2Array(123, 231, 127, 235, 123, 239, 119, 235)
+
+[node name="DeckStudLight1" type="ColorRect" parent="."]
+offset_left = 122.0
+offset_top = 234.0
+offset_right = 124.0
+offset_bottom = 236.0
+mouse_filter = 2
+color = Color(0.784314, 0.862745, 0.945098, 1)
+
+[node name="DeckStud2" type="Polygon2D" parent="."]
+color = Color(0.607843, 0.686275, 0.811765, 1)
+polygon = PackedVector2Array(517, 187, 521, 191, 517, 195, 513, 191)
+
+[node name="DeckStudLight2" type="ColorRect" parent="."]
+offset_left = 516.0
+offset_top = 190.0
+offset_right = 518.0
+offset_bottom = 192.0
+mouse_filter = 2
+color = Color(0.784314, 0.862745, 0.945098, 1)
+
+[node name="DeckStud3" type="Polygon2D" parent="."]
+color = Color(0.607843, 0.686275, 0.811765, 1)
+polygon = PackedVector2Array(517, 231, 521, 235, 517, 239, 513, 235)
+
+[node name="DeckStudLight3" type="ColorRect" parent="."]
+offset_left = 516.0
+offset_top = 234.0
+offset_right = 518.0
+offset_bottom = 236.0
+mouse_filter = 2
+color = Color(0.784314, 0.862745, 0.945098, 1)
+
+[node name="DeckStud4" type="Polygon2D" parent="."]
+color = Color(0.607843, 0.686275, 0.811765, 1)
+polygon = PackedVector2Array(168, 142, 172, 146, 168, 150, 164, 146)
+
+[node name="DeckStudLight4" type="ColorRect" parent="."]
+offset_left = 167.0
+offset_top = 145.0
+offset_right = 169.0
+offset_bottom = 147.0
+mouse_filter = 2
+color = Color(0.784314, 0.862745, 0.945098, 1)
+
+[node name="DeckStud5" type="Polygon2D" parent="."]
+color = Color(0.607843, 0.686275, 0.811765, 1)
+polygon = PackedVector2Array(472, 142, 476, 146, 472, 150, 468, 146)
+
+[node name="DeckStudLight5" type="ColorRect" parent="."]
+offset_left = 471.0
+offset_top = 145.0
+offset_right = 473.0
+offset_bottom = 147.0
+mouse_filter = 2
+color = Color(0.784314, 0.862745, 0.945098, 1)
+
+[node name="DeckStud6" type="Polygon2D" parent="."]
+color = Color(0.607843, 0.686275, 0.811765, 1)
+polygon = PackedVector2Array(168, 271, 172, 275, 168, 279, 164, 275)
+
+[node name="DeckStudLight6" type="ColorRect" parent="."]
+offset_left = 167.0
+offset_top = 274.0
+offset_right = 169.0
+offset_bottom = 276.0
+mouse_filter = 2
+color = Color(0.784314, 0.862745, 0.945098, 1)
+
+[node name="DeckStud7" type="Polygon2D" parent="."]
+color = Color(0.607843, 0.686275, 0.811765, 1)
+polygon = PackedVector2Array(472, 271, 476, 275, 472, 279, 468, 275)
+
+[node name="DeckStudLight7" type="ColorRect" parent="."]
+offset_left = 471.0
+offset_top = 274.0
+offset_right = 473.0
+offset_bottom = 276.0
+mouse_filter = 2
+color = Color(0.784314, 0.862745, 0.945098, 1)
+
+[node name="DeckStud8" type="Polygon2D" parent="."]
+color = Color(0.607843, 0.686275, 0.811765, 1)
+polygon = PackedVector2Array(320, 136, 324, 140, 320, 144, 316, 140)
+
+[node name="DeckStudLight8" type="ColorRect" parent="."]
+offset_left = 319.0
+offset_top = 139.0
+offset_right = 321.0
+offset_bottom = 141.0
+mouse_filter = 2
+color = Color(0.784314, 0.862745, 0.945098, 1)
+
+[node name="DeckStud9" type="Polygon2D" parent="."]
+color = Color(0.607843, 0.686275, 0.811765, 1)
+polygon = PackedVector2Array(320, 285, 324, 289, 320, 293, 316, 289)
+
+[node name="DeckStudLight9" type="ColorRect" parent="."]
+offset_left = 319.0
+offset_top = 288.0
+offset_right = 321.0
+offset_bottom = 290.0
+mouse_filter = 2
+color = Color(0.784314, 0.862745, 0.945098, 1)
+
+[node name="BanquetTable" type="Node2D" parent="."]
+position = Vector2(160, 170)
+
+[node name="Shadow" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.098039, 0.141176, 0.243137, 1)
+polygon = PackedVector2Array(30, 8, 295, 8, 320, 33, 320, 59, 295, 84, 30, 84, 5, 59, 5, 33)
+
+[node name="StonePlinth" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.192157, 0.243137, 0.384314, 1)
+polygon = PackedVector2Array(23, 5, 297, 5, 320, 28, 320, 57, 297, 80, 23, 80, 0, 57, 0, 28)
+
+[node name="LapisTop" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.45098, 0.521569, 0.713725, 1)
+polygon = PackedVector2Array(22, 0, 298, 0, 320, 22, 320, 48, 298, 70, 22, 70, 0, 48, 0, 22)
+
+[node name="PaleEdge" type="Line2D" parent="BanquetTable"]
+points = PackedVector2Array(23, 2, 297, 2, 318, 23, 318, 47, 297, 68, 23, 68, 2, 47, 2, 23)
+width = 2.0
+default_color = Color(0.654902, 0.729412, 0.941176, 1)
+closed = true
+
+[node name="Runner" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.227451, 0.286275, 0.466667, 1)
+polygon = PackedVector2Array(35, 25, 285, 25, 291, 31, 291, 39, 285, 45, 35, 45, 29, 39, 29, 31)
+
+[node name="RunnerBinding" type="Line2D" parent="BanquetTable"]
+points = PackedVector2Array(37, 27, 283, 27, 289, 33, 289, 37, 283, 43, 37, 43, 31, 37, 31, 33)
+width = 1.0
+default_color = Color(0.592157, 0.701961, 0.878431, 1)
+closed = true
+
+[node name="MoonWeave0" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.431373, 0.466667, 0.701961, 1)
+polygon = PackedVector2Array(43, 29, 49, 35, 43, 41, 37, 35)
+
+[node name="MoonWeave1" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.431373, 0.466667, 0.701961, 1)
+polygon = PackedVector2Array(69, 29, 75, 35, 69, 41, 63, 35)
+
+[node name="MoonWeave2" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.431373, 0.466667, 0.701961, 1)
+polygon = PackedVector2Array(95, 29, 101, 35, 95, 41, 89, 35)
+
+[node name="MoonWeave3" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.431373, 0.466667, 0.701961, 1)
+polygon = PackedVector2Array(121, 29, 127, 35, 121, 41, 115, 35)
+
+[node name="MoonWeave4" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.431373, 0.466667, 0.701961, 1)
+polygon = PackedVector2Array(147, 29, 153, 35, 147, 41, 141, 35)
+
+[node name="MoonWeave5" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.431373, 0.466667, 0.701961, 1)
+polygon = PackedVector2Array(173, 29, 179, 35, 173, 41, 167, 35)
+
+[node name="MoonWeave6" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.431373, 0.466667, 0.701961, 1)
+polygon = PackedVector2Array(199, 29, 205, 35, 199, 41, 193, 35)
+
+[node name="MoonWeave7" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.431373, 0.466667, 0.701961, 1)
+polygon = PackedVector2Array(225, 29, 231, 35, 225, 41, 219, 35)
+
+[node name="MoonWeave8" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.431373, 0.466667, 0.701961, 1)
+polygon = PackedVector2Array(251, 29, 257, 35, 251, 41, 245, 35)
+
+[node name="MoonWeave9" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.431373, 0.466667, 0.701961, 1)
+polygon = PackedVector2Array(277, 29, 283, 35, 277, 41, 271, 35)
+
+[node name="Plate0" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.886275, 0.913725, 0.960784, 1)
+polygon = PackedVector2Array(59, 13, 57, 17, 51, 19, 45, 17, 43, 13, 45, 9, 51, 7, 57, 9)
+
+[node name="PlateGlaze0" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.423529, 0.529412, 0.67451, 1)
+polygon = PackedVector2Array(57, 13, 55, 16, 51, 17, 47, 16, 45, 13, 47, 10, 51, 9, 55, 10)
+
+[node name="StarFruit0" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.929412, 0.835294, 0.611765, 1)
+polygon = PackedVector2Array(51, 9, 54, 13, 51, 17, 48, 13)
+
+[node name="Cup0" type="ColorRect" parent="BanquetTable"]
+offset_left = 61.0
+offset_top = 14.0
+offset_right = 65.0
+offset_bottom = 19.0
+mouse_filter = 2
+color = Color(0.52549, 0.792157, 0.847059, 1)
+
+[node name="CupLight0" type="ColorRect" parent="BanquetTable"]
+offset_left = 61.0
+offset_top = 14.0
+offset_right = 65.0
+offset_bottom = 15.0
+mouse_filter = 2
+color = Color(0.741176, 0.929412, 0.941176, 1)
+
+[node name="Plate1" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.886275, 0.913725, 0.960784, 1)
+polygon = PackedVector2Array(59, 55, 57, 59, 51, 61, 45, 59, 43, 55, 45, 51, 51, 49, 57, 51)
+
+[node name="PlateGlaze1" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.423529, 0.529412, 0.67451, 1)
+polygon = PackedVector2Array(57, 55, 55, 58, 51, 59, 47, 58, 45, 55, 47, 52, 51, 51, 55, 52)
+
+[node name="StarFruit1" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.784314, 0.643137, 0.917647, 1)
+polygon = PackedVector2Array(51, 51, 54, 55, 51, 59, 48, 55)
+
+[node name="Cup1" type="ColorRect" parent="BanquetTable"]
+offset_left = 61.0
+offset_top = 56.0
+offset_right = 65.0
+offset_bottom = 61.0
+mouse_filter = 2
+color = Color(0.52549, 0.792157, 0.847059, 1)
+
+[node name="CupLight1" type="ColorRect" parent="BanquetTable"]
+offset_left = 61.0
+offset_top = 56.0
+offset_right = 65.0
+offset_bottom = 57.0
+mouse_filter = 2
+color = Color(0.741176, 0.929412, 0.941176, 1)
+
+[node name="Plate2" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.886275, 0.913725, 0.960784, 1)
+polygon = PackedVector2Array(109, 13, 107, 17, 101, 19, 95, 17, 93, 13, 95, 9, 101, 7, 107, 9)
+
+[node name="PlateGlaze2" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.423529, 0.529412, 0.67451, 1)
+polygon = PackedVector2Array(107, 13, 105, 16, 101, 17, 97, 16, 95, 13, 97, 10, 101, 9, 105, 10)
+
+[node name="StarFruit2" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.784314, 0.643137, 0.917647, 1)
+polygon = PackedVector2Array(101, 9, 104, 13, 101, 17, 98, 13)
+
+[node name="Cup2" type="ColorRect" parent="BanquetTable"]
+offset_left = 111.0
+offset_top = 14.0
+offset_right = 115.0
+offset_bottom = 19.0
+mouse_filter = 2
+color = Color(0.52549, 0.792157, 0.847059, 1)
+
+[node name="CupLight2" type="ColorRect" parent="BanquetTable"]
+offset_left = 111.0
+offset_top = 14.0
+offset_right = 115.0
+offset_bottom = 15.0
+mouse_filter = 2
+color = Color(0.741176, 0.929412, 0.941176, 1)
+
+[node name="Plate3" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.886275, 0.913725, 0.960784, 1)
+polygon = PackedVector2Array(109, 55, 107, 59, 101, 61, 95, 59, 93, 55, 95, 51, 101, 49, 107, 51)
+
+[node name="PlateGlaze3" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.423529, 0.529412, 0.67451, 1)
+polygon = PackedVector2Array(107, 55, 105, 58, 101, 59, 97, 58, 95, 55, 97, 52, 101, 51, 105, 52)
+
+[node name="StarFruit3" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.929412, 0.835294, 0.611765, 1)
+polygon = PackedVector2Array(101, 51, 104, 55, 101, 59, 98, 55)
+
+[node name="Cup3" type="ColorRect" parent="BanquetTable"]
+offset_left = 111.0
+offset_top = 56.0
+offset_right = 115.0
+offset_bottom = 61.0
+mouse_filter = 2
+color = Color(0.52549, 0.792157, 0.847059, 1)
+
+[node name="CupLight3" type="ColorRect" parent="BanquetTable"]
+offset_left = 111.0
+offset_top = 56.0
+offset_right = 115.0
+offset_bottom = 57.0
+mouse_filter = 2
+color = Color(0.741176, 0.929412, 0.941176, 1)
+
+[node name="Plate4" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.886275, 0.913725, 0.960784, 1)
+polygon = PackedVector2Array(159, 13, 157, 17, 151, 19, 145, 17, 143, 13, 145, 9, 151, 7, 157, 9)
+
+[node name="PlateGlaze4" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.423529, 0.529412, 0.67451, 1)
+polygon = PackedVector2Array(157, 13, 155, 16, 151, 17, 147, 16, 145, 13, 147, 10, 151, 9, 155, 10)
+
+[node name="StarFruit4" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.784314, 0.643137, 0.917647, 1)
+polygon = PackedVector2Array(151, 9, 154, 13, 151, 17, 148, 13)
+
+[node name="Cup4" type="ColorRect" parent="BanquetTable"]
+offset_left = 161.0
+offset_top = 14.0
+offset_right = 165.0
+offset_bottom = 19.0
+mouse_filter = 2
+color = Color(0.52549, 0.792157, 0.847059, 1)
+
+[node name="CupLight4" type="ColorRect" parent="BanquetTable"]
+offset_left = 161.0
+offset_top = 14.0
+offset_right = 165.0
+offset_bottom = 15.0
+mouse_filter = 2
+color = Color(0.741176, 0.929412, 0.941176, 1)
+
+[node name="Plate5" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.886275, 0.913725, 0.960784, 1)
+polygon = PackedVector2Array(159, 55, 157, 59, 151, 61, 145, 59, 143, 55, 145, 51, 151, 49, 157, 51)
+
+[node name="PlateGlaze5" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.423529, 0.529412, 0.67451, 1)
+polygon = PackedVector2Array(157, 55, 155, 58, 151, 59, 147, 58, 145, 55, 147, 52, 151, 51, 155, 52)
+
+[node name="StarFruit5" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.784314, 0.643137, 0.917647, 1)
+polygon = PackedVector2Array(151, 51, 154, 55, 151, 59, 148, 55)
+
+[node name="Cup5" type="ColorRect" parent="BanquetTable"]
+offset_left = 161.0
+offset_top = 56.0
+offset_right = 165.0
+offset_bottom = 61.0
+mouse_filter = 2
+color = Color(0.52549, 0.792157, 0.847059, 1)
+
+[node name="CupLight5" type="ColorRect" parent="BanquetTable"]
+offset_left = 161.0
+offset_top = 56.0
+offset_right = 165.0
+offset_bottom = 57.0
+mouse_filter = 2
+color = Color(0.741176, 0.929412, 0.941176, 1)
+
+[node name="Plate6" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.886275, 0.913725, 0.960784, 1)
+polygon = PackedVector2Array(209, 13, 207, 17, 201, 19, 195, 17, 193, 13, 195, 9, 201, 7, 207, 9)
+
+[node name="PlateGlaze6" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.423529, 0.529412, 0.67451, 1)
+polygon = PackedVector2Array(207, 13, 205, 16, 201, 17, 197, 16, 195, 13, 197, 10, 201, 9, 205, 10)
+
+[node name="StarFruit6" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.929412, 0.835294, 0.611765, 1)
+polygon = PackedVector2Array(201, 9, 204, 13, 201, 17, 198, 13)
+
+[node name="Cup6" type="ColorRect" parent="BanquetTable"]
+offset_left = 211.0
+offset_top = 14.0
+offset_right = 215.0
+offset_bottom = 19.0
+mouse_filter = 2
+color = Color(0.52549, 0.792157, 0.847059, 1)
+
+[node name="CupLight6" type="ColorRect" parent="BanquetTable"]
+offset_left = 211.0
+offset_top = 14.0
+offset_right = 215.0
+offset_bottom = 15.0
+mouse_filter = 2
+color = Color(0.741176, 0.929412, 0.941176, 1)
+
+[node name="Plate7" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.886275, 0.913725, 0.960784, 1)
+polygon = PackedVector2Array(209, 55, 207, 59, 201, 61, 195, 59, 193, 55, 195, 51, 201, 49, 207, 51)
+
+[node name="PlateGlaze7" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.423529, 0.529412, 0.67451, 1)
+polygon = PackedVector2Array(207, 55, 205, 58, 201, 59, 197, 58, 195, 55, 197, 52, 201, 51, 205, 52)
+
+[node name="StarFruit7" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.784314, 0.643137, 0.917647, 1)
+polygon = PackedVector2Array(201, 51, 204, 55, 201, 59, 198, 55)
+
+[node name="Cup7" type="ColorRect" parent="BanquetTable"]
+offset_left = 211.0
+offset_top = 56.0
+offset_right = 215.0
+offset_bottom = 61.0
+mouse_filter = 2
+color = Color(0.52549, 0.792157, 0.847059, 1)
+
+[node name="CupLight7" type="ColorRect" parent="BanquetTable"]
+offset_left = 211.0
+offset_top = 56.0
+offset_right = 215.0
+offset_bottom = 57.0
+mouse_filter = 2
+color = Color(0.741176, 0.929412, 0.941176, 1)
+
+[node name="Plate8" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.886275, 0.913725, 0.960784, 1)
+polygon = PackedVector2Array(259, 13, 257, 17, 251, 19, 245, 17, 243, 13, 245, 9, 251, 7, 257, 9)
+
+[node name="PlateGlaze8" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.423529, 0.529412, 0.67451, 1)
+polygon = PackedVector2Array(257, 13, 255, 16, 251, 17, 247, 16, 245, 13, 247, 10, 251, 9, 255, 10)
+
+[node name="StarFruit8" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.784314, 0.643137, 0.917647, 1)
+polygon = PackedVector2Array(251, 9, 254, 13, 251, 17, 248, 13)
+
+[node name="Cup8" type="ColorRect" parent="BanquetTable"]
+offset_left = 261.0
+offset_top = 14.0
+offset_right = 265.0
+offset_bottom = 19.0
+mouse_filter = 2
+color = Color(0.52549, 0.792157, 0.847059, 1)
+
+[node name="CupLight8" type="ColorRect" parent="BanquetTable"]
+offset_left = 261.0
+offset_top = 14.0
+offset_right = 265.0
+offset_bottom = 15.0
+mouse_filter = 2
+color = Color(0.741176, 0.929412, 0.941176, 1)
+
+[node name="Plate9" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.886275, 0.913725, 0.960784, 1)
+polygon = PackedVector2Array(259, 55, 257, 59, 251, 61, 245, 59, 243, 55, 245, 51, 251, 49, 257, 51)
+
+[node name="PlateGlaze9" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.423529, 0.529412, 0.67451, 1)
+polygon = PackedVector2Array(257, 55, 255, 58, 251, 59, 247, 58, 245, 55, 247, 52, 251, 51, 255, 52)
+
+[node name="StarFruit9" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.929412, 0.835294, 0.611765, 1)
+polygon = PackedVector2Array(251, 51, 254, 55, 251, 59, 248, 55)
+
+[node name="Cup9" type="ColorRect" parent="BanquetTable"]
+offset_left = 261.0
+offset_top = 56.0
+offset_right = 265.0
+offset_bottom = 61.0
+mouse_filter = 2
+color = Color(0.52549, 0.792157, 0.847059, 1)
+
+[node name="CupLight9" type="ColorRect" parent="BanquetTable"]
+offset_left = 261.0
+offset_top = 56.0
+offset_right = 265.0
+offset_bottom = 57.0
+mouse_filter = 2
+color = Color(0.741176, 0.929412, 0.941176, 1)
+
+[node name="Plate10" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.886275, 0.913725, 0.960784, 1)
+polygon = PackedVector2Array(289, 13, 287, 17, 281, 19, 275, 17, 273, 13, 275, 9, 281, 7, 287, 9)
+
+[node name="PlateGlaze10" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.423529, 0.529412, 0.67451, 1)
+polygon = PackedVector2Array(287, 13, 285, 16, 281, 17, 277, 16, 275, 13, 277, 10, 281, 9, 285, 10)
+
+[node name="StarFruit10" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.784314, 0.643137, 0.917647, 1)
+polygon = PackedVector2Array(281, 9, 284, 13, 281, 17, 278, 13)
+
+[node name="Cup10" type="ColorRect" parent="BanquetTable"]
+offset_left = 291.0
+offset_top = 14.0
+offset_right = 295.0
+offset_bottom = 19.0
+mouse_filter = 2
+color = Color(0.52549, 0.792157, 0.847059, 1)
+
+[node name="CupLight10" type="ColorRect" parent="BanquetTable"]
+offset_left = 291.0
+offset_top = 14.0
+offset_right = 295.0
+offset_bottom = 15.0
+mouse_filter = 2
+color = Color(0.741176, 0.929412, 0.941176, 1)
+
+[node name="Plate11" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.886275, 0.913725, 0.960784, 1)
+polygon = PackedVector2Array(289, 55, 287, 59, 281, 61, 275, 59, 273, 55, 275, 51, 281, 49, 287, 51)
+
+[node name="PlateGlaze11" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.423529, 0.529412, 0.67451, 1)
+polygon = PackedVector2Array(287, 55, 285, 58, 281, 59, 277, 58, 275, 55, 277, 52, 281, 51, 285, 52)
+
+[node name="StarFruit11" type="Polygon2D" parent="BanquetTable"]
+color = Color(0.784314, 0.643137, 0.917647, 1)
+polygon = PackedVector2Array(281, 51, 284, 55, 281, 59, 278, 55)
+
+[node name="Cup11" type="ColorRect" parent="BanquetTable"]
+offset_left = 291.0
+offset_top = 56.0
+offset_right = 295.0
+offset_bottom = 61.0
+mouse_filter = 2
+color = Color(0.52549, 0.792157, 0.847059, 1)
+
+[node name="CupLight11" type="ColorRect" parent="BanquetTable"]
+offset_left = 291.0
+offset_top = 56.0
+offset_right = 295.0
+offset_bottom = 57.0
+mouse_filter = 2
+color = Color(0.741176, 0.929412, 0.941176, 1)
+
+[node name="TableLamp0" type="Node2D" parent="BanquetTable"]
+position = Vector2(97, 35)
+
+[node name="Glow" type="Polygon2D" parent="BanquetTable/TableLamp0"]
+color = Color(0.47451, 0.811765, 0.901961, 0.286275)
+polygon = PackedVector2Array(18, 0, 16, 8, 9, 14, 0, 16, -9, 14, -16, 8, -18, 0, -16, -8, -9, -14, 0, -16, 9, -14, 16, -8)
+
+[node name="Base" type="Polygon2D" parent="BanquetTable/TableLamp0"]
+color = Color(0.219608, 0.301961, 0.47451, 1)
+polygon = PackedVector2Array(-3, 3, 2, 3, 4, 5, 4, 8, 2, 10, -3, 10, -5, 8, -5, 5)
+
+[node name="Shell" type="Polygon2D" parent="BanquetTable/TableLamp0"]
+color = Color(0.415686, 0.713725, 0.831373, 1)
+polygon = PackedVector2Array(0, -9, 4, -3, 4, 3, 0, 4, -5, 3, -5, -3)
+
+[node name="GlowingCenter" type="Polygon2D" parent="BanquetTable/TableLamp0"]
+color = Color(0.752941, 0.964706, 0.960784, 1)
+polygon = PackedVector2Array(0, -6, 3, -3, 3, 0, 0, 3, -3, 0, -3, -3)
+
+[node name="HotLight" type="ColorRect" parent="BanquetTable/TableLamp0"]
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 1.0
+offset_bottom = 1.0
+mouse_filter = 2
+color = Color(0.929412, 0.992157, 0.984314, 1)
+
+[node name="TableLamp1" type="Node2D" parent="BanquetTable"]
+position = Vector2(224, 35)
+
+[node name="Glow" type="Polygon2D" parent="BanquetTable/TableLamp1"]
+color = Color(0.47451, 0.811765, 0.901961, 0.286275)
+polygon = PackedVector2Array(18, 0, 16, 8, 9, 14, 0, 16, -9, 14, -16, 8, -18, 0, -16, -8, -9, -14, 0, -16, 9, -14, 16, -8)
+
+[node name="Base" type="Polygon2D" parent="BanquetTable/TableLamp1"]
+color = Color(0.219608, 0.301961, 0.47451, 1)
+polygon = PackedVector2Array(-3, 3, 2, 3, 4, 5, 4, 8, 2, 10, -3, 10, -5, 8, -5, 5)
+
+[node name="Shell" type="Polygon2D" parent="BanquetTable/TableLamp1"]
+color = Color(0.415686, 0.713725, 0.831373, 1)
+polygon = PackedVector2Array(0, -9, 4, -3, 4, 3, 0, 4, -5, 3, -5, -3)
+
+[node name="GlowingCenter" type="Polygon2D" parent="BanquetTable/TableLamp1"]
+color = Color(0.752941, 0.964706, 0.960784, 1)
+polygon = PackedVector2Array(0, -6, 3, -3, 3, 0, 0, 3, -3, 0, -3, -3)
+
+[node name="HotLight" type="ColorRect" parent="BanquetTable/TableLamp1"]
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 1.0
+offset_bottom = 1.0
+mouse_filter = 2
+color = Color(0.929412, 0.992157, 0.984314, 1)
+
+[node name="FloatingLantern0" type="Node2D" parent="."]
+position = Vector2(143, 162)
+
+[node name="Glow" type="Polygon2D" parent="FloatingLantern0"]
+color = Color(0.47451, 0.811765, 0.901961, 0.286275)
+polygon = PackedVector2Array(22, 0, 19, 10, 11, 17, 0, 20, -11, 17, -19, 10, -22, 0, -19, -10, -11, -17, 0, -20, 11, -17, 19, -10)
+
+[node name="Base" type="Polygon2D" parent="FloatingLantern0"]
+color = Color(0.219608, 0.301961, 0.47451, 1)
+polygon = PackedVector2Array(-5, 4, 4, 4, 6, 6, 6, 9, 4, 11, -5, 11, -7, 9, -7, 6)
+
+[node name="Shell" type="Polygon2D" parent="FloatingLantern0"]
+color = Color(0.415686, 0.713725, 0.831373, 1)
+polygon = PackedVector2Array(0, -13, 6, -5, 6, 4, 0, 6, -7, 4, -7, -5)
+
+[node name="GlowingCenter" type="Polygon2D" parent="FloatingLantern0"]
+color = Color(0.752941, 0.964706, 0.960784, 1)
+polygon = PackedVector2Array(0, -10, 4, -4, 4, 0, 0, 4, -5, 0, -5, -4)
+
+[node name="HotLight" type="ColorRect" parent="FloatingLantern0"]
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 1.0
+offset_bottom = 1.0
+mouse_filter = 2
+color = Color(0.929412, 0.992157, 0.984314, 1)
+
+[node name="LanternStand0" type="Polygon2D" parent="."]
+color = Color(0.494118, 0.627451, 0.831373, 1)
+polygon = PackedVector2Array(143, 170, 147, 174, 143, 178, 139, 174)
+
+[node name="FloatingLantern1" type="Node2D" parent="."]
+position = Vector2(497, 162)
+
+[node name="Glow" type="Polygon2D" parent="FloatingLantern1"]
+color = Color(0.47451, 0.811765, 0.901961, 0.286275)
+polygon = PackedVector2Array(22, 0, 19, 10, 11, 17, 0, 20, -11, 17, -19, 10, -22, 0, -19, -10, -11, -17, 0, -20, 11, -17, 19, -10)
+
+[node name="Base" type="Polygon2D" parent="FloatingLantern1"]
+color = Color(0.219608, 0.301961, 0.47451, 1)
+polygon = PackedVector2Array(-5, 4, 4, 4, 6, 6, 6, 9, 4, 11, -5, 11, -7, 9, -7, 6)
+
+[node name="Shell" type="Polygon2D" parent="FloatingLantern1"]
+color = Color(0.415686, 0.713725, 0.831373, 1)
+polygon = PackedVector2Array(0, -13, 6, -5, 6, 4, 0, 6, -7, 4, -7, -5)
+
+[node name="GlowingCenter" type="Polygon2D" parent="FloatingLantern1"]
+color = Color(0.752941, 0.964706, 0.960784, 1)
+polygon = PackedVector2Array(0, -10, 4, -4, 4, 0, 0, 4, -5, 0, -5, -4)
+
+[node name="HotLight" type="ColorRect" parent="FloatingLantern1"]
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 1.0
+offset_bottom = 1.0
+mouse_filter = 2
+color = Color(0.929412, 0.992157, 0.984314, 1)
+
+[node name="LanternStand1" type="Polygon2D" parent="."]
+color = Color(0.494118, 0.627451, 0.831373, 1)
+polygon = PackedVector2Array(497, 170, 501, 174, 497, 178, 493, 174)
+
+[node name="FloatingLantern2" type="Node2D" parent="."]
+position = Vector2(139, 252)
+
+[node name="Glow" type="Polygon2D" parent="FloatingLantern2"]
+color = Color(0.47451, 0.811765, 0.901961, 0.286275)
+polygon = PackedVector2Array(22, 0, 19, 10, 11, 17, 0, 20, -11, 17, -19, 10, -22, 0, -19, -10, -11, -17, 0, -20, 11, -17, 19, -10)
+
+[node name="Base" type="Polygon2D" parent="FloatingLantern2"]
+color = Color(0.219608, 0.301961, 0.47451, 1)
+polygon = PackedVector2Array(-5, 4, 4, 4, 6, 6, 6, 9, 4, 11, -5, 11, -7, 9, -7, 6)
+
+[node name="Shell" type="Polygon2D" parent="FloatingLantern2"]
+color = Color(0.415686, 0.713725, 0.831373, 1)
+polygon = PackedVector2Array(0, -13, 6, -5, 6, 4, 0, 6, -7, 4, -7, -5)
+
+[node name="GlowingCenter" type="Polygon2D" parent="FloatingLantern2"]
+color = Color(0.752941, 0.964706, 0.960784, 1)
+polygon = PackedVector2Array(0, -10, 4, -4, 4, 0, 0, 4, -5, 0, -5, -4)
+
+[node name="HotLight" type="ColorRect" parent="FloatingLantern2"]
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 1.0
+offset_bottom = 1.0
+mouse_filter = 2
+color = Color(0.929412, 0.992157, 0.984314, 1)
+
+[node name="LanternStand2" type="Polygon2D" parent="."]
+color = Color(0.494118, 0.627451, 0.831373, 1)
+polygon = PackedVector2Array(139, 260, 143, 264, 139, 268, 135, 264)
+
+[node name="FloatingLantern3" type="Node2D" parent="."]
+position = Vector2(501, 252)
+
+[node name="Glow" type="Polygon2D" parent="FloatingLantern3"]
+color = Color(0.47451, 0.811765, 0.901961, 0.286275)
+polygon = PackedVector2Array(22, 0, 19, 10, 11, 17, 0, 20, -11, 17, -19, 10, -22, 0, -19, -10, -11, -17, 0, -20, 11, -17, 19, -10)
+
+[node name="Base" type="Polygon2D" parent="FloatingLantern3"]
+color = Color(0.219608, 0.301961, 0.47451, 1)
+polygon = PackedVector2Array(-5, 4, 4, 4, 6, 6, 6, 9, 4, 11, -5, 11, -7, 9, -7, 6)
+
+[node name="Shell" type="Polygon2D" parent="FloatingLantern3"]
+color = Color(0.415686, 0.713725, 0.831373, 1)
+polygon = PackedVector2Array(0, -13, 6, -5, 6, 4, 0, 6, -7, 4, -7, -5)
+
+[node name="GlowingCenter" type="Polygon2D" parent="FloatingLantern3"]
+color = Color(0.752941, 0.964706, 0.960784, 1)
+polygon = PackedVector2Array(0, -10, 4, -4, 4, 0, 0, 4, -5, 0, -5, -4)
+
+[node name="HotLight" type="ColorRect" parent="FloatingLantern3"]
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 1.0
+offset_bottom = 1.0
+mouse_filter = 2
+color = Color(0.929412, 0.992157, 0.984314, 1)
+
+[node name="LanternStand3" type="Polygon2D" parent="."]
+color = Color(0.494118, 0.627451, 0.831373, 1)
+polygon = PackedVector2Array(501, 260, 505, 264, 501, 268, 497, 264)
+
+[node name="SeatNorth0" type="Node2D" parent="."]
+position = Vector2(201, 148)
+
+[node name="Shadow" type="ColorRect" parent="SeatNorth0"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 23.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.101961, 0.066667, 0.078431, 0.498039)
+
+[node name="Front" type="ColorRect" parent="SeatNorth0"]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 17.0
+mouse_filter = 2
+color = Color(0.298039, 0.294118, 0.494118, 1)
+
+[node name="Top" type="Polygon2D" parent="SeatNorth0"]
+color = Color(0.454902, 0.427451, 0.65098, 1)
+polygon = PackedVector2Array(2, 0, 18, 0, 20, 2, 20, 10, 18, 12, 2, 12, 0, 10, 0, 2)
+
+[node name="Edge" type="ColorRect" parent="SeatNorth0"]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.592157, 0.592157, 0.768627, 1)
+
+[node name="SoftSeat" type="ColorRect" parent="SeatNorth0"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.54902, 0.509804, 0.784314, 1)
+
+[node name="SeatHighlight" type="ColorRect" parent="SeatNorth0"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 3.0
+mouse_filter = 2
+color = Color(0.698039, 0.643137, 0.835294, 1)
+
+[node name="SeatNorth1" type="Node2D" parent="."]
+position = Vector2(245, 148)
+
+[node name="Shadow" type="ColorRect" parent="SeatNorth1"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 23.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.101961, 0.066667, 0.078431, 0.498039)
+
+[node name="Front" type="ColorRect" parent="SeatNorth1"]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 17.0
+mouse_filter = 2
+color = Color(0.298039, 0.294118, 0.494118, 1)
+
+[node name="Top" type="Polygon2D" parent="SeatNorth1"]
+color = Color(0.454902, 0.427451, 0.65098, 1)
+polygon = PackedVector2Array(2, 0, 18, 0, 20, 2, 20, 10, 18, 12, 2, 12, 0, 10, 0, 2)
+
+[node name="Edge" type="ColorRect" parent="SeatNorth1"]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.592157, 0.592157, 0.768627, 1)
+
+[node name="SoftSeat" type="ColorRect" parent="SeatNorth1"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.54902, 0.509804, 0.784314, 1)
+
+[node name="SeatHighlight" type="ColorRect" parent="SeatNorth1"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 3.0
+mouse_filter = 2
+color = Color(0.698039, 0.643137, 0.835294, 1)
+
+[node name="SeatNorth2" type="Node2D" parent="."]
+position = Vector2(288, 148)
+
+[node name="Shadow" type="ColorRect" parent="SeatNorth2"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 23.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.101961, 0.066667, 0.078431, 0.498039)
+
+[node name="Front" type="ColorRect" parent="SeatNorth2"]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 17.0
+mouse_filter = 2
+color = Color(0.298039, 0.294118, 0.494118, 1)
+
+[node name="Top" type="Polygon2D" parent="SeatNorth2"]
+color = Color(0.454902, 0.427451, 0.65098, 1)
+polygon = PackedVector2Array(2, 0, 18, 0, 20, 2, 20, 10, 18, 12, 2, 12, 0, 10, 0, 2)
+
+[node name="Edge" type="ColorRect" parent="SeatNorth2"]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.592157, 0.592157, 0.768627, 1)
+
+[node name="SoftSeat" type="ColorRect" parent="SeatNorth2"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.54902, 0.509804, 0.784314, 1)
+
+[node name="SeatHighlight" type="ColorRect" parent="SeatNorth2"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 3.0
+mouse_filter = 2
+color = Color(0.698039, 0.643137, 0.835294, 1)
+
+[node name="SeatNorth3" type="Node2D" parent="."]
+position = Vector2(332, 148)
+
+[node name="Shadow" type="ColorRect" parent="SeatNorth3"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 23.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.101961, 0.066667, 0.078431, 0.498039)
+
+[node name="Front" type="ColorRect" parent="SeatNorth3"]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 17.0
+mouse_filter = 2
+color = Color(0.298039, 0.294118, 0.494118, 1)
+
+[node name="Top" type="Polygon2D" parent="SeatNorth3"]
+color = Color(0.454902, 0.427451, 0.65098, 1)
+polygon = PackedVector2Array(2, 0, 18, 0, 20, 2, 20, 10, 18, 12, 2, 12, 0, 10, 0, 2)
+
+[node name="Edge" type="ColorRect" parent="SeatNorth3"]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.592157, 0.592157, 0.768627, 1)
+
+[node name="SoftSeat" type="ColorRect" parent="SeatNorth3"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.54902, 0.509804, 0.784314, 1)
+
+[node name="SeatHighlight" type="ColorRect" parent="SeatNorth3"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 3.0
+mouse_filter = 2
+color = Color(0.698039, 0.643137, 0.835294, 1)
+
+[node name="SeatNorth4" type="Node2D" parent="."]
+position = Vector2(376, 148)
+
+[node name="Shadow" type="ColorRect" parent="SeatNorth4"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 23.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.101961, 0.066667, 0.078431, 0.498039)
+
+[node name="Front" type="ColorRect" parent="SeatNorth4"]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 17.0
+mouse_filter = 2
+color = Color(0.298039, 0.294118, 0.494118, 1)
+
+[node name="Top" type="Polygon2D" parent="SeatNorth4"]
+color = Color(0.454902, 0.427451, 0.65098, 1)
+polygon = PackedVector2Array(2, 0, 18, 0, 20, 2, 20, 10, 18, 12, 2, 12, 0, 10, 0, 2)
+
+[node name="Edge" type="ColorRect" parent="SeatNorth4"]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.592157, 0.592157, 0.768627, 1)
+
+[node name="SoftSeat" type="ColorRect" parent="SeatNorth4"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.54902, 0.509804, 0.784314, 1)
+
+[node name="SeatHighlight" type="ColorRect" parent="SeatNorth4"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 3.0
+mouse_filter = 2
+color = Color(0.698039, 0.643137, 0.835294, 1)
+
+[node name="SeatNorth5" type="Node2D" parent="."]
+position = Vector2(420, 148)
+
+[node name="Shadow" type="ColorRect" parent="SeatNorth5"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 23.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.101961, 0.066667, 0.078431, 0.498039)
+
+[node name="Front" type="ColorRect" parent="SeatNorth5"]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 17.0
+mouse_filter = 2
+color = Color(0.298039, 0.294118, 0.494118, 1)
+
+[node name="Top" type="Polygon2D" parent="SeatNorth5"]
+color = Color(0.454902, 0.427451, 0.65098, 1)
+polygon = PackedVector2Array(2, 0, 18, 0, 20, 2, 20, 10, 18, 12, 2, 12, 0, 10, 0, 2)
+
+[node name="Edge" type="ColorRect" parent="SeatNorth5"]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.592157, 0.592157, 0.768627, 1)
+
+[node name="SoftSeat" type="ColorRect" parent="SeatNorth5"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.54902, 0.509804, 0.784314, 1)
+
+[node name="SeatHighlight" type="ColorRect" parent="SeatNorth5"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 3.0
+mouse_filter = 2
+color = Color(0.698039, 0.643137, 0.835294, 1)
+
+[node name="SeatSouth0" type="Node2D" parent="."]
+position = Vector2(201, 254)
+
+[node name="Shadow" type="ColorRect" parent="SeatSouth0"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 23.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.101961, 0.066667, 0.078431, 0.498039)
+
+[node name="Front" type="ColorRect" parent="SeatSouth0"]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 17.0
+mouse_filter = 2
+color = Color(0.298039, 0.294118, 0.494118, 1)
+
+[node name="Top" type="Polygon2D" parent="SeatSouth0"]
+color = Color(0.454902, 0.427451, 0.65098, 1)
+polygon = PackedVector2Array(2, 0, 18, 0, 20, 2, 20, 10, 18, 12, 2, 12, 0, 10, 0, 2)
+
+[node name="Edge" type="ColorRect" parent="SeatSouth0"]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.592157, 0.592157, 0.768627, 1)
+
+[node name="SoftSeat" type="ColorRect" parent="SeatSouth0"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.54902, 0.509804, 0.784314, 1)
+
+[node name="SeatHighlight" type="ColorRect" parent="SeatSouth0"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 3.0
+mouse_filter = 2
+color = Color(0.698039, 0.643137, 0.835294, 1)
+
+[node name="SeatSouth1" type="Node2D" parent="."]
+position = Vector2(245, 254)
+
+[node name="Shadow" type="ColorRect" parent="SeatSouth1"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 23.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.101961, 0.066667, 0.078431, 0.498039)
+
+[node name="Front" type="ColorRect" parent="SeatSouth1"]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 17.0
+mouse_filter = 2
+color = Color(0.298039, 0.294118, 0.494118, 1)
+
+[node name="Top" type="Polygon2D" parent="SeatSouth1"]
+color = Color(0.454902, 0.427451, 0.65098, 1)
+polygon = PackedVector2Array(2, 0, 18, 0, 20, 2, 20, 10, 18, 12, 2, 12, 0, 10, 0, 2)
+
+[node name="Edge" type="ColorRect" parent="SeatSouth1"]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.592157, 0.592157, 0.768627, 1)
+
+[node name="SoftSeat" type="ColorRect" parent="SeatSouth1"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.54902, 0.509804, 0.784314, 1)
+
+[node name="SeatHighlight" type="ColorRect" parent="SeatSouth1"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 3.0
+mouse_filter = 2
+color = Color(0.698039, 0.643137, 0.835294, 1)
+
+[node name="SeatSouth2" type="Node2D" parent="."]
+position = Vector2(288, 254)
+
+[node name="Shadow" type="ColorRect" parent="SeatSouth2"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 23.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.101961, 0.066667, 0.078431, 0.498039)
+
+[node name="Front" type="ColorRect" parent="SeatSouth2"]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 17.0
+mouse_filter = 2
+color = Color(0.298039, 0.294118, 0.494118, 1)
+
+[node name="Top" type="Polygon2D" parent="SeatSouth2"]
+color = Color(0.454902, 0.427451, 0.65098, 1)
+polygon = PackedVector2Array(2, 0, 18, 0, 20, 2, 20, 10, 18, 12, 2, 12, 0, 10, 0, 2)
+
+[node name="Edge" type="ColorRect" parent="SeatSouth2"]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.592157, 0.592157, 0.768627, 1)
+
+[node name="SoftSeat" type="ColorRect" parent="SeatSouth2"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.54902, 0.509804, 0.784314, 1)
+
+[node name="SeatHighlight" type="ColorRect" parent="SeatSouth2"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 3.0
+mouse_filter = 2
+color = Color(0.698039, 0.643137, 0.835294, 1)
+
+[node name="SeatSouth3" type="Node2D" parent="."]
+position = Vector2(332, 254)
+
+[node name="Shadow" type="ColorRect" parent="SeatSouth3"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 23.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.101961, 0.066667, 0.078431, 0.498039)
+
+[node name="Front" type="ColorRect" parent="SeatSouth3"]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 17.0
+mouse_filter = 2
+color = Color(0.298039, 0.294118, 0.494118, 1)
+
+[node name="Top" type="Polygon2D" parent="SeatSouth3"]
+color = Color(0.454902, 0.427451, 0.65098, 1)
+polygon = PackedVector2Array(2, 0, 18, 0, 20, 2, 20, 10, 18, 12, 2, 12, 0, 10, 0, 2)
+
+[node name="Edge" type="ColorRect" parent="SeatSouth3"]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.592157, 0.592157, 0.768627, 1)
+
+[node name="SoftSeat" type="ColorRect" parent="SeatSouth3"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.54902, 0.509804, 0.784314, 1)
+
+[node name="SeatHighlight" type="ColorRect" parent="SeatSouth3"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 3.0
+mouse_filter = 2
+color = Color(0.698039, 0.643137, 0.835294, 1)
+
+[node name="SeatSouth4" type="Node2D" parent="."]
+position = Vector2(376, 254)
+
+[node name="Shadow" type="ColorRect" parent="SeatSouth4"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 23.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.101961, 0.066667, 0.078431, 0.498039)
+
+[node name="Front" type="ColorRect" parent="SeatSouth4"]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 17.0
+mouse_filter = 2
+color = Color(0.298039, 0.294118, 0.494118, 1)
+
+[node name="Top" type="Polygon2D" parent="SeatSouth4"]
+color = Color(0.454902, 0.427451, 0.65098, 1)
+polygon = PackedVector2Array(2, 0, 18, 0, 20, 2, 20, 10, 18, 12, 2, 12, 0, 10, 0, 2)
+
+[node name="Edge" type="ColorRect" parent="SeatSouth4"]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.592157, 0.592157, 0.768627, 1)
+
+[node name="SoftSeat" type="ColorRect" parent="SeatSouth4"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.54902, 0.509804, 0.784314, 1)
+
+[node name="SeatHighlight" type="ColorRect" parent="SeatSouth4"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 3.0
+mouse_filter = 2
+color = Color(0.698039, 0.643137, 0.835294, 1)
+
+[node name="SeatSouth5" type="Node2D" parent="."]
+position = Vector2(420, 254)
+
+[node name="Shadow" type="ColorRect" parent="SeatSouth5"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 23.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.101961, 0.066667, 0.078431, 0.498039)
+
+[node name="Front" type="ColorRect" parent="SeatSouth5"]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 17.0
+mouse_filter = 2
+color = Color(0.298039, 0.294118, 0.494118, 1)
+
+[node name="Top" type="Polygon2D" parent="SeatSouth5"]
+color = Color(0.454902, 0.427451, 0.65098, 1)
+polygon = PackedVector2Array(2, 0, 18, 0, 20, 2, 20, 10, 18, 12, 2, 12, 0, 10, 0, 2)
+
+[node name="Edge" type="ColorRect" parent="SeatSouth5"]
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.592157, 0.592157, 0.768627, 1)
+
+[node name="SoftSeat" type="ColorRect" parent="SeatSouth5"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.54902, 0.509804, 0.784314, 1)
+
+[node name="SeatHighlight" type="ColorRect" parent="SeatSouth5"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 3.0
+mouse_filter = 2
+color = Color(0.698039, 0.643137, 0.835294, 1)
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="Interface"]
+offset_left = 24.0
+offset_top = 14.0
+offset_right = 219.0
+offset_bottom = 44.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.917647, 0.901961, 0.988235, 1)
+theme_override_font_sizes/font_size = 24
+text = "月灯食堂"
+
+[node name="World" type="Label" parent="Interface"]
+offset_left = 26.0
+offset_top = 45.0
+offset_right = 116.0
+offset_bottom = 60.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.647059, 0.717647, 0.870588, 1)
+theme_override_font_sizes/font_size = 11
+text = "里世界"
+
+[node name="ShiftHint" type="Label" parent="Interface"]
+offset_left = 514.0
+offset_top = 336.0
+offset_right = 619.0
+offset_bottom = 354.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.647059, 0.717647, 0.870588, 1)
+theme_override_font_sizes/font_size = 12
+text = "Shift 切换世界"
+horizontal_alignment = 2
+
+[node name="BackButton" type="Button" parent="Interface"]
+unique_name_in_owner = true
+offset_left = 526.0
+offset_top = 19.0
+offset_right = 616.0
+offset_bottom = 49.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.917647, 0.901961, 0.988235, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("BackNormal")
+theme_override_styles/hover = SubResource("BackHover")
+theme_override_styles/pressed = SubResource("BackPressed")
+text = "返回地图"

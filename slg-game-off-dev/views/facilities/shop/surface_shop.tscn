@@ -1,0 +1,2124 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://views/facilities/facility_room.gd" id="1_room"]
+[ext_resource type="TileSet" path="res://assets/tilesets/station_floors.tres" id="2_floor"]
+
+[sub_resource type="StyleBoxFlat" id="BackNormal"]
+bg_color = Color(0.2431, 0.1725, 0.1765, 1.0000)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7647, 0.6353, 0.5059, 1.0000)
+
+[sub_resource type="StyleBoxFlat" id="BackHover"]
+bg_color = Color(0.3608, 0.2431, 0.2196, 1.0000)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9804, 0.8863, 0.6941, 1.0000)
+
+[sub_resource type="StyleBoxFlat" id="BackPressed"]
+bg_color = Color(0.2431, 0.1725, 0.1765, 1.0000)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9804, 0.8863, 0.6941, 1.0000)
+
+[sub_resource type="StyleBoxFlat" id="BackFocus"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9804, 0.8863, 0.6941, 1.0000)
+
+[node name="SurfaceShop" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_room")
+facility_id = &"shop"
+world = 0
+
+[node name="Backdrop" type="ColorRect" parent="."]
+offset_left = 0
+offset_top = 0
+offset_right = 640
+offset_bottom = 360
+mouse_filter = 2
+color = Color(0.1294, 0.1176, 0.1529, 1.0000)
+
+[node name="RoomShadow" type="ColorRect" parent="."]
+offset_left = 87
+offset_top = 99
+offset_right = 553
+offset_bottom = 329
+mouse_filter = 2
+color = Color(0.0902, 0.0863, 0.1294, 1.0000)
+
+[node name="TiledFloor" type="TileMapLayer" parent="."]
+position = Vector2(96, 100)
+scale = Vector2(2, 2)
+modulate = Color(0.8980, 0.6902, 0.5294, 1.0000)
+tile_set = ExtResource("2_floor")
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 1, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 2, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 3, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 3, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 4, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 4, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 5, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 5, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 6, 0, 0, 0, 11, 0, 2, 0, 0, 0, 1, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 2, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 3, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 4, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 5, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 6, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 7, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 8, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 9, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 10, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 11, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 12, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 13, 0, 6, 0, 0, 0, 13, 0, 2, 0, 0, 0)
+
+[node name="BackWall" type="Node2D" parent="."]
+
+[node name="Wainscot" type="Polygon2D" parent="BackWall"]
+color = Color(0.2941, 0.1843, 0.2000, 1.0000)
+polygon = PackedVector2Array(92, 104, 92, 72, 113, 61, 527, 61, 548, 72, 548, 104)
+
+[node name="Frieze" type="ColorRect" parent="BackWall"]
+offset_left = 113
+offset_top = 61
+offset_right = 527
+offset_bottom = 66
+mouse_filter = 2
+color = Color(0.6706, 0.4667, 0.3490, 1.0000)
+
+[node name="Trim" type="ColorRect" parent="BackWall"]
+offset_left = 92
+offset_top = 101
+offset_right = 548
+offset_bottom = 105
+mouse_filter = 2
+color = Color(0.7529, 0.5765, 0.4039, 1.0000)
+
+[node name="WallStripe01" type="ColorRect" parent="BackWall"]
+offset_left = 105
+offset_top = 72
+offset_right = 108
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe02" type="ColorRect" parent="BackWall"]
+offset_left = 129
+offset_top = 72
+offset_right = 132
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe03" type="ColorRect" parent="BackWall"]
+offset_left = 153
+offset_top = 72
+offset_right = 156
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe04" type="ColorRect" parent="BackWall"]
+offset_left = 177
+offset_top = 72
+offset_right = 180
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe05" type="ColorRect" parent="BackWall"]
+offset_left = 201
+offset_top = 72
+offset_right = 204
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe06" type="ColorRect" parent="BackWall"]
+offset_left = 225
+offset_top = 72
+offset_right = 228
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe07" type="ColorRect" parent="BackWall"]
+offset_left = 249
+offset_top = 72
+offset_right = 252
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe08" type="ColorRect" parent="BackWall"]
+offset_left = 273
+offset_top = 72
+offset_right = 276
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe09" type="ColorRect" parent="BackWall"]
+offset_left = 297
+offset_top = 72
+offset_right = 300
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe10" type="ColorRect" parent="BackWall"]
+offset_left = 321
+offset_top = 72
+offset_right = 324
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe11" type="ColorRect" parent="BackWall"]
+offset_left = 345
+offset_top = 72
+offset_right = 348
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe12" type="ColorRect" parent="BackWall"]
+offset_left = 369
+offset_top = 72
+offset_right = 372
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe13" type="ColorRect" parent="BackWall"]
+offset_left = 393
+offset_top = 72
+offset_right = 396
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe14" type="ColorRect" parent="BackWall"]
+offset_left = 417
+offset_top = 72
+offset_right = 420
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe15" type="ColorRect" parent="BackWall"]
+offset_left = 441
+offset_top = 72
+offset_right = 444
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe16" type="ColorRect" parent="BackWall"]
+offset_left = 465
+offset_top = 72
+offset_right = 468
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe17" type="ColorRect" parent="BackWall"]
+offset_left = 489
+offset_top = 72
+offset_right = 492
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="WallStripe18" type="ColorRect" parent="BackWall"]
+offset_left = 513
+offset_top = 72
+offset_right = 516
+offset_bottom = 99
+mouse_filter = 2
+color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+
+[node name="BrassLamp1" type="Node2D" parent="BackWall"]
+position = Vector2(108, 79)
+
+[node name="Case" type="ColorRect" parent="BackWall/BrassLamp1"]
+offset_left = 0
+offset_top = 0
+offset_right = 18
+offset_bottom = 15
+mouse_filter = 2
+color = Color(0.2275, 0.1529, 0.1765, 1.0000)
+
+[node name="Glow" type="ColorRect" parent="BackWall/BrassLamp1"]
+offset_left = 3
+offset_top = 3
+offset_right = 15
+offset_bottom = 11
+mouse_filter = 2
+color = Color(0.9216, 0.6824, 0.4039, 1.0000)
+
+[node name="Glass" type="ColorRect" parent="BackWall/BrassLamp1"]
+offset_left = 7
+offset_top = 4
+offset_right = 12
+offset_bottom = 10
+mouse_filter = 2
+color = Color(1.0000, 0.8784, 0.6275, 1.0000)
+
+[node name="Rim" type="ColorRect" parent="BackWall/BrassLamp1"]
+offset_left = 0
+offset_top = 12
+offset_right = 18
+offset_bottom = 15
+mouse_filter = 2
+color = Color(0.6784, 0.4706, 0.3333, 1.0000)
+
+[node name="BrassLamp2" type="Node2D" parent="BackWall"]
+position = Vector2(306, 79)
+
+[node name="Case" type="ColorRect" parent="BackWall/BrassLamp2"]
+offset_left = 0
+offset_top = 0
+offset_right = 18
+offset_bottom = 15
+mouse_filter = 2
+color = Color(0.2275, 0.1529, 0.1765, 1.0000)
+
+[node name="Glow" type="ColorRect" parent="BackWall/BrassLamp2"]
+offset_left = 3
+offset_top = 3
+offset_right = 15
+offset_bottom = 11
+mouse_filter = 2
+color = Color(0.9216, 0.6824, 0.4039, 1.0000)
+
+[node name="Glass" type="ColorRect" parent="BackWall/BrassLamp2"]
+offset_left = 7
+offset_top = 4
+offset_right = 12
+offset_bottom = 10
+mouse_filter = 2
+color = Color(1.0000, 0.8784, 0.6275, 1.0000)
+
+[node name="Rim" type="ColorRect" parent="BackWall/BrassLamp2"]
+offset_left = 0
+offset_top = 12
+offset_right = 18
+offset_bottom = 15
+mouse_filter = 2
+color = Color(0.6784, 0.4706, 0.3333, 1.0000)
+
+[node name="BrassLamp3" type="Node2D" parent="BackWall"]
+position = Vector2(508, 79)
+
+[node name="Case" type="ColorRect" parent="BackWall/BrassLamp3"]
+offset_left = 0
+offset_top = 0
+offset_right = 18
+offset_bottom = 15
+mouse_filter = 2
+color = Color(0.2275, 0.1529, 0.1765, 1.0000)
+
+[node name="Glow" type="ColorRect" parent="BackWall/BrassLamp3"]
+offset_left = 3
+offset_top = 3
+offset_right = 15
+offset_bottom = 11
+mouse_filter = 2
+color = Color(0.9216, 0.6824, 0.4039, 1.0000)
+
+[node name="Glass" type="ColorRect" parent="BackWall/BrassLamp3"]
+offset_left = 7
+offset_top = 4
+offset_right = 12
+offset_bottom = 10
+mouse_filter = 2
+color = Color(1.0000, 0.8784, 0.6275, 1.0000)
+
+[node name="Rim" type="ColorRect" parent="BackWall/BrassLamp3"]
+offset_left = 0
+offset_top = 12
+offset_right = 18
+offset_bottom = 15
+mouse_filter = 2
+color = Color(0.6784, 0.4706, 0.3333, 1.0000)
+
+[node name="Stock" type="Node2D" parent="."]
+
+[node name="PantryShelf" type="Node2D" parent="Stock"]
+position = Vector2(109, 113)
+
+[node name="Shadow" type="ColorRect" parent="Stock/PantryShelf"]
+offset_left = -2
+offset_top = 8
+offset_right = 124
+offset_bottom = 90
+mouse_filter = 2
+color = Color(0.0902, 0.0902, 0.1294, 0.5647)
+
+[node name="Cabinet" type="ColorRect" parent="Stock/PantryShelf"]
+offset_left = 0
+offset_top = 0
+offset_right = 120
+offset_bottom = 83
+mouse_filter = 2
+color = Color(0.3255, 0.2157, 0.1843, 1.0000)
+
+[node name="Recess" type="ColorRect" parent="Stock/PantryShelf"]
+offset_left = 5
+offset_top = 7
+offset_right = 115
+offset_bottom = 70
+mouse_filter = 2
+color = Color(0.2039, 0.1451, 0.1569, 1.0000)
+
+[node name="TopLip" type="ColorRect" parent="Stock/PantryShelf"]
+offset_left = 0
+offset_top = 0
+offset_right = 120
+offset_bottom = 5
+mouse_filter = 2
+color = Color(0.6902, 0.4745, 0.3176, 1.0000)
+
+[node name="MiddleShelf" type="ColorRect" parent="Stock/PantryShelf"]
+offset_left = 5
+offset_top = 38
+offset_right = 115
+offset_bottom = 43
+mouse_filter = 2
+color = Color(0.5137, 0.3255, 0.2392, 1.0000)
+
+[node name="BottomLip" type="ColorRect" parent="Stock/PantryShelf"]
+offset_left = 0
+offset_top = 71
+offset_right = 120
+offset_bottom = 78
+mouse_filter = 2
+color = Color(0.6745, 0.4392, 0.2824, 1.0000)
+
+[node name="FootWest" type="ColorRect" parent="Stock/PantryShelf"]
+offset_left = 3
+offset_top = 78
+offset_right = 11
+offset_bottom = 85
+mouse_filter = 2
+color = Color(0.2196, 0.1529, 0.1647, 1.0000)
+
+[node name="FootEast" type="ColorRect" parent="Stock/PantryShelf"]
+offset_left = 109
+offset_top = 78
+offset_right = 117
+offset_bottom = 85
+mouse_filter = 2
+color = Color(0.2196, 0.1529, 0.1647, 1.0000)
+
+[node name="Nameplate" type="ColorRect" parent="Stock/PantryShelf"]
+offset_left = 53
+offset_top = 73
+offset_right = 67
+offset_bottom = 76
+mouse_filter = 2
+color = Color(0.8431, 0.6431, 0.4196, 1.0000)
+
+[node name="Goods1_1" type="Node2D" parent="Stock/PantryShelf"]
+position = Vector2(12, 38)
+
+[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods1_1"]
+offset_left = 3
+offset_top = -17
+offset_right = 16
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.6431, 0.3569, 0.2784, 1.0000)
+
+[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods1_1"]
+offset_left = 4
+offset_top = -21
+offset_right = 15
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods1_1"]
+offset_left = 5
+offset_top = -15
+offset_right = 7
+offset_bottom = -5
+mouse_filter = 2
+color = Color(0.8706, 0.5608, 0.3804, 1.0000)
+
+[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods1_1"]
+offset_left = 5
+offset_top = -9
+offset_right = 14
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+
+[node name="Goods1_2" type="Node2D" parent="Stock/PantryShelf"]
+position = Vector2(33, 38)
+
+[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods1_2"]
+offset_left = 3
+offset_top = -17
+offset_right = 16
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.5098, 0.5647, 0.3843, 1.0000)
+
+[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods1_2"]
+offset_left = 4
+offset_top = -21
+offset_right = 15
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods1_2"]
+offset_left = 5
+offset_top = -15
+offset_right = 7
+offset_bottom = -5
+mouse_filter = 2
+color = Color(0.7725, 0.6902, 0.4863, 1.0000)
+
+[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods1_2"]
+offset_left = 5
+offset_top = -9
+offset_right = 14
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+
+[node name="Goods1_3" type="Node2D" parent="Stock/PantryShelf"]
+position = Vector2(54, 38)
+
+[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods1_3"]
+offset_left = 3
+offset_top = -17
+offset_right = 16
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.8549, 0.6745, 0.3882, 1.0000)
+
+[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods1_3"]
+offset_left = 4
+offset_top = -21
+offset_right = 15
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods1_3"]
+offset_left = 5
+offset_top = -15
+offset_right = 7
+offset_bottom = -5
+mouse_filter = 2
+color = Color(0.9804, 0.8627, 0.5569, 1.0000)
+
+[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods1_3"]
+offset_left = 5
+offset_top = -9
+offset_right = 14
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+
+[node name="Goods1_4" type="Node2D" parent="Stock/PantryShelf"]
+position = Vector2(75, 38)
+
+[node name="Bag" type="Polygon2D" parent="Stock/PantryShelf/Goods1_4"]
+color = Color(0.6000, 0.3765, 0.2980, 1.0000)
+polygon = PackedVector2Array(1, -1, 1, -11, 6, -16, 5, -21, 14, -21, 13, -17, 17, -11, 17, -1)
+
+[node name="Twine" type="ColorRect" parent="Stock/PantryShelf/Goods1_4"]
+offset_left = 5
+offset_top = -17
+offset_right = 15
+offset_bottom = -15
+mouse_filter = 2
+color = Color(0.7922, 0.5412, 0.3725, 1.0000)
+
+[node name="Pleat" type="ColorRect" parent="Stock/PantryShelf/Goods1_4"]
+offset_left = 3
+offset_top = -9
+offset_right = 6
+offset_bottom = -2
+mouse_filter = 2
+color = Color(0.7922, 0.5412, 0.3725, 1.0000)
+
+[node name="Goods1_5" type="Node2D" parent="Stock/PantryShelf"]
+position = Vector2(96, 38)
+
+[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods1_5"]
+offset_left = 3
+offset_top = -17
+offset_right = 16
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.7373, 0.5569, 0.3882, 1.0000)
+
+[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods1_5"]
+offset_left = 4
+offset_top = -21
+offset_right = 15
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods1_5"]
+offset_left = 5
+offset_top = -15
+offset_right = 7
+offset_bottom = -5
+mouse_filter = 2
+color = Color(0.8588, 0.7255, 0.5373, 1.0000)
+
+[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods1_5"]
+offset_left = 5
+offset_top = -9
+offset_right = 14
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+
+[node name="Goods2_1" type="Node2D" parent="Stock/PantryShelf"]
+position = Vector2(12, 71)
+
+[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods2_1"]
+offset_left = 3
+offset_top = -17
+offset_right = 16
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.6000, 0.3765, 0.2980, 1.0000)
+
+[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods2_1"]
+offset_left = 4
+offset_top = -21
+offset_right = 15
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods2_1"]
+offset_left = 5
+offset_top = -15
+offset_right = 7
+offset_bottom = -5
+mouse_filter = 2
+color = Color(0.7922, 0.5412, 0.3725, 1.0000)
+
+[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods2_1"]
+offset_left = 5
+offset_top = -9
+offset_right = 14
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+
+[node name="Goods2_2" type="Node2D" parent="Stock/PantryShelf"]
+position = Vector2(33, 71)
+
+[node name="Pack" type="ColorRect" parent="Stock/PantryShelf/Goods2_2"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.7373, 0.5569, 0.3882, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/PantryShelf/Goods2_2"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.8588, 0.7255, 0.5373, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/PantryShelf/Goods2_2"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.8588, 0.7255, 0.5373, 1.0000)
+
+[node name="Goods2_3" type="Node2D" parent="Stock/PantryShelf"]
+position = Vector2(54, 71)
+
+[node name="Bag" type="Polygon2D" parent="Stock/PantryShelf/Goods2_3"]
+color = Color(0.3922, 0.4667, 0.5098, 1.0000)
+polygon = PackedVector2Array(1, -1, 1, -11, 6, -16, 5, -21, 14, -21, 13, -17, 17, -11, 17, -1)
+
+[node name="Twine" type="ColorRect" parent="Stock/PantryShelf/Goods2_3"]
+offset_left = 5
+offset_top = -17
+offset_right = 15
+offset_bottom = -15
+mouse_filter = 2
+color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+
+[node name="Pleat" type="ColorRect" parent="Stock/PantryShelf/Goods2_3"]
+offset_left = 3
+offset_top = -9
+offset_right = 6
+offset_bottom = -2
+mouse_filter = 2
+color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+
+[node name="Goods2_4" type="Node2D" parent="Stock/PantryShelf"]
+position = Vector2(75, 71)
+
+[node name="Pack" type="ColorRect" parent="Stock/PantryShelf/Goods2_4"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.6706, 0.4235, 0.3961, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/PantryShelf/Goods2_4"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/PantryShelf/Goods2_4"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+
+[node name="Goods2_5" type="Node2D" parent="Stock/PantryShelf"]
+position = Vector2(96, 71)
+
+[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods2_5"]
+offset_left = 3
+offset_top = -17
+offset_right = 16
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.4667, 0.3922, 0.4706, 1.0000)
+
+[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods2_5"]
+offset_left = 4
+offset_top = -21
+offset_right = 15
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods2_5"]
+offset_left = 5
+offset_top = -15
+offset_right = 7
+offset_bottom = -5
+mouse_filter = 2
+color = Color(0.7176, 0.5961, 0.6784, 1.0000)
+
+[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods2_5"]
+offset_left = 5
+offset_top = -9
+offset_right = 14
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+
+[node name="FoldedCloth" type="Node2D" parent="Stock"]
+position = Vector2(260, 113)
+
+[node name="Shadow" type="ColorRect" parent="Stock/FoldedCloth"]
+offset_left = -2
+offset_top = 8
+offset_right = 124
+offset_bottom = 90
+mouse_filter = 2
+color = Color(0.0902, 0.0902, 0.1294, 0.5647)
+
+[node name="Cabinet" type="ColorRect" parent="Stock/FoldedCloth"]
+offset_left = 0
+offset_top = 0
+offset_right = 120
+offset_bottom = 83
+mouse_filter = 2
+color = Color(0.3255, 0.2157, 0.1843, 1.0000)
+
+[node name="Recess" type="ColorRect" parent="Stock/FoldedCloth"]
+offset_left = 5
+offset_top = 7
+offset_right = 115
+offset_bottom = 70
+mouse_filter = 2
+color = Color(0.2039, 0.1451, 0.1569, 1.0000)
+
+[node name="TopLip" type="ColorRect" parent="Stock/FoldedCloth"]
+offset_left = 0
+offset_top = 0
+offset_right = 120
+offset_bottom = 5
+mouse_filter = 2
+color = Color(0.6902, 0.4745, 0.3176, 1.0000)
+
+[node name="MiddleShelf" type="ColorRect" parent="Stock/FoldedCloth"]
+offset_left = 5
+offset_top = 38
+offset_right = 115
+offset_bottom = 43
+mouse_filter = 2
+color = Color(0.5137, 0.3255, 0.2392, 1.0000)
+
+[node name="BottomLip" type="ColorRect" parent="Stock/FoldedCloth"]
+offset_left = 0
+offset_top = 71
+offset_right = 120
+offset_bottom = 78
+mouse_filter = 2
+color = Color(0.6745, 0.4392, 0.2824, 1.0000)
+
+[node name="FootWest" type="ColorRect" parent="Stock/FoldedCloth"]
+offset_left = 3
+offset_top = 78
+offset_right = 11
+offset_bottom = 85
+mouse_filter = 2
+color = Color(0.2196, 0.1529, 0.1647, 1.0000)
+
+[node name="FootEast" type="ColorRect" parent="Stock/FoldedCloth"]
+offset_left = 109
+offset_top = 78
+offset_right = 117
+offset_bottom = 85
+mouse_filter = 2
+color = Color(0.2196, 0.1529, 0.1647, 1.0000)
+
+[node name="Nameplate" type="ColorRect" parent="Stock/FoldedCloth"]
+offset_left = 53
+offset_top = 73
+offset_right = 67
+offset_bottom = 76
+mouse_filter = 2
+color = Color(0.8431, 0.6431, 0.4196, 1.0000)
+
+[node name="Goods1_1" type="Node2D" parent="Stock/FoldedCloth"]
+position = Vector2(12, 38)
+
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_1"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.8549, 0.6745, 0.3882, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_1"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.9804, 0.8627, 0.5569, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_1"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.9804, 0.8627, 0.5569, 1.0000)
+
+[node name="Goods1_2" type="Node2D" parent="Stock/FoldedCloth"]
+position = Vector2(33, 38)
+
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_2"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.6000, 0.3765, 0.2980, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_2"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.7922, 0.5412, 0.3725, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_2"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.7922, 0.5412, 0.3725, 1.0000)
+
+[node name="Goods1_3" type="Node2D" parent="Stock/FoldedCloth"]
+position = Vector2(54, 38)
+
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_3"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.7373, 0.5569, 0.3882, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_3"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.8588, 0.7255, 0.5373, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_3"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.8588, 0.7255, 0.5373, 1.0000)
+
+[node name="Goods1_4" type="Node2D" parent="Stock/FoldedCloth"]
+position = Vector2(75, 38)
+
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_4"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.3922, 0.4667, 0.5098, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_4"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_4"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+
+[node name="Goods1_5" type="Node2D" parent="Stock/FoldedCloth"]
+position = Vector2(96, 38)
+
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_5"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.6706, 0.4235, 0.3961, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_5"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_5"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+
+[node name="Goods2_1" type="Node2D" parent="Stock/FoldedCloth"]
+position = Vector2(12, 71)
+
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_1"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.3922, 0.4667, 0.5098, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_1"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_1"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+
+[node name="Goods2_2" type="Node2D" parent="Stock/FoldedCloth"]
+position = Vector2(33, 71)
+
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_2"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.6706, 0.4235, 0.3961, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_2"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_2"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+
+[node name="Goods2_3" type="Node2D" parent="Stock/FoldedCloth"]
+position = Vector2(54, 71)
+
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_3"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.4667, 0.3922, 0.4706, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_3"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.7176, 0.5961, 0.6784, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_3"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.7176, 0.5961, 0.6784, 1.0000)
+
+[node name="Goods2_4" type="Node2D" parent="Stock/FoldedCloth"]
+position = Vector2(75, 71)
+
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_4"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.6431, 0.3569, 0.2784, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_4"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.8706, 0.5608, 0.3804, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_4"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.8706, 0.5608, 0.3804, 1.0000)
+
+[node name="Goods2_5" type="Node2D" parent="Stock/FoldedCloth"]
+position = Vector2(96, 71)
+
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_5"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.5098, 0.5647, 0.3843, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_5"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.7725, 0.6902, 0.4863, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_5"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.7725, 0.6902, 0.4863, 1.0000)
+
+[node name="Spices" type="Node2D" parent="Stock"]
+position = Vector2(411, 113)
+
+[node name="Shadow" type="ColorRect" parent="Stock/Spices"]
+offset_left = -2
+offset_top = 8
+offset_right = 124
+offset_bottom = 90
+mouse_filter = 2
+color = Color(0.0902, 0.0902, 0.1294, 0.5647)
+
+[node name="Cabinet" type="ColorRect" parent="Stock/Spices"]
+offset_left = 0
+offset_top = 0
+offset_right = 120
+offset_bottom = 83
+mouse_filter = 2
+color = Color(0.3255, 0.2157, 0.1843, 1.0000)
+
+[node name="Recess" type="ColorRect" parent="Stock/Spices"]
+offset_left = 5
+offset_top = 7
+offset_right = 115
+offset_bottom = 70
+mouse_filter = 2
+color = Color(0.2039, 0.1451, 0.1569, 1.0000)
+
+[node name="TopLip" type="ColorRect" parent="Stock/Spices"]
+offset_left = 0
+offset_top = 0
+offset_right = 120
+offset_bottom = 5
+mouse_filter = 2
+color = Color(0.6902, 0.4745, 0.3176, 1.0000)
+
+[node name="MiddleShelf" type="ColorRect" parent="Stock/Spices"]
+offset_left = 5
+offset_top = 38
+offset_right = 115
+offset_bottom = 43
+mouse_filter = 2
+color = Color(0.5137, 0.3255, 0.2392, 1.0000)
+
+[node name="BottomLip" type="ColorRect" parent="Stock/Spices"]
+offset_left = 0
+offset_top = 71
+offset_right = 120
+offset_bottom = 78
+mouse_filter = 2
+color = Color(0.6745, 0.4392, 0.2824, 1.0000)
+
+[node name="FootWest" type="ColorRect" parent="Stock/Spices"]
+offset_left = 3
+offset_top = 78
+offset_right = 11
+offset_bottom = 85
+mouse_filter = 2
+color = Color(0.2196, 0.1529, 0.1647, 1.0000)
+
+[node name="FootEast" type="ColorRect" parent="Stock/Spices"]
+offset_left = 109
+offset_top = 78
+offset_right = 117
+offset_bottom = 85
+mouse_filter = 2
+color = Color(0.2196, 0.1529, 0.1647, 1.0000)
+
+[node name="Nameplate" type="ColorRect" parent="Stock/Spices"]
+offset_left = 53
+offset_top = 73
+offset_right = 67
+offset_bottom = 76
+mouse_filter = 2
+color = Color(0.8431, 0.6431, 0.4196, 1.0000)
+
+[node name="Goods1_1" type="Node2D" parent="Stock/Spices"]
+position = Vector2(12, 38)
+
+[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods1_1"]
+offset_left = 3
+offset_top = -17
+offset_right = 16
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.7373, 0.5569, 0.3882, 1.0000)
+
+[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods1_1"]
+offset_left = 4
+offset_top = -21
+offset_right = 15
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods1_1"]
+offset_left = 5
+offset_top = -15
+offset_right = 7
+offset_bottom = -5
+mouse_filter = 2
+color = Color(0.8588, 0.7255, 0.5373, 1.0000)
+
+[node name="Label" type="ColorRect" parent="Stock/Spices/Goods1_1"]
+offset_left = 5
+offset_top = -9
+offset_right = 14
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+
+[node name="Goods1_2" type="Node2D" parent="Stock/Spices"]
+position = Vector2(33, 38)
+
+[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods1_2"]
+offset_left = 3
+offset_top = -17
+offset_right = 16
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.3922, 0.4667, 0.5098, 1.0000)
+
+[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods1_2"]
+offset_left = 4
+offset_top = -21
+offset_right = 15
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods1_2"]
+offset_left = 5
+offset_top = -15
+offset_right = 7
+offset_bottom = -5
+mouse_filter = 2
+color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+
+[node name="Label" type="ColorRect" parent="Stock/Spices/Goods1_2"]
+offset_left = 5
+offset_top = -9
+offset_right = 14
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+
+[node name="Goods1_3" type="Node2D" parent="Stock/Spices"]
+position = Vector2(54, 38)
+
+[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods1_3"]
+offset_left = 3
+offset_top = -17
+offset_right = 16
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.6706, 0.4235, 0.3961, 1.0000)
+
+[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods1_3"]
+offset_left = 4
+offset_top = -21
+offset_right = 15
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods1_3"]
+offset_left = 5
+offset_top = -15
+offset_right = 7
+offset_bottom = -5
+mouse_filter = 2
+color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+
+[node name="Label" type="ColorRect" parent="Stock/Spices/Goods1_3"]
+offset_left = 5
+offset_top = -9
+offset_right = 14
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+
+[node name="Goods1_4" type="Node2D" parent="Stock/Spices"]
+position = Vector2(75, 38)
+
+[node name="Bag" type="Polygon2D" parent="Stock/Spices/Goods1_4"]
+color = Color(0.4667, 0.3922, 0.4706, 1.0000)
+polygon = PackedVector2Array(1, -1, 1, -11, 6, -16, 5, -21, 14, -21, 13, -17, 17, -11, 17, -1)
+
+[node name="Twine" type="ColorRect" parent="Stock/Spices/Goods1_4"]
+offset_left = 5
+offset_top = -17
+offset_right = 15
+offset_bottom = -15
+mouse_filter = 2
+color = Color(0.7176, 0.5961, 0.6784, 1.0000)
+
+[node name="Pleat" type="ColorRect" parent="Stock/Spices/Goods1_4"]
+offset_left = 3
+offset_top = -9
+offset_right = 6
+offset_bottom = -2
+mouse_filter = 2
+color = Color(0.7176, 0.5961, 0.6784, 1.0000)
+
+[node name="Goods1_5" type="Node2D" parent="Stock/Spices"]
+position = Vector2(96, 38)
+
+[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods1_5"]
+offset_left = 3
+offset_top = -17
+offset_right = 16
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.6431, 0.3569, 0.2784, 1.0000)
+
+[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods1_5"]
+offset_left = 4
+offset_top = -21
+offset_right = 15
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods1_5"]
+offset_left = 5
+offset_top = -15
+offset_right = 7
+offset_bottom = -5
+mouse_filter = 2
+color = Color(0.8706, 0.5608, 0.3804, 1.0000)
+
+[node name="Label" type="ColorRect" parent="Stock/Spices/Goods1_5"]
+offset_left = 5
+offset_top = -9
+offset_right = 14
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+
+[node name="Goods2_1" type="Node2D" parent="Stock/Spices"]
+position = Vector2(12, 71)
+
+[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods2_1"]
+offset_left = 3
+offset_top = -17
+offset_right = 16
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.4667, 0.3922, 0.4706, 1.0000)
+
+[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods2_1"]
+offset_left = 4
+offset_top = -21
+offset_right = 15
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods2_1"]
+offset_left = 5
+offset_top = -15
+offset_right = 7
+offset_bottom = -5
+mouse_filter = 2
+color = Color(0.7176, 0.5961, 0.6784, 1.0000)
+
+[node name="Label" type="ColorRect" parent="Stock/Spices/Goods2_1"]
+offset_left = 5
+offset_top = -9
+offset_right = 14
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+
+[node name="Goods2_2" type="Node2D" parent="Stock/Spices"]
+position = Vector2(33, 71)
+
+[node name="Pack" type="ColorRect" parent="Stock/Spices/Goods2_2"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.6431, 0.3569, 0.2784, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/Spices/Goods2_2"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.8706, 0.5608, 0.3804, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/Spices/Goods2_2"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.8706, 0.5608, 0.3804, 1.0000)
+
+[node name="Goods2_3" type="Node2D" parent="Stock/Spices"]
+position = Vector2(54, 71)
+
+[node name="Bag" type="Polygon2D" parent="Stock/Spices/Goods2_3"]
+color = Color(0.5098, 0.5647, 0.3843, 1.0000)
+polygon = PackedVector2Array(1, -1, 1, -11, 6, -16, 5, -21, 14, -21, 13, -17, 17, -11, 17, -1)
+
+[node name="Twine" type="ColorRect" parent="Stock/Spices/Goods2_3"]
+offset_left = 5
+offset_top = -17
+offset_right = 15
+offset_bottom = -15
+mouse_filter = 2
+color = Color(0.7725, 0.6902, 0.4863, 1.0000)
+
+[node name="Pleat" type="ColorRect" parent="Stock/Spices/Goods2_3"]
+offset_left = 3
+offset_top = -9
+offset_right = 6
+offset_bottom = -2
+mouse_filter = 2
+color = Color(0.7725, 0.6902, 0.4863, 1.0000)
+
+[node name="Goods2_4" type="Node2D" parent="Stock/Spices"]
+position = Vector2(75, 71)
+
+[node name="Pack" type="ColorRect" parent="Stock/Spices/Goods2_4"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.8549, 0.6745, 0.3882, 1.0000)
+
+[node name="Fold" type="ColorRect" parent="Stock/Spices/Goods2_4"]
+offset_left = 0
+offset_top = -16
+offset_right = 18
+offset_bottom = -13
+mouse_filter = 2
+color = Color(0.9804, 0.8627, 0.5569, 1.0000)
+
+[node name="Band" type="ColorRect" parent="Stock/Spices/Goods2_4"]
+offset_left = 7
+offset_top = -13
+offset_right = 10
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.9804, 0.8627, 0.5569, 1.0000)
+
+[node name="Goods2_5" type="Node2D" parent="Stock/Spices"]
+position = Vector2(96, 71)
+
+[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods2_5"]
+offset_left = 3
+offset_top = -17
+offset_right = 16
+offset_bottom = -1
+mouse_filter = 2
+color = Color(0.6000, 0.3765, 0.2980, 1.0000)
+
+[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods2_5"]
+offset_left = 4
+offset_top = -21
+offset_right = 15
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods2_5"]
+offset_left = 5
+offset_top = -15
+offset_right = 7
+offset_bottom = -5
+mouse_filter = 2
+color = Color(0.7922, 0.5412, 0.3725, 1.0000)
+
+[node name="Label" type="ColorRect" parent="Stock/Spices/Goods2_5"]
+offset_left = 5
+offset_top = -9
+offset_right = 14
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+
+[node name="EntryRug" type="Node2D" parent="."]
+position = Vector2(239, 239)
+
+[node name="DarkBorder" type="ColorRect" parent="EntryRug"]
+offset_left = 0
+offset_top = 0
+offset_right = 82
+offset_bottom = 76
+mouse_filter = 2
+color = Color(0.5059, 0.2863, 0.2941, 1.0000)
+
+[node name="Weave" type="ColorRect" parent="EntryRug"]
+offset_left = 4
+offset_top = 4
+offset_right = 78
+offset_bottom = 72
+mouse_filter = 2
+color = Color(0.6667, 0.3843, 0.3137, 1.0000)
+
+[node name="StripeWest" type="ColorRect" parent="EntryRug"]
+offset_left = 7
+offset_top = 4
+offset_right = 9
+offset_bottom = 72
+mouse_filter = 2
+color = Color(0.8627, 0.6235, 0.4039, 1.0000)
+
+[node name="StripeEast" type="ColorRect" parent="EntryRug"]
+offset_left = 73
+offset_top = 4
+offset_right = 75
+offset_bottom = 72
+mouse_filter = 2
+color = Color(0.8627, 0.6235, 0.4039, 1.0000)
+
+[node name="Embroidery1" type="Polygon2D" parent="EntryRug"]
+color = Color(0.8784, 0.6784, 0.4706, 1.0000)
+polygon = PackedVector2Array(41, 9, 49, 16, 41, 23, 33, 16)
+
+[node name="Embroidery2" type="Polygon2D" parent="EntryRug"]
+color = Color(0.8784, 0.6784, 0.4706, 1.0000)
+polygon = PackedVector2Array(41, 30, 49, 37, 41, 44, 33, 37)
+
+[node name="Embroidery3" type="Polygon2D" parent="EntryRug"]
+color = Color(0.8784, 0.6784, 0.4706, 1.0000)
+polygon = PackedVector2Array(41, 51, 49, 58, 41, 65, 33, 58)
+
+[node name="Crates" type="Node2D" parent="."]
+
+[node name="Crate1" type="Node2D" parent="Crates"]
+position = Vector2(119, 239)
+
+[node name="Shadow" type="ColorRect" parent="Crates/Crate1"]
+offset_left = 2
+offset_top = 4
+offset_right = 64
+offset_bottom = 40
+mouse_filter = 2
+color = Color(0.1216, 0.1098, 0.1333, 0.5647)
+
+[node name="Case" type="ColorRect" parent="Crates/Crate1"]
+offset_left = 0
+offset_top = 0
+offset_right = 58
+offset_bottom = 33
+mouse_filter = 2
+color = Color(0.4627, 0.3137, 0.2235, 1.0000)
+
+[node name="Depth" type="ColorRect" parent="Crates/Crate1"]
+offset_left = 0
+offset_top = 25
+offset_right = 58
+offset_bottom = 33
+mouse_filter = 2
+color = Color(0.3373, 0.1922, 0.1843, 1.0000)
+
+[node name="Rim" type="ColorRect" parent="Crates/Crate1"]
+offset_left = 0
+offset_top = 0
+offset_right = 58
+offset_bottom = 4
+mouse_filter = 2
+color = Color(0.7412, 0.5255, 0.3451, 1.0000)
+
+[node name="WestStrap" type="ColorRect" parent="Crates/Crate1"]
+offset_left = 4
+offset_top = 4
+offset_right = 8
+offset_bottom = 33
+mouse_filter = 2
+color = Color(0.5922, 0.3961, 0.2627, 1.0000)
+
+[node name="EastStrap" type="ColorRect" parent="Crates/Crate1"]
+offset_left = 50
+offset_top = 4
+offset_right = 54
+offset_bottom = 33
+mouse_filter = 2
+color = Color(0.5922, 0.3961, 0.2627, 1.0000)
+
+[node name="Produce1" type="Polygon2D" parent="Crates/Crate1"]
+color = Color(0.8118, 0.5294, 0.3176, 1.0000)
+polygon = PackedVector2Array(15, 3, 14, 6, 10, 7, 6, 6, 5, 3, 6, 0, 10, -1, 14, 0)
+
+[node name="Produce2" type="Polygon2D" parent="Crates/Crate1"]
+color = Color(0.8275, 0.5961, 0.3373, 1.0000)
+polygon = PackedVector2Array(26, 2, 25, 5, 21, 6, 17, 5, 16, 2, 17, -1, 21, -2, 25, -1)
+
+[node name="Produce3" type="Polygon2D" parent="Crates/Crate1"]
+color = Color(0.5216, 0.5647, 0.3608, 1.0000)
+polygon = PackedVector2Array(37, 3, 36, 6, 32, 7, 28, 6, 27, 3, 28, 0, 32, -1, 36, 0)
+
+[node name="Produce4" type="Polygon2D" parent="Crates/Crate1"]
+color = Color(0.8863, 0.6431, 0.3804, 1.0000)
+polygon = PackedVector2Array(48, 2, 47, 5, 43, 6, 39, 5, 38, 2, 39, -1, 43, -2, 47, -1)
+
+[node name="Crate2" type="Node2D" parent="Crates"]
+position = Vector2(150, 272)
+
+[node name="Shadow" type="ColorRect" parent="Crates/Crate2"]
+offset_left = 2
+offset_top = 4
+offset_right = 57
+offset_bottom = 37
+mouse_filter = 2
+color = Color(0.1216, 0.1098, 0.1333, 0.5647)
+
+[node name="Case" type="ColorRect" parent="Crates/Crate2"]
+offset_left = 0
+offset_top = 0
+offset_right = 51
+offset_bottom = 30
+mouse_filter = 2
+color = Color(0.4627, 0.3137, 0.2235, 1.0000)
+
+[node name="Depth" type="ColorRect" parent="Crates/Crate2"]
+offset_left = 0
+offset_top = 22
+offset_right = 51
+offset_bottom = 30
+mouse_filter = 2
+color = Color(0.3373, 0.1922, 0.1843, 1.0000)
+
+[node name="Rim" type="ColorRect" parent="Crates/Crate2"]
+offset_left = 0
+offset_top = 0
+offset_right = 51
+offset_bottom = 4
+mouse_filter = 2
+color = Color(0.7412, 0.5255, 0.3451, 1.0000)
+
+[node name="WestStrap" type="ColorRect" parent="Crates/Crate2"]
+offset_left = 4
+offset_top = 4
+offset_right = 8
+offset_bottom = 30
+mouse_filter = 2
+color = Color(0.5922, 0.3961, 0.2627, 1.0000)
+
+[node name="EastStrap" type="ColorRect" parent="Crates/Crate2"]
+offset_left = 43
+offset_top = 4
+offset_right = 47
+offset_bottom = 30
+mouse_filter = 2
+color = Color(0.5922, 0.3961, 0.2627, 1.0000)
+
+[node name="Tag" type="ColorRect" parent="Crates/Crate2"]
+offset_left = 20
+offset_top = 7
+offset_right = 30
+offset_bottom = 13
+mouse_filter = 2
+color = Color(0.8392, 0.6980, 0.5098, 1.0000)
+
+[node name="Crate3" type="Node2D" parent="Crates"]
+position = Vector2(199, 222)
+
+[node name="Shadow" type="ColorRect" parent="Crates/Crate3"]
+offset_left = 2
+offset_top = 4
+offset_right = 36
+offset_bottom = 32
+mouse_filter = 2
+color = Color(0.1216, 0.1098, 0.1333, 0.5647)
+
+[node name="Case" type="ColorRect" parent="Crates/Crate3"]
+offset_left = 0
+offset_top = 0
+offset_right = 30
+offset_bottom = 25
+mouse_filter = 2
+color = Color(0.4627, 0.3137, 0.2235, 1.0000)
+
+[node name="Depth" type="ColorRect" parent="Crates/Crate3"]
+offset_left = 0
+offset_top = 17
+offset_right = 30
+offset_bottom = 25
+mouse_filter = 2
+color = Color(0.3373, 0.1922, 0.1843, 1.0000)
+
+[node name="Rim" type="ColorRect" parent="Crates/Crate3"]
+offset_left = 0
+offset_top = 0
+offset_right = 30
+offset_bottom = 4
+mouse_filter = 2
+color = Color(0.7412, 0.5255, 0.3451, 1.0000)
+
+[node name="WestStrap" type="ColorRect" parent="Crates/Crate3"]
+offset_left = 4
+offset_top = 4
+offset_right = 8
+offset_bottom = 25
+mouse_filter = 2
+color = Color(0.5922, 0.3961, 0.2627, 1.0000)
+
+[node name="EastStrap" type="ColorRect" parent="Crates/Crate3"]
+offset_left = 22
+offset_top = 4
+offset_right = 26
+offset_bottom = 25
+mouse_filter = 2
+color = Color(0.5922, 0.3961, 0.2627, 1.0000)
+
+[node name="Tag" type="ColorRect" parent="Crates/Crate3"]
+offset_left = 10
+offset_top = 7
+offset_right = 20
+offset_bottom = 13
+mouse_filter = 2
+color = Color(0.8392, 0.6980, 0.5098, 1.0000)
+
+[node name="CheckedCounter" type="Node2D" parent="."]
+position = Vector2(344, 227)
+
+[node name="Shadow" type="ColorRect" parent="CheckedCounter"]
+offset_left = 4
+offset_top = 8
+offset_right = 175
+offset_bottom = 72
+mouse_filter = 2
+color = Color(0.1725, 0.1176, 0.1373, 0.4902)
+
+[node name="Base" type="ColorRect" parent="CheckedCounter"]
+offset_left = 0
+offset_top = 8
+offset_right = 166
+offset_bottom = 66
+mouse_filter = 2
+color = Color(0.4510, 0.2902, 0.2118, 1.0000)
+
+[node name="ToeKick" type="ColorRect" parent="CheckedCounter"]
+offset_left = 0
+offset_top = 59
+offset_right = 166
+offset_bottom = 66
+mouse_filter = 2
+color = Color(0.2863, 0.1843, 0.1725, 1.0000)
+
+[node name="Countertop" type="ColorRect" parent="CheckedCounter"]
+offset_left = -3
+offset_top = 1
+offset_right = 169
+offset_bottom = 20
+mouse_filter = 2
+color = Color(0.8118, 0.6000, 0.3922, 1.0000)
+
+[node name="Lip" type="ColorRect" parent="CheckedCounter"]
+offset_left = -3
+offset_top = 17
+offset_right = 169
+offset_bottom = 21
+mouse_filter = 2
+color = Color(0.5961, 0.3569, 0.2392, 1.0000)
+
+[node name="FrontInset" type="ColorRect" parent="CheckedCounter"]
+offset_left = 6
+offset_top = 30
+offset_right = 160
+offset_bottom = 51
+mouse_filter = 2
+color = Color(0.3373, 0.2078, 0.1804, 1.0000)
+
+[node name="WoodPanel1" type="ColorRect" parent="CheckedCounter"]
+offset_left = 12
+offset_top = 34
+offset_right = 56
+offset_bottom = 47
+mouse_filter = 2
+color = Color(0.6196, 0.4157, 0.2667, 1.0000)
+
+[node name="WoodPanel2" type="ColorRect" parent="CheckedCounter"]
+offset_left = 61
+offset_top = 34
+offset_right = 105
+offset_bottom = 47
+mouse_filter = 2
+color = Color(0.6196, 0.4157, 0.2667, 1.0000)
+
+[node name="WoodPanel3" type="ColorRect" parent="CheckedCounter"]
+offset_left = 110
+offset_top = 34
+offset_right = 154
+offset_bottom = 47
+mouse_filter = 2
+color = Color(0.6196, 0.4157, 0.2667, 1.0000)
+
+[node name="Oilcloth" type="Node2D" parent="CheckedCounter"]
+position = Vector2(8, 4)
+
+[node name="Hem" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 0
+offset_top = 0
+offset_right = 64
+offset_bottom = 34
+mouse_filter = 2
+color = Color(0.4902, 0.2784, 0.2510, 1.0000)
+
+[node name="Check0_0" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 0
+offset_top = 0
+offset_right = 8
+offset_bottom = 8
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check0_1" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 8
+offset_top = 0
+offset_right = 16
+offset_bottom = 8
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check0_2" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 16
+offset_top = 0
+offset_right = 24
+offset_bottom = 8
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check0_3" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 24
+offset_top = 0
+offset_right = 32
+offset_bottom = 8
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check0_4" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 32
+offset_top = 0
+offset_right = 40
+offset_bottom = 8
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check0_5" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 40
+offset_top = 0
+offset_right = 48
+offset_bottom = 8
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check0_6" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 48
+offset_top = 0
+offset_right = 56
+offset_bottom = 8
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check0_7" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 56
+offset_top = 0
+offset_right = 64
+offset_bottom = 8
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check1_0" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 0
+offset_top = 8
+offset_right = 8
+offset_bottom = 16
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check1_1" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 8
+offset_top = 8
+offset_right = 16
+offset_bottom = 16
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check1_2" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 16
+offset_top = 8
+offset_right = 24
+offset_bottom = 16
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check1_3" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 24
+offset_top = 8
+offset_right = 32
+offset_bottom = 16
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check1_4" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 32
+offset_top = 8
+offset_right = 40
+offset_bottom = 16
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check1_5" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 40
+offset_top = 8
+offset_right = 48
+offset_bottom = 16
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check1_6" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 48
+offset_top = 8
+offset_right = 56
+offset_bottom = 16
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check1_7" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 56
+offset_top = 8
+offset_right = 64
+offset_bottom = 16
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check2_0" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 0
+offset_top = 16
+offset_right = 8
+offset_bottom = 24
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check2_1" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 8
+offset_top = 16
+offset_right = 16
+offset_bottom = 24
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check2_2" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 16
+offset_top = 16
+offset_right = 24
+offset_bottom = 24
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check2_3" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 24
+offset_top = 16
+offset_right = 32
+offset_bottom = 24
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check2_4" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 32
+offset_top = 16
+offset_right = 40
+offset_bottom = 24
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check2_5" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 40
+offset_top = 16
+offset_right = 48
+offset_bottom = 24
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check2_6" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 48
+offset_top = 16
+offset_right = 56
+offset_bottom = 24
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check2_7" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 56
+offset_top = 16
+offset_right = 64
+offset_bottom = 24
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check3_0" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 0
+offset_top = 24
+offset_right = 8
+offset_bottom = 32
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check3_1" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 8
+offset_top = 24
+offset_right = 16
+offset_bottom = 32
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check3_2" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 16
+offset_top = 24
+offset_right = 24
+offset_bottom = 32
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check3_3" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 24
+offset_top = 24
+offset_right = 32
+offset_bottom = 32
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check3_4" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 32
+offset_top = 24
+offset_right = 40
+offset_bottom = 32
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check3_5" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 40
+offset_top = 24
+offset_right = 48
+offset_bottom = 32
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="Check3_6" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 48
+offset_top = 24
+offset_right = 56
+offset_bottom = 32
+mouse_filter = 2
+color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+
+[node name="Check3_7" type="ColorRect" parent="CheckedCounter/Oilcloth"]
+offset_left = 56
+offset_top = 24
+offset_right = 64
+offset_bottom = 32
+mouse_filter = 2
+color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+
+[node name="CashRegister" type="ColorRect" parent="CheckedCounter"]
+offset_left = 111
+offset_top = -7
+offset_right = 145
+offset_bottom = 9
+mouse_filter = 2
+color = Color(0.3216, 0.2667, 0.2235, 1.0000)
+
+[node name="Lid" type="ColorRect" parent="CheckedCounter"]
+offset_left = 113
+offset_top = -8
+offset_right = 143
+offset_bottom = -4
+mouse_filter = 2
+color = Color(0.7098, 0.5647, 0.3922, 1.0000)
+
+[node name="Drawer" type="ColorRect" parent="CheckedCounter"]
+offset_left = 112
+offset_top = 4
+offset_right = 144
+offset_bottom = 9
+mouse_filter = 2
+color = Color(0.4745, 0.3608, 0.2706, 1.0000)
+
+[node name="Meter" type="ColorRect" parent="CheckedCounter"]
+offset_left = 119
+offset_top = -5
+offset_right = 137
+offset_bottom = 0
+mouse_filter = 2
+color = Color(0.8314, 0.6588, 0.4392, 1.0000)
+
+[node name="Threshold" type="ColorRect" parent="."]
+offset_left = 247
+offset_top = 322
+offset_right = 312
+offset_bottom = 327
+mouse_filter = 2
+color = Color(0.4431, 0.3176, 0.2510, 1.0000)
+
+[node name="ThresholdTrim" type="ColorRect" parent="."]
+offset_left = 247
+offset_top = 322
+offset_right = 312
+offset_bottom = 323
+mouse_filter = 2
+color = Color(0.7843, 0.6039, 0.4078, 1.0000)
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="Interface"]
+offset_left = 24
+offset_top = 14
+offset_right = 264
+offset_bottom = 44
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.9804, 0.8863, 0.6941, 1.0000)
+theme_override_font_sizes/font_size = 24
+text = "商店"
+
+[node name="World" type="Label" parent="Interface"]
+offset_left = 26
+offset_top = 45
+offset_right = 122
+offset_bottom = 60
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.7647, 0.6353, 0.5059, 1.0000)
+theme_override_font_sizes/font_size = 11
+text = "表世界"
+
+[node name="ShiftHint" type="Label" parent="Interface"]
+offset_left = 514
+offset_top = 336
+offset_right = 622
+offset_bottom = 354
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.7647, 0.6353, 0.5059, 1.0000)
+theme_override_font_sizes/font_size = 12
+text = "Shift 切换世界"
+
+[node name="BackButton" type="Button" parent="Interface"]
+unique_name_in_owner = true
+offset_left = 526
+offset_top = 19
+offset_right = 616
+offset_bottom = 49
+mouse_default_cursor_shape = 2
+text = "返回地图"
+theme_override_colors/font_color = Color(0.9804, 0.8863, 0.6941, 1.0000)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("BackNormal")
+theme_override_styles/hover = SubResource("BackHover")
+theme_override_styles/pressed = SubResource("BackPressed")
+theme_override_styles/focus = SubResource("BackFocus")

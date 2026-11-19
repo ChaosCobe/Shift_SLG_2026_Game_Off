@@ -1,0 +1,35 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://views/map/facility_hotspot.gd" id="1_hotspot"]
+
+[node name="FacilityHotspot" type="TextureRect"]
+offset_right = 96.0
+offset_bottom = 96.0
+mouse_default_cursor_shape = 2
+expand_mode = 1
+script = ExtResource("1_hotspot")
+
+[node name="Outline" type="TextureRect" parent="."]
+visible = false
+show_behind_parent = true
+self_modulate = Color(1, 0.83, 0.43, 1)
+layout_mode = 0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="NameTag" type="Label" parent="."]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+offset_bottom = -2.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.76, 1)
+theme_override_colors/font_outline_color = Color(0.08, 0.12, 0.12, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1

@@ -1,0 +1,709 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://views/facilities/facility_room.gd" id="1_room"]
+
+[sub_resource type="StyleBoxFlat" id="BackNormal"]
+bg_color = Color(0.1686, 0.1569, 0.2706, 1.0000)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7608, 0.6902, 0.8588, 1.0000)
+
+[sub_resource type="StyleBoxFlat" id="BackHover"]
+bg_color = Color(0.2745, 0.2196, 0.3686, 1.0000)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9059, 0.7961, 0.9922, 1.0000)
+
+[sub_resource type="StyleBoxFlat" id="BackPressed"]
+bg_color = Color(0.1686, 0.1569, 0.2706, 1.0000)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9059, 0.7961, 0.9922, 1.0000)
+
+[sub_resource type="StyleBoxFlat" id="BackFocus"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9059, 0.7961, 0.9922, 1.0000)
+
+[node name="InnerShop" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_room")
+facility_id = &"shop"
+world = 1
+
+[node name="NightBackdrop" type="ColorRect" parent="."]
+offset_left = 0
+offset_top = 0
+offset_right = 640
+offset_bottom = 360
+mouse_filter = 2
+color = Color(0.0784, 0.0941, 0.1686, 1.0000)
+
+[node name="AetherSpecks" type="Node2D" parent="."]
+
+[node name="Speck01" type="ColorRect" parent="AetherSpecks"]
+offset_left = 30
+offset_top = 135
+offset_right = 32
+offset_bottom = 137
+mouse_filter = 2
+color = Color(0.4510, 0.5373, 0.7216, 1.0000)
+
+[node name="Speck02" type="ColorRect" parent="AetherSpecks"]
+offset_left = 63
+offset_top = 78
+offset_right = 64
+offset_bottom = 80
+mouse_filter = 2
+color = Color(0.3216, 0.4039, 0.5686, 1.0000)
+
+[node name="Speck03" type="ColorRect" parent="AetherSpecks"]
+offset_left = 75
+offset_top = 238
+offset_right = 76
+offset_bottom = 240
+mouse_filter = 2
+color = Color(0.5059, 0.4627, 0.6078, 1.0000)
+
+[node name="Speck04" type="ColorRect" parent="AetherSpecks"]
+offset_left = 48
+offset_top = 287
+offset_right = 50
+offset_bottom = 289
+mouse_filter = 2
+color = Color(0.3137, 0.4078, 0.5569, 1.0000)
+
+[node name="Speck05" type="ColorRect" parent="AetherSpecks"]
+offset_left = 105
+offset_top = 171
+offset_right = 106
+offset_bottom = 173
+mouse_filter = 2
+color = Color(0.4510, 0.5373, 0.7216, 1.0000)
+
+[node name="Speck06" type="ColorRect" parent="AetherSpecks"]
+offset_left = 94
+offset_top = 311
+offset_right = 95
+offset_bottom = 313
+mouse_filter = 2
+color = Color(0.3216, 0.4039, 0.5686, 1.0000)
+
+[node name="Speck07" type="ColorRect" parent="AetherSpecks"]
+offset_left = 139
+offset_top = 58
+offset_right = 141
+offset_bottom = 60
+mouse_filter = 2
+color = Color(0.5059, 0.4627, 0.6078, 1.0000)
+
+[node name="Speck08" type="ColorRect" parent="AetherSpecks"]
+offset_left = 198
+offset_top = 79
+offset_right = 199
+offset_bottom = 81
+mouse_filter = 2
+color = Color(0.3137, 0.4078, 0.5569, 1.0000)
+
+[node name="Speck09" type="ColorRect" parent="AetherSpecks"]
+offset_left = 225
+offset_top = 58
+offset_right = 226
+offset_bottom = 60
+mouse_filter = 2
+color = Color(0.4510, 0.5373, 0.7216, 1.0000)
+
+[node name="Speck10" type="ColorRect" parent="AetherSpecks"]
+offset_left = 348
+offset_top = 65
+offset_right = 350
+offset_bottom = 67
+mouse_filter = 2
+color = Color(0.3216, 0.4039, 0.5686, 1.0000)
+
+[node name="Speck11" type="ColorRect" parent="AetherSpecks"]
+offset_left = 430
+offset_top = 65
+offset_right = 431
+offset_bottom = 67
+mouse_filter = 2
+color = Color(0.5059, 0.4627, 0.6078, 1.0000)
+
+[node name="Speck12" type="ColorRect" parent="AetherSpecks"]
+offset_left = 581
+offset_top = 111
+offset_right = 582
+offset_bottom = 113
+mouse_filter = 2
+color = Color(0.3137, 0.4078, 0.5569, 1.0000)
+
+[node name="Speck13" type="ColorRect" parent="AetherSpecks"]
+offset_left = 596
+offset_top = 173
+offset_right = 598
+offset_bottom = 175
+mouse_filter = 2
+color = Color(0.4510, 0.5373, 0.7216, 1.0000)
+
+[node name="Speck14" type="ColorRect" parent="AetherSpecks"]
+offset_left = 553
+offset_top = 283
+offset_right = 554
+offset_bottom = 285
+mouse_filter = 2
+color = Color(0.3216, 0.4039, 0.5686, 1.0000)
+
+[node name="Speck15" type="ColorRect" parent="AetherSpecks"]
+offset_left = 576
+offset_top = 312
+offset_right = 577
+offset_bottom = 314
+mouse_filter = 2
+color = Color(0.5059, 0.4627, 0.6078, 1.0000)
+
+[node name="Speck16" type="ColorRect" parent="AetherSpecks"]
+offset_left = 599
+offset_top = 257
+offset_right = 601
+offset_bottom = 259
+mouse_filter = 2
+color = Color(0.3137, 0.4078, 0.5569, 1.0000)
+
+[node name="Speck17" type="ColorRect" parent="AetherSpecks"]
+offset_left = 62
+offset_top = 199
+offset_right = 63
+offset_bottom = 201
+mouse_filter = 2
+color = Color(0.4510, 0.5373, 0.7216, 1.0000)
+
+[node name="Speck18" type="ColorRect" parent="AetherSpecks"]
+offset_left = 111
+offset_top = 107
+offset_right = 112
+offset_bottom = 109
+mouse_filter = 2
+color = Color(0.3216, 0.4039, 0.5686, 1.0000)
+
+[node name="Speck19" type="ColorRect" parent="AetherSpecks"]
+offset_left = 551
+offset_top = 169
+offset_right = 553
+offset_bottom = 171
+mouse_filter = 2
+color = Color(0.5059, 0.4627, 0.6078, 1.0000)
+
+[node name="Speck20" type="ColorRect" parent="AetherSpecks"]
+offset_left = 396
+offset_top = 304
+offset_right = 397
+offset_bottom = 306
+mouse_filter = 2
+color = Color(0.3137, 0.4078, 0.5569, 1.0000)
+
+[node name="Speck21" type="ColorRect" parent="AetherSpecks"]
+offset_left = 514
+offset_top = 325
+offset_right = 515
+offset_bottom = 327
+mouse_filter = 2
+color = Color(0.4510, 0.5373, 0.7216, 1.0000)
+
+[node name="Speck22" type="ColorRect" parent="AetherSpecks"]
+offset_left = 120
+offset_top = 326
+offset_right = 122
+offset_bottom = 328
+mouse_filter = 2
+color = Color(0.3216, 0.4039, 0.5686, 1.0000)
+
+[node name="Speck23" type="ColorRect" parent="AetherSpecks"]
+offset_left = 324
+offset_top = 336
+offset_right = 325
+offset_bottom = 338
+mouse_filter = 2
+color = Color(0.5059, 0.4627, 0.6078, 1.0000)
+
+[node name="Speck24" type="ColorRect" parent="AetherSpecks"]
+offset_left = 515
+offset_top = 57
+offset_right = 516
+offset_bottom = 59
+mouse_filter = 2
+color = Color(0.3137, 0.4078, 0.5569, 1.0000)
+
+[node name="FloatingGallery" type="Node2D" parent="."]
+
+[node name="IslandShadow" type="Polygon2D" parent="FloatingGallery"]
+color = Color(0.0510, 0.0784, 0.1373, 1.0000)
+polygon = PackedVector2Array(152, 219, 172, 157, 238, 113, 377, 105, 469, 125, 513, 170, 506, 233, 452, 283, 327, 312, 215, 295, 165, 261)
+
+[node name="Basalt" type="Polygon2D" parent="FloatingGallery"]
+color = Color(0.2902, 0.2314, 0.3961, 1.0000)
+polygon = PackedVector2Array(150, 207, 170, 145, 236, 101, 375, 93, 467, 113, 511, 158, 504, 221, 450, 271, 325, 300, 213, 283, 163, 249)
+
+[node name="StoneTop" type="Polygon2D" parent="FloatingGallery"]
+color = Color(0.3333, 0.2863, 0.4667, 1.0000)
+polygon = PackedVector2Array(150, 200, 170, 138, 236, 94, 375, 86, 467, 106, 511, 151, 504, 214, 450, 264, 325, 293, 213, 276, 163, 242)
+
+[node name="Inlay" type="Polygon2D" parent="FloatingGallery"]
+color = Color(0.5098, 0.4431, 0.6118, 1.0000)
+polygon = PackedVector2Array(158, 198, 177, 141, 241, 100, 373, 93, 464, 114, 501, 155, 495, 210, 446, 262, 326, 289, 219, 275, 172, 242)
+
+[node name="QuietStone" type="Polygon2D" parent="FloatingGallery"]
+color = Color(0.3686, 0.3137, 0.4863, 1.0000)
+polygon = PackedVector2Array(162, 198, 181, 144, 242, 105, 373, 98, 462, 119, 497, 155, 489, 208, 443, 257, 325, 283, 221, 269, 177, 239)
+
+[node name="EntranceStairs" type="Polygon2D" parent="FloatingGallery"]
+color = Color(0.4235, 0.3451, 0.5529, 1.0000)
+polygon = PackedVector2Array(290, 285, 347, 285, 363, 315, 275, 315)
+
+[node name="Stair1" type="ColorRect" parent="FloatingGallery"]
+offset_left = 290
+offset_top = 285
+offset_right = 347
+offset_bottom = 289
+mouse_filter = 2
+color = Color(0.6510, 0.5490, 0.7176, 1.0000)
+
+[node name="Stair2" type="ColorRect" parent="FloatingGallery"]
+offset_left = 286
+offset_top = 292
+offset_right = 352
+offset_bottom = 296
+mouse_filter = 2
+color = Color(0.6510, 0.5490, 0.7176, 1.0000)
+
+[node name="Stair3" type="ColorRect" parent="FloatingGallery"]
+offset_left = 281
+offset_top = 300
+offset_right = 356
+offset_bottom = 304
+mouse_filter = 2
+color = Color(0.6510, 0.5490, 0.7176, 1.0000)
+
+[node name="Stair4" type="ColorRect" parent="FloatingGallery"]
+offset_left = 276
+offset_top = 308
+offset_right = 362
+offset_bottom = 312
+mouse_filter = 2
+color = Color(0.6510, 0.5490, 0.7176, 1.0000)
+
+[node name="CrystalWalkWest" type="Polygon2D" parent="FloatingGallery"]
+color = Color(0.3412, 0.3137, 0.4941, 1.0000)
+polygon = PackedVector2Array(144, 175, 221, 155, 230, 170, 144, 193)
+
+[node name="CrystalWalkEast" type="Polygon2D" parent="FloatingGallery"]
+color = Color(0.3412, 0.3137, 0.4941, 1.0000)
+polygon = PackedVector2Array(428, 208, 501, 227, 499, 242, 424, 223)
+
+[node name="Displays" type="Node2D" parent="."]
+
+[node name="MoonOnObsidian" type="Node2D" parent="Displays"]
+position = Vector2(163, 181)
+
+[node name="Shadow" type="Polygon2D" parent="Displays/MoonOnObsidian"]
+color = Color(0.0667, 0.0941, 0.1647, 0.8000)
+polygon = PackedVector2Array(39, 12, 34, 19, 22, 24, 4, 26, -13, 24, -26, 19, -31, 12, -26, 5, -14, 0, 4, -2, 22, 0, 34, 5)
+
+[node name="StoneFoot" type="Polygon2D" parent="Displays/MoonOnObsidian"]
+color = Color(0.2078, 0.1804, 0.3216, 1.0000)
+polygon = PackedVector2Array(34, 6, 29, 13, 17, 18, 0, 20, -17, 18, -29, 13, -34, 6, -29, -1, -17, -6, 0, -8, 17, -6, 29, -1)
+
+[node name="CarvedRim" type="Polygon2D" parent="Displays/MoonOnObsidian"]
+color = Color(0.5569, 0.4667, 0.6824, 1.0000)
+polygon = PackedVector2Array(34, 1, 29, 7, 17, 12, 0, 14, -17, 12, -29, 7, -34, 1, -29, -5, -17, -10, 0, -12, 17, -10, 29, -6)
+
+[node name="StoneTop" type="Polygon2D" parent="Displays/MoonOnObsidian"]
+color = Color(0.2980, 0.2392, 0.4275, 1.0000)
+polygon = PackedVector2Array(30, -1, 26, 4, 15, 8, 0, 9, -15, 8, -26, 4, -30, -1, -26, -6, -15, -10, 0, -11, 15, -10, 26, -6)
+
+[node name="ArtifactShadow" type="Polygon2D" parent="Displays/MoonOnObsidian"]
+color = Color(0.1569, 0.1529, 0.2667, 1.0000)
+polygon = PackedVector2Array(12, -2, 10, 0, 6, 1, 0, 2, -6, 1, -10, 0, -12, -2, -10, -4, -6, -5, 0, -6, 6, -5, 10, -4)
+
+[node name="Moon" type="Polygon2D" parent="Displays/MoonOnObsidian"]
+color = Color(0.9490, 0.7373, 0.5961, 1.0000)
+polygon = PackedVector2Array(17, -32, 15, -24, 11, -18, 4, -14, -4, -14, -11, -18, -15, -24, -17, -32, -15, -40, -11, -46, -4, -50, 4, -50, 11, -46, 15, -40)
+
+[node name="MoonCut" type="Polygon2D" parent="Displays/MoonOnObsidian"]
+color = Color(0.1294, 0.1216, 0.2196, 1.0000)
+polygon = PackedVector2Array(22, -38, 21, -31, 16, -25, 10, -21, 4, -21, -2, -25, -7, -31, -8, -38, -7, -45, -2, -51, 4, -55, 10, -55, 16, -51, 21, -45)
+
+[node name="MoonSpark" type="ColorRect" parent="Displays/MoonOnObsidian"]
+offset_left = 8
+offset_top = -17
+offset_right = 11
+offset_bottom = -14
+mouse_filter = 2
+color = Color(1.0000, 0.8784, 0.6824, 1.0000)
+
+[node name="SparkWest" type="ColorRect" parent="Displays/MoonOnObsidian"]
+offset_left = -20
+offset_top = -45
+offset_right = -17
+offset_bottom = -42
+mouse_filter = 2
+color = Color(1.0000, 0.8784, 0.6824, 1.0000)
+
+[node name="SparkEast" type="ColorRect" parent="Displays/MoonOnObsidian"]
+offset_left = 19
+offset_top = -31
+offset_right = 21
+offset_bottom = -29
+mouse_filter = 2
+color = Color(1.0000, 0.8784, 0.6824, 1.0000)
+
+[node name="CarvedLight" type="ColorRect" parent="Displays/MoonOnObsidian"]
+offset_left = -2
+offset_top = 9
+offset_right = 2
+offset_bottom = 11
+mouse_filter = 2
+color = Color(0.9490, 0.7373, 0.5961, 1.0000)
+
+[node name="VialOfStarlight" type="Node2D" parent="Displays"]
+position = Vector2(422, 140)
+
+[node name="Shadow" type="Polygon2D" parent="Displays/VialOfStarlight"]
+color = Color(0.0667, 0.0941, 0.1647, 0.8000)
+polygon = PackedVector2Array(39, 12, 34, 19, 22, 24, 4, 26, -13, 24, -26, 19, -31, 12, -26, 5, -14, 0, 4, -2, 22, 0, 34, 5)
+
+[node name="StoneFoot" type="Polygon2D" parent="Displays/VialOfStarlight"]
+color = Color(0.2078, 0.1804, 0.3216, 1.0000)
+polygon = PackedVector2Array(34, 6, 29, 13, 17, 18, 0, 20, -17, 18, -29, 13, -34, 6, -29, -1, -17, -6, 0, -8, 17, -6, 29, -1)
+
+[node name="CarvedRim" type="Polygon2D" parent="Displays/VialOfStarlight"]
+color = Color(0.5569, 0.4667, 0.6824, 1.0000)
+polygon = PackedVector2Array(34, 1, 29, 7, 17, 12, 0, 14, -17, 12, -29, 7, -34, 1, -29, -5, -17, -10, 0, -12, 17, -10, 29, -6)
+
+[node name="StoneTop" type="Polygon2D" parent="Displays/VialOfStarlight"]
+color = Color(0.2980, 0.2392, 0.4275, 1.0000)
+polygon = PackedVector2Array(30, -1, 26, 4, 15, 8, 0, 9, -15, 8, -26, 4, -30, -1, -26, -6, -15, -10, 0, -11, 15, -10, 26, -6)
+
+[node name="ArtifactShadow" type="Polygon2D" parent="Displays/VialOfStarlight"]
+color = Color(0.1569, 0.1529, 0.2667, 1.0000)
+polygon = PackedVector2Array(12, -2, 10, 0, 6, 1, 0, 2, -6, 1, -10, 0, -12, -2, -10, -4, -6, -5, 0, -6, 6, -5, 10, -4)
+
+[node name="Vial" type="Polygon2D" parent="Displays/VialOfStarlight"]
+color = Color(0.6784, 0.6196, 0.8863, 1.0000)
+polygon = PackedVector2Array(-5, -52, 5, -52, 5, -43, 13, -33, 13, -20, 8, -16, -8, -16, -13, -20, -13, -33, -5, -43)
+
+[node name="Potion" type="Polygon2D" parent="Displays/VialOfStarlight"]
+color = Color(0.8196, 0.5451, 0.9176, 1.0000)
+polygon = PackedVector2Array(-11, -29, 11, -29, 11, -21, 7, -18, -7, -18, -11, -21)
+
+[node name="Cork" type="ColorRect" parent="Displays/VialOfStarlight"]
+offset_left = -6
+offset_top = -55
+offset_right = 6
+offset_bottom = -51
+mouse_filter = 2
+color = Color(0.7373, 0.6196, 0.4627, 1.0000)
+
+[node name="Glint" type="ColorRect" parent="Displays/VialOfStarlight"]
+offset_left = -8
+offset_top = -34
+offset_right = -6
+offset_bottom = -24
+mouse_filter = 2
+color = Color(1.0000, 0.9412, 1.0000, 1.0000)
+
+[node name="SparkWest" type="ColorRect" parent="Displays/VialOfStarlight"]
+offset_left = -20
+offset_top = -45
+offset_right = -17
+offset_bottom = -42
+mouse_filter = 2
+color = Color(1.0000, 0.9412, 1.0000, 1.0000)
+
+[node name="SparkEast" type="ColorRect" parent="Displays/VialOfStarlight"]
+offset_left = 19
+offset_top = -31
+offset_right = 21
+offset_bottom = -29
+mouse_filter = 2
+color = Color(1.0000, 0.9412, 1.0000, 1.0000)
+
+[node name="CarvedLight" type="ColorRect" parent="Displays/VialOfStarlight"]
+offset_left = -2
+offset_top = 9
+offset_right = 2
+offset_bottom = 11
+mouse_filter = 2
+color = Color(0.8196, 0.5451, 0.9176, 1.0000)
+
+[node name="ClockworkGeode" type="Node2D" parent="Displays"]
+position = Vector2(495, 236)
+
+[node name="Shadow" type="Polygon2D" parent="Displays/ClockworkGeode"]
+color = Color(0.0667, 0.0941, 0.1647, 0.8000)
+polygon = PackedVector2Array(39, 12, 34, 19, 22, 24, 4, 26, -13, 24, -26, 19, -31, 12, -26, 5, -14, 0, 4, -2, 22, 0, 34, 5)
+
+[node name="StoneFoot" type="Polygon2D" parent="Displays/ClockworkGeode"]
+color = Color(0.2078, 0.1804, 0.3216, 1.0000)
+polygon = PackedVector2Array(34, 6, 29, 13, 17, 18, 0, 20, -17, 18, -29, 13, -34, 6, -29, -1, -17, -6, 0, -8, 17, -6, 29, -1)
+
+[node name="CarvedRim" type="Polygon2D" parent="Displays/ClockworkGeode"]
+color = Color(0.5569, 0.4667, 0.6824, 1.0000)
+polygon = PackedVector2Array(34, 1, 29, 7, 17, 12, 0, 14, -17, 12, -29, 7, -34, 1, -29, -5, -17, -10, 0, -12, 17, -10, 29, -6)
+
+[node name="StoneTop" type="Polygon2D" parent="Displays/ClockworkGeode"]
+color = Color(0.2980, 0.2392, 0.4275, 1.0000)
+polygon = PackedVector2Array(30, -1, 26, 4, 15, 8, 0, 9, -15, 8, -26, 4, -30, -1, -26, -6, -15, -10, 0, -11, 15, -10, 26, -6)
+
+[node name="ArtifactShadow" type="Polygon2D" parent="Displays/ClockworkGeode"]
+color = Color(0.1569, 0.1529, 0.2667, 1.0000)
+polygon = PackedVector2Array(12, -2, 10, 0, 6, 1, 0, 2, -6, 1, -10, 0, -12, -2, -10, -4, -6, -5, 0, -6, 6, -5, 10, -4)
+
+[node name="Geode" type="Polygon2D" parent="Displays/ClockworkGeode"]
+color = Color(0.3804, 0.8353, 0.8000, 1.0000)
+polygon = PackedVector2Array(0, -53, 13, -43, 16, -23, 0, -12, -16, -23, -12, -43)
+
+[node name="Facet" type="Polygon2D" parent="Displays/ClockworkGeode"]
+color = Color(0.7725, 1.0000, 0.9216, 1.0000)
+polygon = PackedVector2Array(0, -53, 7, -25, 0, -12, -7, -25)
+
+[node name="LowFacet" type="Polygon2D" parent="Displays/ClockworkGeode"]
+color = Color(0.3216, 0.6039, 0.6196, 1.0000)
+polygon = PackedVector2Array(7, -25, 13, -43, 16, -23, 0, -12)
+
+[node name="SparkWest" type="ColorRect" parent="Displays/ClockworkGeode"]
+offset_left = -20
+offset_top = -45
+offset_right = -17
+offset_bottom = -42
+mouse_filter = 2
+color = Color(0.7725, 1.0000, 0.9216, 1.0000)
+
+[node name="SparkEast" type="ColorRect" parent="Displays/ClockworkGeode"]
+offset_left = 19
+offset_top = -31
+offset_right = 21
+offset_bottom = -29
+mouse_filter = 2
+color = Color(0.7725, 1.0000, 0.9216, 1.0000)
+
+[node name="CarvedLight" type="ColorRect" parent="Displays/ClockworkGeode"]
+offset_left = -2
+offset_top = 9
+offset_right = 2
+offset_bottom = 11
+mouse_filter = 2
+color = Color(0.3804, 0.8353, 0.8000, 1.0000)
+
+[node name="SelfTurningBook" type="Node2D" parent="Displays"]
+position = Vector2(224, 255)
+
+[node name="Shadow" type="Polygon2D" parent="Displays/SelfTurningBook"]
+color = Color(0.0667, 0.0941, 0.1647, 0.8000)
+polygon = PackedVector2Array(39, 12, 34, 19, 22, 24, 4, 26, -13, 24, -26, 19, -31, 12, -26, 5, -14, 0, 4, -2, 22, 0, 34, 5)
+
+[node name="StoneFoot" type="Polygon2D" parent="Displays/SelfTurningBook"]
+color = Color(0.2078, 0.1804, 0.3216, 1.0000)
+polygon = PackedVector2Array(34, 6, 29, 13, 17, 18, 0, 20, -17, 18, -29, 13, -34, 6, -29, -1, -17, -6, 0, -8, 17, -6, 29, -1)
+
+[node name="CarvedRim" type="Polygon2D" parent="Displays/SelfTurningBook"]
+color = Color(0.5569, 0.4667, 0.6824, 1.0000)
+polygon = PackedVector2Array(34, 1, 29, 7, 17, 12, 0, 14, -17, 12, -29, 7, -34, 1, -29, -5, -17, -10, 0, -12, 17, -10, 29, -6)
+
+[node name="StoneTop" type="Polygon2D" parent="Displays/SelfTurningBook"]
+color = Color(0.2980, 0.2392, 0.4275, 1.0000)
+polygon = PackedVector2Array(30, -1, 26, 4, 15, 8, 0, 9, -15, 8, -26, 4, -30, -1, -26, -6, -15, -10, 0, -11, 15, -10, 26, -6)
+
+[node name="ArtifactShadow" type="Polygon2D" parent="Displays/SelfTurningBook"]
+color = Color(0.1569, 0.1529, 0.2667, 1.0000)
+polygon = PackedVector2Array(12, -2, 10, 0, 6, 1, 0, 2, -6, 1, -10, 0, -12, -2, -10, -4, -6, -5, 0, -6, 6, -5, 10, -4)
+
+[node name="Book" type="Polygon2D" parent="Displays/SelfTurningBook"]
+color = Color(0.5922, 0.5725, 0.9137, 1.0000)
+polygon = PackedVector2Array(-19, -39, 3, -46, 17, -36, 17, -22, -6, -14, -19, -23)
+
+[node name="Pages" type="Polygon2D" parent="Displays/SelfTurningBook"]
+color = Color(0.8431, 0.8157, 1.0000, 1.0000)
+polygon = PackedVector2Array(-19, -39, -6, -29, 17, -36, 17, -30, -6, -22, -19, -32)
+
+[node name="Ribbon" type="ColorRect" parent="Displays/SelfTurningBook"]
+offset_left = 7
+offset_top = -25
+offset_right = 9
+offset_bottom = -16
+mouse_filter = 2
+color = Color(0.7176, 0.9569, 0.8784, 1.0000)
+
+[node name="SparkWest" type="ColorRect" parent="Displays/SelfTurningBook"]
+offset_left = -20
+offset_top = -45
+offset_right = -17
+offset_bottom = -42
+mouse_filter = 2
+color = Color(0.8431, 0.8157, 1.0000, 1.0000)
+
+[node name="SparkEast" type="ColorRect" parent="Displays/SelfTurningBook"]
+offset_left = 19
+offset_top = -31
+offset_right = 21
+offset_bottom = -29
+mouse_filter = 2
+color = Color(0.8431, 0.8157, 1.0000, 1.0000)
+
+[node name="CarvedLight" type="ColorRect" parent="Displays/SelfTurningBook"]
+offset_left = -2
+offset_top = 9
+offset_right = 2
+offset_bottom = 11
+mouse_filter = 2
+color = Color(0.5922, 0.5725, 0.9137, 1.0000)
+
+[node name="SuspendedPrism" type="Node2D" parent="Displays"]
+position = Vector2(324, 197)
+
+[node name="Shadow" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.1059, 0.1137, 0.2118, 0.5647)
+polygon = PackedVector2Array(71, 11, 66, 26, 50, 39, 27, 47, 0, 50, -27, 47, -50, 39, -66, 26, -71, 11, -66, -4, -50, -17, -27, -25, 0, -28, 27, -25, 50, -17, 66, -4)
+
+[node name="SlabBase" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.2392, 0.2039, 0.3529, 1.0000)
+polygon = PackedVector2Array(66, 7, 61, 20, 47, 31, 25, 38, 0, 41, -25, 38, -47, 31, -61, 20, -66, 7, -61, -6, -47, -17, -25, -24, 0, -27, 25, -24, 47, -17, 61, -6)
+
+[node name="SlabRim" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.7451, 0.5804, 0.7608, 1.0000)
+polygon = PackedVector2Array(66, 0, 61, 13, 47, 24, 25, 31, 0, 34, -25, 31, -47, 24, -61, 13, -66, 0, -61, -13, -47, -24, -25, -31, 0, -34, 25, -31, 47, -24, 61, -13)
+
+[node name="SlabFace" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.2941, 0.2510, 0.4235, 1.0000)
+polygon = PackedVector2Array(61, 0, 56, 11, 43, 21, 23, 27, 0, 29, -23, 27, -43, 21, -56, 11, -61, 0, -56, -11, -43, -21, -23, -27, 0, -29, 23, -27, 43, -21, 56, -11)
+
+[node name="AuraBorder" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.5333, 0.4353, 0.7098, 1.0000)
+polygon = PackedVector2Array(41, 0, 38, 8, 29, 14, 16, 18, 0, 20, -16, 18, -29, 14, -38, 8, -41, 0, -38, -8, -29, -14, -16, -18, 0, -20, 16, -18, 29, -14, 38, -8)
+
+[node name="Aura" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.2471, 0.2275, 0.4118, 1.0000)
+polygon = PackedVector2Array(38, 0, 35, 7, 27, 12, 15, 16, 0, 17, -15, 16, -27, 12, -35, 7, -38, 0, -35, -7, -27, -12, -15, -16, 0, -17, 15, -16, 27, -12, 35, -7)
+
+[node name="Inlay1" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.7255, 0.6510, 0.9294, 1.0000)
+polygon = PackedVector2Array(-43, -7, -38, -4, -43, -1, -48, -4)
+
+[node name="Inlay2" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.7255, 0.6510, 0.9294, 1.0000)
+polygon = PackedVector2Array(43, -7, 48, -4, 43, -1, 38, -4)
+
+[node name="Inlay3" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.7255, 0.6510, 0.9294, 1.0000)
+polygon = PackedVector2Array(-30, 11, -25, 14, -30, 17, -35, 14)
+
+[node name="Inlay4" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.7255, 0.6510, 0.9294, 1.0000)
+polygon = PackedVector2Array(30, 11, 35, 14, 30, 17, 25, 14)
+
+[node name="Inlay5" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.7255, 0.6510, 0.9294, 1.0000)
+polygon = PackedVector2Array(0, 19, 5, 22, 0, 25, -5, 22)
+
+[node name="Inlay6" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.7255, 0.6510, 0.9294, 1.0000)
+polygon = PackedVector2Array(0, -24, 5, -21, 0, -18, -5, -21)
+
+[node name="Halo" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.4118, 0.8510, 0.8196, 0.2078)
+polygon = PackedVector2Array(0, -65, 35, -37, 25, -20, 0, -6, -25, -20, -35, -37)
+
+[node name="PrismWest" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.4588, 0.8275, 0.8078, 1.0000)
+polygon = PackedVector2Array(0, -68, -27, -37, 0, -16, 3, -43)
+
+[node name="PrismEast" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.2510, 0.5373, 0.5725, 1.0000)
+polygon = PackedVector2Array(0, -68, 27, -37, 0, -16, 3, -43)
+
+[node name="PrismLight" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.7608, 1.0000, 0.9216, 1.0000)
+polygon = PackedVector2Array(0, -68, 9, -39, 0, -22, -9, -39)
+
+[node name="PrismFlare" type="Polygon2D" parent="Displays/SuspendedPrism"]
+color = Color(0.9373, 1.0000, 0.9922, 1.0000)
+polygon = PackedVector2Array(0, -56, 4, -44, 15, -41, 4, -39, 0, -27, -3, -39, -14, -41, -3, -44)
+
+[node name="SparkWest" type="ColorRect" parent="Displays/SuspendedPrism"]
+offset_left = -30
+offset_top = -47
+offset_right = -27
+offset_bottom = -44
+mouse_filter = 2
+color = Color(0.7216, 0.9765, 0.8941, 1.0000)
+
+[node name="SparkEast" type="ColorRect" parent="Displays/SuspendedPrism"]
+offset_left = 27
+offset_top = -57
+offset_right = 30
+offset_bottom = -54
+mouse_filter = 2
+color = Color(0.8627, 0.8196, 0.9922, 1.0000)
+
+[node name="SparkNorth" type="ColorRect" parent="Displays/SuspendedPrism"]
+offset_left = 8
+offset_top = -73
+offset_right = 11
+offset_bottom = -70
+mouse_filter = 2
+color = Color(0.9608, 0.8314, 0.9882, 1.0000)
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="Interface"]
+offset_left = 24
+offset_top = 14
+offset_right = 264
+offset_bottom = 44
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.9059, 0.7961, 0.9922, 1.0000)
+theme_override_font_sizes/font_size = 24
+text = "奇物商店"
+
+[node name="World" type="Label" parent="Interface"]
+offset_left = 26
+offset_top = 45
+offset_right = 122
+offset_bottom = 60
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.7608, 0.6902, 0.8588, 1.0000)
+theme_override_font_sizes/font_size = 11
+text = "里世界"
+
+[node name="ShiftHint" type="Label" parent="Interface"]
+offset_left = 514
+offset_top = 336
+offset_right = 622
+offset_bottom = 354
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.7608, 0.6902, 0.8588, 1.0000)
+theme_override_font_sizes/font_size = 12
+text = "Shift 切换世界"
+
+[node name="BackButton" type="Button" parent="Interface"]
+unique_name_in_owner = true
+offset_left = 526
+offset_top = 19
+offset_right = 616
+offset_bottom = 49
+mouse_default_cursor_shape = 2
+text = "返回地图"
+theme_override_colors/font_color = Color(0.9059, 0.7961, 0.9922, 1.0000)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("BackNormal")
+theme_override_styles/hover = SubResource("BackHover")
+theme_override_styles/pressed = SubResource("BackPressed")
+theme_override_styles/focus = SubResource("BackFocus")

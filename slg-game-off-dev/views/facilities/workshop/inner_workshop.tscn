@@ -1,0 +1,759 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://views/facilities/facility_room.gd" id="1_room"]
+
+[sub_resource type="StyleBoxFlat" id="BackNormal"]
+bg_color = Color(0.13333, 0.13725, 0.26275, 1.00000)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.43529, 0.38431, 0.60000, 1.00000)
+
+[sub_resource type="StyleBoxFlat" id="BackHover"]
+bg_color = Color(0.21961, 0.20392, 0.37647, 1.00000)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.88235, 0.81569, 1.00000, 1.00000)
+
+[sub_resource type="StyleBoxFlat" id="BackPressed"]
+bg_color = Color(0.13333, 0.13725, 0.26275, 1.00000)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.88235, 0.81569, 1.00000, 1.00000)
+
+[sub_resource type="StyleBoxFlat" id="BackFocus"]
+bg_color = Color(0.13333, 0.13725, 0.26275, 1.00000)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.88235, 0.81569, 1.00000, 1.00000)
+
+[node name="InnerWorkshop" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_room")
+facility_id = &"workshop"
+world = 1
+
+[node name="Backdrop" type="ColorRect" parent="."]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.06667, 0.07451, 0.14118, 1.00000)
+mouse_filter = 2
+
+[node name="MoonstoneFloor" type="Node2D" parent="."]
+
+[node name="FloatingShadow" type="Polygon2D" parent="MoonstoneFloor"]
+color = Color(0.03922, 0.04314, 0.10588, 1.00000)
+polygon = PackedVector2Array(87, 125, 141, 78, 296, 78, 357, 111, 377, 111, 403, 89, 526, 89, 569, 132, 569, 258, 534, 291, 375, 291, 355, 321, 153, 321, 88, 277, 61, 227, 61, 170)
+
+[node name="OuterEdge" type="Polygon2D" parent="MoonstoneFloor"]
+color = Color(0.31373, 0.27451, 0.44706, 1.00000)
+polygon = PackedVector2Array(84, 118, 138, 71, 293, 71, 354, 104, 374, 104, 400, 82, 523, 82, 566, 125, 566, 251, 531, 284, 372, 284, 352, 314, 150, 314, 85, 270, 58, 220, 58, 163)
+
+[node name="Stone" type="Polygon2D" parent="MoonstoneFloor"]
+color = Color(0.15686, 0.15294, 0.27451, 1.00000)
+polygon = PackedVector2Array(89, 125, 143, 80, 291, 80, 352, 114, 379, 114, 404, 92, 518, 92, 557, 132, 557, 246, 527, 274, 367, 274, 346, 305, 153, 305, 92, 262, 67, 217, 67, 166)
+
+[node name="SilverTrim" type="Line2D" parent="MoonstoneFloor"]
+points = PackedVector2Array(89, 125, 143, 80, 291, 80, 352, 114, 379, 114, 404, 92, 518, 92, 557, 132, 557, 246, 527, 274, 367, 274, 346, 305, 153, 305, 92, 262, 67, 217, 67, 166, 89, 125)
+width = 2.0
+default_color = Color(0.50588, 0.44314, 0.60000, 1.00000)
+
+[node name="PrimaryDais" type="Polygon2D" parent="MoonstoneFloor"]
+color = Color(0.20000, 0.18824, 0.31765, 1.00000)
+polygon = PackedVector2Array(132, 107, 313, 107, 351, 145, 351, 251, 313, 289, 132, 289, 94, 251, 94, 145)
+
+[node name="SecondaryGallery" type="Polygon2D" parent="MoonstoneFloor"]
+color = Color(0.20392, 0.16078, 0.29804, 1.00000)
+polygon = PackedVector2Array(413, 108, 516, 108, 541, 133, 541, 228, 516, 253, 413, 253, 388, 228, 388, 133)
+
+[node name="ConduitTop" type="Line2D" parent="MoonstoneFloor"]
+points = PackedVector2Array(313, 151, 350, 151, 380, 128, 427, 128, 448, 151)
+width = 3.0
+default_color = Color(0.39608, 0.33725, 0.53333, 1.00000)
+
+[node name="ConduitBottom" type="Line2D" parent="MoonstoneFloor"]
+points = PackedVector2Array(313, 224, 350, 224, 382, 249, 428, 249, 447, 227)
+width = 3.0
+default_color = Color(0.37647, 0.34510, 0.52157, 1.00000)
+
+[node name="ConduitLight" type="Line2D" parent="MoonstoneFloor"]
+points = PackedVector2Array(323, 188, 360, 188, 378, 172, 433, 172, 445, 185)
+width = 2.0
+default_color = Color(0.49412, 0.73725, 0.68235, 1.00000)
+
+[node name="ConduitSource" type="Line2D" parent="MoonstoneFloor"]
+points = PackedVector2Array(132, 188, 92, 188, 84, 199, 84, 231, 118, 263)
+width = 2.0
+default_color = Color(0.40784, 0.34902, 0.50980, 1.00000)
+
+[node name="WindowArc" type="Line2D" parent="MoonstoneFloor"]
+points = PackedVector2Array(163, 87, 277, 87, 316, 111)
+width = 2.0
+default_color = Color(0.31765, 0.27451, 0.41176, 1.00000)
+
+[node name="FloorInlay" type="Node2D" parent="."]
+
+[node name="Inlay0_1" type="Polygon2D" parent="FloorInlay"]
+color = Color(0.32157, 0.27451, 0.38431, 1.00000)
+polygon = PackedVector2Array(143, 127, 146, 129, 143, 131, 140, 129)
+
+[node name="Inlay0_3" type="Polygon2D" parent="FloorInlay"]
+color = Color(0.32157, 0.27451, 0.38431, 1.00000)
+polygon = PackedVector2Array(205, 127, 208, 129, 205, 131, 202, 129)
+
+[node name="Inlay1_0" type="Polygon2D" parent="FloorInlay"]
+color = Color(0.32157, 0.27451, 0.38431, 1.00000)
+polygon = PackedVector2Array(112, 160, 115, 162, 112, 164, 109, 162)
+
+[node name="Inlay1_2" type="Polygon2D" parent="FloorInlay"]
+color = Color(0.32157, 0.27451, 0.38431, 1.00000)
+polygon = PackedVector2Array(174, 160, 177, 162, 174, 164, 171, 162)
+
+[node name="Inlay2_1" type="Polygon2D" parent="FloorInlay"]
+color = Color(0.32157, 0.27451, 0.38431, 1.00000)
+polygon = PackedVector2Array(143, 193, 146, 195, 143, 197, 140, 195)
+
+[node name="Inlay2_3" type="Polygon2D" parent="FloorInlay"]
+color = Color(0.32157, 0.27451, 0.38431, 1.00000)
+polygon = PackedVector2Array(205, 193, 208, 195, 205, 197, 202, 195)
+
+[node name="Inlay3_0" type="Polygon2D" parent="FloorInlay"]
+color = Color(0.32157, 0.27451, 0.38431, 1.00000)
+polygon = PackedVector2Array(112, 226, 115, 228, 112, 230, 109, 228)
+
+[node name="Inlay3_2" type="Polygon2D" parent="FloorInlay"]
+color = Color(0.32157, 0.27451, 0.38431, 1.00000)
+polygon = PackedVector2Array(174, 226, 177, 228, 174, 230, 171, 228)
+
+[node name="Inlay4_1" type="Polygon2D" parent="FloorInlay"]
+color = Color(0.32157, 0.27451, 0.38431, 1.00000)
+polygon = PackedVector2Array(143, 259, 146, 261, 143, 263, 140, 261)
+
+[node name="Inlay4_3" type="Polygon2D" parent="FloorInlay"]
+color = Color(0.32157, 0.27451, 0.38431, 1.00000)
+polygon = PackedVector2Array(205, 259, 208, 261, 205, 263, 202, 261)
+
+[node name="SuspendedLens" type="Node2D" parent="."]
+position = Vector2(223, 195)
+
+[node name="ProjectedGlowDown" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.16078, 0.15294, 0.27059, 1.00000)
+polygon = PackedVector2Array(-53, -77, 52, -77, 86, -43, 86, 57, 52, 91, -53, 91, -87, 57, -87, -43)
+
+[node name="DaisBorder" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.34902, 0.30196, 0.49020, 1.00000)
+polygon = PackedVector2Array(-39, -82, 39, -82, 86, -35, 86, 43, 39, 90, -39, 90, -86, 43, -86, -35)
+
+[node name="DaisFace" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.24314, 0.22353, 0.37255, 1.00000)
+polygon = PackedVector2Array(-36, -80, 36, -80, 80, -36, 80, 36, 36, 80, -36, 80, -80, 36, -80, -36)
+
+[node name="BrassInlay" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.49412, 0.44314, 0.64706, 1.00000)
+polygon = PackedVector2Array(-30, -66, 30, -66, 66, -30, 66, 30, 30, 66, -30, 66, -66, 30, -66, -30)
+
+[node name="OutsidePrism" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.15294, 0.18824, 0.32157, 1.00000)
+polygon = PackedVector2Array(-28, -63, 28, -63, 63, -28, 63, 28, 28, 63, -28, 63, -63, 28, -63, -28)
+
+[node name="PrismFrame" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.28235, 0.31765, 0.47059, 1.00000)
+polygon = PackedVector2Array(-24, -53, 24, -53, 53, -24, 53, 24, 24, 53, -24, 53, -53, 24, -53, -24)
+
+[node name="PrismVoid" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.10588, 0.12941, 0.24706, 1.00000)
+polygon = PackedVector2Array(-23, -50, 23, -50, 50, -23, 50, 23, 23, 50, -23, 50, -50, 23, -50, -23)
+
+[node name="GlyphTriangleA" type="Line2D" parent="SuspendedLens"]
+points = PackedVector2Array(0, -57, 49, 28, -49, 28, 0, -57)
+width = 2.0
+default_color = Color(0.49412, 0.77255, 0.75686, 1.00000)
+
+[node name="GlyphTriangleB" type="Line2D" parent="SuspendedLens"]
+points = PackedVector2Array(-50, -28, 50, -28, 0, 57, -50, -28)
+width = 2.0
+default_color = Color(0.40392, 0.34510, 0.56078, 1.00000)
+
+[node name="OrbitA" type="Line2D" parent="SuspendedLens"]
+points = PackedVector2Array(-54, 0, -38, -28, 0, -39, 38, -28, 54, 0, 38, 27, 0, 38, -38, 27, -54, 0)
+width = 2.0
+default_color = Color(0.54118, 0.77647, 0.72941, 0.78000)
+
+[node name="OrbitB" type="Line2D" parent="SuspendedLens"]
+points = PackedVector2Array(-43, 27, -37, -10, 0, -31, 37, -10, 43, 27, 19, 32, -19, 32, -43, 27)
+width = 2.0
+default_color = Color(0.53333, 0.52157, 0.80784, 0.53000)
+
+[node name="GemShadow" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.17647, 0.29804, 0.39608, 1.00000)
+polygon = PackedVector2Array(0, 2, 22, 15, 0, 28, -22, 15)
+
+[node name="GemHalo" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.35294, 0.66275, 0.67059, 0.42000)
+polygon = PackedVector2Array(0, -40, 26, -6, 0, 28, -26, -6)
+
+[node name="GemBody" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.54902, 0.89020, 0.81176, 1.00000)
+polygon = PackedVector2Array(0, -34, 18, -9, 13, 16, 0, 25, -13, 16, -18, -9)
+
+[node name="GemFacet" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.34510, 0.68235, 0.68627, 1.00000)
+polygon = PackedVector2Array(0, -34, 7, -8, 0, 25, -13, 16, -18, -9)
+
+[node name="GemCore" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.72941, 0.96863, 0.83922, 1.00000)
+polygon = PackedVector2Array(0, -29, 8, -11, 0, 12, -5, -6)
+
+[node name="TopGlint" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.87843, 1.00000, 0.92157, 1.00000)
+polygon = PackedVector2Array(-1, -22, 2, -17, -1, -12, -4, -17)
+
+[node name="RuneBase0" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.30588, 0.32549, 0.49020, 1.00000)
+polygon = PackedVector2Array(0, -78, 7, -72, 0, -66, -7, -72)
+
+[node name="Rune0" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.73725, 0.56863, 0.85490, 1.00000)
+polygon = PackedVector2Array(0, -75, 3, -72, 0, -69, -3, -72)
+
+[node name="RuneBase1" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.30588, 0.32549, 0.49020, 1.00000)
+polygon = PackedVector2Array(72, -6, 79, 0, 72, 6, 65, 0)
+
+[node name="Rune1" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.73725, 0.56863, 0.85490, 1.00000)
+polygon = PackedVector2Array(72, -3, 75, 0, 72, 3, 69, 0)
+
+[node name="RuneBase2" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.30588, 0.32549, 0.49020, 1.00000)
+polygon = PackedVector2Array(0, 66, 7, 72, 0, 78, -7, 72)
+
+[node name="Rune2" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.73725, 0.56863, 0.85490, 1.00000)
+polygon = PackedVector2Array(0, 69, 3, 72, 0, 75, -3, 72)
+
+[node name="RuneBase3" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.30588, 0.32549, 0.49020, 1.00000)
+polygon = PackedVector2Array(-72, -6, -65, 0, -72, 6, -79, 0)
+
+[node name="Rune3" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.73725, 0.56863, 0.85490, 1.00000)
+polygon = PackedVector2Array(-72, -3, -69, 0, -72, 3, -75, 0)
+
+[node name="RuneBase4" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.30588, 0.32549, 0.49020, 1.00000)
+polygon = PackedVector2Array(-48, -54, -41, -48, -48, -42, -55, -48)
+
+[node name="Rune4" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.54118, 0.81961, 0.74118, 1.00000)
+polygon = PackedVector2Array(-48, -51, -45, -48, -48, -45, -51, -48)
+
+[node name="RuneBase5" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.30588, 0.32549, 0.49020, 1.00000)
+polygon = PackedVector2Array(48, -54, 55, -48, 48, -42, 41, -48)
+
+[node name="Rune5" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.54118, 0.81961, 0.74118, 1.00000)
+polygon = PackedVector2Array(48, -51, 51, -48, 48, -45, 45, -48)
+
+[node name="RuneBase6" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.30588, 0.32549, 0.49020, 1.00000)
+polygon = PackedVector2Array(-48, 42, -41, 48, -48, 54, -55, 48)
+
+[node name="Rune6" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.54118, 0.81961, 0.74118, 1.00000)
+polygon = PackedVector2Array(-48, 45, -45, 48, -48, 51, -51, 48)
+
+[node name="RuneBase7" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.30588, 0.32549, 0.49020, 1.00000)
+polygon = PackedVector2Array(48, 42, 55, 48, 48, 54, 41, 48)
+
+[node name="Rune7" type="Polygon2D" parent="SuspendedLens"]
+color = Color(0.54118, 0.81961, 0.74118, 1.00000)
+polygon = PackedVector2Array(48, 45, 51, 48, 48, 51, 45, 48)
+
+[node name="AuxiliaryAltar" type="Node2D" parent="."]
+position = Vector2(475, 188)
+
+[node name="FloatingShadow" type="Polygon2D" parent="AuxiliaryAltar"]
+color = Color(0.14510, 0.10980, 0.23922, 1.00000)
+polygon = PackedVector2Array(-32, -38, 36, -38, 52, -22, 52, 43, 36, 59, -32, 59, -48, 43, -48, -22)
+
+[node name="BeveledPlinth" type="Polygon2D" parent="AuxiliaryAltar"]
+color = Color(0.42353, 0.30588, 0.54118, 1.00000)
+polygon = PackedVector2Array(-31, -43, 35, -43, 51, -27, 51, 27, 35, 43, -31, 43, -47, 27, -47, -27)
+
+[node name="Velvet" type="Polygon2D" parent="AuxiliaryAltar"]
+color = Color(0.26667, 0.20392, 0.37255, 1.00000)
+polygon = PackedVector2Array(-28, -40, 32, -40, 46, -26, 46, 21, 32, 35, -28, 35, -42, 21, -42, -26)
+
+[node name="SilverVeins" type="Polygon2D" parent="AuxiliaryAltar"]
+color = Color(0.64314, 0.51765, 0.72549, 1.00000)
+polygon = PackedVector2Array(-9, -31, 15, -31, 30, -16, 30, 8, 15, 23, -9, 23, -24, 8, -24, -16)
+
+[node name="Basin" type="Polygon2D" parent="AuxiliaryAltar"]
+color = Color(0.15294, 0.21569, 0.32157, 1.00000)
+polygon = PackedVector2Array(-7, -27, 13, -27, 26, -14, 26, 6, 13, 19, -7, 19, -20, 6, -20, -14)
+
+[node name="BasinInside" type="Polygon2D" parent="AuxiliaryAltar"]
+color = Color(0.21961, 0.33333, 0.40392, 1.00000)
+polygon = PackedVector2Array(-5, -22, 11, -22, 21, -12, 21, 4, 11, 14, -5, 14, -15, 4, -15, -12)
+
+[node name="BasinStar" type="Polygon2D" parent="AuxiliaryAltar"]
+color = Color(0.46667, 0.71373, 0.66275, 0.88000)
+polygon = PackedVector2Array(3, -16, 18, -4, 3, 8, -12, -4)
+
+[node name="BasinCore" type="Polygon2D" parent="AuxiliaryAltar"]
+color = Color(0.69020, 0.91373, 0.73725, 1.00000)
+polygon = PackedVector2Array(3, -12, 12, -4, 3, 4, -6, -4)
+
+[node name="TinctureCase" type="ColorRect" parent="AuxiliaryAltar"]
+offset_left = -32.0
+offset_top = 24.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0.39608, 0.32941, 0.49412, 1.00000)
+mouse_filter = 2
+
+[node name="GlassFoot0" type="ColorRect" parent="AuxiliaryAltar"]
+offset_left = -34.0
+offset_top = -20.0
+offset_right = -25.0
+offset_bottom = -17.0
+color = Color(0.16078, 0.14902, 0.23529, 1.00000)
+mouse_filter = 2
+
+[node name="Vial0" type="Polygon2D" parent="AuxiliaryAltar"]
+color = Color(0.86667, 0.61961, 0.81176, 1.00000)
+polygon = PackedVector2Array(-32, -31, -27, -31, -27, -27, -25, -24, -26, -17, -34, -17, -35, -24, -32, -27)
+
+[node name="Cap0" type="ColorRect" parent="AuxiliaryAltar"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = -27.0
+offset_bottom = -30.0
+color = Color(0.92549, 0.81176, 0.79608, 1.00000)
+mouse_filter = 2
+
+[node name="GlassFoot1" type="ColorRect" parent="AuxiliaryAltar"]
+offset_left = 29.0
+offset_top = -20.0
+offset_right = 38.0
+offset_bottom = -17.0
+color = Color(0.16078, 0.14902, 0.23529, 1.00000)
+mouse_filter = 2
+
+[node name="Vial1" type="Polygon2D" parent="AuxiliaryAltar"]
+color = Color(0.58431, 0.84314, 0.76078, 1.00000)
+polygon = PackedVector2Array(31, -31, 36, -31, 36, -27, 38, -24, 37, -17, 29, -17, 28, -24, 31, -27)
+
+[node name="Cap1" type="ColorRect" parent="AuxiliaryAltar"]
+offset_left = 31.0
+offset_top = -32.0
+offset_right = 36.0
+offset_bottom = -30.0
+color = Color(0.92549, 0.81176, 0.79608, 1.00000)
+mouse_filter = 2
+
+[node name="GlassFoot2" type="ColorRect" parent="AuxiliaryAltar"]
+offset_left = 20.0
+offset_top = 26.0
+offset_right = 29.0
+offset_bottom = 29.0
+color = Color(0.16078, 0.14902, 0.23529, 1.00000)
+mouse_filter = 2
+
+[node name="Vial2" type="Polygon2D" parent="AuxiliaryAltar"]
+color = Color(0.82353, 0.67843, 0.56863, 1.00000)
+polygon = PackedVector2Array(22, 15, 27, 15, 27, 19, 29, 22, 28, 29, 20, 29, 19, 22, 22, 19)
+
+[node name="Cap2" type="ColorRect" parent="AuxiliaryAltar"]
+offset_left = 22.0
+offset_top = 14.0
+offset_right = 27.0
+offset_bottom = 16.0
+color = Color(0.92549, 0.81176, 0.79608, 1.00000)
+mouse_filter = 2
+
+[node name="GlassFoot3" type="ColorRect" parent="AuxiliaryAltar"]
+offset_left = -23.0
+offset_top = 26.0
+offset_right = -14.0
+offset_bottom = 29.0
+color = Color(0.16078, 0.14902, 0.23529, 1.00000)
+mouse_filter = 2
+
+[node name="Vial3" type="Polygon2D" parent="AuxiliaryAltar"]
+color = Color(0.65098, 0.66275, 0.93725, 1.00000)
+polygon = PackedVector2Array(-21, 15, -16, 15, -16, 19, -14, 22, -15, 29, -23, 29, -24, 22, -21, 19)
+
+[node name="Cap3" type="ColorRect" parent="AuxiliaryAltar"]
+offset_left = -21.0
+offset_top = 14.0
+offset_right = -16.0
+offset_bottom = 16.0
+color = Color(0.92549, 0.81176, 0.79608, 1.00000)
+mouse_filter = 2
+
+[node name="ArcaneShelves" type="Node2D" parent="."]
+
+[node name="Rack0" type="Node2D" parent="ArcaneShelves"]
+position = Vector2(123, 109)
+
+[node name="Recess" type="Polygon2D" parent="ArcaneShelves/Rack0"]
+color = Color(0.13725, 0.11765, 0.21176, 1.00000)
+polygon = PackedVector2Array(-23, -10, 23, -10, 27, -6, 27, 12, 23, 16, -23, 16, -27, 12, -27, -6)
+
+[node name="Ledgelight" type="ColorRect" parent="ArcaneShelves/Rack0"]
+offset_left = -26.0
+offset_top = 9.0
+offset_right = 26.0
+offset_bottom = 13.0
+color = Color(0.45882, 0.34510, 0.52941, 1.00000)
+mouse_filter = 2
+
+[node name="Ledge" type="ColorRect" parent="ArcaneShelves/Rack0"]
+offset_left = -26.0
+offset_top = 13.0
+offset_right = 26.0
+offset_bottom = 17.0
+color = Color(0.26275, 0.23137, 0.35686, 1.00000)
+mouse_filter = 2
+
+[node name="Tome0" type="ColorRect" parent="ArcaneShelves/Rack0"]
+offset_left = -21.0
+offset_top = 0.0
+offset_right = -14.0
+offset_bottom = 9.0
+color = Color(0.51765, 0.45882, 0.65882, 1.00000)
+mouse_filter = 2
+
+[node name="Band0" type="ColorRect" parent="ArcaneShelves/Rack0"]
+offset_left = -20.0
+offset_top = 1.0
+offset_right = -15.0
+offset_bottom = 3.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Tome1" type="ColorRect" parent="ArcaneShelves/Rack0"]
+offset_left = -12.0
+offset_top = -6.0
+offset_right = -5.0
+offset_bottom = 9.0
+color = Color(0.62353, 0.41176, 0.65882, 1.00000)
+mouse_filter = 2
+
+[node name="Band1" type="ColorRect" parent="ArcaneShelves/Rack0"]
+offset_left = -11.0
+offset_top = -5.0
+offset_right = -6.0
+offset_bottom = -3.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Tome2" type="ColorRect" parent="ArcaneShelves/Rack0"]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 9.0
+color = Color(0.42353, 0.63529, 0.58431, 1.00000)
+mouse_filter = 2
+
+[node name="Band2" type="ColorRect" parent="ArcaneShelves/Rack0"]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3.0
+offset_bottom = 0.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Tome3" type="ColorRect" parent="ArcaneShelves/Rack0"]
+offset_left = 6.0
+offset_top = 0.0
+offset_right = 13.0
+offset_bottom = 9.0
+color = Color(0.56863, 0.40784, 0.61176, 1.00000)
+mouse_filter = 2
+
+[node name="Band3" type="ColorRect" parent="ArcaneShelves/Rack0"]
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 12.0
+offset_bottom = 3.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Tome4" type="ColorRect" parent="ArcaneShelves/Rack0"]
+offset_left = 15.0
+offset_top = -6.0
+offset_right = 22.0
+offset_bottom = 9.0
+color = Color(0.77647, 0.62745, 0.46275, 1.00000)
+mouse_filter = 2
+
+[node name="Band4" type="ColorRect" parent="ArcaneShelves/Rack0"]
+offset_left = 16.0
+offset_top = -5.0
+offset_right = 21.0
+offset_bottom = -3.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Rack1" type="Node2D" parent="ArcaneShelves"]
+position = Vector2(478, 110)
+
+[node name="Recess" type="Polygon2D" parent="ArcaneShelves/Rack1"]
+color = Color(0.13725, 0.11765, 0.21176, 1.00000)
+polygon = PackedVector2Array(-23, -10, 23, -10, 27, -6, 27, 12, 23, 16, -23, 16, -27, 12, -27, -6)
+
+[node name="Ledgelight" type="ColorRect" parent="ArcaneShelves/Rack1"]
+offset_left = -26.0
+offset_top = 9.0
+offset_right = 26.0
+offset_bottom = 13.0
+color = Color(0.45882, 0.34510, 0.52941, 1.00000)
+mouse_filter = 2
+
+[node name="Ledge" type="ColorRect" parent="ArcaneShelves/Rack1"]
+offset_left = -26.0
+offset_top = 13.0
+offset_right = 26.0
+offset_bottom = 17.0
+color = Color(0.26275, 0.23137, 0.35686, 1.00000)
+mouse_filter = 2
+
+[node name="Tome0" type="ColorRect" parent="ArcaneShelves/Rack1"]
+offset_left = -21.0
+offset_top = -3.0
+offset_right = -14.0
+offset_bottom = 9.0
+color = Color(0.62353, 0.41176, 0.65882, 1.00000)
+mouse_filter = 2
+
+[node name="Band0" type="ColorRect" parent="ArcaneShelves/Rack1"]
+offset_left = -20.0
+offset_top = -2.0
+offset_right = -15.0
+offset_bottom = 0.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Tome1" type="ColorRect" parent="ArcaneShelves/Rack1"]
+offset_left = -12.0
+offset_top = 0.0
+offset_right = -5.0
+offset_bottom = 9.0
+color = Color(0.42353, 0.63529, 0.58431, 1.00000)
+mouse_filter = 2
+
+[node name="Band1" type="ColorRect" parent="ArcaneShelves/Rack1"]
+offset_left = -11.0
+offset_top = 1.0
+offset_right = -6.0
+offset_bottom = 3.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Tome2" type="ColorRect" parent="ArcaneShelves/Rack1"]
+offset_left = -3.0
+offset_top = -6.0
+offset_right = 4.0
+offset_bottom = 9.0
+color = Color(0.56863, 0.40784, 0.61176, 1.00000)
+mouse_filter = 2
+
+[node name="Band2" type="ColorRect" parent="ArcaneShelves/Rack1"]
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 3.0
+offset_bottom = -3.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Tome3" type="ColorRect" parent="ArcaneShelves/Rack1"]
+offset_left = 6.0
+offset_top = -3.0
+offset_right = 13.0
+offset_bottom = 9.0
+color = Color(0.77647, 0.62745, 0.46275, 1.00000)
+mouse_filter = 2
+
+[node name="Band3" type="ColorRect" parent="ArcaneShelves/Rack1"]
+offset_left = 7.0
+offset_top = -2.0
+offset_right = 12.0
+offset_bottom = 0.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Tome4" type="ColorRect" parent="ArcaneShelves/Rack1"]
+offset_left = 15.0
+offset_top = 0.0
+offset_right = 22.0
+offset_bottom = 9.0
+color = Color(0.51765, 0.45882, 0.65882, 1.00000)
+mouse_filter = 2
+
+[node name="Band4" type="ColorRect" parent="ArcaneShelves/Rack1"]
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 21.0
+offset_bottom = 3.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Rack2" type="Node2D" parent="ArcaneShelves"]
+position = Vector2(304, 276)
+
+[node name="Recess" type="Polygon2D" parent="ArcaneShelves/Rack2"]
+color = Color(0.13725, 0.11765, 0.21176, 1.00000)
+polygon = PackedVector2Array(-23, -10, 23, -10, 27, -6, 27, 12, 23, 16, -23, 16, -27, 12, -27, -6)
+
+[node name="Ledgelight" type="ColorRect" parent="ArcaneShelves/Rack2"]
+offset_left = -26.0
+offset_top = 9.0
+offset_right = 26.0
+offset_bottom = 13.0
+color = Color(0.45882, 0.34510, 0.52941, 1.00000)
+mouse_filter = 2
+
+[node name="Ledge" type="ColorRect" parent="ArcaneShelves/Rack2"]
+offset_left = -26.0
+offset_top = 13.0
+offset_right = 26.0
+offset_bottom = 17.0
+color = Color(0.26275, 0.23137, 0.35686, 1.00000)
+mouse_filter = 2
+
+[node name="Tome0" type="ColorRect" parent="ArcaneShelves/Rack2"]
+offset_left = -21.0
+offset_top = -6.0
+offset_right = -14.0
+offset_bottom = 9.0
+color = Color(0.42353, 0.63529, 0.58431, 1.00000)
+mouse_filter = 2
+
+[node name="Band0" type="ColorRect" parent="ArcaneShelves/Rack2"]
+offset_left = -20.0
+offset_top = -5.0
+offset_right = -15.0
+offset_bottom = -3.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Tome1" type="ColorRect" parent="ArcaneShelves/Rack2"]
+offset_left = -12.0
+offset_top = -3.0
+offset_right = -5.0
+offset_bottom = 9.0
+color = Color(0.56863, 0.40784, 0.61176, 1.00000)
+mouse_filter = 2
+
+[node name="Band1" type="ColorRect" parent="ArcaneShelves/Rack2"]
+offset_left = -11.0
+offset_top = -2.0
+offset_right = -6.0
+offset_bottom = 0.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Tome2" type="ColorRect" parent="ArcaneShelves/Rack2"]
+offset_left = -3.0
+offset_top = 0.0
+offset_right = 4.0
+offset_bottom = 9.0
+color = Color(0.77647, 0.62745, 0.46275, 1.00000)
+mouse_filter = 2
+
+[node name="Band2" type="ColorRect" parent="ArcaneShelves/Rack2"]
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 3.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Tome3" type="ColorRect" parent="ArcaneShelves/Rack2"]
+offset_left = 6.0
+offset_top = -6.0
+offset_right = 13.0
+offset_bottom = 9.0
+color = Color(0.51765, 0.45882, 0.65882, 1.00000)
+mouse_filter = 2
+
+[node name="Band3" type="ColorRect" parent="ArcaneShelves/Rack2"]
+offset_left = 7.0
+offset_top = -5.0
+offset_right = 12.0
+offset_bottom = -3.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Tome4" type="ColorRect" parent="ArcaneShelves/Rack2"]
+offset_left = 15.0
+offset_top = -3.0
+offset_right = 22.0
+offset_bottom = 9.0
+color = Color(0.62353, 0.41176, 0.65882, 1.00000)
+mouse_filter = 2
+
+[node name="Band4" type="ColorRect" parent="ArcaneShelves/Rack2"]
+offset_left = 16.0
+offset_top = -2.0
+offset_right = 21.0
+offset_bottom = 0.0
+color = Color(0.69412, 0.63529, 0.76863, 1.00000)
+mouse_filter = 2
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="Interface"]
+offset_left = 24.0
+offset_top = 14.0
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.88235, 0.81569, 1.00000, 1.00000)
+text = "术式工坊"
+mouse_filter = 2
+
+[node name="World" type="Label" parent="Interface"]
+offset_left = 26.0
+offset_top = 44.0
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.66275, 0.62745, 0.80000, 1.00000)
+text = "里世界"
+mouse_filter = 2
+
+[node name="ShiftHint" type="Label" parent="Interface"]
+offset_left = 514.0
+offset_top = 335.0
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.66275, 0.62745, 0.80000, 1.00000)
+text = "Shift 切换世界"
+mouse_filter = 2
+
+[node name="BackButton" type="Button" parent="Interface"]
+unique_name_in_owner = true
+offset_left = 526.0
+offset_top = 19.0
+offset_right = 616.0
+offset_bottom = 49.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.88235, 0.81569, 1.00000, 1.00000)
+theme_override_colors/font_hover_color = Color(0.95686, 0.91373, 0.85490, 1.00000)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("BackNormal")
+theme_override_styles/hover = SubResource("BackHover")
+theme_override_styles/pressed = SubResource("BackPressed")
+theme_override_styles/focus = SubResource("BackFocus")
+text = "返回地图"

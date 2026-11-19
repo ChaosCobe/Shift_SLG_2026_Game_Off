@@ -15,4 +15,5 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 
 func _return_to_map() -> void:
-	SceneRouter.return_to_map(world)
+	if not UIManager.is_dialogue_open():
+		SceneRouter.return_to_map(world)

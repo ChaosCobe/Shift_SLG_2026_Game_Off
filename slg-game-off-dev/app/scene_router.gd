@@ -45,11 +45,15 @@ func shift_map_world() -> void:
 
 
 func shift_facility(facility_id: StringName, source_world: int) -> void:
-	_open_facility_in_world(facility_id, _other_world(source_world), true)
+	await _open_facility_in_world(facility_id, _other_world(source_world), true)
 
 
 func return_to_map(world: int) -> void:
 	_change_scene(MAP_SCENE, world)
+
+
+func is_changing_scene() -> bool:
+	return _changing_scene
 
 
 func _other_world(world: int) -> int:
@@ -60,7 +64,7 @@ func _open_facility_in_world(facility_id: StringName, world: int, play_shift := 
 	var scenes: Dictionary = FACILITY_SCENES.get(facility_id, {})
 	var scene_path: String = scenes.get(world, "")
 	if not scene_path.is_empty():
-		_change_scene(scene_path, world, play_shift)
+		await _change_scene(scene_path, world, play_shift)
 
 
 func _change_scene(scene_path: String, world: int, play_shift := false) -> void:

@@ -1,6 +1,6 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://views/facilities/facility_room.gd" id="1_room"]
+[ext_resource type="Script" path="res://views/facilities/workshop/repair_room.gd" id="1_room"]
 
 [ext_resource type="Texture2D" path="res://assets/third_party/ninja_adventure/Pipes.png" id="2_pipes"]
 
@@ -1534,6 +1534,20 @@ color = Color(0.75294, 0.70196, 0.58431, 1.00000)
 mouse_filter = 2
 
 [node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="RepairButton" type="Button" parent="Interface"]
+unique_name_in_owner = true
+offset_left = 98.0
+offset_top = 211.0
+offset_right = 218.0
+offset_bottom = 241.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("BackNormal")
+theme_override_styles/hover = SubResource("BackHover")
+theme_override_styles/pressed = SubResource("BackPressed")
+theme_override_styles/focus = SubResource("BackFocus")
+text = "检修稳流器"
 
 [node name="Title" type="Label" parent="Interface"]
 offset_left = 24.0

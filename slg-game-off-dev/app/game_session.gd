@@ -93,6 +93,18 @@ func turn_in_quest(quest_id: StringName, issuer: StringName) -> Dictionary:
 	return result
 
 
+func has_save() -> bool:
+	return SaveIO.load_snapshot(_valid_snapshot)["ok"]
+
+
+func start_new_game() -> void:
+	if not SceneRouter.is_on_home() or SceneRouter.is_changing_scene() or UIManager.has_modal():
+		return
+	_state = INITIAL_STATE.duplicate(true)
+	SceneRouter.return_to_map(SceneRouter.World.SURFACE)
+	state_changed.emit()
+
+
 func save_game() -> Error:
 	if not _can_access_save():
 		return ERR_BUSY
@@ -104,7 +116,8 @@ func save_game() -> Error:
 
 
 func load_game() -> Dictionary:
-	if not _can_access_save():
+	var on_home := SceneRouter.is_on_home() and not SceneRouter.is_changing_scene() and not UIManager.has_modal()
+	if not on_home and not _can_access_save():
 		return {"ok": false, "reason": &"busy"}
 
 	var result := SaveIO.load_snapshot(_valid_snapshot)

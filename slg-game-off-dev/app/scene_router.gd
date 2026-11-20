@@ -5,6 +5,7 @@ signal world_changed(world: int)
 enum World { SURFACE, INNER }
 
 const MAP_SCENE := "res://app/main.tscn"
+const HOME_SCENE := "res://views/menus/home_menu.tscn"
 const WORLD_TRANSITION := preload("res://views/transitions/world_transition.tscn")
 const FACILITY_SCENES := {
 	&"hub": {
@@ -52,6 +53,25 @@ func return_to_map(world: int) -> void:
 	_change_scene("" if is_on_map() else MAP_SCENE, world)
 
 
+func open_home() -> bool:
+	return await _change_scene(HOME_SCENE, current_world)
+
+
+func is_on_home() -> bool:
+	var scene := get_tree().current_scene
+	return scene != null and scene.scene_file_path == HOME_SCENE
+
+
+func is_in_game() -> bool:
+	if is_on_map():
+		return true
+	for facility_id: StringName in FACILITY_SCENES:
+		for world: int in FACILITY_SCENES[facility_id]:
+			if is_in_facility(facility_id, world):
+				return true
+	return false
+
+
 func is_on_map() -> bool:
 	var scene := get_tree().current_scene
 	return scene != null and scene.scene_file_path == MAP_SCENE
@@ -78,9 +98,9 @@ func _open_facility_in_world(facility_id: StringName, world: int, play_shift := 
 		await _change_scene(scene_path, world, play_shift)
 
 
-func _change_scene(scene_path: String, world: int, play_shift := false) -> void:
+func _change_scene(scene_path: String, world: int, play_shift := false) -> bool:
 	if _changing_scene:
-		return
+		return false
 
 	_changing_scene = true
 	if play_shift:
@@ -97,6 +117,10 @@ func _change_scene(scene_path: String, world: int, play_shift := false) -> void:
 			await tree.scene_changed
 		else:
 			push_error("Could not open scene '%s': %s" % [scene_path, error_string(result)])
+			if play_shift:
+				await _transition.reveal()
+			_changing_scene = false
+			return false
 
 	if previous_world != current_world:
 		world_changed.emit(current_world)
@@ -104,3 +128,4 @@ func _change_scene(scene_path: String, world: int, play_shift := false) -> void:
 	if play_shift:
 		await _transition.reveal()
 	_changing_scene = false
+	return true

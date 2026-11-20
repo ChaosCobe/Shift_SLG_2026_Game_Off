@@ -1,12 +1,12 @@
 extends Control
 
-signal finished
+signal advance_requested
+signal choice_selected(index: int)
+signal player_reply_finished
 signal shift_confirmed
 
-const DialogueSession := preload("res://views/dialogue/dialogue_session.gd")
 const PlayerReply := preload("res://views/dialogue/player_reply.gd")
 
-var _session: DialogueSession
 var _focused_action: Control
 
 @onready var _speaker: Label = %Speaker
@@ -20,20 +20,36 @@ var _focused_action: Control
 
 
 func _ready() -> void:
-	_player_reply.finished.connect(_on_reply_finished)
+	_player_reply.finished.connect(player_reply_finished.emit)
 	_cancel_shift.pressed.connect(dismiss_shift_prompt)
 	_confirm_shift.pressed.connect(_confirm_world_shift)
 
 
-func start(session: DialogueSession, world: int) -> void:
-	_session = session
-	_speaker.text = _session.speaker_name
-	update_portrait(world)
-	_show_line()
+func set_speaker(display_name: String) -> void:
+	_speaker.text = display_name
 
 
-func update_portrait(world: int) -> void:
-	_portrait.texture = _session.portrait_for(world)
+func set_portrait(portrait: Texture2D) -> void:
+	_portrait.texture = portrait
+
+
+func show_line(text: String, player_line: bool, choices: Array[String], has_next: bool) -> void:
+	if player_line:
+		_player_reply.present(text)
+	else:
+		_player_reply.dismiss()
+		_line.text = text
+	for action in _actions.get_children():
+		_actions.remove_child(action)
+		action.queue_free()
+
+	if choices.is_empty():
+		var caption := "继续" if has_next else "结束对话"
+		_add_action(caption, advance_requested.emit)
+	else:
+		for index in choices.size():
+			_add_action(choices[index], choice_selected.emit.bind(index))
+	_focus_first_action()
 
 
 func show_shift_prompt() -> void:
@@ -67,26 +83,6 @@ func _confirm_world_shift() -> void:
 	shift_confirmed.emit()
 
 
-func _show_line() -> void:
-	if _session.is_player_line():
-		_player_reply.present(_session.current_text())
-	else:
-		_player_reply.dismiss()
-		_line.text = _session.current_text()
-	for action in _actions.get_children():
-		_actions.remove_child(action)
-		action.queue_free()
-
-	var options := _session.options()
-	if options.is_empty():
-		var caption := "继续" if _session.has_next_line() else "结束对话"
-		_add_action(caption, _advance)
-	else:
-		for option: String in options:
-			_add_action(option, _choose.bind(option))
-	_focus_first_action()
-
-
 func _add_action(caption: String, callback: Callable) -> void:
 	var button := Button.new()
 	button.text = caption
@@ -99,20 +95,3 @@ func _add_action(caption: String, callback: Callable) -> void:
 func _focus_first_action() -> void:
 	var first_action := _actions.get_child(0) as Button
 	first_action.grab_focus()
-
-
-func _advance() -> void:
-	if _session.advance():
-		_show_line()
-	else:
-		finished.emit()
-
-
-func _on_reply_finished() -> void:
-	if _session.has_next_line() and _session.options().is_empty():
-		_advance()
-
-
-func _choose(option: String) -> void:
-	_session.choose(option)
-	_show_line()

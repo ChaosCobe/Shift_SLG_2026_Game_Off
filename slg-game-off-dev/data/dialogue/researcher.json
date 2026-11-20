@@ -1,0 +1,123 @@
+{
+  "id": "researcher",
+  "speaker_name": {
+    "zh_CN": "年轻研究者",
+    "en": ""
+  },
+  "portraits": {
+    "surface": "res://assets/portraits/anna_yanami_cutout.png",
+    "inner": "res://assets/portraits/tiara_basori_cutout.png"
+  },
+  "entry": "opening",
+  "blocks": {
+    "opening": {
+      "lines": [
+        {
+          "speaker": "npc",
+          "zh_CN": "帮我按住这张纸！飞艇刚一靠站，我的铅笔就一路滚到了桌边。",
+          "en": "",
+          "variants": [
+            {
+              "when": {
+                "world": "inner",
+                "regulator_repaired": true
+              },
+              "zh_CN": "嘘，看第三圈……又暗了！空港那边已经平稳，我这张纸上却还在添点。",
+              "en": ""
+            },
+            {
+              "when": {
+                "regulator_repaired": true
+              },
+              "zh_CN": "今天铅笔总算能在桌上待住了。给，你修好稳流器之后的第一张记录。",
+              "en": ""
+            },
+            {
+              "when": {
+                "world": "inner"
+              },
+              "zh_CN": "看第三圈阵纹。它每暗一下，我就点一笔。空港的记录也在这儿，你挑一张。",
+              "en": ""
+            }
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "zh_CN": "看飞艇记录",
+          "en": "",
+          "next": "airship"
+        },
+        {
+          "zh_CN": "看法阵记录",
+          "en": "",
+          "next": "array"
+        }
+      ]
+    },
+    "airship": {
+      "lines": [
+        {
+          "speaker": "player",
+          "zh_CN": "这条抖线也是铅笔自己画的？",
+          "en": "",
+          "variants": [
+            {
+              "when": {
+                "regulator_repaired": true
+              },
+              "zh_CN": "这么直……铅笔睡着了？",
+              "en": ""
+            }
+          ]
+        },
+        {
+          "speaker": "npc",
+          "zh_CN": "嗯，我把它绑在了仪表上。飞艇停稳了，笔还在抖。去机修所看看稳流器吧。",
+          "en": "",
+          "variants": [
+            {
+              "when": {
+                "regulator_repaired": true
+              },
+              "zh_CN": "我刚也这么想，还特意敲了一下仪表。看，就这一个小尖。飞艇一路都很稳。",
+              "en": ""
+            }
+          ]
+        }
+      ]
+    },
+    "array": {
+      "lines": [
+        {
+          "speaker": "player",
+          "zh_CN": "这一排黑点，你在画星座？",
+          "en": "",
+          "variants": [
+            {
+              "when": {
+                "regulator_repaired": true
+              },
+              "zh_CN": "飞艇稳了，怎么还有黑点？",
+              "en": ""
+            }
+          ]
+        },
+        {
+          "speaker": "npc",
+          "zh_CN": "阵纹每暗一次，我就点一下。把两张纸叠起来看，每个点都落在一道抖线上。",
+          "en": "",
+          "variants": [
+            {
+              "when": {
+                "regulator_repaired": true
+              },
+              "zh_CN": "你也看到了？阵纹还在闪。看来明天我还得来这儿蹲一趟。",
+              "en": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

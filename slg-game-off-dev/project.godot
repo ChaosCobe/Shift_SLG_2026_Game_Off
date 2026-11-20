@@ -11,7 +11,8 @@ config/icon="res://icon.svg"
 
 SceneRouter="*res://app/scene_router.gd"
 FacilityState="*res://app/facility_state.gd"
-UIManager="*res://app/ui_manager.gd"
+UIManager="*res://app/ui_manager.tscn"
+DialogueSystem="*res://app/dialogue_system.gd"
 
 [display]
 

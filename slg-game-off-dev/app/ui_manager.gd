@@ -15,8 +15,11 @@ func unmount_modal(view: Control) -> void:
 	_modal_layer.remove_child(view)
 
 
-func has_modal() -> bool:
-	return _modal_layer.get_child_count() > 0
+func has_modal(ignored_modal: Control = null) -> bool:
+	var modal_count := _modal_layer.get_child_count()
+	if ignored_modal != null and ignored_modal.get_parent() == _modal_layer:
+		modal_count -= 1
+	return modal_count > 0
 
 
 func _input(event: InputEvent) -> void:

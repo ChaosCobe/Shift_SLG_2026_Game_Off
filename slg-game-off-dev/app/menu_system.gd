@@ -64,13 +64,48 @@ func _open_pause_menu() -> void:
 	var resume_button: Button = _pause_menu.get_node("%ResumeGame")
 	var settings_button: Button = _pause_menu.get_node("%Settings")
 	var home_button: Button = _pause_menu.get_node("%ReturnHome")
+	var save_button: Button = _pause_menu.get_node("%SaveButton")
+	var load_button: Button = _pause_menu.get_node("%LoadButton")
+	var can_access_save := SceneRouter.is_on_map() and not UIManager.has_modal()
+	save_button.disabled = not can_access_save
+	load_button.disabled = not can_access_save
+	if not can_access_save:
+		_show_save_status("请回到聚落地图存读档" if not SceneRouter.is_on_map() else "请先关闭当前窗口")
 	resume_button.pressed.connect(_resume_game)
 	settings_button.pressed.connect(open_settings.bind(_pause_menu))
+	save_button.pressed.connect(_save_game)
+	load_button.pressed.connect(_load_game)
 	var confirm_home: ConfirmationDialog = _pause_menu.get_node("%ConfirmHome")
-	home_button.pressed.connect(confirm_home.popup_centered.bind(Vector2i(332, 120)))
+	home_button.pressed.connect(_request_return_home)
 	confirm_home.confirmed.connect(_return_to_home)
 	UIManager.mount_modal(_pause_menu, Callable())
 	resume_button.grab_focus()
+
+
+func _save_game() -> void:
+	var result := GameSession.save_game(_pause_menu)
+	_show_save_status("已保存进度" if result == OK else "当前无法保存进度")
+
+
+func _load_game() -> void:
+	var result := GameSession.load_game(_pause_menu)
+	if result["ok"]:
+		_show_save_status("已读取备份存档" if result["used_backup"] else "已读取进度")
+		return
+
+	match result["reason"]:
+		&"missing_save":
+			_show_save_status("还没有存档")
+		&"invalid_save":
+			_show_save_status("存档损坏或版本不兼容")
+		_:
+			_show_save_status("当前无法读取进度")
+
+
+func _show_save_status(message: String) -> void:
+	var status: Label = _pause_menu.get_node("%SaveStatus")
+	status.text = message
+	status.show()
 
 
 func _resume_game() -> void:
@@ -85,6 +120,16 @@ func _close_pause_menu() -> void:
 	_pause_menu.queue_free()
 	_pause_menu = null
 	get_tree().paused = false
+
+
+func _request_return_home() -> void:
+	if _returning_home:
+		return
+	if GameSession.has_save():
+		_return_to_home()
+	else:
+		var confirm_home: ConfirmationDialog = _pause_menu.get_node("%ConfirmHome")
+		confirm_home.popup_centered(Vector2i(332, 120))
 
 
 func _return_to_home() -> void:

@@ -105,8 +105,8 @@ func start_new_game() -> void:
 	state_changed.emit()
 
 
-func save_game() -> Error:
-	if not _can_access_save():
+func save_game(pause_menu: Control = null) -> Error:
+	if not _can_access_save(pause_menu):
 		return ERR_BUSY
 
 	var snapshot := _state.duplicate(true)
@@ -115,9 +115,9 @@ func save_game() -> Error:
 	return SaveIO.save_snapshot(snapshot, _valid_snapshot)
 
 
-func load_game() -> Dictionary:
+func load_game(pause_menu: Control = null) -> Dictionary:
 	var on_home := SceneRouter.is_on_home() and not SceneRouter.is_changing_scene() and not UIManager.has_modal()
-	if not on_home and not _can_access_save():
+	if not on_home and not _can_access_save(pause_menu):
 		return {"ok": false, "reason": &"busy"}
 
 	var result := SaveIO.load_snapshot(_valid_snapshot)
@@ -135,8 +135,8 @@ func load_game() -> Dictionary:
 	return {"ok": true, "used_backup": result["used_backup"]}
 
 
-func _can_access_save() -> bool:
-	return SceneRouter.is_on_map() and not SceneRouter.is_changing_scene() and not UIManager.has_modal()
+func _can_access_save(pause_menu: Control) -> bool:
+	return SceneRouter.is_on_map() and not SceneRouter.is_changing_scene() and not UIManager.has_modal(pause_menu)
 
 
 func _valid_snapshot(snapshot: Dictionary) -> bool:

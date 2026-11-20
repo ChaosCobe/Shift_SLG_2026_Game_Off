@@ -1,0 +1,20 @@
+{
+  "id": "safe_flight_combined",
+  "speaker_name": { "zh_CN": "年轻研究者", "en": "Young Researcher" },
+  "portraits": {
+    "surface": "res://assets/portraits/anna_yanami_cutout.png",
+    "inner": "res://assets/portraits/tiara_basori_cutout.png"
+  },
+  "entry": "opening",
+  "blocks": {
+    "opening": {
+      "lines": [
+        {
+          "speaker": "npc",
+          "zh_CN": "稳流器修好了，风也停了。你看，这回记录上的墨线直得像用尺画的。通行凭证给你。",
+          "en": ""
+        }
+      ]
+    }
+  }
+}

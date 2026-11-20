@@ -1,0 +1,20 @@
+{
+  "id": "safe_flight_magic",
+  "speaker_name": { "zh_CN": "年轻研究者", "en": "Young Researcher" },
+  "portraits": {
+    "surface": "res://assets/portraits/anna_yanami_cutout.png",
+    "inner": "res://assets/portraits/tiara_basori_cutout.png"
+  },
+  "entry": "opening",
+  "blocks": {
+    "opening": {
+      "lines": [
+        {
+          "speaker": "npc",
+          "zh_CN": "云一散，飞艇就顺着航线稳稳进港了。这张通行凭证给你。",
+          "en": ""
+        }
+      ]
+    }
+  }
+}

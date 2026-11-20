@@ -1,7 +1,29 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://views/facilities/facility_room.gd" id="1_room"]
+[ext_resource type="Script" path="res://views/facilities/workshop/ritual_room.gd" id="1_room"]
 [ext_resource type="PackedScene" path="res://views/facilities/facility_hud.tscn" id="3_hud"]
+
+[sub_resource type="StyleBoxFlat" id="RitualPanel"]
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 8.0
+content_margin_bottom = 7.0
+bg_color = Color(0.096, 0.09, 0.16, 0.97)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.47, 0.38, 0.58, 1)
+
+[sub_resource type="StyleBoxFlat" id="RitualButton"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.24, 0.18, 0.35, 1)
+
+[sub_resource type="StyleBoxFlat" id="RitualButtonHover"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.34, 0.26, 0.46, 1)
 
 [node name="InnerWorkshop" type="Node2D"]
 texture_filter = 1
@@ -691,3 +713,36 @@ facility_title = "术式工坊"
 title_color = Color(0.88235, 0.81569, 1.00000, 1.00000)
 detail_color = Color(0.66275, 0.62745, 0.80000, 1.00000)
 
+[node name="RitualControls" type="PanelContainer" parent="Interface"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -59.0
+offset_right = 294.0
+offset_bottom = -14.0
+theme_override_styles/panel = SubResource("RitualPanel")
+
+[node name="Row" type="HBoxContainer" parent="Interface/RitualControls"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="AirportWeather" type="Label" parent="Interface/RitualControls/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.82, 0.77, 0.94, 1)
+theme_override_font_sizes/font_size = 13
+text = "表世界空港 · 强风"
+
+[node name="WeatherRitualAction" type="Button" parent="Interface/RitualControls/Row"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(88, 28)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.91, 0.86, 1, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("RitualButton")
+theme_override_styles/hover = SubResource("RitualButtonHover")
+theme_override_styles/pressed = SubResource("RitualButtonHover")
+text = "施术放晴"

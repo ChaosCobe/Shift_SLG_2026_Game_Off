@@ -1,0 +1,43 @@
+{
+  "id": "safe_flight",
+  "world": "surface",
+  "issuer_npc_id": "researcher",
+  "title": {
+    "zh_CN": "飞艇稳定性",
+    "en": "A Stable Flight"
+  },
+  "objective": {
+    "zh_CN": "去表世界机修所修好稳流器，或到里世界术式工坊让空港放晴。办好后回空港站房交付。",
+    "en": "Repair the regulator in the surface workshop or clear the airport weather in the inner ritual workshop. Then report back at the terminal."
+  },
+  "routes": [
+    {
+      "id": "combined",
+      "label": { "zh_CN": "维修与晴空", "en": "Repair and Clear Skies" },
+      "all": {
+        "facilities.surface.workshop.regulator_repaired": true,
+        "environment.surface.airport.weather": "clear"
+      },
+      "feedback_dialogue_id": "safe_flight_combined",
+      "reward_tokens": 1
+    },
+    {
+      "id": "engineering",
+      "label": { "zh_CN": "机械维修", "en": "Mechanical Repair" },
+      "all": {
+        "facilities.surface.workshop.regulator_repaired": true
+      },
+      "feedback_dialogue_id": "safe_flight_engineering",
+      "reward_tokens": 1
+    },
+    {
+      "id": "magic",
+      "label": { "zh_CN": "天气术式", "en": "Weather Ritual" },
+      "all": {
+        "environment.surface.airport.weather": "clear"
+      },
+      "feedback_dialogue_id": "safe_flight_magic",
+      "reward_tokens": 1
+    }
+  ]
+}

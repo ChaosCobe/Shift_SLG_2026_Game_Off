@@ -49,7 +49,18 @@ func shift_facility(facility_id: StringName, source_world: int) -> void:
 
 
 func return_to_map(world: int) -> void:
-	_change_scene(MAP_SCENE, world)
+	_change_scene("" if is_on_map() else MAP_SCENE, world)
+
+
+func is_on_map() -> bool:
+	var scene := get_tree().current_scene
+	return scene != null and scene.scene_file_path == MAP_SCENE
+
+
+func is_in_facility(facility_id: StringName, world: int) -> bool:
+	var scene := get_tree().current_scene
+	var paths: Dictionary = FACILITY_SCENES.get(facility_id, {})
+	return scene != null and scene.scene_file_path == paths.get(world, "")
 
 
 func is_changing_scene() -> bool:

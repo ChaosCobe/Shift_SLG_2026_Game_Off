@@ -1,0 +1,20 @@
+{
+  "id": "safe_flight_engineering",
+  "speaker_name": { "zh_CN": "年轻研究者", "en": "Young Researcher" },
+  "portraits": {
+    "surface": "res://assets/portraits/anna_yanami_cutout.png",
+    "inner": "res://assets/portraits/tiara_basori_cutout.png"
+  },
+  "entry": "opening",
+  "blocks": {
+    "opening": {
+      "lines": [
+        {
+          "speaker": "npc",
+          "zh_CN": "刚才还有阵风，修好的稳流器把飞艇稳住了。航线可以恢复，这张通行凭证给你。",
+          "en": ""
+        }
+      ]
+    }
+  }
+}

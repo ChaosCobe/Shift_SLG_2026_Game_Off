@@ -10,9 +10,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneRouter="*res://app/scene_router.gd"
-FacilityState="*res://app/facility_state.gd"
 UIManager="*res://app/ui_manager.tscn"
 DialogueSystem="*res://app/dialogue_system.gd"
+GameSession="*res://app/game_session.gd"
 
 [display]
 

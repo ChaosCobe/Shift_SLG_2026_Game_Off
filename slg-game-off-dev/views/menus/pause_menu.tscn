@@ -1,0 +1,114 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://views/menus/menu_theme.tres" id="1_theme"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+
+[node name="Shade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.028, 0.049, 0.062, 0.72)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(244, 0)
+layout_mode = 2
+
+[node name="Contents" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="Title" type="Label" parent="Center/Panel/Contents"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.967, 0.86, 0.675, 1)
+theme_override_font_sizes/font_size = 25
+text = "游戏暂停"
+horizontal_alignment = 1
+
+[node name="ResumeGame" type="Button" parent="Center/Panel/Contents"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "继续游戏"
+
+[node name="Settings" type="Button" parent="Center/Panel/Contents"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "设置"
+
+[node name="SaveControls" type="HBoxContainer" parent="Center/Panel/Contents"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="SaveButton" type="Button" parent="Center/Panel/Contents/SaveControls"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "保存"
+
+[node name="LoadButton" type="Button" parent="Center/Panel/Contents/SaveControls"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "读取"
+
+[node name="SaveStatus" type="Label" parent="Center/Panel/Contents"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.86, 0.79, 0.65, 1)
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ReturnHome" type="Button" parent="Center/Panel/Contents"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "返回首页"
+
+[node name="ReturnError" type="Label" parent="Center/Panel/Contents"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.67, 0.55, 1)
+text = "无法返回首页，请重试。"
+horizontal_alignment = 1
+
+[node name="ConfirmHome" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+title = "返回首页"
+size = Vector2i(332, 120)
+exclusive = true
+theme = ExtResource("1_theme")
+ok_button_text = "返回首页"
+cancel_button_text = "继续游戏"
+dialog_text = "未保存的进度将丢失。可在聚落地图的暂停菜单保存。"

@@ -1,31 +1,31 @@
-[gd_scene format=3]
+[gd_scene format=4 uid="uid://dp875ule2lu1f"]
 
-[ext_resource type="Script" path="res://views/facilities/hub/hub_room.gd" id="1_room"]
-[ext_resource type="TileSet" path="res://assets/tilesets/station_floors.tres" id="2_floors"]
+[ext_resource type="Script" uid="uid://dng4gfa6xhiiv" path="res://views/facilities/hub/hub_room.gd" id="1_room"]
+[ext_resource type="TileSet" uid="uid://blf6fpd81uuk5" path="res://assets/tilesets/station_floors.tres" id="2_floors"]
 [ext_resource type="PackedScene" path="res://views/facilities/facility_hud.tscn" id="3_hud"]
 [ext_resource type="PackedScene" path="res://views/facilities/facility_actor.tscn" id="4_actor"]
-[ext_resource type="Texture2D" path="res://assets/third_party/ninja_adventure/characters/researcher_surface.png" id="5_researcher"]
+[ext_resource type="Texture2D" uid="uid://cee6x7a1nvxgm" path="res://assets/third_party/ninja_adventure/characters/researcher_surface.png" id="5_researcher"]
+[ext_resource type="Script" uid="uid://du74vfixbml2y" path="res://actors/npc_route.gd" id="8_jy0sj"]
+[ext_resource type="PackedScene" uid="uid://xjkwr37yhohd" path="res://actors/npc_actor.tscn" id="9_qkjlv"]
 
 [sub_resource type="AtlasTexture" id="ResearcherIdle"]
 atlas = ExtResource("5_researcher")
 region = Rect2(0, 0, 16, 16)
 filter_clip = true
 
-[node name="SurfaceHub" type="Node2D"]
+[node name="SurfaceHub" type="Node2D" unique_id=1734023527]
 texture_filter = 1
 script = ExtResource("1_room")
-facility_id = &"hub"
 npc_id = &"researcher"
+facility_id = &"hub"
 
-[node name="Backdrop" type="ColorRect" parent="."]
-offset_left = 0.0
-offset_top = 0.0
+[node name="Backdrop" type="ColorRect" parent="." unique_id=2095542881]
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
 color = Color(0.09412, 0.11765, 0.15686, 1)
 
-[node name="InteriorShadow" type="ColorRect" parent="."]
+[node name="InteriorShadow" type="ColorRect" parent="." unique_id=1878611796]
 offset_left = 77.0
 offset_top = 105.0
 offset_right = 563.0
@@ -33,23 +33,23 @@ offset_bottom = 333.0
 mouse_filter = 2
 color = Color(0.06275, 0.08235, 0.12157, 1)
 
-[node name="Floor" type="TileMapLayer" parent="."]
+[node name="Floor" type="TileMapLayer" parent="." unique_id=670232410]
 position = Vector2(80, 106)
 scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAAMAAAAAAADAAAAAAAMAAAAAAAEAAAAAAAMAAAAAAAFAAAAAAAMAAAAAAAGAAAAAAAMAAAAAAAHAAAAAAAMAAAAAAAIAAAAAAAMAAAAAAAJAAAAAAAMAAAAAAAKAAAAAAAMAAAAAAALAAAAAAAMAAAAAAAMAAAAAAAMAAAAAAANAAAAAAAMAAAAAAAOAAAAAAANAAAAAAAAAAEAAAALAAEAAAABAAEAAAAMAAEAAAACAAEAAAAMAAEAAAADAAEAAAAMAAEAAAAEAAEAAAAMAAEAAAAFAAEAAAAMAAEAAAAGAAEAAAAMAAEAAAAHAAEAAAAMAAEAAAAIAAEAAAAMAAEAAAAJAAEAAAAMAAEAAAAKAAEAAAAMAAEAAAALAAEAAAAMAAEAAAAMAAEAAAAMAAEAAAANAAEAAAAMAAEAAAAOAAEAAAANAAEAAAAAAAIAAAALAAEAAAABAAIAAAAMAAEAAAACAAIAAAAMAAEAAAADAAIAAAAMAAEAAAAEAAIAAAAMAAEAAAAFAAIAAAAMAAEAAAAGAAIAAAAMAAEAAAAHAAIAAAAMAAEAAAAIAAIAAAAMAAEAAAAJAAIAAAAMAAEAAAAKAAIAAAAMAAEAAAALAAIAAAAMAAEAAAAMAAIAAAAMAAEAAAANAAIAAAAMAAEAAAAOAAIAAAANAAEAAAAAAAMAAAALAAEAAAABAAMAAAAMAAEAAAACAAMAAAAMAAEAAAADAAMAAAAMAAEAAAAEAAMAAAAMAAEAAAAFAAMAAAAMAAEAAAAGAAMAAAAMAAEAAAAHAAMAAAAMAAEAAAAIAAMAAAAMAAEAAAAJAAMAAAAMAAEAAAAKAAMAAAAMAAEAAAALAAMAAAAMAAEAAAAMAAMAAAAMAAEAAAANAAMAAAAMAAEAAAAOAAMAAAANAAEAAAAAAAQAAAALAAEAAAABAAQAAAAMAAEAAAACAAQAAAAMAAEAAAADAAQAAAAMAAEAAAAEAAQAAAAMAAEAAAAFAAQAAAAMAAEAAAAGAAQAAAAMAAEAAAAHAAQAAAAMAAEAAAAIAAQAAAAMAAEAAAAJAAQAAAAMAAEAAAAKAAQAAAAMAAEAAAALAAQAAAAMAAEAAAAMAAQAAAAMAAEAAAANAAQAAAAMAAEAAAAOAAQAAAANAAEAAAAAAAUAAAALAAEAAAABAAUAAAAMAAEAAAACAAUAAAAMAAEAAAADAAUAAAAMAAEAAAAEAAUAAAAMAAEAAAAFAAUAAAAMAAEAAAAGAAUAAAAMAAEAAAAHAAUAAAAMAAEAAAAIAAUAAAAMAAEAAAAJAAUAAAAMAAEAAAAKAAUAAAAMAAEAAAALAAUAAAAMAAEAAAAMAAUAAAAMAAEAAAANAAUAAAAMAAEAAAAOAAUAAAANAAEAAAAAAAYAAAALAAIAAAABAAYAAAAMAAIAAAACAAYAAAAMAAIAAAADAAYAAAAMAAIAAAAEAAYAAAAMAAIAAAAFAAYAAAAMAAIAAAAGAAYAAAAMAAIAAAAHAAYAAAAMAAIAAAAIAAYAAAAMAAIAAAAJAAYAAAAMAAIAAAAKAAYAAAAMAAIAAAALAAYAAAAMAAIAAAAMAAYAAAAMAAIAAAANAAYAAAAMAAIAAAAOAAYAAAANAAIAAAA=")
 tile_set = ExtResource("2_floors")
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 14, 0, 1, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 14, 0, 2, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 3, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 14, 0, 3, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 4, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 14, 0, 4, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 5, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 14, 0, 5, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 6, 0, 0, 0, 11, 0, 2, 0, 0, 0, 1, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 2, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 3, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 4, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 5, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 6, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 7, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 8, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 9, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 10, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 11, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 12, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 13, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 14, 0, 6, 0, 0, 0, 13, 0, 2, 0, 0, 0)
 
-[node name="BackWall" type="Node2D" parent="."]
+[node name="BackWall" type="Node2D" parent="." unique_id=1716530976]
 
-[node name="Base" type="ColorRect" parent="BackWall"]
+[node name="Base" type="ColorRect" parent="BackWall" unique_id=1775873274]
 offset_left = 80.0
 offset_top = 77.0
 offset_right = 560.0
 offset_bottom = 107.0
 mouse_filter = 2
-color = Color(0.25882, 0.20000, 0.17255, 1)
+color = Color(0.25882, 0.2, 0.17255, 1)
 
-[node name="UpperStone" type="ColorRect" parent="BackWall"]
+[node name="UpperStone" type="ColorRect" parent="BackWall" unique_id=200009609]
 offset_left = 80.0
 offset_top = 77.0
 offset_right = 560.0
@@ -57,7 +57,7 @@ offset_bottom = 95.0
 mouse_filter = 2
 color = Color(0.20392, 0.24314, 0.28627, 1)
 
-[node name="Rail" type="ColorRect" parent="BackWall"]
+[node name="Rail" type="ColorRect" parent="BackWall" unique_id=66427090]
 offset_left = 80.0
 offset_top = 94.0
 offset_right = 560.0
@@ -65,7 +65,7 @@ offset_bottom = 97.0
 mouse_filter = 2
 color = Color(0.68627, 0.51765, 0.35686, 1)
 
-[node name="LowerTrim" type="ColorRect" parent="BackWall"]
+[node name="LowerTrim" type="ColorRect" parent="BackWall" unique_id=969201427]
 offset_left = 80.0
 offset_top = 103.0
 offset_right = 560.0
@@ -73,7 +73,7 @@ offset_bottom = 107.0
 mouse_filter = 2
 color = Color(0.41176, 0.30588, 0.23137, 1)
 
-[node name="TopEdge" type="ColorRect" parent="BackWall"]
+[node name="TopEdge" type="ColorRect" parent="BackWall" unique_id=207954072]
 offset_left = 80.0
 offset_top = 76.0
 offset_right = 560.0
@@ -81,7 +81,7 @@ offset_bottom = 78.0
 mouse_filter = 2
 color = Color(0.06667, 0.09804, 0.14118, 1)
 
-[node name="PillarWest" type="ColorRect" parent="BackWall"]
+[node name="PillarWest" type="ColorRect" parent="BackWall" unique_id=258565042]
 offset_left = 80.0
 offset_top = 73.0
 offset_right = 90.0
@@ -89,7 +89,7 @@ offset_bottom = 107.0
 mouse_filter = 2
 color = Color(0.36471, 0.31765, 0.27843, 1)
 
-[node name="PillarEast" type="ColorRect" parent="BackWall"]
+[node name="PillarEast" type="ColorRect" parent="BackWall" unique_id=2064244571]
 offset_left = 550.0
 offset_top = 73.0
 offset_right = 560.0
@@ -97,22 +97,22 @@ offset_bottom = 107.0
 mouse_filter = 2
 color = Color(0.36471, 0.31765, 0.27843, 1)
 
-[node name="WestWindow" type="Node2D" parent="BackWall"]
+[node name="WestWindow" type="Node2D" parent="BackWall" unique_id=1141509811]
 position = Vector2(111, 58)
 
-[node name="Frame" type="Polygon2D" parent="BackWall/WestWindow"]
+[node name="Frame" type="Polygon2D" parent="BackWall/WestWindow" unique_id=1689939166]
 color = Color(0.50196, 0.40392, 0.31373, 1)
 polygon = PackedVector2Array(0, 48, 0, 15, 4, 15, 4, 8, 12, 8, 12, 4, 22, 4, 22, 0, 56, 0, 56, 4, 66, 4, 66, 8, 74, 8, 74, 15, 78, 15, 78, 48)
 
-[node name="Glass" type="Polygon2D" parent="BackWall/WestWindow"]
+[node name="Glass" type="Polygon2D" parent="BackWall/WestWindow" unique_id=1071694105]
 color = Color(0.27843, 0.38039, 0.43137, 1)
 polygon = PackedVector2Array(5, 43, 5, 18, 9, 18, 9, 12, 17, 12, 17, 8, 26, 8, 26, 5, 52, 5, 52, 8, 61, 8, 61, 12, 69, 12, 69, 18, 73, 18, 73, 43)
 
-[node name="PortSilhouette" type="Polygon2D" parent="BackWall/WestWindow"]
+[node name="PortSilhouette" type="Polygon2D" parent="BackWall/WestWindow" unique_id=1147177553]
 color = Color(0.16078, 0.22745, 0.28235, 1)
 polygon = PackedVector2Array(5, 43, 5, 34, 13, 34, 13, 28, 23, 28, 23, 24, 28, 24, 28, 30, 35, 30, 35, 25, 42, 25, 42, 34, 49, 34, 49, 29, 56, 29, 56, 26, 65, 26, 65, 33, 73, 33, 73, 43)
 
-[node name="Mullion" type="ColorRect" parent="BackWall/WestWindow"]
+[node name="Mullion" type="ColorRect" parent="BackWall/WestWindow" unique_id=1742608688]
 offset_left = 37.0
 offset_top = 5.0
 offset_right = 41.0
@@ -120,15 +120,15 @@ offset_bottom = 44.0
 mouse_filter = 2
 color = Color(0.62745, 0.51765, 0.37647, 1)
 
-[node name="Crossbar" type="ColorRect" parent="BackWall/WestWindow"]
+[node name="Crossbar" type="ColorRect" parent="BackWall/WestWindow" unique_id=1496139164]
 offset_left = 5.0
 offset_top = 22.0
 offset_right = 73.0
 offset_bottom = 25.0
 mouse_filter = 2
-color = Color(0.55686, 0.45490, 0.34118, 1)
+color = Color(0.55686, 0.4549, 0.34118, 1)
 
-[node name="Sill" type="ColorRect" parent="BackWall/WestWindow"]
+[node name="Sill" type="ColorRect" parent="BackWall/WestWindow" unique_id=964212343]
 offset_left = -3.0
 offset_top = 43.0
 offset_right = 81.0
@@ -136,7 +136,7 @@ offset_bottom = 48.0
 mouse_filter = 2
 color = Color(0.61961, 0.50196, 0.35686, 1)
 
-[node name="Shadow" type="ColorRect" parent="BackWall/WestWindow"]
+[node name="Shadow" type="ColorRect" parent="BackWall/WestWindow" unique_id=792854853]
 offset_left = -3.0
 offset_top = 48.0
 offset_right = 81.0
@@ -144,22 +144,22 @@ offset_bottom = 50.0
 mouse_filter = 2
 color = Color(0.14118, 0.11765, 0.11765, 1)
 
-[node name="MiddleWindow" type="Node2D" parent="BackWall"]
+[node name="MiddleWindow" type="Node2D" parent="BackWall" unique_id=1399495400]
 position = Vector2(281, 58)
 
-[node name="Frame" type="Polygon2D" parent="BackWall/MiddleWindow"]
+[node name="Frame" type="Polygon2D" parent="BackWall/MiddleWindow" unique_id=1206414511]
 color = Color(0.50196, 0.40392, 0.31373, 1)
 polygon = PackedVector2Array(0, 48, 0, 15, 4, 15, 4, 8, 12, 8, 12, 4, 22, 4, 22, 0, 56, 0, 56, 4, 66, 4, 66, 8, 74, 8, 74, 15, 78, 15, 78, 48)
 
-[node name="Glass" type="Polygon2D" parent="BackWall/MiddleWindow"]
+[node name="Glass" type="Polygon2D" parent="BackWall/MiddleWindow" unique_id=515949121]
 color = Color(0.27843, 0.38039, 0.43137, 1)
 polygon = PackedVector2Array(5, 43, 5, 18, 9, 18, 9, 12, 17, 12, 17, 8, 26, 8, 26, 5, 52, 5, 52, 8, 61, 8, 61, 12, 69, 12, 69, 18, 73, 18, 73, 43)
 
-[node name="PortSilhouette" type="Polygon2D" parent="BackWall/MiddleWindow"]
+[node name="PortSilhouette" type="Polygon2D" parent="BackWall/MiddleWindow" unique_id=172915409]
 color = Color(0.16078, 0.22745, 0.28235, 1)
 polygon = PackedVector2Array(5, 43, 5, 34, 13, 34, 13, 28, 23, 28, 23, 24, 28, 24, 28, 30, 35, 30, 35, 25, 42, 25, 42, 34, 49, 34, 49, 29, 56, 29, 56, 26, 65, 26, 65, 33, 73, 33, 73, 43)
 
-[node name="Mullion" type="ColorRect" parent="BackWall/MiddleWindow"]
+[node name="Mullion" type="ColorRect" parent="BackWall/MiddleWindow" unique_id=2122760259]
 offset_left = 37.0
 offset_top = 5.0
 offset_right = 41.0
@@ -167,15 +167,15 @@ offset_bottom = 44.0
 mouse_filter = 2
 color = Color(0.62745, 0.51765, 0.37647, 1)
 
-[node name="Crossbar" type="ColorRect" parent="BackWall/MiddleWindow"]
+[node name="Crossbar" type="ColorRect" parent="BackWall/MiddleWindow" unique_id=912883965]
 offset_left = 5.0
 offset_top = 22.0
 offset_right = 73.0
 offset_bottom = 25.0
 mouse_filter = 2
-color = Color(0.55686, 0.45490, 0.34118, 1)
+color = Color(0.55686, 0.4549, 0.34118, 1)
 
-[node name="Sill" type="ColorRect" parent="BackWall/MiddleWindow"]
+[node name="Sill" type="ColorRect" parent="BackWall/MiddleWindow" unique_id=1068952706]
 offset_left = -3.0
 offset_top = 43.0
 offset_right = 81.0
@@ -183,7 +183,7 @@ offset_bottom = 48.0
 mouse_filter = 2
 color = Color(0.61961, 0.50196, 0.35686, 1)
 
-[node name="Shadow" type="ColorRect" parent="BackWall/MiddleWindow"]
+[node name="Shadow" type="ColorRect" parent="BackWall/MiddleWindow" unique_id=223746113]
 offset_left = -3.0
 offset_top = 48.0
 offset_right = 81.0
@@ -191,22 +191,22 @@ offset_bottom = 50.0
 mouse_filter = 2
 color = Color(0.14118, 0.11765, 0.11765, 1)
 
-[node name="EastWindow" type="Node2D" parent="BackWall"]
+[node name="EastWindow" type="Node2D" parent="BackWall" unique_id=2070296186]
 position = Vector2(451, 58)
 
-[node name="Frame" type="Polygon2D" parent="BackWall/EastWindow"]
+[node name="Frame" type="Polygon2D" parent="BackWall/EastWindow" unique_id=1208697301]
 color = Color(0.50196, 0.40392, 0.31373, 1)
 polygon = PackedVector2Array(0, 48, 0, 15, 4, 15, 4, 8, 12, 8, 12, 4, 22, 4, 22, 0, 56, 0, 56, 4, 66, 4, 66, 8, 74, 8, 74, 15, 78, 15, 78, 48)
 
-[node name="Glass" type="Polygon2D" parent="BackWall/EastWindow"]
+[node name="Glass" type="Polygon2D" parent="BackWall/EastWindow" unique_id=2078677229]
 color = Color(0.27843, 0.38039, 0.43137, 1)
 polygon = PackedVector2Array(5, 43, 5, 18, 9, 18, 9, 12, 17, 12, 17, 8, 26, 8, 26, 5, 52, 5, 52, 8, 61, 8, 61, 12, 69, 12, 69, 18, 73, 18, 73, 43)
 
-[node name="PortSilhouette" type="Polygon2D" parent="BackWall/EastWindow"]
+[node name="PortSilhouette" type="Polygon2D" parent="BackWall/EastWindow" unique_id=2095266097]
 color = Color(0.16078, 0.22745, 0.28235, 1)
 polygon = PackedVector2Array(5, 43, 5, 34, 13, 34, 13, 28, 23, 28, 23, 24, 28, 24, 28, 30, 35, 30, 35, 25, 42, 25, 42, 34, 49, 34, 49, 29, 56, 29, 56, 26, 65, 26, 65, 33, 73, 33, 73, 43)
 
-[node name="Mullion" type="ColorRect" parent="BackWall/EastWindow"]
+[node name="Mullion" type="ColorRect" parent="BackWall/EastWindow" unique_id=1753865643]
 offset_left = 37.0
 offset_top = 5.0
 offset_right = 41.0
@@ -214,15 +214,15 @@ offset_bottom = 44.0
 mouse_filter = 2
 color = Color(0.62745, 0.51765, 0.37647, 1)
 
-[node name="Crossbar" type="ColorRect" parent="BackWall/EastWindow"]
+[node name="Crossbar" type="ColorRect" parent="BackWall/EastWindow" unique_id=1751049147]
 offset_left = 5.0
 offset_top = 22.0
 offset_right = 73.0
 offset_bottom = 25.0
 mouse_filter = 2
-color = Color(0.55686, 0.45490, 0.34118, 1)
+color = Color(0.55686, 0.4549, 0.34118, 1)
 
-[node name="Sill" type="ColorRect" parent="BackWall/EastWindow"]
+[node name="Sill" type="ColorRect" parent="BackWall/EastWindow" unique_id=163615665]
 offset_left = -3.0
 offset_top = 43.0
 offset_right = 81.0
@@ -230,7 +230,7 @@ offset_bottom = 48.0
 mouse_filter = 2
 color = Color(0.61961, 0.50196, 0.35686, 1)
 
-[node name="Shadow" type="ColorRect" parent="BackWall/EastWindow"]
+[node name="Shadow" type="ColorRect" parent="BackWall/EastWindow" unique_id=160007491]
 offset_left = -3.0
 offset_top = 48.0
 offset_right = 81.0
@@ -238,18 +238,16 @@ offset_bottom = 50.0
 mouse_filter = 2
 color = Color(0.14118, 0.11765, 0.11765, 1)
 
-[node name="WallTimetable" type="Node2D" parent="BackWall"]
+[node name="WallTimetable" type="Node2D" parent="BackWall" unique_id=1530952594]
 position = Vector2(213, 82)
 
-[node name="Frame" type="ColorRect" parent="BackWall/WallTimetable"]
-offset_left = 0.0
-offset_top = 0.0
+[node name="Frame" type="ColorRect" parent="BackWall/WallTimetable" unique_id=77117420]
 offset_right = 46.0
 offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.58431, 0.44314, 0.28627, 1)
 
-[node name="Board" type="ColorRect" parent="BackWall/WallTimetable"]
+[node name="Board" type="ColorRect" parent="BackWall/WallTimetable" unique_id=427458292]
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 44.0
@@ -257,7 +255,7 @@ offset_bottom = 17.0
 mouse_filter = 2
 color = Color(0.17255, 0.16078, 0.17255, 1)
 
-[node name="TitleRule" type="ColorRect" parent="BackWall/WallTimetable"]
+[node name="TitleRule" type="ColorRect" parent="BackWall/WallTimetable" unique_id=1464155859]
 offset_left = 7.0
 offset_top = 5.0
 offset_right = 39.0
@@ -265,7 +263,7 @@ offset_bottom = 7.0
 mouse_filter = 2
 color = Color(0.70588, 0.60392, 0.42745, 1)
 
-[node name="Line1" type="ColorRect" parent="BackWall/WallTimetable"]
+[node name="Line1" type="ColorRect" parent="BackWall/WallTimetable" unique_id=884251704]
 offset_left = 7.0
 offset_top = 9.0
 offset_right = 32.0
@@ -273,7 +271,7 @@ offset_bottom = 10.0
 mouse_filter = 2
 color = Color(0.44706, 0.36863, 0.30588, 1)
 
-[node name="Line2" type="ColorRect" parent="BackWall/WallTimetable"]
+[node name="Line2" type="ColorRect" parent="BackWall/WallTimetable" unique_id=1116710939]
 offset_left = 7.0
 offset_top = 12.0
 offset_right = 37.0
@@ -281,18 +279,18 @@ offset_bottom = 13.0
 mouse_filter = 2
 color = Color(0.44706, 0.36863, 0.30588, 1)
 
-[node name="StationClock" type="Node2D" parent="BackWall"]
+[node name="StationClock" type="Node2D" parent="BackWall" unique_id=1438241638]
 position = Vector2(392, 82)
 
-[node name="Rim" type="Polygon2D" parent="BackWall/StationClock"]
+[node name="Rim" type="Polygon2D" parent="BackWall/StationClock" unique_id=425192252]
 color = Color(0.61961, 0.47451, 0.31373, 1)
 polygon = PackedVector2Array(0, 5, 3, 5, 3, 2, 7, 2, 7, 0, 15, 0, 15, 2, 19, 2, 19, 5, 22, 5, 22, 17, 19, 17, 19, 20, 3, 20, 3, 17, 0, 17)
 
-[node name="Clockface" type="Polygon2D" parent="BackWall/StationClock"]
+[node name="Clockface" type="Polygon2D" parent="BackWall/StationClock" unique_id=751314109]
 color = Color(0.87059, 0.76471, 0.58039, 1)
 polygon = PackedVector2Array(3, 7, 6, 7, 6, 4, 16, 4, 16, 7, 19, 7, 19, 15, 16, 15, 16, 17, 6, 17, 6, 15, 3, 15)
 
-[node name="HandHour" type="ColorRect" parent="BackWall/StationClock"]
+[node name="HandHour" type="ColorRect" parent="BackWall/StationClock" unique_id=1287500931]
 offset_left = 10.0
 offset_top = 6.0
 offset_right = 12.0
@@ -300,7 +298,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.32157, 0.25882, 0.23529, 1)
 
-[node name="HandMinute" type="ColorRect" parent="BackWall/StationClock"]
+[node name="HandMinute" type="ColorRect" parent="BackWall/StationClock" unique_id=223705356]
 offset_left = 10.0
 offset_top = 11.0
 offset_right = 16.0
@@ -308,85 +306,80 @@ offset_bottom = 13.0
 mouse_filter = 2
 color = Color(0.32157, 0.25882, 0.23529, 1)
 
-[node name="Runner" type="Node2D" parent="."]
+[node name="Runner" type="Node2D" parent="." unique_id=261907001]
 position = Vector2(286, 119)
 
-[node name="Shadow" type="ColorRect" parent="Runner"]
+[node name="Shadow" type="ColorRect" parent="Runner" unique_id=429054933]
 offset_left = -2.0
 offset_top = 1.0
 offset_right = 70.0
 offset_bottom = 211.0
 mouse_filter = 2
-color = Color(0.44314, 0.29020, 0.23922, 0.45)
+color = Color(0.44314, 0.2902, 0.23922, 0.45)
 
-[node name="WovenRed" type="ColorRect" parent="Runner"]
-offset_left = 0.0
-offset_top = 0.0
+[node name="WovenRed" type="ColorRect" parent="Runner" unique_id=2044547783]
 offset_right = 68.0
 offset_bottom = 210.0
 mouse_filter = 2
-color = Color(0.32941, 0.20000, 0.20000, 1)
+color = Color(0.32941, 0.2, 0.2, 1)
 
-[node name="StripeLeft" type="ColorRect" parent="Runner"]
+[node name="StripeLeft" type="ColorRect" parent="Runner" unique_id=963900199]
 offset_left = 4.0
-offset_top = 0.0
 offset_right = 6.0
 offset_bottom = 210.0
 mouse_filter = 2
 color = Color(0.69412, 0.54118, 0.37647, 1)
 
-[node name="StripeRight" type="ColorRect" parent="Runner"]
+[node name="StripeRight" type="ColorRect" parent="Runner" unique_id=1025886516]
 offset_left = 62.0
-offset_top = 0.0
 offset_right = 64.0
 offset_bottom = 210.0
 mouse_filter = 2
 color = Color(0.69412, 0.54118, 0.37647, 1)
 
-[node name="Center" type="ColorRect" parent="Runner"]
+[node name="Center" type="ColorRect" parent="Runner" unique_id=591492849]
 offset_left = 9.0
-offset_top = 0.0
 offset_right = 59.0
 offset_bottom = 210.0
 mouse_filter = 2
-color = Color(0.45098, 0.25882, 0.25490, 1)
+color = Color(0.45098, 0.25882, 0.2549, 1)
 
-[node name="NearA" type="ColorRect" parent="Runner"]
+[node name="NearA" type="ColorRect" parent="Runner" unique_id=1597171288]
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 59.0
 offset_bottom = 9.0
 mouse_filter = 2
-color = Color(0.60392, 0.40000, 0.32549, 1)
+color = Color(0.60392, 0.4, 0.32549, 1)
 
-[node name="NearB" type="ColorRect" parent="Runner"]
+[node name="NearB" type="ColorRect" parent="Runner" unique_id=1796763078]
 offset_left = 9.0
 offset_top = 15.0
 offset_right = 59.0
 offset_bottom = 17.0
 mouse_filter = 2
-color = Color(0.60392, 0.40000, 0.32549, 1)
+color = Color(0.60392, 0.4, 0.32549, 1)
 
-[node name="FarA" type="ColorRect" parent="Runner"]
+[node name="FarA" type="ColorRect" parent="Runner" unique_id=530126033]
 offset_left = 9.0
 offset_top = 192.0
 offset_right = 59.0
 offset_bottom = 194.0
 mouse_filter = 2
-color = Color(0.60392, 0.40000, 0.32549, 1)
+color = Color(0.60392, 0.4, 0.32549, 1)
 
-[node name="FarB" type="ColorRect" parent="Runner"]
+[node name="FarB" type="ColorRect" parent="Runner" unique_id=1170894824]
 offset_left = 9.0
 offset_top = 200.0
 offset_right = 59.0
 offset_bottom = 202.0
 mouse_filter = 2
-color = Color(0.60392, 0.40000, 0.32549, 1)
+color = Color(0.60392, 0.4, 0.32549, 1)
 
-[node name="Reception" type="Node2D" parent="."]
+[node name="Reception" type="Node2D" parent="." unique_id=261505085]
 position = Vector2(129, 145)
 
-[node name="CounterShadow" type="ColorRect" parent="Reception"]
+[node name="CounterShadow" type="ColorRect" parent="Reception" unique_id=1020513357]
 offset_left = -2.0
 offset_top = 12.0
 offset_right = 131.0
@@ -394,31 +387,28 @@ offset_bottom = 54.0
 mouse_filter = 2
 color = Color(0.38431, 0.30196, 0.23922, 0.4)
 
-[node name="CounterFace" type="ColorRect" parent="Reception"]
-offset_left = 0.0
+[node name="CounterFace" type="ColorRect" parent="Reception" unique_id=847039949]
 offset_top = 11.0
 offset_right = 128.0
 offset_bottom = 48.0
 mouse_filter = 2
 color = Color(0.40784, 0.28235, 0.21961, 1)
 
-[node name="CounterKick" type="ColorRect" parent="Reception"]
-offset_left = 0.0
+[node name="CounterKick" type="ColorRect" parent="Reception" unique_id=1052431290]
 offset_top = 44.0
 offset_right = 128.0
 offset_bottom = 48.0
 mouse_filter = 2
 color = Color(0.25098, 0.18039, 0.17255, 1)
 
-[node name="CounterTop" type="ColorRect" parent="Reception"]
+[node name="CounterTop" type="ColorRect" parent="Reception" unique_id=1458343372]
 offset_left = -3.0
-offset_top = 0.0
 offset_right = 131.0
 offset_bottom = 18.0
 mouse_filter = 2
-color = Color(0.69020, 0.51373, 0.32941, 1)
+color = Color(0.6902, 0.51373, 0.32941, 1)
 
-[node name="CounterLip" type="ColorRect" parent="Reception"]
+[node name="CounterLip" type="ColorRect" parent="Reception" unique_id=1770914040]
 offset_left = -3.0
 offset_top = 15.0
 offset_right = 131.0
@@ -426,26 +416,23 @@ offset_bottom = 19.0
 mouse_filter = 2
 color = Color(0.55686, 0.39608, 0.24314, 1)
 
-[node name="CounterHighlight" type="ColorRect" parent="Reception"]
+[node name="CounterHighlight" type="ColorRect" parent="Reception" unique_id=834211647]
 offset_left = -3.0
-offset_top = 0.0
 offset_right = 131.0
 offset_bottom = 2.0
 mouse_filter = 2
 color = Color(0.82745, 0.63137, 0.42353, 1)
 
-[node name="WestPanel" type="Node2D" parent="Reception"]
+[node name="WestPanel" type="Node2D" parent="Reception" unique_id=370411311]
 position = Vector2(8, 21)
 
-[node name="Recess" type="ColorRect" parent="Reception/WestPanel"]
-offset_left = 0.0
-offset_top = 0.0
+[node name="Recess" type="ColorRect" parent="Reception/WestPanel" unique_id=1416859174]
 offset_right = 32.0
 offset_bottom = 19.0
 mouse_filter = 2
 color = Color(0.30588, 0.21961, 0.19608, 1)
 
-[node name="Inset" type="ColorRect" parent="Reception/WestPanel"]
+[node name="Inset" type="ColorRect" parent="Reception/WestPanel" unique_id=436713125]
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 30.0
@@ -453,7 +440,7 @@ offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.47059, 0.32549, 0.23529, 1)
 
-[node name="PanelEdge" type="ColorRect" parent="Reception/WestPanel"]
+[node name="PanelEdge" type="ColorRect" parent="Reception/WestPanel" unique_id=452848777]
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 30.0
@@ -461,18 +448,16 @@ offset_bottom = 3.0
 mouse_filter = 2
 color = Color(0.58824, 0.43137, 0.30196, 1)
 
-[node name="CenterPanel" type="Node2D" parent="Reception"]
+[node name="CenterPanel" type="Node2D" parent="Reception" unique_id=1738977231]
 position = Vector2(48, 21)
 
-[node name="Recess" type="ColorRect" parent="Reception/CenterPanel"]
-offset_left = 0.0
-offset_top = 0.0
+[node name="Recess" type="ColorRect" parent="Reception/CenterPanel" unique_id=852090241]
 offset_right = 32.0
 offset_bottom = 19.0
 mouse_filter = 2
 color = Color(0.30588, 0.21961, 0.19608, 1)
 
-[node name="Inset" type="ColorRect" parent="Reception/CenterPanel"]
+[node name="Inset" type="ColorRect" parent="Reception/CenterPanel" unique_id=1779563140]
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 30.0
@@ -480,7 +465,7 @@ offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.47059, 0.32549, 0.23529, 1)
 
-[node name="PanelEdge" type="ColorRect" parent="Reception/CenterPanel"]
+[node name="PanelEdge" type="ColorRect" parent="Reception/CenterPanel" unique_id=1793110459]
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 30.0
@@ -488,18 +473,16 @@ offset_bottom = 3.0
 mouse_filter = 2
 color = Color(0.58824, 0.43137, 0.30196, 1)
 
-[node name="EastPanel" type="Node2D" parent="Reception"]
+[node name="EastPanel" type="Node2D" parent="Reception" unique_id=1643142718]
 position = Vector2(88, 21)
 
-[node name="Recess" type="ColorRect" parent="Reception/EastPanel"]
-offset_left = 0.0
-offset_top = 0.0
+[node name="Recess" type="ColorRect" parent="Reception/EastPanel" unique_id=1880911703]
 offset_right = 32.0
 offset_bottom = 19.0
 mouse_filter = 2
 color = Color(0.30588, 0.21961, 0.19608, 1)
 
-[node name="Inset" type="ColorRect" parent="Reception/EastPanel"]
+[node name="Inset" type="ColorRect" parent="Reception/EastPanel" unique_id=1493398142]
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 30.0
@@ -507,7 +490,7 @@ offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.47059, 0.32549, 0.23529, 1)
 
-[node name="PanelEdge" type="ColorRect" parent="Reception/EastPanel"]
+[node name="PanelEdge" type="ColorRect" parent="Reception/EastPanel" unique_id=406524582]
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 30.0
@@ -515,26 +498,23 @@ offset_bottom = 3.0
 mouse_filter = 2
 color = Color(0.58824, 0.43137, 0.30196, 1)
 
-[node name="Register" type="Node2D" parent="Reception"]
+[node name="Register" type="Node2D" parent="Reception" unique_id=462449103]
 position = Vector2(14, 3)
 
-[node name="Case" type="ColorRect" parent="Reception/Register"]
-offset_left = 0.0
-offset_top = 0.0
+[node name="Case" type="ColorRect" parent="Reception/Register" unique_id=157044059]
 offset_right = 19.0
 offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.28627, 0.26667, 0.28627, 1)
 
-[node name="Lid" type="ColorRect" parent="Reception/Register"]
+[node name="Lid" type="ColorRect" parent="Reception/Register" unique_id=1505897327]
 offset_left = 1.0
-offset_top = 0.0
 offset_right = 18.0
 offset_bottom = 2.0
 mouse_filter = 2
 color = Color(0.70588, 0.59608, 0.46667, 1)
 
-[node name="Drawer" type="ColorRect" parent="Reception/Register"]
+[node name="Drawer" type="ColorRect" parent="Reception/Register" unique_id=1256199627]
 offset_left = 4.0
 offset_top = 5.0
 offset_right = 16.0
@@ -542,18 +522,16 @@ offset_bottom = 6.0
 mouse_filter = 2
 color = Color(0.59216, 0.48627, 0.36863, 1)
 
-[node name="Ledger" type="Node2D" parent="Reception"]
+[node name="Ledger" type="Node2D" parent="Reception" unique_id=1645363561]
 position = Vector2(88, 3)
 
-[node name="Cover" type="ColorRect" parent="Reception/Ledger"]
-offset_left = 0.0
-offset_top = 0.0
+[node name="Cover" type="ColorRect" parent="Reception/Ledger" unique_id=197590809]
 offset_right = 20.0
 offset_bottom = 9.0
 mouse_filter = 2
-color = Color(0.39608, 0.26275, 0.29020, 1)
+color = Color(0.39608, 0.26275, 0.2902, 1)
 
-[node name="Pages" type="ColorRect" parent="Reception/Ledger"]
+[node name="Pages" type="ColorRect" parent="Reception/Ledger" unique_id=1885764334]
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 19.0
@@ -561,7 +539,7 @@ offset_bottom = 7.0
 mouse_filter = 2
 color = Color(0.87451, 0.77255, 0.58824, 1)
 
-[node name="Spine" type="ColorRect" parent="Reception/Ledger"]
+[node name="Spine" type="ColorRect" parent="Reception/Ledger" unique_id=124071500]
 offset_left = 9.0
 offset_top = 1.0
 offset_right = 11.0
@@ -569,12 +547,12 @@ offset_bottom = 7.0
 mouse_filter = 2
 color = Color(0.67059, 0.54902, 0.44706, 1)
 
-[node name="WaitingArea" type="Node2D" parent="."]
+[node name="WaitingArea" type="Node2D" parent="." unique_id=891564275]
 
-[node name="WindowBench" type="Node2D" parent="WaitingArea"]
+[node name="WindowBench" type="Node2D" parent="WaitingArea" unique_id=184022907]
 position = Vector2(394, 150)
 
-[node name="Shadow" type="ColorRect" parent="WaitingArea/WindowBench"]
+[node name="Shadow" type="ColorRect" parent="WaitingArea/WindowBench" unique_id=1854688277]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 112.0
@@ -582,31 +560,28 @@ offset_bottom = 48.0
 mouse_filter = 2
 color = Color(0.38431, 0.30196, 0.23922, 0.35)
 
-[node name="SeatFrame" type="ColorRect" parent="WaitingArea/WindowBench"]
-offset_left = 0.0
+[node name="SeatFrame" type="ColorRect" parent="WaitingArea/WindowBench" unique_id=877889527]
 offset_top = 3.0
 offset_right = 108.0
 offset_bottom = 36.0
 mouse_filter = 2
 color = Color(0.32157, 0.22353, 0.18431, 1)
 
-[node name="TopRail" type="ColorRect" parent="WaitingArea/WindowBench"]
-offset_left = 0.0
+[node name="TopRail" type="ColorRect" parent="WaitingArea/WindowBench" unique_id=1416012927]
 offset_top = 3.0
 offset_right = 108.0
 offset_bottom = 8.0
 mouse_filter = 2
-color = Color(0.56471, 0.40392, 0.25490, 1)
+color = Color(0.56471, 0.40392, 0.2549, 1)
 
-[node name="SeatBase" type="ColorRect" parent="WaitingArea/WindowBench"]
-offset_left = 0.0
+[node name="SeatBase" type="ColorRect" parent="WaitingArea/WindowBench" unique_id=1653743728]
 offset_top = 18.0
 offset_right = 108.0
 offset_bottom = 34.0
 mouse_filter = 2
-color = Color(0.40000, 0.32941, 0.27843, 1)
+color = Color(0.4, 0.32941, 0.27843, 1)
 
-[node name="SeatCushion" type="ColorRect" parent="WaitingArea/WindowBench"]
+[node name="SeatCushion" type="ColorRect" parent="WaitingArea/WindowBench" unique_id=1891858500]
 offset_left = 6.0
 offset_top = 19.0
 offset_right = 102.0
@@ -614,31 +589,31 @@ offset_bottom = 31.0
 mouse_filter = 2
 color = Color(0.29412, 0.36863, 0.38824, 1)
 
-[node name="SeatHighlight" type="ColorRect" parent="WaitingArea/WindowBench"]
+[node name="SeatHighlight" type="ColorRect" parent="WaitingArea/WindowBench" unique_id=191411923]
 offset_left = 7.0
 offset_top = 19.0
 offset_right = 101.0
 offset_bottom = 21.0
 mouse_filter = 2
-color = Color(0.43137, 0.49020, 0.49412, 1)
+color = Color(0.43137, 0.4902, 0.49412, 1)
 
-[node name="LegWest" type="ColorRect" parent="WaitingArea/WindowBench"]
+[node name="LegWest" type="ColorRect" parent="WaitingArea/WindowBench" unique_id=516115339]
 offset_left = 4.0
 offset_top = 33.0
 offset_right = 9.0
 offset_bottom = 44.0
 mouse_filter = 2
-color = Color(0.28627, 0.20000, 0.19216, 1)
+color = Color(0.28627, 0.2, 0.19216, 1)
 
-[node name="LegEast" type="ColorRect" parent="WaitingArea/WindowBench"]
+[node name="LegEast" type="ColorRect" parent="WaitingArea/WindowBench" unique_id=1207829663]
 offset_left = 99.0
 offset_top = 33.0
 offset_right = 104.0
 offset_bottom = 44.0
 mouse_filter = 2
-color = Color(0.28627, 0.20000, 0.19216, 1)
+color = Color(0.28627, 0.2, 0.19216, 1)
 
-[node name="DividerWest" type="ColorRect" parent="WaitingArea/WindowBench"]
+[node name="DividerWest" type="ColorRect" parent="WaitingArea/WindowBench" unique_id=870760602]
 offset_left = 36.0
 offset_top = 8.0
 offset_right = 38.0
@@ -646,7 +621,7 @@ offset_bottom = 31.0
 mouse_filter = 2
 color = Color(0.38431, 0.29412, 0.24314, 1)
 
-[node name="DividerEast" type="ColorRect" parent="WaitingArea/WindowBench"]
+[node name="DividerEast" type="ColorRect" parent="WaitingArea/WindowBench" unique_id=1539081629]
 offset_left = 70.0
 offset_top = 8.0
 offset_right = 72.0
@@ -654,10 +629,10 @@ offset_bottom = 31.0
 mouse_filter = 2
 color = Color(0.38431, 0.29412, 0.24314, 1)
 
-[node name="AisleBench" type="Node2D" parent="WaitingArea"]
+[node name="AisleBench" type="Node2D" parent="WaitingArea" unique_id=1107347006]
 position = Vector2(394, 227)
 
-[node name="Shadow" type="ColorRect" parent="WaitingArea/AisleBench"]
+[node name="Shadow" type="ColorRect" parent="WaitingArea/AisleBench" unique_id=186554167]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 112.0
@@ -665,31 +640,28 @@ offset_bottom = 48.0
 mouse_filter = 2
 color = Color(0.38431, 0.30196, 0.23922, 0.35)
 
-[node name="SeatFrame" type="ColorRect" parent="WaitingArea/AisleBench"]
-offset_left = 0.0
+[node name="SeatFrame" type="ColorRect" parent="WaitingArea/AisleBench" unique_id=766888037]
 offset_top = 3.0
 offset_right = 108.0
 offset_bottom = 36.0
 mouse_filter = 2
 color = Color(0.32157, 0.22353, 0.18431, 1)
 
-[node name="TopRail" type="ColorRect" parent="WaitingArea/AisleBench"]
-offset_left = 0.0
+[node name="TopRail" type="ColorRect" parent="WaitingArea/AisleBench" unique_id=1507059025]
 offset_top = 3.0
 offset_right = 108.0
 offset_bottom = 8.0
 mouse_filter = 2
-color = Color(0.56471, 0.40392, 0.25490, 1)
+color = Color(0.56471, 0.40392, 0.2549, 1)
 
-[node name="SeatBase" type="ColorRect" parent="WaitingArea/AisleBench"]
-offset_left = 0.0
+[node name="SeatBase" type="ColorRect" parent="WaitingArea/AisleBench" unique_id=1129182940]
 offset_top = 18.0
 offset_right = 108.0
 offset_bottom = 34.0
 mouse_filter = 2
-color = Color(0.40000, 0.32941, 0.27843, 1)
+color = Color(0.4, 0.32941, 0.27843, 1)
 
-[node name="SeatCushion" type="ColorRect" parent="WaitingArea/AisleBench"]
+[node name="SeatCushion" type="ColorRect" parent="WaitingArea/AisleBench" unique_id=1428225815]
 offset_left = 6.0
 offset_top = 19.0
 offset_right = 102.0
@@ -697,31 +669,31 @@ offset_bottom = 31.0
 mouse_filter = 2
 color = Color(0.29412, 0.36863, 0.38824, 1)
 
-[node name="SeatHighlight" type="ColorRect" parent="WaitingArea/AisleBench"]
+[node name="SeatHighlight" type="ColorRect" parent="WaitingArea/AisleBench" unique_id=1485303978]
 offset_left = 7.0
 offset_top = 19.0
 offset_right = 101.0
 offset_bottom = 21.0
 mouse_filter = 2
-color = Color(0.43137, 0.49020, 0.49412, 1)
+color = Color(0.43137, 0.4902, 0.49412, 1)
 
-[node name="LegWest" type="ColorRect" parent="WaitingArea/AisleBench"]
+[node name="LegWest" type="ColorRect" parent="WaitingArea/AisleBench" unique_id=1438435778]
 offset_left = 4.0
 offset_top = 33.0
 offset_right = 9.0
 offset_bottom = 44.0
 mouse_filter = 2
-color = Color(0.28627, 0.20000, 0.19216, 1)
+color = Color(0.28627, 0.2, 0.19216, 1)
 
-[node name="LegEast" type="ColorRect" parent="WaitingArea/AisleBench"]
+[node name="LegEast" type="ColorRect" parent="WaitingArea/AisleBench" unique_id=1220394381]
 offset_left = 99.0
 offset_top = 33.0
 offset_right = 104.0
 offset_bottom = 44.0
 mouse_filter = 2
-color = Color(0.28627, 0.20000, 0.19216, 1)
+color = Color(0.28627, 0.2, 0.19216, 1)
 
-[node name="DividerWest" type="ColorRect" parent="WaitingArea/AisleBench"]
+[node name="DividerWest" type="ColorRect" parent="WaitingArea/AisleBench" unique_id=608638968]
 offset_left = 36.0
 offset_top = 8.0
 offset_right = 38.0
@@ -729,7 +701,7 @@ offset_bottom = 31.0
 mouse_filter = 2
 color = Color(0.38431, 0.29412, 0.24314, 1)
 
-[node name="DividerEast" type="ColorRect" parent="WaitingArea/AisleBench"]
+[node name="DividerEast" type="ColorRect" parent="WaitingArea/AisleBench" unique_id=1008358402]
 offset_left = 70.0
 offset_top = 8.0
 offset_right = 72.0
@@ -737,10 +709,10 @@ offset_bottom = 31.0
 mouse_filter = 2
 color = Color(0.38431, 0.29412, 0.24314, 1)
 
-[node name="LeftCase" type="Node2D" parent="WaitingArea"]
+[node name="LeftCase" type="Node2D" parent="WaitingArea" unique_id=844151140]
 position = Vector2(158, 248)
 
-[node name="Shadow" type="ColorRect" parent="WaitingArea/LeftCase"]
+[node name="Shadow" type="ColorRect" parent="WaitingArea/LeftCase" unique_id=1947179542]
 offset_left = 2.0
 offset_top = 14.0
 offset_right = 31.0
@@ -748,31 +720,28 @@ offset_bottom = 22.0
 mouse_filter = 2
 color = Color(0.38039, 0.29804, 0.24706, 0.38)
 
-[node name="Handle" type="ColorRect" parent="WaitingArea/LeftCase"]
+[node name="Handle" type="ColorRect" parent="WaitingArea/LeftCase" unique_id=157377601]
 offset_left = 8.0
-offset_top = 0.0
 offset_right = 17.0
 offset_bottom = 4.0
 mouse_filter = 2
-color = Color(0.34510, 0.24314, 0.17647, 1)
+color = Color(0.3451, 0.24314, 0.17647, 1)
 
-[node name="Case" type="ColorRect" parent="WaitingArea/LeftCase"]
-offset_left = 0.0
+[node name="Case" type="ColorRect" parent="WaitingArea/LeftCase" unique_id=629916612]
 offset_top = 3.0
 offset_right = 27.0
 offset_bottom = 20.0
 mouse_filter = 2
-color = Color(0.50980, 0.36471, 0.23922, 1)
+color = Color(0.5098, 0.36471, 0.23922, 1)
 
-[node name="Top" type="ColorRect" parent="WaitingArea/LeftCase"]
-offset_left = 0.0
+[node name="Top" type="ColorRect" parent="WaitingArea/LeftCase" unique_id=1676689483]
 offset_top = 3.0
 offset_right = 27.0
 offset_bottom = 6.0
 mouse_filter = 2
 color = Color(0.64706, 0.48627, 0.32157, 1)
 
-[node name="StrapWest" type="ColorRect" parent="WaitingArea/LeftCase"]
+[node name="StrapWest" type="ColorRect" parent="WaitingArea/LeftCase" unique_id=1525129156]
 offset_left = 4.0
 offset_top = 3.0
 offset_right = 6.0
@@ -780,7 +749,7 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.32941, 0.25098, 0.19216, 1)
 
-[node name="StrapEast" type="ColorRect" parent="WaitingArea/LeftCase"]
+[node name="StrapEast" type="ColorRect" parent="WaitingArea/LeftCase" unique_id=328009917]
 offset_left = 20.0
 offset_top = 3.0
 offset_right = 22.0
@@ -788,7 +757,7 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.32941, 0.25098, 0.19216, 1)
 
-[node name="Clasp" type="ColorRect" parent="WaitingArea/LeftCase"]
+[node name="Clasp" type="ColorRect" parent="WaitingArea/LeftCase" unique_id=1063114445]
 offset_left = 11.0
 offset_top = 6.0
 offset_right = 15.0
@@ -796,10 +765,10 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.86667, 0.72941, 0.46667, 1)
 
-[node name="RightCase" type="Node2D" parent="WaitingArea"]
+[node name="RightCase" type="Node2D" parent="WaitingArea" unique_id=740170719]
 position = Vector2(182, 257)
 
-[node name="Shadow" type="ColorRect" parent="WaitingArea/RightCase"]
+[node name="Shadow" type="ColorRect" parent="WaitingArea/RightCase" unique_id=1385450164]
 offset_left = 2.0
 offset_top = 14.0
 offset_right = 31.0
@@ -807,31 +776,28 @@ offset_bottom = 22.0
 mouse_filter = 2
 color = Color(0.38039, 0.29804, 0.24706, 0.38)
 
-[node name="Handle" type="ColorRect" parent="WaitingArea/RightCase"]
+[node name="Handle" type="ColorRect" parent="WaitingArea/RightCase" unique_id=274125767]
 offset_left = 8.0
-offset_top = 0.0
 offset_right = 17.0
 offset_bottom = 4.0
 mouse_filter = 2
-color = Color(0.34510, 0.24314, 0.17647, 1)
+color = Color(0.3451, 0.24314, 0.17647, 1)
 
-[node name="Case" type="ColorRect" parent="WaitingArea/RightCase"]
-offset_left = 0.0
+[node name="Case" type="ColorRect" parent="WaitingArea/RightCase" unique_id=1133448036]
 offset_top = 3.0
 offset_right = 27.0
 offset_bottom = 20.0
 mouse_filter = 2
-color = Color(0.50980, 0.36471, 0.23922, 1)
+color = Color(0.5098, 0.36471, 0.23922, 1)
 
-[node name="Top" type="ColorRect" parent="WaitingArea/RightCase"]
-offset_left = 0.0
+[node name="Top" type="ColorRect" parent="WaitingArea/RightCase" unique_id=550839421]
 offset_top = 3.0
 offset_right = 27.0
 offset_bottom = 6.0
 mouse_filter = 2
 color = Color(0.64706, 0.48627, 0.32157, 1)
 
-[node name="StrapWest" type="ColorRect" parent="WaitingArea/RightCase"]
+[node name="StrapWest" type="ColorRect" parent="WaitingArea/RightCase" unique_id=1698458145]
 offset_left = 4.0
 offset_top = 3.0
 offset_right = 6.0
@@ -839,7 +805,7 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.32941, 0.25098, 0.19216, 1)
 
-[node name="StrapEast" type="ColorRect" parent="WaitingArea/RightCase"]
+[node name="StrapEast" type="ColorRect" parent="WaitingArea/RightCase" unique_id=1874829507]
 offset_left = 20.0
 offset_top = 3.0
 offset_right = 22.0
@@ -847,7 +813,7 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.32941, 0.25098, 0.19216, 1)
 
-[node name="Clasp" type="ColorRect" parent="WaitingArea/RightCase"]
+[node name="Clasp" type="ColorRect" parent="WaitingArea/RightCase" unique_id=1491027665]
 offset_left = 11.0
 offset_top = 6.0
 offset_right = 15.0
@@ -855,7 +821,7 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.86667, 0.72941, 0.46667, 1)
 
-[node name="Threshold" type="ColorRect" parent="."]
+[node name="Threshold" type="ColorRect" parent="." unique_id=1631134581]
 offset_left = 286.0
 offset_top = 326.0
 offset_right = 354.0
@@ -863,28 +829,28 @@ offset_bottom = 331.0
 mouse_filter = 2
 color = Color(0.41961, 0.37255, 0.34902, 1)
 
-[node name="ThresholdTrim" type="ColorRect" parent="."]
+[node name="ThresholdTrim" type="ColorRect" parent="." unique_id=1693427501]
 offset_left = 286.0
 offset_top = 326.0
 offset_right = 354.0
 offset_bottom = 327.0
 mouse_filter = 2
-color = Color(0.64314, 0.58824, 0.49020, 1)
+color = Color(0.64314, 0.58824, 0.4902, 1)
 
-[node name="Interface" type="CanvasLayer" parent="."]
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1518498218]
 
-[node name="QuestButton" type="Button" parent="Interface"]
+[node name="QuestButton" type="Button" parent="Interface" unique_id=252148346]
 unique_name_in_owner = true
 offset_left = 24.0
 offset_top = 72.0
 offset_right = 116.0
 offset_bottom = 100.0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.93, 0.85, 0.70, 1)
+theme_override_colors/font_color = Color(0.93, 0.85, 0.7, 1)
 theme_override_font_sizes/font_size = 14
 text = "飞艇委托"
 
-[node name="Researcher" parent="Interface" instance=ExtResource("4_actor")]
+[node name="Researcher" parent="Interface" unique_id=1080114130 instance=ExtResource("4_actor")]
 unique_name_in_owner = true
 offset_left = 296.0
 offset_top = 183.0
@@ -893,8 +859,30 @@ offset_bottom = 231.0
 texture = SubResource("ResearcherIdle")
 display_name = "年轻研究者"
 
-[node name="FacilityHUD" parent="Interface" instance=ExtResource("3_hud")]
+[node name="FacilityHUD" parent="Interface" unique_id=426609359 instance=ExtResource("3_hud")]
 facility_title = "空港站房"
-title_color = Color(0.93333, 0.85490, 0.70980, 1)
+title_color = Color(0.93333, 0.8549, 0.7098, 1)
 detail_color = Color(0.69412, 0.60392, 0.46275, 1)
 
+[node name="ActorLayer" type="Node2D" parent="." unique_id=972310380]
+
+[node name="NpcRoute" type="Node2D" parent="ActorLayer" unique_id=36831618]
+script = ExtResource("8_jy0sj")
+speed = null
+
+[node name="W0" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=2027042358]
+position = Vector2(270, 300)
+
+[node name="W1" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=1208037252]
+position = Vector2(370, 300)
+
+[node name="W2" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=72361360]
+position = Vector2(515, 122)
+
+[node name="W3" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=678297364]
+position = Vector2(191, 137)
+
+[node name="NpcActor" parent="ActorLayer" unique_id=1007591517 instance=ExtResource("9_qkjlv")]
+position = Vector2(270, 300)
+scale = Vector2(3, 3)
+route = NodePath("../NpcRoute")

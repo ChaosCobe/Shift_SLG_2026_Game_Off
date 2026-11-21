@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://xjkwr37yhohd"]
+
+[ext_resource type="Script" uid="uid://ccwujlb4l1fxa" path="res://actors/npc_actor.gd" id="1_q872c"]
+[ext_resource type="SpriteFrames" uid="uid://dlfxt153pa2jf" path="res://actors/placeholder_walk.tres" id="2_gx85x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v22pm"]
+size = Vector2(16, 16)
+
+[node name="NpcActor" type="CharacterBody2D" unique_id=1007591517]
+motion_mode = 1
+script = ExtResource("1_q872c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=799621]
+sprite_frames = ExtResource("2_gx85x")
+animation = &"idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=625879407]
+shape = SubResource("RectangleShape2D_v22pm")

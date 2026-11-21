@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://uurphrm6mmjf"]
+
+[ext_resource type="Texture2D" uid="uid://c47a4rrgq25t0" path="res://assets/map/surface_map.png" id="1_vu2fp"]
+[ext_resource type="PackedScene" uid="uid://xjkwr37yhohd" path="res://actors/npc_actor.tscn" id="2_4qjdu"]
+[ext_resource type="Script" uid="uid://du74vfixbml2y" path="res://actors/npc_route.gd" id="3_route"]
+
+[node name="NpcDemo" type="Node2D" unique_id=996414262]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=385593766]
+position = Vector2(-2, -15)
+texture = ExtResource("1_vu2fp")
+centered = false
+
+[node name="NpcRoute" type="Node2D" parent="." unique_id=1100562395]
+script = ExtResource("3_route")
+
+[node name="W0" type="Marker2D" parent="NpcRoute" unique_id=2084580204]
+position = Vector2(165, 165)
+
+[node name="W1" type="Marker2D" parent="NpcRoute" unique_id=1628609119]
+position = Vector2(166, 197)
+
+[node name="W2" type="Marker2D" parent="NpcRoute" unique_id=1293465044]
+position = Vector2(463, 197)
+
+[node name="W3" type="Marker2D" parent="NpcRoute" unique_id=361229071]
+position = Vector2(463, 168)
+
+[node name="NpcActor" parent="." unique_id=1007591517 instance=ExtResource("2_4qjdu")]
+position = Vector2(168, 166)
+scale = Vector2(2, 2)
+route = NodePath("../NpcRoute")

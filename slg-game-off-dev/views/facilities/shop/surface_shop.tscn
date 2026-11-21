@@ -1,2054 +1,2000 @@
-[gd_scene format=3]
+[gd_scene format=4]
 
 [ext_resource type="Script" path="res://views/facilities/facility_room.gd" id="1_room"]
 [ext_resource type="TileSet" path="res://assets/tilesets/station_floors.tres" id="2_floor"]
 [ext_resource type="PackedScene" path="res://views/facilities/facility_hud.tscn" id="3_hud"]
+[ext_resource type="Script" path="res://views/facilities/facility_hud.gd" id="4_m113o"]
+[ext_resource type="Script" path="res://actors/npc_route.gd" id="5_wr0ul"]
+[ext_resource type="PackedScene" path="res://actors/npc_actor.tscn" id="6_rxtfm"]
+[ext_resource type="Script" path="res://actors/npc_actor.gd" id="7_tbcxo"]
 
-[node name="SurfaceShop" type="Node2D"]
+[node name="SurfaceShop" type="Node2D" unique_id=853610819]
 texture_filter = 1
 script = ExtResource("1_room")
 facility_id = &"shop"
-world = 0
 
-[node name="Backdrop" type="ColorRect" parent="."]
-offset_left = 0
-offset_top = 0
-offset_right = 640
-offset_bottom = 360
+[node name="Backdrop" type="ColorRect" parent="." unique_id=728729528]
+offset_right = 640.0
+offset_bottom = 360.0
 mouse_filter = 2
-color = Color(0.1294, 0.1176, 0.1529, 1.0000)
+color = Color(0.1294, 0.1176, 0.1529, 1)
 
-[node name="RoomShadow" type="ColorRect" parent="."]
-offset_left = 87
-offset_top = 99
-offset_right = 553
-offset_bottom = 329
+[node name="RoomShadow" type="ColorRect" parent="." unique_id=1625949142]
+offset_left = 87.0
+offset_top = 99.0
+offset_right = 553.0
+offset_bottom = 329.0
 mouse_filter = 2
-color = Color(0.0902, 0.0863, 0.1294, 1.0000)
+color = Color(0.0902, 0.0863, 0.1294, 1)
 
-[node name="TiledFloor" type="TileMapLayer" parent="."]
+[node name="TiledFloor" type="TileMapLayer" parent="." unique_id=419989518]
+modulate = Color(0.898, 0.6902, 0.5294, 1)
 position = Vector2(96, 100)
 scale = Vector2(2, 2)
-modulate = Color(0.8980, 0.6902, 0.5294, 1.0000)
+tile_map_data = PackedByteArray("AAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAAMAAAAAAADAAAAAAAMAAAAAAAEAAAAAAAMAAAAAAAFAAAAAAAMAAAAAAAGAAAAAAAMAAAAAAAHAAAAAAAMAAAAAAAIAAAAAAAMAAAAAAAJAAAAAAAMAAAAAAAKAAAAAAAMAAAAAAALAAAAAAAMAAAAAAAMAAAAAAAMAAAAAAANAAAAAAANAAAAAAAAAAEAAAALAAEAAAABAAEAAAAMAAEAAAACAAEAAAAMAAEAAAADAAEAAAAMAAEAAAAEAAEAAAAMAAEAAAAFAAEAAAAMAAEAAAAGAAEAAAAMAAEAAAAHAAEAAAAMAAEAAAAIAAEAAAAMAAEAAAAJAAEAAAAMAAEAAAAKAAEAAAAMAAEAAAALAAEAAAAMAAEAAAAMAAEAAAAMAAEAAAANAAEAAAANAAEAAAAAAAIAAAALAAEAAAABAAIAAAAMAAEAAAACAAIAAAAMAAEAAAADAAIAAAAMAAEAAAAEAAIAAAAMAAEAAAAFAAIAAAAMAAEAAAAGAAIAAAAMAAEAAAAHAAIAAAAMAAEAAAAIAAIAAAAMAAEAAAAJAAIAAAAMAAEAAAAKAAIAAAAMAAEAAAALAAIAAAAMAAEAAAAMAAIAAAAMAAEAAAANAAIAAAANAAEAAAAAAAMAAAALAAEAAAABAAMAAAAMAAEAAAACAAMAAAAMAAEAAAADAAMAAAAMAAEAAAAEAAMAAAAMAAEAAAAFAAMAAAAMAAEAAAAGAAMAAAAMAAEAAAAHAAMAAAAMAAEAAAAIAAMAAAAMAAEAAAAJAAMAAAAMAAEAAAAKAAMAAAAMAAEAAAALAAMAAAAMAAEAAAAMAAMAAAAMAAEAAAANAAMAAAANAAEAAAAAAAQAAAALAAEAAAABAAQAAAAMAAEAAAACAAQAAAAMAAEAAAADAAQAAAAMAAEAAAAEAAQAAAAMAAEAAAAFAAQAAAAMAAEAAAAGAAQAAAAMAAEAAAAHAAQAAAAMAAEAAAAIAAQAAAAMAAEAAAAJAAQAAAAMAAEAAAAKAAQAAAAMAAEAAAALAAQAAAAMAAEAAAAMAAQAAAAMAAEAAAANAAQAAAANAAEAAAAAAAUAAAALAAEAAAABAAUAAAAMAAEAAAACAAUAAAAMAAEAAAADAAUAAAAMAAEAAAAEAAUAAAAMAAEAAAAFAAUAAAAMAAEAAAAGAAUAAAAMAAEAAAAHAAUAAAAMAAEAAAAIAAUAAAAMAAEAAAAJAAUAAAAMAAEAAAAKAAUAAAAMAAEAAAALAAUAAAAMAAEAAAAMAAUAAAAMAAEAAAANAAUAAAANAAEAAAAAAAYAAAALAAIAAAABAAYAAAAMAAIAAAACAAYAAAAMAAIAAAADAAYAAAAMAAIAAAAEAAYAAAAMAAIAAAAFAAYAAAAMAAIAAAAGAAYAAAAMAAIAAAAHAAYAAAAMAAIAAAAIAAYAAAAMAAIAAAAJAAYAAAAMAAIAAAAKAAYAAAAMAAIAAAALAAYAAAAMAAIAAAAMAAYAAAAMAAIAAAANAAYAAAANAAIAAAA=")
 tile_set = ExtResource("2_floor")
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 1, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 2, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 2, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 3, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 3, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 4, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 4, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 4, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 5, 0, 0, 0, 11, 0, 1, 0, 0, 0, 1, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 2, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 3, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 4, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 5, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 6, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 7, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 8, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 9, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 10, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 11, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 12, 0, 5, 0, 0, 0, 12, 0, 1, 0, 0, 0, 13, 0, 5, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 6, 0, 0, 0, 11, 0, 2, 0, 0, 0, 1, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 2, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 3, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 4, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 5, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 6, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 7, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 8, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 9, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 10, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 11, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 12, 0, 6, 0, 0, 0, 12, 0, 2, 0, 0, 0, 13, 0, 6, 0, 0, 0, 13, 0, 2, 0, 0, 0)
 
-[node name="BackWall" type="Node2D" parent="."]
+[node name="BackWall" type="Node2D" parent="." unique_id=1895399464]
 
-[node name="Wainscot" type="Polygon2D" parent="BackWall"]
-color = Color(0.2941, 0.1843, 0.2000, 1.0000)
+[node name="Wainscot" type="Polygon2D" parent="BackWall" unique_id=1758392362]
+color = Color(0.2941, 0.1843, 0.2, 1)
 polygon = PackedVector2Array(92, 104, 92, 72, 113, 61, 527, 61, 548, 72, 548, 104)
 
-[node name="Frieze" type="ColorRect" parent="BackWall"]
-offset_left = 113
-offset_top = 61
-offset_right = 527
-offset_bottom = 66
+[node name="Frieze" type="ColorRect" parent="BackWall" unique_id=635968117]
+offset_left = 113.0
+offset_top = 61.0
+offset_right = 527.0
+offset_bottom = 66.0
 mouse_filter = 2
-color = Color(0.6706, 0.4667, 0.3490, 1.0000)
+color = Color(0.6706, 0.4667, 0.349, 1)
 
-[node name="Trim" type="ColorRect" parent="BackWall"]
-offset_left = 92
-offset_top = 101
-offset_right = 548
-offset_bottom = 105
+[node name="Trim" type="ColorRect" parent="BackWall" unique_id=1625349295]
+offset_left = 92.0
+offset_top = 101.0
+offset_right = 548.0
+offset_bottom = 105.0
 mouse_filter = 2
-color = Color(0.7529, 0.5765, 0.4039, 1.0000)
+color = Color(0.7529, 0.5765, 0.4039, 1)
 
-[node name="WallStripe01" type="ColorRect" parent="BackWall"]
-offset_left = 105
-offset_top = 72
-offset_right = 108
-offset_bottom = 99
+[node name="WallStripe01" type="ColorRect" parent="BackWall" unique_id=931633890]
+offset_left = 105.0
+offset_top = 72.0
+offset_right = 108.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe02" type="ColorRect" parent="BackWall"]
-offset_left = 129
-offset_top = 72
-offset_right = 132
-offset_bottom = 99
+[node name="WallStripe02" type="ColorRect" parent="BackWall" unique_id=9453337]
+offset_left = 129.0
+offset_top = 72.0
+offset_right = 132.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe03" type="ColorRect" parent="BackWall"]
-offset_left = 153
-offset_top = 72
-offset_right = 156
-offset_bottom = 99
+[node name="WallStripe03" type="ColorRect" parent="BackWall" unique_id=1476740645]
+offset_left = 153.0
+offset_top = 72.0
+offset_right = 156.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe04" type="ColorRect" parent="BackWall"]
-offset_left = 177
-offset_top = 72
-offset_right = 180
-offset_bottom = 99
+[node name="WallStripe04" type="ColorRect" parent="BackWall" unique_id=2084840040]
+offset_left = 177.0
+offset_top = 72.0
+offset_right = 180.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe05" type="ColorRect" parent="BackWall"]
-offset_left = 201
-offset_top = 72
-offset_right = 204
-offset_bottom = 99
+[node name="WallStripe05" type="ColorRect" parent="BackWall" unique_id=77031882]
+offset_left = 201.0
+offset_top = 72.0
+offset_right = 204.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe06" type="ColorRect" parent="BackWall"]
-offset_left = 225
-offset_top = 72
-offset_right = 228
-offset_bottom = 99
+[node name="WallStripe06" type="ColorRect" parent="BackWall" unique_id=1491409528]
+offset_left = 225.0
+offset_top = 72.0
+offset_right = 228.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe07" type="ColorRect" parent="BackWall"]
-offset_left = 249
-offset_top = 72
-offset_right = 252
-offset_bottom = 99
+[node name="WallStripe07" type="ColorRect" parent="BackWall" unique_id=750100269]
+offset_left = 249.0
+offset_top = 72.0
+offset_right = 252.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe08" type="ColorRect" parent="BackWall"]
-offset_left = 273
-offset_top = 72
-offset_right = 276
-offset_bottom = 99
+[node name="WallStripe08" type="ColorRect" parent="BackWall" unique_id=1855384632]
+offset_left = 273.0
+offset_top = 72.0
+offset_right = 276.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe09" type="ColorRect" parent="BackWall"]
-offset_left = 297
-offset_top = 72
-offset_right = 300
-offset_bottom = 99
+[node name="WallStripe09" type="ColorRect" parent="BackWall" unique_id=186244048]
+offset_left = 297.0
+offset_top = 72.0
+offset_right = 300.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe10" type="ColorRect" parent="BackWall"]
-offset_left = 321
-offset_top = 72
-offset_right = 324
-offset_bottom = 99
+[node name="WallStripe10" type="ColorRect" parent="BackWall" unique_id=1647738180]
+offset_left = 321.0
+offset_top = 72.0
+offset_right = 324.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe11" type="ColorRect" parent="BackWall"]
-offset_left = 345
-offset_top = 72
-offset_right = 348
-offset_bottom = 99
+[node name="WallStripe11" type="ColorRect" parent="BackWall" unique_id=2085758626]
+offset_left = 345.0
+offset_top = 72.0
+offset_right = 348.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe12" type="ColorRect" parent="BackWall"]
-offset_left = 369
-offset_top = 72
-offset_right = 372
-offset_bottom = 99
+[node name="WallStripe12" type="ColorRect" parent="BackWall" unique_id=631592964]
+offset_left = 369.0
+offset_top = 72.0
+offset_right = 372.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe13" type="ColorRect" parent="BackWall"]
-offset_left = 393
-offset_top = 72
-offset_right = 396
-offset_bottom = 99
+[node name="WallStripe13" type="ColorRect" parent="BackWall" unique_id=1232803809]
+offset_left = 393.0
+offset_top = 72.0
+offset_right = 396.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe14" type="ColorRect" parent="BackWall"]
-offset_left = 417
-offset_top = 72
-offset_right = 420
-offset_bottom = 99
+[node name="WallStripe14" type="ColorRect" parent="BackWall" unique_id=1005169690]
+offset_left = 417.0
+offset_top = 72.0
+offset_right = 420.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe15" type="ColorRect" parent="BackWall"]
-offset_left = 441
-offset_top = 72
-offset_right = 444
-offset_bottom = 99
+[node name="WallStripe15" type="ColorRect" parent="BackWall" unique_id=639378492]
+offset_left = 441.0
+offset_top = 72.0
+offset_right = 444.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe16" type="ColorRect" parent="BackWall"]
-offset_left = 465
-offset_top = 72
-offset_right = 468
-offset_bottom = 99
+[node name="WallStripe16" type="ColorRect" parent="BackWall" unique_id=1142479516]
+offset_left = 465.0
+offset_top = 72.0
+offset_right = 468.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe17" type="ColorRect" parent="BackWall"]
-offset_left = 489
-offset_top = 72
-offset_right = 492
-offset_bottom = 99
+[node name="WallStripe17" type="ColorRect" parent="BackWall" unique_id=256239319]
+offset_left = 489.0
+offset_top = 72.0
+offset_right = 492.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="WallStripe18" type="ColorRect" parent="BackWall"]
-offset_left = 513
-offset_top = 72
-offset_right = 516
-offset_bottom = 99
+[node name="WallStripe18" type="ColorRect" parent="BackWall" unique_id=325898685]
+offset_left = 513.0
+offset_top = 72.0
+offset_right = 516.0
+offset_bottom = 99.0
 mouse_filter = 2
-color = Color(0.4118, 0.2549, 0.2706, 1.0000)
+color = Color(0.4118, 0.2549, 0.2706, 1)
 
-[node name="BrassLamp1" type="Node2D" parent="BackWall"]
+[node name="BrassLamp1" type="Node2D" parent="BackWall" unique_id=1042126941]
 position = Vector2(108, 79)
 
-[node name="Case" type="ColorRect" parent="BackWall/BrassLamp1"]
-offset_left = 0
-offset_top = 0
-offset_right = 18
-offset_bottom = 15
+[node name="Case" type="ColorRect" parent="BackWall/BrassLamp1" unique_id=356697421]
+offset_right = 18.0
+offset_bottom = 15.0
 mouse_filter = 2
-color = Color(0.2275, 0.1529, 0.1765, 1.0000)
+color = Color(0.2275, 0.1529, 0.1765, 1)
 
-[node name="Glow" type="ColorRect" parent="BackWall/BrassLamp1"]
-offset_left = 3
-offset_top = 3
-offset_right = 15
-offset_bottom = 11
+[node name="Glow" type="ColorRect" parent="BackWall/BrassLamp1" unique_id=2075294596]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 15.0
+offset_bottom = 11.0
 mouse_filter = 2
-color = Color(0.9216, 0.6824, 0.4039, 1.0000)
+color = Color(0.9216, 0.6824, 0.4039, 1)
 
-[node name="Glass" type="ColorRect" parent="BackWall/BrassLamp1"]
-offset_left = 7
-offset_top = 4
-offset_right = 12
-offset_bottom = 10
+[node name="Glass" type="ColorRect" parent="BackWall/BrassLamp1" unique_id=2095697502]
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 12.0
+offset_bottom = 10.0
 mouse_filter = 2
-color = Color(1.0000, 0.8784, 0.6275, 1.0000)
+color = Color(1, 0.8784, 0.6275, 1)
 
-[node name="Rim" type="ColorRect" parent="BackWall/BrassLamp1"]
-offset_left = 0
-offset_top = 12
-offset_right = 18
-offset_bottom = 15
+[node name="Rim" type="ColorRect" parent="BackWall/BrassLamp1" unique_id=1476905081]
+offset_top = 12.0
+offset_right = 18.0
+offset_bottom = 15.0
 mouse_filter = 2
-color = Color(0.6784, 0.4706, 0.3333, 1.0000)
+color = Color(0.6784, 0.4706, 0.3333, 1)
 
-[node name="BrassLamp2" type="Node2D" parent="BackWall"]
+[node name="BrassLamp2" type="Node2D" parent="BackWall" unique_id=995994831]
 position = Vector2(306, 79)
 
-[node name="Case" type="ColorRect" parent="BackWall/BrassLamp2"]
-offset_left = 0
-offset_top = 0
-offset_right = 18
-offset_bottom = 15
+[node name="Case" type="ColorRect" parent="BackWall/BrassLamp2" unique_id=1720404171]
+offset_right = 18.0
+offset_bottom = 15.0
 mouse_filter = 2
-color = Color(0.2275, 0.1529, 0.1765, 1.0000)
+color = Color(0.2275, 0.1529, 0.1765, 1)
 
-[node name="Glow" type="ColorRect" parent="BackWall/BrassLamp2"]
-offset_left = 3
-offset_top = 3
-offset_right = 15
-offset_bottom = 11
+[node name="Glow" type="ColorRect" parent="BackWall/BrassLamp2" unique_id=1884337123]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 15.0
+offset_bottom = 11.0
 mouse_filter = 2
-color = Color(0.9216, 0.6824, 0.4039, 1.0000)
+color = Color(0.9216, 0.6824, 0.4039, 1)
 
-[node name="Glass" type="ColorRect" parent="BackWall/BrassLamp2"]
-offset_left = 7
-offset_top = 4
-offset_right = 12
-offset_bottom = 10
+[node name="Glass" type="ColorRect" parent="BackWall/BrassLamp2" unique_id=992692227]
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 12.0
+offset_bottom = 10.0
 mouse_filter = 2
-color = Color(1.0000, 0.8784, 0.6275, 1.0000)
+color = Color(1, 0.8784, 0.6275, 1)
 
-[node name="Rim" type="ColorRect" parent="BackWall/BrassLamp2"]
-offset_left = 0
-offset_top = 12
-offset_right = 18
-offset_bottom = 15
+[node name="Rim" type="ColorRect" parent="BackWall/BrassLamp2" unique_id=1083411958]
+offset_top = 12.0
+offset_right = 18.0
+offset_bottom = 15.0
 mouse_filter = 2
-color = Color(0.6784, 0.4706, 0.3333, 1.0000)
+color = Color(0.6784, 0.4706, 0.3333, 1)
 
-[node name="BrassLamp3" type="Node2D" parent="BackWall"]
+[node name="BrassLamp3" type="Node2D" parent="BackWall" unique_id=673457731]
 position = Vector2(508, 79)
 
-[node name="Case" type="ColorRect" parent="BackWall/BrassLamp3"]
-offset_left = 0
-offset_top = 0
-offset_right = 18
-offset_bottom = 15
+[node name="Case" type="ColorRect" parent="BackWall/BrassLamp3" unique_id=498253925]
+offset_right = 18.0
+offset_bottom = 15.0
 mouse_filter = 2
-color = Color(0.2275, 0.1529, 0.1765, 1.0000)
+color = Color(0.2275, 0.1529, 0.1765, 1)
 
-[node name="Glow" type="ColorRect" parent="BackWall/BrassLamp3"]
-offset_left = 3
-offset_top = 3
-offset_right = 15
-offset_bottom = 11
+[node name="Glow" type="ColorRect" parent="BackWall/BrassLamp3" unique_id=447918989]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 15.0
+offset_bottom = 11.0
 mouse_filter = 2
-color = Color(0.9216, 0.6824, 0.4039, 1.0000)
+color = Color(0.9216, 0.6824, 0.4039, 1)
 
-[node name="Glass" type="ColorRect" parent="BackWall/BrassLamp3"]
-offset_left = 7
-offset_top = 4
-offset_right = 12
-offset_bottom = 10
+[node name="Glass" type="ColorRect" parent="BackWall/BrassLamp3" unique_id=1015529719]
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 12.0
+offset_bottom = 10.0
 mouse_filter = 2
-color = Color(1.0000, 0.8784, 0.6275, 1.0000)
+color = Color(1, 0.8784, 0.6275, 1)
 
-[node name="Rim" type="ColorRect" parent="BackWall/BrassLamp3"]
-offset_left = 0
-offset_top = 12
-offset_right = 18
-offset_bottom = 15
+[node name="Rim" type="ColorRect" parent="BackWall/BrassLamp3" unique_id=1114719001]
+offset_top = 12.0
+offset_right = 18.0
+offset_bottom = 15.0
 mouse_filter = 2
-color = Color(0.6784, 0.4706, 0.3333, 1.0000)
+color = Color(0.6784, 0.4706, 0.3333, 1)
 
-[node name="Stock" type="Node2D" parent="."]
+[node name="Stock" type="Node2D" parent="." unique_id=573341242]
 
-[node name="PantryShelf" type="Node2D" parent="Stock"]
+[node name="PantryShelf" type="Node2D" parent="Stock" unique_id=1471125812]
 position = Vector2(109, 113)
 
-[node name="Shadow" type="ColorRect" parent="Stock/PantryShelf"]
-offset_left = -2
-offset_top = 8
-offset_right = 124
-offset_bottom = 90
+[node name="Shadow" type="ColorRect" parent="Stock/PantryShelf" unique_id=1321340117]
+offset_left = -2.0
+offset_top = 8.0
+offset_right = 124.0
+offset_bottom = 90.0
 mouse_filter = 2
 color = Color(0.0902, 0.0902, 0.1294, 0.5647)
 
-[node name="Cabinet" type="ColorRect" parent="Stock/PantryShelf"]
-offset_left = 0
-offset_top = 0
-offset_right = 120
-offset_bottom = 83
+[node name="Cabinet" type="ColorRect" parent="Stock/PantryShelf" unique_id=1866425563]
+offset_right = 120.0
+offset_bottom = 83.0
 mouse_filter = 2
-color = Color(0.3255, 0.2157, 0.1843, 1.0000)
+color = Color(0.3255, 0.2157, 0.1843, 1)
 
-[node name="Recess" type="ColorRect" parent="Stock/PantryShelf"]
-offset_left = 5
-offset_top = 7
-offset_right = 115
-offset_bottom = 70
+[node name="Recess" type="ColorRect" parent="Stock/PantryShelf" unique_id=923145785]
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 115.0
+offset_bottom = 70.0
 mouse_filter = 2
-color = Color(0.2039, 0.1451, 0.1569, 1.0000)
+color = Color(0.2039, 0.1451, 0.1569, 1)
 
-[node name="TopLip" type="ColorRect" parent="Stock/PantryShelf"]
-offset_left = 0
-offset_top = 0
-offset_right = 120
-offset_bottom = 5
+[node name="TopLip" type="ColorRect" parent="Stock/PantryShelf" unique_id=605499987]
+offset_right = 120.0
+offset_bottom = 5.0
 mouse_filter = 2
-color = Color(0.6902, 0.4745, 0.3176, 1.0000)
+color = Color(0.6902, 0.4745, 0.3176, 1)
 
-[node name="MiddleShelf" type="ColorRect" parent="Stock/PantryShelf"]
-offset_left = 5
-offset_top = 38
-offset_right = 115
-offset_bottom = 43
+[node name="MiddleShelf" type="ColorRect" parent="Stock/PantryShelf" unique_id=766478842]
+offset_left = 5.0
+offset_top = 38.0
+offset_right = 115.0
+offset_bottom = 43.0
 mouse_filter = 2
-color = Color(0.5137, 0.3255, 0.2392, 1.0000)
+color = Color(0.5137, 0.3255, 0.2392, 1)
 
-[node name="BottomLip" type="ColorRect" parent="Stock/PantryShelf"]
-offset_left = 0
-offset_top = 71
-offset_right = 120
-offset_bottom = 78
+[node name="BottomLip" type="ColorRect" parent="Stock/PantryShelf" unique_id=459429087]
+offset_top = 71.0
+offset_right = 120.0
+offset_bottom = 78.0
 mouse_filter = 2
-color = Color(0.6745, 0.4392, 0.2824, 1.0000)
+color = Color(0.6745, 0.4392, 0.2824, 1)
 
-[node name="FootWest" type="ColorRect" parent="Stock/PantryShelf"]
-offset_left = 3
-offset_top = 78
-offset_right = 11
-offset_bottom = 85
+[node name="FootWest" type="ColorRect" parent="Stock/PantryShelf" unique_id=1236731621]
+offset_left = 3.0
+offset_top = 78.0
+offset_right = 11.0
+offset_bottom = 85.0
 mouse_filter = 2
-color = Color(0.2196, 0.1529, 0.1647, 1.0000)
+color = Color(0.2196, 0.1529, 0.1647, 1)
 
-[node name="FootEast" type="ColorRect" parent="Stock/PantryShelf"]
-offset_left = 109
-offset_top = 78
-offset_right = 117
-offset_bottom = 85
+[node name="FootEast" type="ColorRect" parent="Stock/PantryShelf" unique_id=1356236438]
+offset_left = 109.0
+offset_top = 78.0
+offset_right = 117.0
+offset_bottom = 85.0
 mouse_filter = 2
-color = Color(0.2196, 0.1529, 0.1647, 1.0000)
+color = Color(0.2196, 0.1529, 0.1647, 1)
 
-[node name="Nameplate" type="ColorRect" parent="Stock/PantryShelf"]
-offset_left = 53
-offset_top = 73
-offset_right = 67
-offset_bottom = 76
+[node name="Nameplate" type="ColorRect" parent="Stock/PantryShelf" unique_id=1133021695]
+offset_left = 53.0
+offset_top = 73.0
+offset_right = 67.0
+offset_bottom = 76.0
 mouse_filter = 2
-color = Color(0.8431, 0.6431, 0.4196, 1.0000)
+color = Color(0.8431, 0.6431, 0.4196, 1)
 
-[node name="Goods1_1" type="Node2D" parent="Stock/PantryShelf"]
+[node name="Goods1_1" type="Node2D" parent="Stock/PantryShelf" unique_id=642161371]
 position = Vector2(12, 38)
 
-[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods1_1"]
-offset_left = 3
-offset_top = -17
-offset_right = 16
-offset_bottom = -1
+[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods1_1" unique_id=1378969416]
+offset_left = 3.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.6431, 0.3569, 0.2784, 1.0000)
+color = Color(0.6431, 0.3569, 0.2784, 1)
 
-[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods1_1"]
-offset_left = 4
-offset_top = -21
-offset_right = 15
-offset_bottom = -16
+[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods1_1" unique_id=367127275]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -16.0
 mouse_filter = 2
-color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+color = Color(0.7137, 0.5804, 0.4235, 1)
 
-[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods1_1"]
-offset_left = 5
-offset_top = -15
-offset_right = 7
-offset_bottom = -5
+[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods1_1" unique_id=2111952680]
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0.8706, 0.5608, 0.3804, 1.0000)
+color = Color(0.8706, 0.5608, 0.3804, 1)
 
-[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods1_1"]
-offset_left = 5
-offset_top = -9
-offset_right = 14
-offset_bottom = -4
+[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods1_1" unique_id=48438871]
+offset_left = 5.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+color = Color(0.9176, 0.8157, 0.6275, 1)
 
-[node name="Goods1_2" type="Node2D" parent="Stock/PantryShelf"]
+[node name="Goods1_2" type="Node2D" parent="Stock/PantryShelf" unique_id=15412474]
 position = Vector2(33, 38)
 
-[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods1_2"]
-offset_left = 3
-offset_top = -17
-offset_right = 16
-offset_bottom = -1
+[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods1_2" unique_id=194972615]
+offset_left = 3.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.5098, 0.5647, 0.3843, 1.0000)
+color = Color(0.5098, 0.5647, 0.3843, 1)
 
-[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods1_2"]
-offset_left = 4
-offset_top = -21
-offset_right = 15
-offset_bottom = -16
+[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods1_2" unique_id=1873728145]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -16.0
 mouse_filter = 2
-color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+color = Color(0.7137, 0.5804, 0.4235, 1)
 
-[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods1_2"]
-offset_left = 5
-offset_top = -15
-offset_right = 7
-offset_bottom = -5
+[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods1_2" unique_id=2010822509]
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0.7725, 0.6902, 0.4863, 1.0000)
+color = Color(0.7725, 0.6902, 0.4863, 1)
 
-[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods1_2"]
-offset_left = 5
-offset_top = -9
-offset_right = 14
-offset_bottom = -4
+[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods1_2" unique_id=336042256]
+offset_left = 5.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+color = Color(0.9176, 0.8157, 0.6275, 1)
 
-[node name="Goods1_3" type="Node2D" parent="Stock/PantryShelf"]
+[node name="Goods1_3" type="Node2D" parent="Stock/PantryShelf" unique_id=2130829813]
 position = Vector2(54, 38)
 
-[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods1_3"]
-offset_left = 3
-offset_top = -17
-offset_right = 16
-offset_bottom = -1
+[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods1_3" unique_id=1376589363]
+offset_left = 3.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.8549, 0.6745, 0.3882, 1.0000)
+color = Color(0.8549, 0.6745, 0.3882, 1)
 
-[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods1_3"]
-offset_left = 4
-offset_top = -21
-offset_right = 15
-offset_bottom = -16
+[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods1_3" unique_id=1535951470]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -16.0
 mouse_filter = 2
-color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+color = Color(0.7137, 0.5804, 0.4235, 1)
 
-[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods1_3"]
-offset_left = 5
-offset_top = -15
-offset_right = 7
-offset_bottom = -5
+[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods1_3" unique_id=616790515]
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0.9804, 0.8627, 0.5569, 1.0000)
+color = Color(0.9804, 0.8627, 0.5569, 1)
 
-[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods1_3"]
-offset_left = 5
-offset_top = -9
-offset_right = 14
-offset_bottom = -4
+[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods1_3" unique_id=1763355842]
+offset_left = 5.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+color = Color(0.9176, 0.8157, 0.6275, 1)
 
-[node name="Goods1_4" type="Node2D" parent="Stock/PantryShelf"]
+[node name="Goods1_4" type="Node2D" parent="Stock/PantryShelf" unique_id=1177534693]
 position = Vector2(75, 38)
 
-[node name="Bag" type="Polygon2D" parent="Stock/PantryShelf/Goods1_4"]
-color = Color(0.6000, 0.3765, 0.2980, 1.0000)
+[node name="Bag" type="Polygon2D" parent="Stock/PantryShelf/Goods1_4" unique_id=1017250792]
+color = Color(0.6, 0.3765, 0.298, 1)
 polygon = PackedVector2Array(1, -1, 1, -11, 6, -16, 5, -21, 14, -21, 13, -17, 17, -11, 17, -1)
 
-[node name="Twine" type="ColorRect" parent="Stock/PantryShelf/Goods1_4"]
-offset_left = 5
-offset_top = -17
-offset_right = 15
-offset_bottom = -15
+[node name="Twine" type="ColorRect" parent="Stock/PantryShelf/Goods1_4" unique_id=1148271917]
+offset_left = 5.0
+offset_top = -17.0
+offset_right = 15.0
+offset_bottom = -15.0
 mouse_filter = 2
-color = Color(0.7922, 0.5412, 0.3725, 1.0000)
+color = Color(0.7922, 0.5412, 0.3725, 1)
 
-[node name="Pleat" type="ColorRect" parent="Stock/PantryShelf/Goods1_4"]
-offset_left = 3
-offset_top = -9
-offset_right = 6
-offset_bottom = -2
+[node name="Pleat" type="ColorRect" parent="Stock/PantryShelf/Goods1_4" unique_id=76362847]
+offset_left = 3.0
+offset_top = -9.0
+offset_right = 6.0
+offset_bottom = -2.0
 mouse_filter = 2
-color = Color(0.7922, 0.5412, 0.3725, 1.0000)
+color = Color(0.7922, 0.5412, 0.3725, 1)
 
-[node name="Goods1_5" type="Node2D" parent="Stock/PantryShelf"]
+[node name="Goods1_5" type="Node2D" parent="Stock/PantryShelf" unique_id=536661470]
 position = Vector2(96, 38)
 
-[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods1_5"]
-offset_left = 3
-offset_top = -17
-offset_right = 16
-offset_bottom = -1
+[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods1_5" unique_id=1070182127]
+offset_left = 3.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.7373, 0.5569, 0.3882, 1.0000)
+color = Color(0.7373, 0.5569, 0.3882, 1)
 
-[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods1_5"]
-offset_left = 4
-offset_top = -21
-offset_right = 15
-offset_bottom = -16
+[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods1_5" unique_id=1590644492]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -16.0
 mouse_filter = 2
-color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+color = Color(0.7137, 0.5804, 0.4235, 1)
 
-[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods1_5"]
-offset_left = 5
-offset_top = -15
-offset_right = 7
-offset_bottom = -5
+[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods1_5" unique_id=2006705518]
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0.8588, 0.7255, 0.5373, 1.0000)
+color = Color(0.8588, 0.7255, 0.5373, 1)
 
-[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods1_5"]
-offset_left = 5
-offset_top = -9
-offset_right = 14
-offset_bottom = -4
+[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods1_5" unique_id=1915153744]
+offset_left = 5.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+color = Color(0.9176, 0.8157, 0.6275, 1)
 
-[node name="Goods2_1" type="Node2D" parent="Stock/PantryShelf"]
+[node name="Goods2_1" type="Node2D" parent="Stock/PantryShelf" unique_id=664003551]
 position = Vector2(12, 71)
 
-[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods2_1"]
-offset_left = 3
-offset_top = -17
-offset_right = 16
-offset_bottom = -1
+[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods2_1" unique_id=1527720846]
+offset_left = 3.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.6000, 0.3765, 0.2980, 1.0000)
+color = Color(0.6, 0.3765, 0.298, 1)
 
-[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods2_1"]
-offset_left = 4
-offset_top = -21
-offset_right = 15
-offset_bottom = -16
+[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods2_1" unique_id=1356179700]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -16.0
 mouse_filter = 2
-color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+color = Color(0.7137, 0.5804, 0.4235, 1)
 
-[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods2_1"]
-offset_left = 5
-offset_top = -15
-offset_right = 7
-offset_bottom = -5
+[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods2_1" unique_id=1569432532]
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0.7922, 0.5412, 0.3725, 1.0000)
+color = Color(0.7922, 0.5412, 0.3725, 1)
 
-[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods2_1"]
-offset_left = 5
-offset_top = -9
-offset_right = 14
-offset_bottom = -4
+[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods2_1" unique_id=1235034453]
+offset_left = 5.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+color = Color(0.9176, 0.8157, 0.6275, 1)
 
-[node name="Goods2_2" type="Node2D" parent="Stock/PantryShelf"]
+[node name="Goods2_2" type="Node2D" parent="Stock/PantryShelf" unique_id=1733701963]
 position = Vector2(33, 71)
 
-[node name="Pack" type="ColorRect" parent="Stock/PantryShelf/Goods2_2"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/PantryShelf/Goods2_2" unique_id=1091535546]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.7373, 0.5569, 0.3882, 1.0000)
+color = Color(0.7373, 0.5569, 0.3882, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/PantryShelf/Goods2_2"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/PantryShelf/Goods2_2" unique_id=411342936]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.8588, 0.7255, 0.5373, 1.0000)
+color = Color(0.8588, 0.7255, 0.5373, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/PantryShelf/Goods2_2"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/PantryShelf/Goods2_2" unique_id=1202933794]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.8588, 0.7255, 0.5373, 1.0000)
+color = Color(0.8588, 0.7255, 0.5373, 1)
 
-[node name="Goods2_3" type="Node2D" parent="Stock/PantryShelf"]
+[node name="Goods2_3" type="Node2D" parent="Stock/PantryShelf" unique_id=713877675]
 position = Vector2(54, 71)
 
-[node name="Bag" type="Polygon2D" parent="Stock/PantryShelf/Goods2_3"]
-color = Color(0.3922, 0.4667, 0.5098, 1.0000)
+[node name="Bag" type="Polygon2D" parent="Stock/PantryShelf/Goods2_3" unique_id=1227259073]
+color = Color(0.3922, 0.4667, 0.5098, 1)
 polygon = PackedVector2Array(1, -1, 1, -11, 6, -16, 5, -21, 14, -21, 13, -17, 17, -11, 17, -1)
 
-[node name="Twine" type="ColorRect" parent="Stock/PantryShelf/Goods2_3"]
-offset_left = 5
-offset_top = -17
-offset_right = 15
-offset_bottom = -15
+[node name="Twine" type="ColorRect" parent="Stock/PantryShelf/Goods2_3" unique_id=254168434]
+offset_left = 5.0
+offset_top = -17.0
+offset_right = 15.0
+offset_bottom = -15.0
 mouse_filter = 2
-color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+color = Color(0.5765, 0.6471, 0.6471, 1)
 
-[node name="Pleat" type="ColorRect" parent="Stock/PantryShelf/Goods2_3"]
-offset_left = 3
-offset_top = -9
-offset_right = 6
-offset_bottom = -2
+[node name="Pleat" type="ColorRect" parent="Stock/PantryShelf/Goods2_3" unique_id=225040538]
+offset_left = 3.0
+offset_top = -9.0
+offset_right = 6.0
+offset_bottom = -2.0
 mouse_filter = 2
-color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+color = Color(0.5765, 0.6471, 0.6471, 1)
 
-[node name="Goods2_4" type="Node2D" parent="Stock/PantryShelf"]
+[node name="Goods2_4" type="Node2D" parent="Stock/PantryShelf" unique_id=232438929]
 position = Vector2(75, 71)
 
-[node name="Pack" type="ColorRect" parent="Stock/PantryShelf/Goods2_4"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/PantryShelf/Goods2_4" unique_id=288080013]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.6706, 0.4235, 0.3961, 1.0000)
+color = Color(0.6706, 0.4235, 0.3961, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/PantryShelf/Goods2_4"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/PantryShelf/Goods2_4" unique_id=1842802590]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+color = Color(0.851, 0.5922, 0.4471, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/PantryShelf/Goods2_4"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/PantryShelf/Goods2_4" unique_id=355437114]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+color = Color(0.851, 0.5922, 0.4471, 1)
 
-[node name="Goods2_5" type="Node2D" parent="Stock/PantryShelf"]
+[node name="Goods2_5" type="Node2D" parent="Stock/PantryShelf" unique_id=284506733]
 position = Vector2(96, 71)
 
-[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods2_5"]
-offset_left = 3
-offset_top = -17
-offset_right = 16
-offset_bottom = -1
+[node name="Bottle" type="ColorRect" parent="Stock/PantryShelf/Goods2_5" unique_id=393363673]
+offset_left = 3.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.4667, 0.3922, 0.4706, 1.0000)
+color = Color(0.4667, 0.3922, 0.4706, 1)
 
-[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods2_5"]
-offset_left = 4
-offset_top = -21
-offset_right = 15
-offset_bottom = -16
+[node name="Cap" type="ColorRect" parent="Stock/PantryShelf/Goods2_5" unique_id=3314663]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -16.0
 mouse_filter = 2
-color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+color = Color(0.7137, 0.5804, 0.4235, 1)
 
-[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods2_5"]
-offset_left = 5
-offset_top = -15
-offset_right = 7
-offset_bottom = -5
+[node name="Glint" type="ColorRect" parent="Stock/PantryShelf/Goods2_5" unique_id=1666138989]
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0.7176, 0.5961, 0.6784, 1.0000)
+color = Color(0.7176, 0.5961, 0.6784, 1)
 
-[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods2_5"]
-offset_left = 5
-offset_top = -9
-offset_right = 14
-offset_bottom = -4
+[node name="Label" type="ColorRect" parent="Stock/PantryShelf/Goods2_5" unique_id=378661503]
+offset_left = 5.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+color = Color(0.9176, 0.8157, 0.6275, 1)
 
-[node name="FoldedCloth" type="Node2D" parent="Stock"]
+[node name="FoldedCloth" type="Node2D" parent="Stock" unique_id=1653506838]
 position = Vector2(260, 113)
 
-[node name="Shadow" type="ColorRect" parent="Stock/FoldedCloth"]
-offset_left = -2
-offset_top = 8
-offset_right = 124
-offset_bottom = 90
+[node name="Shadow" type="ColorRect" parent="Stock/FoldedCloth" unique_id=1735704329]
+offset_left = -2.0
+offset_top = 8.0
+offset_right = 124.0
+offset_bottom = 90.0
 mouse_filter = 2
 color = Color(0.0902, 0.0902, 0.1294, 0.5647)
 
-[node name="Cabinet" type="ColorRect" parent="Stock/FoldedCloth"]
-offset_left = 0
-offset_top = 0
-offset_right = 120
-offset_bottom = 83
+[node name="Cabinet" type="ColorRect" parent="Stock/FoldedCloth" unique_id=57103960]
+offset_right = 120.0
+offset_bottom = 83.0
 mouse_filter = 2
-color = Color(0.3255, 0.2157, 0.1843, 1.0000)
+color = Color(0.3255, 0.2157, 0.1843, 1)
 
-[node name="Recess" type="ColorRect" parent="Stock/FoldedCloth"]
-offset_left = 5
-offset_top = 7
-offset_right = 115
-offset_bottom = 70
+[node name="Recess" type="ColorRect" parent="Stock/FoldedCloth" unique_id=2019220178]
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 115.0
+offset_bottom = 70.0
 mouse_filter = 2
-color = Color(0.2039, 0.1451, 0.1569, 1.0000)
+color = Color(0.2039, 0.1451, 0.1569, 1)
 
-[node name="TopLip" type="ColorRect" parent="Stock/FoldedCloth"]
-offset_left = 0
-offset_top = 0
-offset_right = 120
-offset_bottom = 5
+[node name="TopLip" type="ColorRect" parent="Stock/FoldedCloth" unique_id=505408173]
+offset_right = 120.0
+offset_bottom = 5.0
 mouse_filter = 2
-color = Color(0.6902, 0.4745, 0.3176, 1.0000)
+color = Color(0.6902, 0.4745, 0.3176, 1)
 
-[node name="MiddleShelf" type="ColorRect" parent="Stock/FoldedCloth"]
-offset_left = 5
-offset_top = 38
-offset_right = 115
-offset_bottom = 43
+[node name="MiddleShelf" type="ColorRect" parent="Stock/FoldedCloth" unique_id=574484578]
+offset_left = 5.0
+offset_top = 38.0
+offset_right = 115.0
+offset_bottom = 43.0
 mouse_filter = 2
-color = Color(0.5137, 0.3255, 0.2392, 1.0000)
+color = Color(0.5137, 0.3255, 0.2392, 1)
 
-[node name="BottomLip" type="ColorRect" parent="Stock/FoldedCloth"]
-offset_left = 0
-offset_top = 71
-offset_right = 120
-offset_bottom = 78
+[node name="BottomLip" type="ColorRect" parent="Stock/FoldedCloth" unique_id=1862126442]
+offset_top = 71.0
+offset_right = 120.0
+offset_bottom = 78.0
 mouse_filter = 2
-color = Color(0.6745, 0.4392, 0.2824, 1.0000)
+color = Color(0.6745, 0.4392, 0.2824, 1)
 
-[node name="FootWest" type="ColorRect" parent="Stock/FoldedCloth"]
-offset_left = 3
-offset_top = 78
-offset_right = 11
-offset_bottom = 85
+[node name="FootWest" type="ColorRect" parent="Stock/FoldedCloth" unique_id=1807765890]
+offset_left = 3.0
+offset_top = 78.0
+offset_right = 11.0
+offset_bottom = 85.0
 mouse_filter = 2
-color = Color(0.2196, 0.1529, 0.1647, 1.0000)
+color = Color(0.2196, 0.1529, 0.1647, 1)
 
-[node name="FootEast" type="ColorRect" parent="Stock/FoldedCloth"]
-offset_left = 109
-offset_top = 78
-offset_right = 117
-offset_bottom = 85
+[node name="FootEast" type="ColorRect" parent="Stock/FoldedCloth" unique_id=464187099]
+offset_left = 109.0
+offset_top = 78.0
+offset_right = 117.0
+offset_bottom = 85.0
 mouse_filter = 2
-color = Color(0.2196, 0.1529, 0.1647, 1.0000)
+color = Color(0.2196, 0.1529, 0.1647, 1)
 
-[node name="Nameplate" type="ColorRect" parent="Stock/FoldedCloth"]
-offset_left = 53
-offset_top = 73
-offset_right = 67
-offset_bottom = 76
+[node name="Nameplate" type="ColorRect" parent="Stock/FoldedCloth" unique_id=195198803]
+offset_left = 53.0
+offset_top = 73.0
+offset_right = 67.0
+offset_bottom = 76.0
 mouse_filter = 2
-color = Color(0.8431, 0.6431, 0.4196, 1.0000)
+color = Color(0.8431, 0.6431, 0.4196, 1)
 
-[node name="Goods1_1" type="Node2D" parent="Stock/FoldedCloth"]
+[node name="Goods1_1" type="Node2D" parent="Stock/FoldedCloth" unique_id=1717560080]
 position = Vector2(12, 38)
 
-[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_1"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_1" unique_id=1063868219]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.8549, 0.6745, 0.3882, 1.0000)
+color = Color(0.8549, 0.6745, 0.3882, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_1"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_1" unique_id=316580189]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.9804, 0.8627, 0.5569, 1.0000)
+color = Color(0.9804, 0.8627, 0.5569, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_1"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_1" unique_id=1388657076]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.9804, 0.8627, 0.5569, 1.0000)
+color = Color(0.9804, 0.8627, 0.5569, 1)
 
-[node name="Goods1_2" type="Node2D" parent="Stock/FoldedCloth"]
+[node name="Goods1_2" type="Node2D" parent="Stock/FoldedCloth" unique_id=1544652468]
 position = Vector2(33, 38)
 
-[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_2"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_2" unique_id=397960223]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.6000, 0.3765, 0.2980, 1.0000)
+color = Color(0.6, 0.3765, 0.298, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_2"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_2" unique_id=1396118572]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.7922, 0.5412, 0.3725, 1.0000)
+color = Color(0.7922, 0.5412, 0.3725, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_2"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_2" unique_id=1482498361]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.7922, 0.5412, 0.3725, 1.0000)
+color = Color(0.7922, 0.5412, 0.3725, 1)
 
-[node name="Goods1_3" type="Node2D" parent="Stock/FoldedCloth"]
+[node name="Goods1_3" type="Node2D" parent="Stock/FoldedCloth" unique_id=2034605385]
 position = Vector2(54, 38)
 
-[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_3"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_3" unique_id=1251608533]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.7373, 0.5569, 0.3882, 1.0000)
+color = Color(0.7373, 0.5569, 0.3882, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_3"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_3" unique_id=1726445901]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.8588, 0.7255, 0.5373, 1.0000)
+color = Color(0.8588, 0.7255, 0.5373, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_3"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_3" unique_id=1970816789]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.8588, 0.7255, 0.5373, 1.0000)
+color = Color(0.8588, 0.7255, 0.5373, 1)
 
-[node name="Goods1_4" type="Node2D" parent="Stock/FoldedCloth"]
+[node name="Goods1_4" type="Node2D" parent="Stock/FoldedCloth" unique_id=229091183]
 position = Vector2(75, 38)
 
-[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_4"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_4" unique_id=1711388762]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.3922, 0.4667, 0.5098, 1.0000)
+color = Color(0.3922, 0.4667, 0.5098, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_4"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_4" unique_id=1738759362]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+color = Color(0.5765, 0.6471, 0.6471, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_4"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_4" unique_id=838150313]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+color = Color(0.5765, 0.6471, 0.6471, 1)
 
-[node name="Goods1_5" type="Node2D" parent="Stock/FoldedCloth"]
+[node name="Goods1_5" type="Node2D" parent="Stock/FoldedCloth" unique_id=1923338133]
 position = Vector2(96, 38)
 
-[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_5"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods1_5" unique_id=771613709]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.6706, 0.4235, 0.3961, 1.0000)
+color = Color(0.6706, 0.4235, 0.3961, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_5"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods1_5" unique_id=1118994221]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+color = Color(0.851, 0.5922, 0.4471, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_5"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods1_5" unique_id=61952020]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+color = Color(0.851, 0.5922, 0.4471, 1)
 
-[node name="Goods2_1" type="Node2D" parent="Stock/FoldedCloth"]
+[node name="Goods2_1" type="Node2D" parent="Stock/FoldedCloth" unique_id=787817211]
 position = Vector2(12, 71)
 
-[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_1"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_1" unique_id=990637000]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.3922, 0.4667, 0.5098, 1.0000)
+color = Color(0.3922, 0.4667, 0.5098, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_1"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_1" unique_id=1258669956]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+color = Color(0.5765, 0.6471, 0.6471, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_1"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_1" unique_id=973378725]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+color = Color(0.5765, 0.6471, 0.6471, 1)
 
-[node name="Goods2_2" type="Node2D" parent="Stock/FoldedCloth"]
+[node name="Goods2_2" type="Node2D" parent="Stock/FoldedCloth" unique_id=969937473]
 position = Vector2(33, 71)
 
-[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_2"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_2" unique_id=743909503]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.6706, 0.4235, 0.3961, 1.0000)
+color = Color(0.6706, 0.4235, 0.3961, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_2"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_2" unique_id=22860018]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+color = Color(0.851, 0.5922, 0.4471, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_2"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_2" unique_id=1401484670]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+color = Color(0.851, 0.5922, 0.4471, 1)
 
-[node name="Goods2_3" type="Node2D" parent="Stock/FoldedCloth"]
+[node name="Goods2_3" type="Node2D" parent="Stock/FoldedCloth" unique_id=512805968]
 position = Vector2(54, 71)
 
-[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_3"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_3" unique_id=1327333735]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.4667, 0.3922, 0.4706, 1.0000)
+color = Color(0.4667, 0.3922, 0.4706, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_3"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_3" unique_id=1719786265]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.7176, 0.5961, 0.6784, 1.0000)
+color = Color(0.7176, 0.5961, 0.6784, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_3"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_3" unique_id=700910288]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.7176, 0.5961, 0.6784, 1.0000)
+color = Color(0.7176, 0.5961, 0.6784, 1)
 
-[node name="Goods2_4" type="Node2D" parent="Stock/FoldedCloth"]
+[node name="Goods2_4" type="Node2D" parent="Stock/FoldedCloth" unique_id=1085741709]
 position = Vector2(75, 71)
 
-[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_4"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_4" unique_id=994222207]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.6431, 0.3569, 0.2784, 1.0000)
+color = Color(0.6431, 0.3569, 0.2784, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_4"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_4" unique_id=631917739]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.8706, 0.5608, 0.3804, 1.0000)
+color = Color(0.8706, 0.5608, 0.3804, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_4"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_4" unique_id=921022665]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.8706, 0.5608, 0.3804, 1.0000)
+color = Color(0.8706, 0.5608, 0.3804, 1)
 
-[node name="Goods2_5" type="Node2D" parent="Stock/FoldedCloth"]
+[node name="Goods2_5" type="Node2D" parent="Stock/FoldedCloth" unique_id=727806730]
 position = Vector2(96, 71)
 
-[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_5"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/FoldedCloth/Goods2_5" unique_id=1164137870]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.5098, 0.5647, 0.3843, 1.0000)
+color = Color(0.5098, 0.5647, 0.3843, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_5"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/FoldedCloth/Goods2_5" unique_id=21100307]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.7725, 0.6902, 0.4863, 1.0000)
+color = Color(0.7725, 0.6902, 0.4863, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_5"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/FoldedCloth/Goods2_5" unique_id=1609369735]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.7725, 0.6902, 0.4863, 1.0000)
+color = Color(0.7725, 0.6902, 0.4863, 1)
 
-[node name="Spices" type="Node2D" parent="Stock"]
+[node name="Spices" type="Node2D" parent="Stock" unique_id=1072510290]
 position = Vector2(411, 113)
 
-[node name="Shadow" type="ColorRect" parent="Stock/Spices"]
-offset_left = -2
-offset_top = 8
-offset_right = 124
-offset_bottom = 90
+[node name="Shadow" type="ColorRect" parent="Stock/Spices" unique_id=791099896]
+offset_left = -2.0
+offset_top = 8.0
+offset_right = 124.0
+offset_bottom = 90.0
 mouse_filter = 2
 color = Color(0.0902, 0.0902, 0.1294, 0.5647)
 
-[node name="Cabinet" type="ColorRect" parent="Stock/Spices"]
-offset_left = 0
-offset_top = 0
-offset_right = 120
-offset_bottom = 83
+[node name="Cabinet" type="ColorRect" parent="Stock/Spices" unique_id=1150035137]
+offset_right = 120.0
+offset_bottom = 83.0
 mouse_filter = 2
-color = Color(0.3255, 0.2157, 0.1843, 1.0000)
+color = Color(0.3255, 0.2157, 0.1843, 1)
 
-[node name="Recess" type="ColorRect" parent="Stock/Spices"]
-offset_left = 5
-offset_top = 7
-offset_right = 115
-offset_bottom = 70
+[node name="Recess" type="ColorRect" parent="Stock/Spices" unique_id=2103658587]
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 115.0
+offset_bottom = 70.0
 mouse_filter = 2
-color = Color(0.2039, 0.1451, 0.1569, 1.0000)
+color = Color(0.2039, 0.1451, 0.1569, 1)
 
-[node name="TopLip" type="ColorRect" parent="Stock/Spices"]
-offset_left = 0
-offset_top = 0
-offset_right = 120
-offset_bottom = 5
+[node name="TopLip" type="ColorRect" parent="Stock/Spices" unique_id=915475731]
+offset_right = 120.0
+offset_bottom = 5.0
 mouse_filter = 2
-color = Color(0.6902, 0.4745, 0.3176, 1.0000)
+color = Color(0.6902, 0.4745, 0.3176, 1)
 
-[node name="MiddleShelf" type="ColorRect" parent="Stock/Spices"]
-offset_left = 5
-offset_top = 38
-offset_right = 115
-offset_bottom = 43
+[node name="MiddleShelf" type="ColorRect" parent="Stock/Spices" unique_id=2073092621]
+offset_left = 5.0
+offset_top = 38.0
+offset_right = 115.0
+offset_bottom = 43.0
 mouse_filter = 2
-color = Color(0.5137, 0.3255, 0.2392, 1.0000)
+color = Color(0.5137, 0.3255, 0.2392, 1)
 
-[node name="BottomLip" type="ColorRect" parent="Stock/Spices"]
-offset_left = 0
-offset_top = 71
-offset_right = 120
-offset_bottom = 78
+[node name="BottomLip" type="ColorRect" parent="Stock/Spices" unique_id=1994951163]
+offset_top = 71.0
+offset_right = 120.0
+offset_bottom = 78.0
 mouse_filter = 2
-color = Color(0.6745, 0.4392, 0.2824, 1.0000)
+color = Color(0.6745, 0.4392, 0.2824, 1)
 
-[node name="FootWest" type="ColorRect" parent="Stock/Spices"]
-offset_left = 3
-offset_top = 78
-offset_right = 11
-offset_bottom = 85
+[node name="FootWest" type="ColorRect" parent="Stock/Spices" unique_id=506036455]
+offset_left = 3.0
+offset_top = 78.0
+offset_right = 11.0
+offset_bottom = 85.0
 mouse_filter = 2
-color = Color(0.2196, 0.1529, 0.1647, 1.0000)
+color = Color(0.2196, 0.1529, 0.1647, 1)
 
-[node name="FootEast" type="ColorRect" parent="Stock/Spices"]
-offset_left = 109
-offset_top = 78
-offset_right = 117
-offset_bottom = 85
+[node name="FootEast" type="ColorRect" parent="Stock/Spices" unique_id=1250385569]
+offset_left = 109.0
+offset_top = 78.0
+offset_right = 117.0
+offset_bottom = 85.0
 mouse_filter = 2
-color = Color(0.2196, 0.1529, 0.1647, 1.0000)
+color = Color(0.2196, 0.1529, 0.1647, 1)
 
-[node name="Nameplate" type="ColorRect" parent="Stock/Spices"]
-offset_left = 53
-offset_top = 73
-offset_right = 67
-offset_bottom = 76
+[node name="Nameplate" type="ColorRect" parent="Stock/Spices" unique_id=376154273]
+offset_left = 53.0
+offset_top = 73.0
+offset_right = 67.0
+offset_bottom = 76.0
 mouse_filter = 2
-color = Color(0.8431, 0.6431, 0.4196, 1.0000)
+color = Color(0.8431, 0.6431, 0.4196, 1)
 
-[node name="Goods1_1" type="Node2D" parent="Stock/Spices"]
+[node name="Goods1_1" type="Node2D" parent="Stock/Spices" unique_id=402148754]
 position = Vector2(12, 38)
 
-[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods1_1"]
-offset_left = 3
-offset_top = -17
-offset_right = 16
-offset_bottom = -1
+[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods1_1" unique_id=411716504]
+offset_left = 3.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.7373, 0.5569, 0.3882, 1.0000)
+color = Color(0.7373, 0.5569, 0.3882, 1)
 
-[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods1_1"]
-offset_left = 4
-offset_top = -21
-offset_right = 15
-offset_bottom = -16
+[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods1_1" unique_id=505999265]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -16.0
 mouse_filter = 2
-color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+color = Color(0.7137, 0.5804, 0.4235, 1)
 
-[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods1_1"]
-offset_left = 5
-offset_top = -15
-offset_right = 7
-offset_bottom = -5
+[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods1_1" unique_id=407154400]
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0.8588, 0.7255, 0.5373, 1.0000)
+color = Color(0.8588, 0.7255, 0.5373, 1)
 
-[node name="Label" type="ColorRect" parent="Stock/Spices/Goods1_1"]
-offset_left = 5
-offset_top = -9
-offset_right = 14
-offset_bottom = -4
+[node name="Label" type="ColorRect" parent="Stock/Spices/Goods1_1" unique_id=1505477509]
+offset_left = 5.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+color = Color(0.9176, 0.8157, 0.6275, 1)
 
-[node name="Goods1_2" type="Node2D" parent="Stock/Spices"]
+[node name="Goods1_2" type="Node2D" parent="Stock/Spices" unique_id=276656260]
 position = Vector2(33, 38)
 
-[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods1_2"]
-offset_left = 3
-offset_top = -17
-offset_right = 16
-offset_bottom = -1
+[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods1_2" unique_id=757460761]
+offset_left = 3.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.3922, 0.4667, 0.5098, 1.0000)
+color = Color(0.3922, 0.4667, 0.5098, 1)
 
-[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods1_2"]
-offset_left = 4
-offset_top = -21
-offset_right = 15
-offset_bottom = -16
+[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods1_2" unique_id=388436839]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -16.0
 mouse_filter = 2
-color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+color = Color(0.7137, 0.5804, 0.4235, 1)
 
-[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods1_2"]
-offset_left = 5
-offset_top = -15
-offset_right = 7
-offset_bottom = -5
+[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods1_2" unique_id=2085763138]
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0.5765, 0.6471, 0.6471, 1.0000)
+color = Color(0.5765, 0.6471, 0.6471, 1)
 
-[node name="Label" type="ColorRect" parent="Stock/Spices/Goods1_2"]
-offset_left = 5
-offset_top = -9
-offset_right = 14
-offset_bottom = -4
+[node name="Label" type="ColorRect" parent="Stock/Spices/Goods1_2" unique_id=1371968363]
+offset_left = 5.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+color = Color(0.9176, 0.8157, 0.6275, 1)
 
-[node name="Goods1_3" type="Node2D" parent="Stock/Spices"]
+[node name="Goods1_3" type="Node2D" parent="Stock/Spices" unique_id=1544993251]
 position = Vector2(54, 38)
 
-[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods1_3"]
-offset_left = 3
-offset_top = -17
-offset_right = 16
-offset_bottom = -1
+[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods1_3" unique_id=487009341]
+offset_left = 3.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.6706, 0.4235, 0.3961, 1.0000)
+color = Color(0.6706, 0.4235, 0.3961, 1)
 
-[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods1_3"]
-offset_left = 4
-offset_top = -21
-offset_right = 15
-offset_bottom = -16
+[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods1_3" unique_id=1563895797]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -16.0
 mouse_filter = 2
-color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+color = Color(0.7137, 0.5804, 0.4235, 1)
 
-[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods1_3"]
-offset_left = 5
-offset_top = -15
-offset_right = 7
-offset_bottom = -5
+[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods1_3" unique_id=830168984]
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0.8510, 0.5922, 0.4471, 1.0000)
+color = Color(0.851, 0.5922, 0.4471, 1)
 
-[node name="Label" type="ColorRect" parent="Stock/Spices/Goods1_3"]
-offset_left = 5
-offset_top = -9
-offset_right = 14
-offset_bottom = -4
+[node name="Label" type="ColorRect" parent="Stock/Spices/Goods1_3" unique_id=1832565962]
+offset_left = 5.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+color = Color(0.9176, 0.8157, 0.6275, 1)
 
-[node name="Goods1_4" type="Node2D" parent="Stock/Spices"]
+[node name="Goods1_4" type="Node2D" parent="Stock/Spices" unique_id=784503769]
 position = Vector2(75, 38)
 
-[node name="Bag" type="Polygon2D" parent="Stock/Spices/Goods1_4"]
-color = Color(0.4667, 0.3922, 0.4706, 1.0000)
+[node name="Bag" type="Polygon2D" parent="Stock/Spices/Goods1_4" unique_id=1627243966]
+color = Color(0.4667, 0.3922, 0.4706, 1)
 polygon = PackedVector2Array(1, -1, 1, -11, 6, -16, 5, -21, 14, -21, 13, -17, 17, -11, 17, -1)
 
-[node name="Twine" type="ColorRect" parent="Stock/Spices/Goods1_4"]
-offset_left = 5
-offset_top = -17
-offset_right = 15
-offset_bottom = -15
+[node name="Twine" type="ColorRect" parent="Stock/Spices/Goods1_4" unique_id=932970532]
+offset_left = 5.0
+offset_top = -17.0
+offset_right = 15.0
+offset_bottom = -15.0
 mouse_filter = 2
-color = Color(0.7176, 0.5961, 0.6784, 1.0000)
+color = Color(0.7176, 0.5961, 0.6784, 1)
 
-[node name="Pleat" type="ColorRect" parent="Stock/Spices/Goods1_4"]
-offset_left = 3
-offset_top = -9
-offset_right = 6
-offset_bottom = -2
+[node name="Pleat" type="ColorRect" parent="Stock/Spices/Goods1_4" unique_id=546697962]
+offset_left = 3.0
+offset_top = -9.0
+offset_right = 6.0
+offset_bottom = -2.0
 mouse_filter = 2
-color = Color(0.7176, 0.5961, 0.6784, 1.0000)
+color = Color(0.7176, 0.5961, 0.6784, 1)
 
-[node name="Goods1_5" type="Node2D" parent="Stock/Spices"]
+[node name="Goods1_5" type="Node2D" parent="Stock/Spices" unique_id=1893909828]
 position = Vector2(96, 38)
 
-[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods1_5"]
-offset_left = 3
-offset_top = -17
-offset_right = 16
-offset_bottom = -1
+[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods1_5" unique_id=1243555144]
+offset_left = 3.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.6431, 0.3569, 0.2784, 1.0000)
+color = Color(0.6431, 0.3569, 0.2784, 1)
 
-[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods1_5"]
-offset_left = 4
-offset_top = -21
-offset_right = 15
-offset_bottom = -16
+[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods1_5" unique_id=1247264931]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -16.0
 mouse_filter = 2
-color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+color = Color(0.7137, 0.5804, 0.4235, 1)
 
-[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods1_5"]
-offset_left = 5
-offset_top = -15
-offset_right = 7
-offset_bottom = -5
+[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods1_5" unique_id=1179015102]
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0.8706, 0.5608, 0.3804, 1.0000)
+color = Color(0.8706, 0.5608, 0.3804, 1)
 
-[node name="Label" type="ColorRect" parent="Stock/Spices/Goods1_5"]
-offset_left = 5
-offset_top = -9
-offset_right = 14
-offset_bottom = -4
+[node name="Label" type="ColorRect" parent="Stock/Spices/Goods1_5" unique_id=412911582]
+offset_left = 5.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+color = Color(0.9176, 0.8157, 0.6275, 1)
 
-[node name="Goods2_1" type="Node2D" parent="Stock/Spices"]
+[node name="Goods2_1" type="Node2D" parent="Stock/Spices" unique_id=675031829]
 position = Vector2(12, 71)
 
-[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods2_1"]
-offset_left = 3
-offset_top = -17
-offset_right = 16
-offset_bottom = -1
+[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods2_1" unique_id=1163335286]
+offset_left = 3.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.4667, 0.3922, 0.4706, 1.0000)
+color = Color(0.4667, 0.3922, 0.4706, 1)
 
-[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods2_1"]
-offset_left = 4
-offset_top = -21
-offset_right = 15
-offset_bottom = -16
+[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods2_1" unique_id=1639578046]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -16.0
 mouse_filter = 2
-color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+color = Color(0.7137, 0.5804, 0.4235, 1)
 
-[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods2_1"]
-offset_left = 5
-offset_top = -15
-offset_right = 7
-offset_bottom = -5
+[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods2_1" unique_id=2013890310]
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0.7176, 0.5961, 0.6784, 1.0000)
+color = Color(0.7176, 0.5961, 0.6784, 1)
 
-[node name="Label" type="ColorRect" parent="Stock/Spices/Goods2_1"]
-offset_left = 5
-offset_top = -9
-offset_right = 14
-offset_bottom = -4
+[node name="Label" type="ColorRect" parent="Stock/Spices/Goods2_1" unique_id=2027629060]
+offset_left = 5.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+color = Color(0.9176, 0.8157, 0.6275, 1)
 
-[node name="Goods2_2" type="Node2D" parent="Stock/Spices"]
+[node name="Goods2_2" type="Node2D" parent="Stock/Spices" unique_id=114903252]
 position = Vector2(33, 71)
 
-[node name="Pack" type="ColorRect" parent="Stock/Spices/Goods2_2"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/Spices/Goods2_2" unique_id=46897689]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.6431, 0.3569, 0.2784, 1.0000)
+color = Color(0.6431, 0.3569, 0.2784, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/Spices/Goods2_2"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/Spices/Goods2_2" unique_id=1202312211]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.8706, 0.5608, 0.3804, 1.0000)
+color = Color(0.8706, 0.5608, 0.3804, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/Spices/Goods2_2"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/Spices/Goods2_2" unique_id=698382985]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.8706, 0.5608, 0.3804, 1.0000)
+color = Color(0.8706, 0.5608, 0.3804, 1)
 
-[node name="Goods2_3" type="Node2D" parent="Stock/Spices"]
+[node name="Goods2_3" type="Node2D" parent="Stock/Spices" unique_id=336920583]
 position = Vector2(54, 71)
 
-[node name="Bag" type="Polygon2D" parent="Stock/Spices/Goods2_3"]
-color = Color(0.5098, 0.5647, 0.3843, 1.0000)
+[node name="Bag" type="Polygon2D" parent="Stock/Spices/Goods2_3" unique_id=174183263]
+color = Color(0.5098, 0.5647, 0.3843, 1)
 polygon = PackedVector2Array(1, -1, 1, -11, 6, -16, 5, -21, 14, -21, 13, -17, 17, -11, 17, -1)
 
-[node name="Twine" type="ColorRect" parent="Stock/Spices/Goods2_3"]
-offset_left = 5
-offset_top = -17
-offset_right = 15
-offset_bottom = -15
+[node name="Twine" type="ColorRect" parent="Stock/Spices/Goods2_3" unique_id=2054448742]
+offset_left = 5.0
+offset_top = -17.0
+offset_right = 15.0
+offset_bottom = -15.0
 mouse_filter = 2
-color = Color(0.7725, 0.6902, 0.4863, 1.0000)
+color = Color(0.7725, 0.6902, 0.4863, 1)
 
-[node name="Pleat" type="ColorRect" parent="Stock/Spices/Goods2_3"]
-offset_left = 3
-offset_top = -9
-offset_right = 6
-offset_bottom = -2
+[node name="Pleat" type="ColorRect" parent="Stock/Spices/Goods2_3" unique_id=820022271]
+offset_left = 3.0
+offset_top = -9.0
+offset_right = 6.0
+offset_bottom = -2.0
 mouse_filter = 2
-color = Color(0.7725, 0.6902, 0.4863, 1.0000)
+color = Color(0.7725, 0.6902, 0.4863, 1)
 
-[node name="Goods2_4" type="Node2D" parent="Stock/Spices"]
+[node name="Goods2_4" type="Node2D" parent="Stock/Spices" unique_id=496069860]
 position = Vector2(75, 71)
 
-[node name="Pack" type="ColorRect" parent="Stock/Spices/Goods2_4"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -1
+[node name="Pack" type="ColorRect" parent="Stock/Spices/Goods2_4" unique_id=142113598]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.8549, 0.6745, 0.3882, 1.0000)
+color = Color(0.8549, 0.6745, 0.3882, 1)
 
-[node name="Fold" type="ColorRect" parent="Stock/Spices/Goods2_4"]
-offset_left = 0
-offset_top = -16
-offset_right = 18
-offset_bottom = -13
+[node name="Fold" type="ColorRect" parent="Stock/Spices/Goods2_4" unique_id=1110138525]
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = -13.0
 mouse_filter = 2
-color = Color(0.9804, 0.8627, 0.5569, 1.0000)
+color = Color(0.9804, 0.8627, 0.5569, 1)
 
-[node name="Band" type="ColorRect" parent="Stock/Spices/Goods2_4"]
-offset_left = 7
-offset_top = -13
-offset_right = 10
-offset_bottom = -1
+[node name="Band" type="ColorRect" parent="Stock/Spices/Goods2_4" unique_id=2067762194]
+offset_left = 7.0
+offset_top = -13.0
+offset_right = 10.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.9804, 0.8627, 0.5569, 1.0000)
+color = Color(0.9804, 0.8627, 0.5569, 1)
 
-[node name="Goods2_5" type="Node2D" parent="Stock/Spices"]
+[node name="Goods2_5" type="Node2D" parent="Stock/Spices" unique_id=1852791572]
 position = Vector2(96, 71)
 
-[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods2_5"]
-offset_left = 3
-offset_top = -17
-offset_right = 16
-offset_bottom = -1
+[node name="Bottle" type="ColorRect" parent="Stock/Spices/Goods2_5" unique_id=88278024]
+offset_left = 3.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -1.0
 mouse_filter = 2
-color = Color(0.6000, 0.3765, 0.2980, 1.0000)
+color = Color(0.6, 0.3765, 0.298, 1)
 
-[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods2_5"]
-offset_left = 4
-offset_top = -21
-offset_right = 15
-offset_bottom = -16
+[node name="Cap" type="ColorRect" parent="Stock/Spices/Goods2_5" unique_id=1293198559]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -16.0
 mouse_filter = 2
-color = Color(0.7137, 0.5804, 0.4235, 1.0000)
+color = Color(0.7137, 0.5804, 0.4235, 1)
 
-[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods2_5"]
-offset_left = 5
-offset_top = -15
-offset_right = 7
-offset_bottom = -5
+[node name="Glint" type="ColorRect" parent="Stock/Spices/Goods2_5" unique_id=2059386270]
+offset_left = 5.0
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0.7922, 0.5412, 0.3725, 1.0000)
+color = Color(0.7922, 0.5412, 0.3725, 1)
 
-[node name="Label" type="ColorRect" parent="Stock/Spices/Goods2_5"]
-offset_left = 5
-offset_top = -9
-offset_right = 14
-offset_bottom = -4
+[node name="Label" type="ColorRect" parent="Stock/Spices/Goods2_5" unique_id=740545128]
+offset_left = 5.0
+offset_top = -9.0
+offset_right = 14.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.9176, 0.8157, 0.6275, 1.0000)
+color = Color(0.9176, 0.8157, 0.6275, 1)
 
-[node name="EntryRug" type="Node2D" parent="."]
+[node name="EntryRug" type="Node2D" parent="." unique_id=356851341]
 position = Vector2(239, 239)
 
-[node name="DarkBorder" type="ColorRect" parent="EntryRug"]
-offset_left = 0
-offset_top = 0
-offset_right = 82
-offset_bottom = 76
+[node name="DarkBorder" type="ColorRect" parent="EntryRug" unique_id=364909779]
+offset_right = 82.0
+offset_bottom = 76.0
 mouse_filter = 2
-color = Color(0.5059, 0.2863, 0.2941, 1.0000)
+color = Color(0.5059, 0.2863, 0.2941, 1)
 
-[node name="Weave" type="ColorRect" parent="EntryRug"]
-offset_left = 4
-offset_top = 4
-offset_right = 78
-offset_bottom = 72
+[node name="Weave" type="ColorRect" parent="EntryRug" unique_id=1948308054]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 78.0
+offset_bottom = 72.0
 mouse_filter = 2
-color = Color(0.6667, 0.3843, 0.3137, 1.0000)
+color = Color(0.6667, 0.3843, 0.3137, 1)
 
-[node name="StripeWest" type="ColorRect" parent="EntryRug"]
-offset_left = 7
-offset_top = 4
-offset_right = 9
-offset_bottom = 72
+[node name="StripeWest" type="ColorRect" parent="EntryRug" unique_id=1539762401]
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 9.0
+offset_bottom = 72.0
 mouse_filter = 2
-color = Color(0.8627, 0.6235, 0.4039, 1.0000)
+color = Color(0.8627, 0.6235, 0.4039, 1)
 
-[node name="StripeEast" type="ColorRect" parent="EntryRug"]
-offset_left = 73
-offset_top = 4
-offset_right = 75
-offset_bottom = 72
+[node name="StripeEast" type="ColorRect" parent="EntryRug" unique_id=1760427014]
+offset_left = 73.0
+offset_top = 4.0
+offset_right = 75.0
+offset_bottom = 72.0
 mouse_filter = 2
-color = Color(0.8627, 0.6235, 0.4039, 1.0000)
+color = Color(0.8627, 0.6235, 0.4039, 1)
 
-[node name="Embroidery1" type="Polygon2D" parent="EntryRug"]
-color = Color(0.8784, 0.6784, 0.4706, 1.0000)
+[node name="Embroidery1" type="Polygon2D" parent="EntryRug" unique_id=1390891031]
+color = Color(0.8784, 0.6784, 0.4706, 1)
 polygon = PackedVector2Array(41, 9, 49, 16, 41, 23, 33, 16)
 
-[node name="Embroidery2" type="Polygon2D" parent="EntryRug"]
-color = Color(0.8784, 0.6784, 0.4706, 1.0000)
+[node name="Embroidery2" type="Polygon2D" parent="EntryRug" unique_id=81060907]
+color = Color(0.8784, 0.6784, 0.4706, 1)
 polygon = PackedVector2Array(41, 30, 49, 37, 41, 44, 33, 37)
 
-[node name="Embroidery3" type="Polygon2D" parent="EntryRug"]
-color = Color(0.8784, 0.6784, 0.4706, 1.0000)
+[node name="Embroidery3" type="Polygon2D" parent="EntryRug" unique_id=924959285]
+color = Color(0.8784, 0.6784, 0.4706, 1)
 polygon = PackedVector2Array(41, 51, 49, 58, 41, 65, 33, 58)
 
-[node name="Crates" type="Node2D" parent="."]
+[node name="Crates" type="Node2D" parent="." unique_id=2048168583]
 
-[node name="Crate1" type="Node2D" parent="Crates"]
+[node name="Crate1" type="Node2D" parent="Crates" unique_id=1347942807]
 position = Vector2(119, 239)
 
-[node name="Shadow" type="ColorRect" parent="Crates/Crate1"]
-offset_left = 2
-offset_top = 4
-offset_right = 64
-offset_bottom = 40
+[node name="Shadow" type="ColorRect" parent="Crates/Crate1" unique_id=196108601]
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 64.0
+offset_bottom = 40.0
 mouse_filter = 2
 color = Color(0.1216, 0.1098, 0.1333, 0.5647)
 
-[node name="Case" type="ColorRect" parent="Crates/Crate1"]
-offset_left = 0
-offset_top = 0
-offset_right = 58
-offset_bottom = 33
+[node name="Case" type="ColorRect" parent="Crates/Crate1" unique_id=669092523]
+offset_right = 58.0
+offset_bottom = 33.0
 mouse_filter = 2
-color = Color(0.4627, 0.3137, 0.2235, 1.0000)
+color = Color(0.4627, 0.3137, 0.2235, 1)
 
-[node name="Depth" type="ColorRect" parent="Crates/Crate1"]
-offset_left = 0
-offset_top = 25
-offset_right = 58
-offset_bottom = 33
+[node name="Depth" type="ColorRect" parent="Crates/Crate1" unique_id=1619370450]
+offset_top = 25.0
+offset_right = 58.0
+offset_bottom = 33.0
 mouse_filter = 2
-color = Color(0.3373, 0.1922, 0.1843, 1.0000)
+color = Color(0.3373, 0.1922, 0.1843, 1)
 
-[node name="Rim" type="ColorRect" parent="Crates/Crate1"]
-offset_left = 0
-offset_top = 0
-offset_right = 58
-offset_bottom = 4
+[node name="Rim" type="ColorRect" parent="Crates/Crate1" unique_id=439885533]
+offset_right = 58.0
+offset_bottom = 4.0
 mouse_filter = 2
-color = Color(0.7412, 0.5255, 0.3451, 1.0000)
+color = Color(0.7412, 0.5255, 0.3451, 1)
 
-[node name="WestStrap" type="ColorRect" parent="Crates/Crate1"]
-offset_left = 4
-offset_top = 4
-offset_right = 8
-offset_bottom = 33
+[node name="WestStrap" type="ColorRect" parent="Crates/Crate1" unique_id=1558648659]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 8.0
+offset_bottom = 33.0
 mouse_filter = 2
-color = Color(0.5922, 0.3961, 0.2627, 1.0000)
+color = Color(0.5922, 0.3961, 0.2627, 1)
 
-[node name="EastStrap" type="ColorRect" parent="Crates/Crate1"]
-offset_left = 50
-offset_top = 4
-offset_right = 54
-offset_bottom = 33
+[node name="EastStrap" type="ColorRect" parent="Crates/Crate1" unique_id=1788235037]
+offset_left = 50.0
+offset_top = 4.0
+offset_right = 54.0
+offset_bottom = 33.0
 mouse_filter = 2
-color = Color(0.5922, 0.3961, 0.2627, 1.0000)
+color = Color(0.5922, 0.3961, 0.2627, 1)
 
-[node name="Produce1" type="Polygon2D" parent="Crates/Crate1"]
-color = Color(0.8118, 0.5294, 0.3176, 1.0000)
+[node name="Produce1" type="Polygon2D" parent="Crates/Crate1" unique_id=469253353]
+color = Color(0.8118, 0.5294, 0.3176, 1)
 polygon = PackedVector2Array(15, 3, 14, 6, 10, 7, 6, 6, 5, 3, 6, 0, 10, -1, 14, 0)
 
-[node name="Produce2" type="Polygon2D" parent="Crates/Crate1"]
-color = Color(0.8275, 0.5961, 0.3373, 1.0000)
+[node name="Produce2" type="Polygon2D" parent="Crates/Crate1" unique_id=1742969013]
+color = Color(0.8275, 0.5961, 0.3373, 1)
 polygon = PackedVector2Array(26, 2, 25, 5, 21, 6, 17, 5, 16, 2, 17, -1, 21, -2, 25, -1)
 
-[node name="Produce3" type="Polygon2D" parent="Crates/Crate1"]
-color = Color(0.5216, 0.5647, 0.3608, 1.0000)
+[node name="Produce3" type="Polygon2D" parent="Crates/Crate1" unique_id=1596358691]
+color = Color(0.5216, 0.5647, 0.3608, 1)
 polygon = PackedVector2Array(37, 3, 36, 6, 32, 7, 28, 6, 27, 3, 28, 0, 32, -1, 36, 0)
 
-[node name="Produce4" type="Polygon2D" parent="Crates/Crate1"]
-color = Color(0.8863, 0.6431, 0.3804, 1.0000)
+[node name="Produce4" type="Polygon2D" parent="Crates/Crate1" unique_id=1294204903]
+color = Color(0.8863, 0.6431, 0.3804, 1)
 polygon = PackedVector2Array(48, 2, 47, 5, 43, 6, 39, 5, 38, 2, 39, -1, 43, -2, 47, -1)
 
-[node name="Crate2" type="Node2D" parent="Crates"]
+[node name="Crate2" type="Node2D" parent="Crates" unique_id=1750631255]
 position = Vector2(150, 272)
 
-[node name="Shadow" type="ColorRect" parent="Crates/Crate2"]
-offset_left = 2
-offset_top = 4
-offset_right = 57
-offset_bottom = 37
+[node name="Shadow" type="ColorRect" parent="Crates/Crate2" unique_id=544796374]
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 57.0
+offset_bottom = 37.0
 mouse_filter = 2
 color = Color(0.1216, 0.1098, 0.1333, 0.5647)
 
-[node name="Case" type="ColorRect" parent="Crates/Crate2"]
-offset_left = 0
-offset_top = 0
-offset_right = 51
-offset_bottom = 30
+[node name="Case" type="ColorRect" parent="Crates/Crate2" unique_id=339779321]
+offset_right = 51.0
+offset_bottom = 30.0
 mouse_filter = 2
-color = Color(0.4627, 0.3137, 0.2235, 1.0000)
+color = Color(0.4627, 0.3137, 0.2235, 1)
 
-[node name="Depth" type="ColorRect" parent="Crates/Crate2"]
-offset_left = 0
-offset_top = 22
-offset_right = 51
-offset_bottom = 30
+[node name="Depth" type="ColorRect" parent="Crates/Crate2" unique_id=2144193390]
+offset_top = 22.0
+offset_right = 51.0
+offset_bottom = 30.0
 mouse_filter = 2
-color = Color(0.3373, 0.1922, 0.1843, 1.0000)
+color = Color(0.3373, 0.1922, 0.1843, 1)
 
-[node name="Rim" type="ColorRect" parent="Crates/Crate2"]
-offset_left = 0
-offset_top = 0
-offset_right = 51
-offset_bottom = 4
+[node name="Rim" type="ColorRect" parent="Crates/Crate2" unique_id=2130040926]
+offset_right = 51.0
+offset_bottom = 4.0
 mouse_filter = 2
-color = Color(0.7412, 0.5255, 0.3451, 1.0000)
+color = Color(0.7412, 0.5255, 0.3451, 1)
 
-[node name="WestStrap" type="ColorRect" parent="Crates/Crate2"]
-offset_left = 4
-offset_top = 4
-offset_right = 8
-offset_bottom = 30
+[node name="WestStrap" type="ColorRect" parent="Crates/Crate2" unique_id=881035487]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 8.0
+offset_bottom = 30.0
 mouse_filter = 2
-color = Color(0.5922, 0.3961, 0.2627, 1.0000)
+color = Color(0.5922, 0.3961, 0.2627, 1)
 
-[node name="EastStrap" type="ColorRect" parent="Crates/Crate2"]
-offset_left = 43
-offset_top = 4
-offset_right = 47
-offset_bottom = 30
+[node name="EastStrap" type="ColorRect" parent="Crates/Crate2" unique_id=879800243]
+offset_left = 43.0
+offset_top = 4.0
+offset_right = 47.0
+offset_bottom = 30.0
 mouse_filter = 2
-color = Color(0.5922, 0.3961, 0.2627, 1.0000)
+color = Color(0.5922, 0.3961, 0.2627, 1)
 
-[node name="Tag" type="ColorRect" parent="Crates/Crate2"]
-offset_left = 20
-offset_top = 7
-offset_right = 30
-offset_bottom = 13
+[node name="Tag" type="ColorRect" parent="Crates/Crate2" unique_id=986368001]
+offset_left = 20.0
+offset_top = 7.0
+offset_right = 30.0
+offset_bottom = 13.0
 mouse_filter = 2
-color = Color(0.8392, 0.6980, 0.5098, 1.0000)
+color = Color(0.8392, 0.698, 0.5098, 1)
 
-[node name="Crate3" type="Node2D" parent="Crates"]
+[node name="Crate3" type="Node2D" parent="Crates" unique_id=400312500]
 position = Vector2(199, 222)
 
-[node name="Shadow" type="ColorRect" parent="Crates/Crate3"]
-offset_left = 2
-offset_top = 4
-offset_right = 36
-offset_bottom = 32
+[node name="Shadow" type="ColorRect" parent="Crates/Crate3" unique_id=103290990]
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 36.0
+offset_bottom = 32.0
 mouse_filter = 2
 color = Color(0.1216, 0.1098, 0.1333, 0.5647)
 
-[node name="Case" type="ColorRect" parent="Crates/Crate3"]
-offset_left = 0
-offset_top = 0
-offset_right = 30
-offset_bottom = 25
+[node name="Case" type="ColorRect" parent="Crates/Crate3" unique_id=1587834251]
+offset_right = 30.0
+offset_bottom = 25.0
 mouse_filter = 2
-color = Color(0.4627, 0.3137, 0.2235, 1.0000)
+color = Color(0.4627, 0.3137, 0.2235, 1)
 
-[node name="Depth" type="ColorRect" parent="Crates/Crate3"]
-offset_left = 0
-offset_top = 17
-offset_right = 30
-offset_bottom = 25
+[node name="Depth" type="ColorRect" parent="Crates/Crate3" unique_id=1889474186]
+offset_top = 17.0
+offset_right = 30.0
+offset_bottom = 25.0
 mouse_filter = 2
-color = Color(0.3373, 0.1922, 0.1843, 1.0000)
+color = Color(0.3373, 0.1922, 0.1843, 1)
 
-[node name="Rim" type="ColorRect" parent="Crates/Crate3"]
-offset_left = 0
-offset_top = 0
-offset_right = 30
-offset_bottom = 4
+[node name="Rim" type="ColorRect" parent="Crates/Crate3" unique_id=1748675917]
+offset_right = 30.0
+offset_bottom = 4.0
 mouse_filter = 2
-color = Color(0.7412, 0.5255, 0.3451, 1.0000)
+color = Color(0.7412, 0.5255, 0.3451, 1)
 
-[node name="WestStrap" type="ColorRect" parent="Crates/Crate3"]
-offset_left = 4
-offset_top = 4
-offset_right = 8
-offset_bottom = 25
+[node name="WestStrap" type="ColorRect" parent="Crates/Crate3" unique_id=1798343435]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 8.0
+offset_bottom = 25.0
 mouse_filter = 2
-color = Color(0.5922, 0.3961, 0.2627, 1.0000)
+color = Color(0.5922, 0.3961, 0.2627, 1)
 
-[node name="EastStrap" type="ColorRect" parent="Crates/Crate3"]
-offset_left = 22
-offset_top = 4
-offset_right = 26
-offset_bottom = 25
+[node name="EastStrap" type="ColorRect" parent="Crates/Crate3" unique_id=589138651]
+offset_left = 22.0
+offset_top = 4.0
+offset_right = 26.0
+offset_bottom = 25.0
 mouse_filter = 2
-color = Color(0.5922, 0.3961, 0.2627, 1.0000)
+color = Color(0.5922, 0.3961, 0.2627, 1)
 
-[node name="Tag" type="ColorRect" parent="Crates/Crate3"]
-offset_left = 10
-offset_top = 7
-offset_right = 20
-offset_bottom = 13
+[node name="Tag" type="ColorRect" parent="Crates/Crate3" unique_id=276915768]
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 20.0
+offset_bottom = 13.0
 mouse_filter = 2
-color = Color(0.8392, 0.6980, 0.5098, 1.0000)
+color = Color(0.8392, 0.698, 0.5098, 1)
 
-[node name="CheckedCounter" type="Node2D" parent="."]
+[node name="CheckedCounter" type="Node2D" parent="." unique_id=1011107247]
 position = Vector2(344, 227)
 
-[node name="Shadow" type="ColorRect" parent="CheckedCounter"]
-offset_left = 4
-offset_top = 8
-offset_right = 175
-offset_bottom = 72
+[node name="Shadow" type="ColorRect" parent="CheckedCounter" unique_id=114115985]
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 175.0
+offset_bottom = 72.0
 mouse_filter = 2
 color = Color(0.1725, 0.1176, 0.1373, 0.4902)
 
-[node name="Base" type="ColorRect" parent="CheckedCounter"]
-offset_left = 0
-offset_top = 8
-offset_right = 166
-offset_bottom = 66
+[node name="Base" type="ColorRect" parent="CheckedCounter" unique_id=594427650]
+offset_top = 8.0
+offset_right = 166.0
+offset_bottom = 66.0
 mouse_filter = 2
-color = Color(0.4510, 0.2902, 0.2118, 1.0000)
+color = Color(0.451, 0.2902, 0.2118, 1)
 
-[node name="ToeKick" type="ColorRect" parent="CheckedCounter"]
-offset_left = 0
-offset_top = 59
-offset_right = 166
-offset_bottom = 66
+[node name="ToeKick" type="ColorRect" parent="CheckedCounter" unique_id=1360739651]
+offset_top = 59.0
+offset_right = 166.0
+offset_bottom = 66.0
 mouse_filter = 2
-color = Color(0.2863, 0.1843, 0.1725, 1.0000)
+color = Color(0.2863, 0.1843, 0.1725, 1)
 
-[node name="Countertop" type="ColorRect" parent="CheckedCounter"]
-offset_left = -3
-offset_top = 1
-offset_right = 169
-offset_bottom = 20
+[node name="Countertop" type="ColorRect" parent="CheckedCounter" unique_id=108433048]
+offset_left = -3.0
+offset_top = 1.0
+offset_right = 169.0
+offset_bottom = 20.0
 mouse_filter = 2
-color = Color(0.8118, 0.6000, 0.3922, 1.0000)
+color = Color(0.8118, 0.6, 0.3922, 1)
 
-[node name="Lip" type="ColorRect" parent="CheckedCounter"]
-offset_left = -3
-offset_top = 17
-offset_right = 169
-offset_bottom = 21
+[node name="Lip" type="ColorRect" parent="CheckedCounter" unique_id=1567543253]
+offset_left = -3.0
+offset_top = 17.0
+offset_right = 169.0
+offset_bottom = 21.0
 mouse_filter = 2
-color = Color(0.5961, 0.3569, 0.2392, 1.0000)
+color = Color(0.5961, 0.3569, 0.2392, 1)
 
-[node name="FrontInset" type="ColorRect" parent="CheckedCounter"]
-offset_left = 6
-offset_top = 30
-offset_right = 160
-offset_bottom = 51
+[node name="FrontInset" type="ColorRect" parent="CheckedCounter" unique_id=2098657045]
+offset_left = 6.0
+offset_top = 30.0
+offset_right = 160.0
+offset_bottom = 51.0
 mouse_filter = 2
-color = Color(0.3373, 0.2078, 0.1804, 1.0000)
+color = Color(0.3373, 0.2078, 0.1804, 1)
 
-[node name="WoodPanel1" type="ColorRect" parent="CheckedCounter"]
-offset_left = 12
-offset_top = 34
-offset_right = 56
-offset_bottom = 47
+[node name="WoodPanel1" type="ColorRect" parent="CheckedCounter" unique_id=2056772769]
+offset_left = 12.0
+offset_top = 34.0
+offset_right = 56.0
+offset_bottom = 47.0
 mouse_filter = 2
-color = Color(0.6196, 0.4157, 0.2667, 1.0000)
+color = Color(0.6196, 0.4157, 0.2667, 1)
 
-[node name="WoodPanel2" type="ColorRect" parent="CheckedCounter"]
-offset_left = 61
-offset_top = 34
-offset_right = 105
-offset_bottom = 47
+[node name="WoodPanel2" type="ColorRect" parent="CheckedCounter" unique_id=416669504]
+offset_left = 61.0
+offset_top = 34.0
+offset_right = 105.0
+offset_bottom = 47.0
 mouse_filter = 2
-color = Color(0.6196, 0.4157, 0.2667, 1.0000)
+color = Color(0.6196, 0.4157, 0.2667, 1)
 
-[node name="WoodPanel3" type="ColorRect" parent="CheckedCounter"]
-offset_left = 110
-offset_top = 34
-offset_right = 154
-offset_bottom = 47
+[node name="WoodPanel3" type="ColorRect" parent="CheckedCounter" unique_id=259681464]
+offset_left = 110.0
+offset_top = 34.0
+offset_right = 154.0
+offset_bottom = 47.0
 mouse_filter = 2
-color = Color(0.6196, 0.4157, 0.2667, 1.0000)
+color = Color(0.6196, 0.4157, 0.2667, 1)
 
-[node name="Oilcloth" type="Node2D" parent="CheckedCounter"]
+[node name="Oilcloth" type="Node2D" parent="CheckedCounter" unique_id=1699744305]
 position = Vector2(8, 4)
 
-[node name="Hem" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 0
-offset_top = 0
-offset_right = 64
-offset_bottom = 34
+[node name="Hem" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=847544943]
+offset_right = 64.0
+offset_bottom = 34.0
 mouse_filter = 2
-color = Color(0.4902, 0.2784, 0.2510, 1.0000)
+color = Color(0.4902, 0.2784, 0.251, 1)
 
-[node name="Check0_0" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 0
-offset_top = 0
-offset_right = 8
-offset_bottom = 8
+[node name="Check0_0" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=294828665]
+offset_right = 8.0
+offset_bottom = 8.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check0_1" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 8
-offset_top = 0
-offset_right = 16
-offset_bottom = 8
+[node name="Check0_1" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1034794092]
+offset_left = 8.0
+offset_right = 16.0
+offset_bottom = 8.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check0_2" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 16
-offset_top = 0
-offset_right = 24
-offset_bottom = 8
+[node name="Check0_2" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=242174624]
+offset_left = 16.0
+offset_right = 24.0
+offset_bottom = 8.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check0_3" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 24
-offset_top = 0
-offset_right = 32
-offset_bottom = 8
+[node name="Check0_3" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1550016495]
+offset_left = 24.0
+offset_right = 32.0
+offset_bottom = 8.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check0_4" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 32
-offset_top = 0
-offset_right = 40
-offset_bottom = 8
+[node name="Check0_4" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1315915166]
+offset_left = 32.0
+offset_right = 40.0
+offset_bottom = 8.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check0_5" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 40
-offset_top = 0
-offset_right = 48
-offset_bottom = 8
+[node name="Check0_5" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1281898561]
+offset_left = 40.0
+offset_right = 48.0
+offset_bottom = 8.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check0_6" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 48
-offset_top = 0
-offset_right = 56
-offset_bottom = 8
+[node name="Check0_6" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=24757213]
+offset_left = 48.0
+offset_right = 56.0
+offset_bottom = 8.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check0_7" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 56
-offset_top = 0
-offset_right = 64
-offset_bottom = 8
+[node name="Check0_7" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1304609711]
+offset_left = 56.0
+offset_right = 64.0
+offset_bottom = 8.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check1_0" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 0
-offset_top = 8
-offset_right = 8
-offset_bottom = 16
+[node name="Check1_0" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1629129996]
+offset_top = 8.0
+offset_right = 8.0
+offset_bottom = 16.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check1_1" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 8
-offset_top = 8
-offset_right = 16
-offset_bottom = 16
+[node name="Check1_1" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=58128312]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 16.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check1_2" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 16
-offset_top = 8
-offset_right = 24
-offset_bottom = 16
+[node name="Check1_2" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1945452714]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 24.0
+offset_bottom = 16.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check1_3" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 24
-offset_top = 8
-offset_right = 32
-offset_bottom = 16
+[node name="Check1_3" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1097111056]
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 32.0
+offset_bottom = 16.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check1_4" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 32
-offset_top = 8
-offset_right = 40
-offset_bottom = 16
+[node name="Check1_4" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=62004339]
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 16.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check1_5" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 40
-offset_top = 8
-offset_right = 48
-offset_bottom = 16
+[node name="Check1_5" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1082189922]
+offset_left = 40.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 16.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check1_6" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 48
-offset_top = 8
-offset_right = 56
-offset_bottom = 16
+[node name="Check1_6" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=775561466]
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 16.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check1_7" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 56
-offset_top = 8
-offset_right = 64
-offset_bottom = 16
+[node name="Check1_7" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1709707541]
+offset_left = 56.0
+offset_top = 8.0
+offset_right = 64.0
+offset_bottom = 16.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check2_0" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 0
-offset_top = 16
-offset_right = 8
-offset_bottom = 24
+[node name="Check2_0" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1573563817]
+offset_top = 16.0
+offset_right = 8.0
+offset_bottom = 24.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check2_1" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 8
-offset_top = 16
-offset_right = 16
-offset_bottom = 24
+[node name="Check2_1" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=728946266]
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 24.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check2_2" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 16
-offset_top = 16
-offset_right = 24
-offset_bottom = 24
+[node name="Check2_2" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1679784395]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 24.0
+offset_bottom = 24.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check2_3" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 24
-offset_top = 16
-offset_right = 32
-offset_bottom = 24
+[node name="Check2_3" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1315423893]
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 32.0
+offset_bottom = 24.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check2_4" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 32
-offset_top = 16
-offset_right = 40
-offset_bottom = 24
+[node name="Check2_4" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=446872926]
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 24.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check2_5" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 40
-offset_top = 16
-offset_right = 48
-offset_bottom = 24
+[node name="Check2_5" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1323765637]
+offset_left = 40.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 24.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check2_6" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 48
-offset_top = 16
-offset_right = 56
-offset_bottom = 24
+[node name="Check2_6" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1762019704]
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 24.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check2_7" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 56
-offset_top = 16
-offset_right = 64
-offset_bottom = 24
+[node name="Check2_7" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=421081305]
+offset_left = 56.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 24.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check3_0" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 0
-offset_top = 24
-offset_right = 8
-offset_bottom = 32
+[node name="Check3_0" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=123321957]
+offset_top = 24.0
+offset_right = 8.0
+offset_bottom = 32.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check3_1" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 8
-offset_top = 24
-offset_right = 16
-offset_bottom = 32
+[node name="Check3_1" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=245068200]
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 16.0
+offset_bottom = 32.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check3_2" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 16
-offset_top = 24
-offset_right = 24
-offset_bottom = 32
+[node name="Check3_2" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=897604976]
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 24.0
+offset_bottom = 32.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check3_3" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 24
-offset_top = 24
-offset_right = 32
-offset_bottom = 32
+[node name="Check3_3" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=2085866789]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 32.0
+offset_bottom = 32.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check3_4" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 32
-offset_top = 24
-offset_right = 40
-offset_bottom = 32
+[node name="Check3_4" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=748166103]
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 40.0
+offset_bottom = 32.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check3_5" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 40
-offset_top = 24
-offset_right = 48
-offset_bottom = 32
+[node name="Check3_5" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=1967985116]
+offset_left = 40.0
+offset_top = 24.0
+offset_right = 48.0
+offset_bottom = 32.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="Check3_6" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 48
-offset_top = 24
-offset_right = 56
-offset_bottom = 32
+[node name="Check3_6" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=777829211]
+offset_left = 48.0
+offset_top = 24.0
+offset_right = 56.0
+offset_bottom = 32.0
 mouse_filter = 2
-color = Color(0.6667, 0.3882, 0.3137, 1.0000)
+color = Color(0.6667, 0.3882, 0.3137, 1)
 
-[node name="Check3_7" type="ColorRect" parent="CheckedCounter/Oilcloth"]
-offset_left = 56
-offset_top = 24
-offset_right = 64
-offset_bottom = 32
+[node name="Check3_7" type="ColorRect" parent="CheckedCounter/Oilcloth" unique_id=610440124]
+offset_left = 56.0
+offset_top = 24.0
+offset_right = 64.0
+offset_bottom = 32.0
 mouse_filter = 2
-color = Color(0.8863, 0.6824, 0.5137, 1.0000)
+color = Color(0.8863, 0.6824, 0.5137, 1)
 
-[node name="CashRegister" type="ColorRect" parent="CheckedCounter"]
-offset_left = 111
-offset_top = -7
-offset_right = 145
-offset_bottom = 9
+[node name="CashRegister" type="ColorRect" parent="CheckedCounter" unique_id=952516904]
+offset_left = 111.0
+offset_top = -7.0
+offset_right = 145.0
+offset_bottom = 9.0
 mouse_filter = 2
-color = Color(0.3216, 0.2667, 0.2235, 1.0000)
+color = Color(0.3216, 0.2667, 0.2235, 1)
 
-[node name="Lid" type="ColorRect" parent="CheckedCounter"]
-offset_left = 113
-offset_top = -8
-offset_right = 143
-offset_bottom = -4
+[node name="Lid" type="ColorRect" parent="CheckedCounter" unique_id=1475892772]
+offset_left = 113.0
+offset_top = -8.0
+offset_right = 143.0
+offset_bottom = -4.0
 mouse_filter = 2
-color = Color(0.7098, 0.5647, 0.3922, 1.0000)
+color = Color(0.7098, 0.5647, 0.3922, 1)
 
-[node name="Drawer" type="ColorRect" parent="CheckedCounter"]
-offset_left = 112
-offset_top = 4
-offset_right = 144
-offset_bottom = 9
+[node name="Drawer" type="ColorRect" parent="CheckedCounter" unique_id=487105058]
+offset_left = 112.0
+offset_top = 4.0
+offset_right = 144.0
+offset_bottom = 9.0
 mouse_filter = 2
-color = Color(0.4745, 0.3608, 0.2706, 1.0000)
+color = Color(0.4745, 0.3608, 0.2706, 1)
 
-[node name="Meter" type="ColorRect" parent="CheckedCounter"]
-offset_left = 119
-offset_top = -5
-offset_right = 137
-offset_bottom = 0
+[node name="Meter" type="ColorRect" parent="CheckedCounter" unique_id=1821145514]
+offset_left = 119.0
+offset_top = -5.0
+offset_right = 137.0
 mouse_filter = 2
-color = Color(0.8314, 0.6588, 0.4392, 1.0000)
+color = Color(0.8314, 0.6588, 0.4392, 1)
 
-[node name="Threshold" type="ColorRect" parent="."]
-offset_left = 247
-offset_top = 322
-offset_right = 312
-offset_bottom = 327
+[node name="Threshold" type="ColorRect" parent="." unique_id=1299197281]
+offset_left = 247.0
+offset_top = 322.0
+offset_right = 312.0
+offset_bottom = 327.0
 mouse_filter = 2
-color = Color(0.4431, 0.3176, 0.2510, 1.0000)
+color = Color(0.4431, 0.3176, 0.251, 1)
 
-[node name="ThresholdTrim" type="ColorRect" parent="."]
-offset_left = 247
-offset_top = 322
-offset_right = 312
-offset_bottom = 323
+[node name="ThresholdTrim" type="ColorRect" parent="." unique_id=184464489]
+offset_left = 247.0
+offset_top = 322.0
+offset_right = 312.0
+offset_bottom = 323.0
 mouse_filter = 2
-color = Color(0.7843, 0.6039, 0.4078, 1.0000)
+color = Color(0.7843, 0.6039, 0.4078, 1)
 
-[node name="Interface" type="CanvasLayer" parent="."]
+[node name="Interface" type="CanvasLayer" parent="." unique_id=786319537]
 
-[node name="FacilityHUD" parent="Interface" instance=ExtResource("3_hud")]
+[node name="FacilityHUD" type="Control" parent="Interface" unique_id=40055798 instance=ExtResource("3_hud")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_m113o")
 facility_title = "商店"
-title_color = Color(0.9804, 0.8863, 0.6941, 1.0000)
-detail_color = Color(0.7647, 0.6353, 0.5059, 1.0000)
+title_color = Color(0.9804, 0.8863, 0.6941, 1)
+detail_color = Color(0.7647, 0.6353, 0.5059, 1)
 
+[node name="ActorLayer" type="Node2D" parent="." unique_id=390346392]
+
+[node name="NpcRoute" type="Node2D" parent="ActorLayer" unique_id=714350019]
+script = ExtResource("5_wr0ul")
+
+[node name="W0" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=1562207534]
+position = Vector2(270, 300)
+
+[node name="W1" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=1712191132]
+position = Vector2(370, 300)
+
+[node name="W2" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=12606162]
+position = Vector2(370, 240)
+
+[node name="W3" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=1703306872]
+position = Vector2(270, 240)
+
+[node name="NpcActor" type="CharacterBody2D" parent="ActorLayer" unique_id=1007591517 instance=ExtResource("6_rxtfm")]
+position = Vector2(270, 300)
+scale = Vector2(3, 3)
+motion_mode = 1
+script = ExtResource("7_tbcxo")
+route = NodePath("../NpcRoute")

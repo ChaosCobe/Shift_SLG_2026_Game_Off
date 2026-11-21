@@ -1,23 +1,23 @@
-[gd_scene format=3]
+[gd_scene format=4 uid="uid://r3rv4ja5migd"]
 
-[ext_resource type="Script" path="res://views/facilities/facility_room.gd" id="1_room"]
-[ext_resource type="TileSet" path="res://assets/tilesets/station_floors.tres" id="2_floors"]
+[ext_resource type="Script" uid="uid://coglm8kuebcgx" path="res://views/facilities/facility_room.gd" id="1_room"]
+[ext_resource type="TileSet" uid="uid://blf6fpd81uuk5" path="res://assets/tilesets/station_floors.tres" id="2_floors"]
 [ext_resource type="PackedScene" path="res://views/facilities/facility_hud.tscn" id="3_hud"]
+[ext_resource type="Script" uid="uid://du74vfixbml2y" path="res://actors/npc_route.gd" id="5_f8wjk"]
+[ext_resource type="PackedScene" uid="uid://xjkwr37yhohd" path="res://actors/npc_actor.tscn" id="6_jqho0"]
 
-[node name="SurfaceRestaurant" type="Node2D"]
+[node name="SurfaceRestaurant" type="Node2D" unique_id=916088485]
 texture_filter = 1
 script = ExtResource("1_room")
 facility_id = &"restaurant"
 
-[node name="Backdrop" type="ColorRect" parent="."]
-offset_left = 0.0
-offset_top = 0.0
+[node name="Backdrop" type="ColorRect" parent="." unique_id=1774491560]
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
 color = Color(0.133333, 0.105882, 0.133333, 1)
 
-[node name="RoomShadow" type="ColorRect" parent="."]
+[node name="RoomShadow" type="ColorRect" parent="." unique_id=638604989]
 offset_left = 58.0
 offset_top = 89.0
 offset_right = 582.0
@@ -25,7 +25,7 @@ offset_bottom = 332.0
 mouse_filter = 2
 color = Color(0.070588, 0.058824, 0.082353, 1)
 
-[node name="RoomWall" type="ColorRect" parent="."]
+[node name="RoomWall" type="ColorRect" parent="." unique_id=1772064051]
 offset_left = 64.0
 offset_top = 69.0
 offset_right = 576.0
@@ -33,7 +33,7 @@ offset_bottom = 113.0
 mouse_filter = 2
 color = Color(0.317647, 0.2, 0.196078, 1)
 
-[node name="WallTop" type="ColorRect" parent="."]
+[node name="WallTop" type="ColorRect" parent="." unique_id=1760850703]
 offset_left = 64.0
 offset_top = 69.0
 offset_right = 576.0
@@ -41,7 +41,7 @@ offset_bottom = 72.0
 mouse_filter = 2
 color = Color(0.580392, 0.403922, 0.313725, 1)
 
-[node name="WallBase" type="ColorRect" parent="."]
+[node name="WallBase" type="ColorRect" parent="." unique_id=1363988183]
 offset_left = 64.0
 offset_top = 96.0
 offset_right = 576.0
@@ -49,7 +49,7 @@ offset_bottom = 103.0
 mouse_filter = 2
 color = Color(0.384314, 0.2, 0.192157, 1)
 
-[node name="WallTrim" type="ColorRect" parent="."]
+[node name="WallTrim" type="ColorRect" parent="." unique_id=1924122420]
 offset_left = 64.0
 offset_top = 96.0
 offset_right = 576.0
@@ -57,29 +57,29 @@ offset_bottom = 98.0
 mouse_filter = 2
 color = Color(0.701961, 0.478431, 0.329412, 1)
 
-[node name="GoldFloor" type="TileMapLayer" parent="."]
+[node name="GoldFloor" type="TileMapLayer" parent="." unique_id=1519555131]
+modulate = Color(0.945098, 0.776471, 0.67451, 1)
 position = Vector2(64, 102)
 scale = Vector2(2, 2)
-modulate = Color(0.945098, 0.776471, 0.67451, 1)
-tile_set = ExtResource("2_floors")
 tile_map_data = PackedByteArray("AAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAAMAAAAAAADAAAAAAAMAAAAAAAEAAAAAAAMAAAAAAAFAAAAAAAMAAAAAAAGAAAAAAAMAAAAAAAHAAAAAAAMAAAAAAAIAAAAAAAMAAAAAAAJAAAAAAAMAAAAAAAKAAAAAAAMAAAAAAALAAAAAAAMAAAAAAAMAAAAAAAMAAAAAAANAAAAAAAMAAAAAAAOAAAAAAAMAAAAAAAPAAAAAAANAAAAAAAAAAEAAAALAAEAAAABAAEAAAAMAAEAAAACAAEAAAAMAAEAAAADAAEAAAAMAAEAAAAEAAEAAAAMAAEAAAAFAAEAAAAMAAEAAAAGAAEAAAAMAAEAAAAHAAEAAAAMAAEAAAAIAAEAAAAMAAEAAAAJAAEAAAAMAAEAAAAKAAEAAAAMAAEAAAALAAEAAAAMAAEAAAAMAAEAAAAMAAEAAAANAAEAAAAMAAEAAAAOAAEAAAAMAAEAAAAPAAEAAAANAAEAAAAAAAIAAAALAAEAAAABAAIAAAAMAAEAAAACAAIAAAAMAAEAAAADAAIAAAAMAAEAAAAEAAIAAAAMAAEAAAAFAAIAAAAMAAEAAAAGAAIAAAAMAAEAAAAHAAIAAAAMAAEAAAAIAAIAAAAMAAEAAAAJAAIAAAAMAAEAAAAKAAIAAAAMAAEAAAALAAIAAAAMAAEAAAAMAAIAAAAMAAEAAAANAAIAAAAMAAEAAAAOAAIAAAAMAAEAAAAPAAIAAAANAAEAAAAAAAMAAAALAAEAAAABAAMAAAAMAAEAAAACAAMAAAAMAAEAAAADAAMAAAAMAAEAAAAEAAMAAAAMAAEAAAAFAAMAAAAMAAEAAAAGAAMAAAAMAAEAAAAHAAMAAAAMAAEAAAAIAAMAAAAMAAEAAAAJAAMAAAAMAAEAAAAKAAMAAAAMAAEAAAALAAMAAAAMAAEAAAAMAAMAAAAMAAEAAAANAAMAAAAMAAEAAAAOAAMAAAAMAAEAAAAPAAMAAAANAAEAAAAAAAQAAAALAAEAAAABAAQAAAAMAAEAAAACAAQAAAAMAAEAAAADAAQAAAAMAAEAAAAEAAQAAAAMAAEAAAAFAAQAAAAMAAEAAAAGAAQAAAAMAAEAAAAHAAQAAAAMAAEAAAAIAAQAAAAMAAEAAAAJAAQAAAAMAAEAAAAKAAQAAAAMAAEAAAALAAQAAAAMAAEAAAAMAAQAAAAMAAEAAAANAAQAAAAMAAEAAAAOAAQAAAAMAAEAAAAPAAQAAAANAAEAAAAAAAUAAAALAAEAAAABAAUAAAAMAAEAAAACAAUAAAAMAAEAAAADAAUAAAAMAAEAAAAEAAUAAAAMAAEAAAAFAAUAAAAMAAEAAAAGAAUAAAAMAAEAAAAHAAUAAAAMAAEAAAAIAAUAAAAMAAEAAAAJAAUAAAAMAAEAAAAKAAUAAAAMAAEAAAALAAUAAAAMAAEAAAAMAAUAAAAMAAEAAAANAAUAAAAMAAEAAAAOAAUAAAAMAAEAAAAPAAUAAAANAAEAAAAAAAYAAAALAAIAAAABAAYAAAAMAAIAAAACAAYAAAAMAAIAAAADAAYAAAAMAAIAAAAEAAYAAAAMAAIAAAAFAAYAAAAMAAIAAAAGAAYAAAAMAAIAAAAHAAYAAAAMAAIAAAAIAAYAAAAMAAIAAAAJAAYAAAAMAAIAAAAKAAYAAAAMAAIAAAALAAYAAAAMAAIAAAAMAAYAAAAMAAIAAAANAAYAAAAMAAIAAAAOAAYAAAAMAAIAAAAPAAYAAAANAAIAAAA=")
+tile_set = ExtResource("2_floors")
 
-[node name="Window1" type="Node2D" parent="."]
+[node name="Window1" type="Node2D" parent="." unique_id=928601609]
 position = Vector2(110, 72)
 
-[node name="Frame" type="Polygon2D" parent="Window1"]
+[node name="Frame" type="Polygon2D" parent="Window1" unique_id=384608378]
 color = Color(0.137255, 0.137255, 0.196078, 1)
 polygon = PackedVector2Array(0, 8, 4, 4, 8, 0, 30, 0, 34, 4, 38, 8, 38, 23, 0, 23)
 
-[node name="Glass" type="Polygon2D" parent="Window1"]
+[node name="Glass" type="Polygon2D" parent="Window1" unique_id=1043133129]
 color = Color(0.384314, 0.454902, 0.521569, 1)
 polygon = PackedVector2Array(4, 9, 10, 3, 28, 3, 34, 9, 34, 20, 4, 20)
 
-[node name="Track" type="Polygon2D" parent="Window1"]
+[node name="Track" type="Polygon2D" parent="Window1" unique_id=1170720118]
 color = Color(0.262745, 0.27451, 0.352941, 1)
 polygon = PackedVector2Array(4, 17, 11, 15, 17, 17, 26, 12, 34, 16, 34, 20, 4, 20)
 
-[node name="Mullion" type="ColorRect" parent="Window1"]
+[node name="Mullion" type="ColorRect" parent="Window1" unique_id=147791431]
 offset_left = 18.0
 offset_top = 3.0
 offset_right = 20.0
@@ -87,7 +87,7 @@ offset_bottom = 23.0
 mouse_filter = 2
 color = Color(0.623529, 0.466667, 0.32549, 1)
 
-[node name="Sill" type="ColorRect" parent="Window1"]
+[node name="Sill" type="ColorRect" parent="Window1" unique_id=1160219020]
 offset_left = -2.0
 offset_top = 21.0
 offset_right = 40.0
@@ -95,22 +95,22 @@ offset_bottom = 24.0
 mouse_filter = 2
 color = Color(0.737255, 0.556863, 0.376471, 1)
 
-[node name="Window2" type="Node2D" parent="."]
+[node name="Window2" type="Node2D" parent="." unique_id=1683920393]
 position = Vector2(261, 72)
 
-[node name="Frame" type="Polygon2D" parent="Window2"]
+[node name="Frame" type="Polygon2D" parent="Window2" unique_id=423272393]
 color = Color(0.137255, 0.137255, 0.196078, 1)
 polygon = PackedVector2Array(0, 8, 4, 4, 8, 0, 30, 0, 34, 4, 38, 8, 38, 23, 0, 23)
 
-[node name="Glass" type="Polygon2D" parent="Window2"]
+[node name="Glass" type="Polygon2D" parent="Window2" unique_id=526102579]
 color = Color(0.384314, 0.454902, 0.521569, 1)
 polygon = PackedVector2Array(4, 9, 10, 3, 28, 3, 34, 9, 34, 20, 4, 20)
 
-[node name="Track" type="Polygon2D" parent="Window2"]
+[node name="Track" type="Polygon2D" parent="Window2" unique_id=875434179]
 color = Color(0.262745, 0.27451, 0.352941, 1)
 polygon = PackedVector2Array(4, 17, 11, 15, 17, 17, 26, 12, 34, 16, 34, 20, 4, 20)
 
-[node name="Mullion" type="ColorRect" parent="Window2"]
+[node name="Mullion" type="ColorRect" parent="Window2" unique_id=1265683590]
 offset_left = 18.0
 offset_top = 3.0
 offset_right = 20.0
@@ -118,7 +118,7 @@ offset_bottom = 23.0
 mouse_filter = 2
 color = Color(0.623529, 0.466667, 0.32549, 1)
 
-[node name="Sill" type="ColorRect" parent="Window2"]
+[node name="Sill" type="ColorRect" parent="Window2" unique_id=1397222481]
 offset_left = -2.0
 offset_top = 21.0
 offset_right = 40.0
@@ -126,22 +126,22 @@ offset_bottom = 24.0
 mouse_filter = 2
 color = Color(0.737255, 0.556863, 0.376471, 1)
 
-[node name="Window3" type="Node2D" parent="."]
+[node name="Window3" type="Node2D" parent="." unique_id=1825398347]
 position = Vector2(444, 72)
 
-[node name="Frame" type="Polygon2D" parent="Window3"]
+[node name="Frame" type="Polygon2D" parent="Window3" unique_id=1659560893]
 color = Color(0.137255, 0.137255, 0.196078, 1)
 polygon = PackedVector2Array(0, 8, 4, 4, 8, 0, 30, 0, 34, 4, 38, 8, 38, 23, 0, 23)
 
-[node name="Glass" type="Polygon2D" parent="Window3"]
+[node name="Glass" type="Polygon2D" parent="Window3" unique_id=1711258232]
 color = Color(0.384314, 0.454902, 0.521569, 1)
 polygon = PackedVector2Array(4, 9, 10, 3, 28, 3, 34, 9, 34, 20, 4, 20)
 
-[node name="Track" type="Polygon2D" parent="Window3"]
+[node name="Track" type="Polygon2D" parent="Window3" unique_id=280961364]
 color = Color(0.262745, 0.27451, 0.352941, 1)
 polygon = PackedVector2Array(4, 17, 11, 15, 17, 17, 26, 12, 34, 16, 34, 20, 4, 20)
 
-[node name="Mullion" type="ColorRect" parent="Window3"]
+[node name="Mullion" type="ColorRect" parent="Window3" unique_id=1275999548]
 offset_left = 18.0
 offset_top = 3.0
 offset_right = 20.0
@@ -149,7 +149,7 @@ offset_bottom = 23.0
 mouse_filter = 2
 color = Color(0.623529, 0.466667, 0.32549, 1)
 
-[node name="Sill" type="ColorRect" parent="Window3"]
+[node name="Sill" type="ColorRect" parent="Window3" unique_id=1789487049]
 offset_left = -2.0
 offset_top = 21.0
 offset_right = 40.0
@@ -157,22 +157,22 @@ offset_bottom = 24.0
 mouse_filter = 2
 color = Color(0.737255, 0.556863, 0.376471, 1)
 
-[node name="Window4" type="Node2D" parent="."]
+[node name="Window4" type="Node2D" parent="." unique_id=554181746]
 position = Vector2(531, 72)
 
-[node name="Frame" type="Polygon2D" parent="Window4"]
+[node name="Frame" type="Polygon2D" parent="Window4" unique_id=845607421]
 color = Color(0.137255, 0.137255, 0.196078, 1)
 polygon = PackedVector2Array(0, 8, 4, 4, 8, 0, 30, 0, 34, 4, 38, 8, 38, 23, 0, 23)
 
-[node name="Glass" type="Polygon2D" parent="Window4"]
+[node name="Glass" type="Polygon2D" parent="Window4" unique_id=669609787]
 color = Color(0.384314, 0.454902, 0.521569, 1)
 polygon = PackedVector2Array(4, 9, 10, 3, 28, 3, 34, 9, 34, 20, 4, 20)
 
-[node name="Track" type="Polygon2D" parent="Window4"]
+[node name="Track" type="Polygon2D" parent="Window4" unique_id=2053339971]
 color = Color(0.262745, 0.27451, 0.352941, 1)
 polygon = PackedVector2Array(4, 17, 11, 15, 17, 17, 26, 12, 34, 16, 34, 20, 4, 20)
 
-[node name="Mullion" type="ColorRect" parent="Window4"]
+[node name="Mullion" type="ColorRect" parent="Window4" unique_id=1813091293]
 offset_left = 18.0
 offset_top = 3.0
 offset_right = 20.0
@@ -180,7 +180,7 @@ offset_bottom = 23.0
 mouse_filter = 2
 color = Color(0.623529, 0.466667, 0.32549, 1)
 
-[node name="Sill" type="ColorRect" parent="Window4"]
+[node name="Sill" type="ColorRect" parent="Window4" unique_id=204024758]
 offset_left = -2.0
 offset_top = 21.0
 offset_right = 40.0
@@ -188,22 +188,22 @@ offset_bottom = 24.0
 mouse_filter = 2
 color = Color(0.737255, 0.556863, 0.376471, 1)
 
-[node name="OpenKitchen" type="Node2D" parent="."]
+[node name="OpenKitchen" type="Node2D" parent="." unique_id=2098287505]
 
-[node name="KitchenMat" type="Polygon2D" parent="OpenKitchen"]
+[node name="KitchenMat" type="Polygon2D" parent="OpenKitchen" unique_id=919190429]
 color = Color(0.533333, 0.329412, 0.352941, 1)
 polygon = PackedVector2Array(89, 112, 319, 112, 324, 117, 324, 196, 319, 201, 89, 201, 84, 196, 84, 117)
 
-[node name="KitchenMatBorder" type="Line2D" parent="OpenKitchen"]
+[node name="KitchenMatBorder" type="Line2D" parent="OpenKitchen" unique_id=1969328016]
 points = PackedVector2Array(92, 116, 316, 116, 320, 120, 320, 193, 316, 197, 92, 197, 88, 193, 88, 120)
+closed = true
 width = 1.0
 default_color = Color(0.654902, 0.443137, 0.431373, 1)
-closed = true
 
-[node name="CookingRange" type="Node2D" parent="OpenKitchen"]
+[node name="CookingRange" type="Node2D" parent="OpenKitchen" unique_id=1267573668]
 position = Vector2(99, 116)
 
-[node name="Shadow" type="ColorRect" parent="OpenKitchen/CookingRange"]
+[node name="Shadow" type="ColorRect" parent="OpenKitchen/CookingRange" unique_id=1601263564]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 76.0
@@ -211,19 +211,18 @@ offset_bottom = 49.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="OpenKitchen/CookingRange"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="OpenKitchen/CookingRange" unique_id=1600363389]
 offset_top = 37.0
 offset_right = 73.0
 offset_bottom = 45.0
 mouse_filter = 2
 color = Color(0.219608, 0.168627, 0.196078, 1)
 
-[node name="Top" type="Polygon2D" parent="OpenKitchen/CookingRange"]
+[node name="Top" type="Polygon2D" parent="OpenKitchen/CookingRange" unique_id=1808240036]
 color = Color(0.388235, 0.329412, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 71, 0, 73, 2, 73, 35, 71, 37, 2, 37, 0, 35, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="OpenKitchen/CookingRange"]
+[node name="Edge" type="ColorRect" parent="OpenKitchen/CookingRange" unique_id=1889864425]
 offset_left = 2.0
 offset_top = 35.0
 offset_right = 71.0
@@ -231,15 +230,15 @@ offset_bottom = 37.0
 mouse_filter = 2
 color = Color(0.580392, 0.517647, 0.458824, 1)
 
-[node name="Burner17" type="Polygon2D" parent="OpenKitchen/CookingRange"]
+[node name="Burner17" type="Polygon2D" parent="OpenKitchen/CookingRange" unique_id=2079191811]
 color = Color(0.258824, 0.192157, 0.215686, 1)
 polygon = PackedVector2Array(13, 9, 21, 9, 23, 11, 23, 19, 21, 21, 13, 21, 11, 19, 11, 11)
 
-[node name="Ember17" type="Polygon2D" parent="OpenKitchen/CookingRange"]
+[node name="Ember17" type="Polygon2D" parent="OpenKitchen/CookingRange" unique_id=685793287]
 color = Color(0.831373, 0.458824, 0.294118, 1)
 polygon = PackedVector2Array(15, 15, 18, 11, 20, 13, 20, 16, 14, 17)
 
-[node name="Dial17" type="ColorRect" parent="OpenKitchen/CookingRange"]
+[node name="Dial17" type="ColorRect" parent="OpenKitchen/CookingRange" unique_id=538924729]
 offset_left = 15.0
 offset_top = 39.0
 offset_right = 19.0
@@ -247,15 +246,15 @@ offset_bottom = 42.0
 mouse_filter = 2
 color = Color(0.858824, 0.611765, 0.392157, 1)
 
-[node name="Burner37" type="Polygon2D" parent="OpenKitchen/CookingRange"]
+[node name="Burner37" type="Polygon2D" parent="OpenKitchen/CookingRange" unique_id=1983488137]
 color = Color(0.258824, 0.192157, 0.215686, 1)
 polygon = PackedVector2Array(33, 9, 41, 9, 43, 11, 43, 19, 41, 21, 33, 21, 31, 19, 31, 11)
 
-[node name="Ember37" type="Polygon2D" parent="OpenKitchen/CookingRange"]
+[node name="Ember37" type="Polygon2D" parent="OpenKitchen/CookingRange" unique_id=435089642]
 color = Color(0.831373, 0.458824, 0.294118, 1)
 polygon = PackedVector2Array(35, 15, 38, 11, 40, 13, 40, 16, 34, 17)
 
-[node name="Dial37" type="ColorRect" parent="OpenKitchen/CookingRange"]
+[node name="Dial37" type="ColorRect" parent="OpenKitchen/CookingRange" unique_id=1361070971]
 offset_left = 35.0
 offset_top = 39.0
 offset_right = 39.0
@@ -263,15 +262,15 @@ offset_bottom = 42.0
 mouse_filter = 2
 color = Color(0.858824, 0.611765, 0.392157, 1)
 
-[node name="Burner57" type="Polygon2D" parent="OpenKitchen/CookingRange"]
+[node name="Burner57" type="Polygon2D" parent="OpenKitchen/CookingRange" unique_id=74962304]
 color = Color(0.258824, 0.192157, 0.215686, 1)
 polygon = PackedVector2Array(53, 9, 61, 9, 63, 11, 63, 19, 61, 21, 53, 21, 51, 19, 51, 11)
 
-[node name="Ember57" type="Polygon2D" parent="OpenKitchen/CookingRange"]
+[node name="Ember57" type="Polygon2D" parent="OpenKitchen/CookingRange" unique_id=559044039]
 color = Color(0.831373, 0.458824, 0.294118, 1)
 polygon = PackedVector2Array(55, 15, 58, 11, 60, 13, 60, 16, 54, 17)
 
-[node name="Dial57" type="ColorRect" parent="OpenKitchen/CookingRange"]
+[node name="Dial57" type="ColorRect" parent="OpenKitchen/CookingRange" unique_id=1926009199]
 offset_left = 55.0
 offset_top = 39.0
 offset_right = 59.0
@@ -279,11 +278,11 @@ offset_bottom = 42.0
 mouse_filter = 2
 color = Color(0.858824, 0.611765, 0.392157, 1)
 
-[node name="Pot" type="Polygon2D" parent="OpenKitchen/CookingRange"]
+[node name="Pot" type="Polygon2D" parent="OpenKitchen/CookingRange" unique_id=1135727874]
 color = Color(0.537255, 0.403922, 0.360784, 1)
 polygon = PackedVector2Array(47, 3, 62, 3, 65, 6, 65, 15, 62, 18, 47, 18, 44, 15, 44, 6)
 
-[node name="PotLight" type="ColorRect" parent="OpenKitchen/CookingRange"]
+[node name="PotLight" type="ColorRect" parent="OpenKitchen/CookingRange" unique_id=1367355606]
 offset_left = 48.0
 offset_top = 6.0
 offset_right = 61.0
@@ -291,7 +290,7 @@ offset_bottom = 8.0
 mouse_filter = 2
 color = Color(0.827451, 0.670588, 0.490196, 1)
 
-[node name="PotHandleL" type="ColorRect" parent="OpenKitchen/CookingRange"]
+[node name="PotHandleL" type="ColorRect" parent="OpenKitchen/CookingRange" unique_id=187261336]
 offset_left = 40.0
 offset_top = 8.0
 offset_right = 45.0
@@ -299,7 +298,7 @@ offset_bottom = 10.0
 mouse_filter = 2
 color = Color(0.72549, 0.545098, 0.415686, 1)
 
-[node name="PotHandleR" type="ColorRect" parent="OpenKitchen/CookingRange"]
+[node name="PotHandleR" type="ColorRect" parent="OpenKitchen/CookingRange" unique_id=432407192]
 offset_left = 64.0
 offset_top = 8.0
 offset_right = 70.0
@@ -307,14 +306,14 @@ offset_bottom = 10.0
 mouse_filter = 2
 color = Color(0.72549, 0.545098, 0.415686, 1)
 
-[node name="Steam" type="Polygon2D" parent="OpenKitchen/CookingRange"]
+[node name="Steam" type="Polygon2D" parent="OpenKitchen/CookingRange" unique_id=624512837]
 color = Color(0.976471, 0.815686, 0.678431, 0.396078)
 polygon = PackedVector2Array(53, 3, 53, -3, 49, -6, 49, -11, 51, -11, 51, -7, 56, -4, 56, 3)
 
-[node name="PrepBench" type="Node2D" parent="OpenKitchen"]
+[node name="PrepBench" type="Node2D" parent="OpenKitchen" unique_id=586358093]
 position = Vector2(181, 118)
 
-[node name="Shadow" type="ColorRect" parent="OpenKitchen/PrepBench"]
+[node name="Shadow" type="ColorRect" parent="OpenKitchen/PrepBench" unique_id=367990910]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 108.0
@@ -322,19 +321,18 @@ offset_bottom = 46.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="OpenKitchen/PrepBench"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="OpenKitchen/PrepBench" unique_id=1659999084]
 offset_top = 32.0
 offset_right = 105.0
 offset_bottom = 42.0
 mouse_filter = 2
 color = Color(0.470588, 0.27451, 0.215686, 1)
 
-[node name="Top" type="Polygon2D" parent="OpenKitchen/PrepBench"]
+[node name="Top" type="Polygon2D" parent="OpenKitchen/PrepBench" unique_id=917844925]
 color = Color(0.72549, 0.517647, 0.372549, 1)
 polygon = PackedVector2Array(2, 0, 103, 0, 105, 2, 105, 30, 103, 32, 2, 32, 0, 30, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="OpenKitchen/PrepBench"]
+[node name="Edge" type="ColorRect" parent="OpenKitchen/PrepBench" unique_id=2084503171]
 offset_left = 2.0
 offset_top = 30.0
 offset_right = 103.0
@@ -342,7 +340,7 @@ offset_bottom = 32.0
 mouse_filter = 2
 color = Color(0.890196, 0.737255, 0.545098, 1)
 
-[node name="Board" type="ColorRect" parent="OpenKitchen/PrepBench"]
+[node name="Board" type="ColorRect" parent="OpenKitchen/PrepBench" unique_id=1628011753]
 offset_left = 9.0
 offset_top = 8.0
 offset_right = 38.0
@@ -350,7 +348,7 @@ offset_bottom = 22.0
 mouse_filter = 2
 color = Color(0.909804, 0.741176, 0.482353, 1)
 
-[node name="Produce15_12" type="ColorRect" parent="OpenKitchen/PrepBench"]
+[node name="Produce15_12" type="ColorRect" parent="OpenKitchen/PrepBench" unique_id=55333711]
 offset_left = 15.0
 offset_top = 12.0
 offset_right = 20.0
@@ -358,7 +356,7 @@ offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.482353, 0.596078, 0.313725, 1)
 
-[node name="Produce22_15" type="ColorRect" parent="OpenKitchen/PrepBench"]
+[node name="Produce22_15" type="ColorRect" parent="OpenKitchen/PrepBench" unique_id=734891724]
 offset_left = 22.0
 offset_top = 15.0
 offset_right = 27.0
@@ -366,7 +364,7 @@ offset_bottom = 19.0
 mouse_filter = 2
 color = Color(0.211765, 0.431373, 0.294118, 1)
 
-[node name="Produce31_12" type="ColorRect" parent="OpenKitchen/PrepBench"]
+[node name="Produce31_12" type="ColorRect" parent="OpenKitchen/PrepBench" unique_id=1898989464]
 offset_left = 31.0
 offset_top = 12.0
 offset_right = 36.0
@@ -374,7 +372,7 @@ offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.678431, 0.372549, 0.266667, 1)
 
-[node name="Produce26_10" type="ColorRect" parent="OpenKitchen/PrepBench"]
+[node name="Produce26_10" type="ColorRect" parent="OpenKitchen/PrepBench" unique_id=853558221]
 offset_left = 26.0
 offset_top = 10.0
 offset_right = 31.0
@@ -382,7 +380,7 @@ offset_bottom = 14.0
 mouse_filter = 2
 color = Color(0.505882, 0.537255, 0.294118, 1)
 
-[node name="Washbasin" type="ColorRect" parent="OpenKitchen/PrepBench"]
+[node name="Washbasin" type="ColorRect" parent="OpenKitchen/PrepBench" unique_id=2139672623]
 offset_left = 64.0
 offset_top = 5.0
 offset_right = 95.0
@@ -390,7 +388,7 @@ offset_bottom = 25.0
 mouse_filter = 2
 color = Color(0.611765, 0.607843, 0.576471, 1)
 
-[node name="Water" type="ColorRect" parent="OpenKitchen/PrepBench"]
+[node name="Water" type="ColorRect" parent="OpenKitchen/PrepBench" unique_id=186666168]
 offset_left = 69.0
 offset_top = 9.0
 offset_right = 90.0
@@ -398,10 +396,10 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.392157, 0.490196, 0.513725, 1)
 
-[node name="ServiceCounter" type="Node2D" parent="OpenKitchen"]
+[node name="ServiceCounter" type="Node2D" parent="OpenKitchen" unique_id=1948832917]
 position = Vector2(94, 170)
 
-[node name="Shadow" type="ColorRect" parent="OpenKitchen/ServiceCounter"]
+[node name="Shadow" type="ColorRect" parent="OpenKitchen/ServiceCounter" unique_id=2059645728]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 227.0
@@ -409,19 +407,18 @@ offset_bottom = 36.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="OpenKitchen/ServiceCounter"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="OpenKitchen/ServiceCounter" unique_id=1292998394]
 offset_top = 19.0
 offset_right = 224.0
 offset_bottom = 32.0
 mouse_filter = 2
 color = Color(0.380392, 0.219608, 0.192157, 1)
 
-[node name="Top" type="Polygon2D" parent="OpenKitchen/ServiceCounter"]
+[node name="Top" type="Polygon2D" parent="OpenKitchen/ServiceCounter" unique_id=1393180897]
 color = Color(0.654902, 0.423529, 0.309804, 1)
 polygon = PackedVector2Array(2, 0, 222, 0, 224, 2, 224, 17, 222, 19, 2, 19, 0, 17, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="OpenKitchen/ServiceCounter"]
+[node name="Edge" type="ColorRect" parent="OpenKitchen/ServiceCounter" unique_id=2045495442]
 offset_left = 2.0
 offset_top = 17.0
 offset_right = 222.0
@@ -429,7 +426,7 @@ offset_bottom = 19.0
 mouse_filter = 2
 color = Color(0.878431, 0.65098, 0.458824, 1)
 
-[node name="FrontPlate0" type="ColorRect" parent="OpenKitchen/ServiceCounter"]
+[node name="FrontPlate0" type="ColorRect" parent="OpenKitchen/ServiceCounter" unique_id=1209713708]
 offset_left = 12.0
 offset_top = 23.0
 offset_right = 29.0
@@ -437,7 +434,7 @@ offset_bottom = 28.0
 mouse_filter = 2
 color = Color(0.466667, 0.27451, 0.219608, 1)
 
-[node name="FrontPlate1" type="ColorRect" parent="OpenKitchen/ServiceCounter"]
+[node name="FrontPlate1" type="ColorRect" parent="OpenKitchen/ServiceCounter" unique_id=2146418121]
 offset_left = 55.0
 offset_top = 23.0
 offset_right = 72.0
@@ -445,7 +442,7 @@ offset_bottom = 28.0
 mouse_filter = 2
 color = Color(0.466667, 0.27451, 0.219608, 1)
 
-[node name="FrontPlate2" type="ColorRect" parent="OpenKitchen/ServiceCounter"]
+[node name="FrontPlate2" type="ColorRect" parent="OpenKitchen/ServiceCounter" unique_id=1604121493]
 offset_left = 98.0
 offset_top = 23.0
 offset_right = 115.0
@@ -453,7 +450,7 @@ offset_bottom = 28.0
 mouse_filter = 2
 color = Color(0.466667, 0.27451, 0.219608, 1)
 
-[node name="FrontPlate3" type="ColorRect" parent="OpenKitchen/ServiceCounter"]
+[node name="FrontPlate3" type="ColorRect" parent="OpenKitchen/ServiceCounter" unique_id=1321219770]
 offset_left = 141.0
 offset_top = 23.0
 offset_right = 158.0
@@ -461,7 +458,7 @@ offset_bottom = 28.0
 mouse_filter = 2
 color = Color(0.466667, 0.27451, 0.219608, 1)
 
-[node name="FrontPlate4" type="ColorRect" parent="OpenKitchen/ServiceCounter"]
+[node name="FrontPlate4" type="ColorRect" parent="OpenKitchen/ServiceCounter" unique_id=678601662]
 offset_left = 184.0
 offset_top = 23.0
 offset_right = 201.0
@@ -469,44 +466,44 @@ offset_bottom = 28.0
 mouse_filter = 2
 color = Color(0.466667, 0.27451, 0.219608, 1)
 
-[node name="Plate0" type="Polygon2D" parent="OpenKitchen/ServiceCounter"]
+[node name="Plate0" type="Polygon2D" parent="OpenKitchen/ServiceCounter" unique_id=2132355341]
 color = Color(0.866667, 0.819608, 0.701961, 1)
 polygon = PackedVector2Array(51, 9, 49, 13, 43, 14, 37, 13, 35, 9, 37, 5, 43, 4, 49, 5)
 
-[node name="PlateInlay0" type="Polygon2D" parent="OpenKitchen/ServiceCounter"]
+[node name="PlateInlay0" type="Polygon2D" parent="OpenKitchen/ServiceCounter" unique_id=852531666]
 color = Color(0.690196, 0.470588, 0.329412, 1)
 polygon = PackedVector2Array(48, 9, 47, 11, 43, 12, 39, 11, 38, 9, 39, 7, 43, 6, 47, 7)
 
-[node name="Plate1" type="Polygon2D" parent="OpenKitchen/ServiceCounter"]
+[node name="Plate1" type="Polygon2D" parent="OpenKitchen/ServiceCounter" unique_id=839642263]
 color = Color(0.866667, 0.819608, 0.701961, 1)
 polygon = PackedVector2Array(69, 9, 67, 13, 61, 14, 55, 13, 53, 9, 55, 5, 61, 4, 67, 5)
 
-[node name="PlateInlay1" type="Polygon2D" parent="OpenKitchen/ServiceCounter"]
+[node name="PlateInlay1" type="Polygon2D" parent="OpenKitchen/ServiceCounter" unique_id=1526352648]
 color = Color(0.690196, 0.470588, 0.329412, 1)
 polygon = PackedVector2Array(66, 9, 65, 11, 61, 12, 57, 11, 56, 9, 57, 7, 61, 6, 65, 7)
 
-[node name="Plate2" type="Polygon2D" parent="OpenKitchen/ServiceCounter"]
+[node name="Plate2" type="Polygon2D" parent="OpenKitchen/ServiceCounter" unique_id=1732503143]
 color = Color(0.866667, 0.819608, 0.701961, 1)
 polygon = PackedVector2Array(153, 10, 151, 14, 145, 15, 139, 14, 137, 10, 139, 6, 145, 5, 151, 6)
 
-[node name="PlateInlay2" type="Polygon2D" parent="OpenKitchen/ServiceCounter"]
+[node name="PlateInlay2" type="Polygon2D" parent="OpenKitchen/ServiceCounter" unique_id=843112291]
 color = Color(0.690196, 0.470588, 0.329412, 1)
 polygon = PackedVector2Array(150, 10, 149, 12, 145, 13, 141, 12, 140, 10, 141, 8, 145, 7, 149, 8)
 
-[node name="Plate3" type="Polygon2D" parent="OpenKitchen/ServiceCounter"]
+[node name="Plate3" type="Polygon2D" parent="OpenKitchen/ServiceCounter" unique_id=1131128783]
 color = Color(0.866667, 0.819608, 0.701961, 1)
 polygon = PackedVector2Array(171, 10, 169, 14, 163, 15, 157, 14, 155, 10, 157, 6, 163, 5, 169, 6)
 
-[node name="PlateInlay3" type="Polygon2D" parent="OpenKitchen/ServiceCounter"]
+[node name="PlateInlay3" type="Polygon2D" parent="OpenKitchen/ServiceCounter" unique_id=2066933734]
 color = Color(0.690196, 0.470588, 0.329412, 1)
 polygon = PackedVector2Array(168, 10, 167, 12, 163, 13, 159, 12, 158, 10, 159, 8, 163, 7, 167, 8)
 
-[node name="Sideboard" type="Node2D" parent="."]
+[node name="Sideboard" type="Node2D" parent="." unique_id=1163909778]
 
-[node name="DessertDisplay" type="Node2D" parent="Sideboard"]
+[node name="DessertDisplay" type="Node2D" parent="Sideboard" unique_id=242700163]
 position = Vector2(429, 113)
 
-[node name="Shadow" type="ColorRect" parent="Sideboard/DessertDisplay"]
+[node name="Shadow" type="ColorRect" parent="Sideboard/DessertDisplay" unique_id=1373996265]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 111.0
@@ -514,19 +511,18 @@ offset_bottom = 45.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="Sideboard/DessertDisplay"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="Sideboard/DessertDisplay" unique_id=104215378]
 offset_top = 30.0
 offset_right = 108.0
 offset_bottom = 41.0
 mouse_filter = 2
 color = Color(0.47451, 0.294118, 0.239216, 1)
 
-[node name="Top" type="Polygon2D" parent="Sideboard/DessertDisplay"]
+[node name="Top" type="Polygon2D" parent="Sideboard/DessertDisplay" unique_id=1049780979]
 color = Color(0.729412, 0.529412, 0.4, 1)
 polygon = PackedVector2Array(2, 0, 106, 0, 108, 2, 108, 28, 106, 30, 2, 30, 0, 28, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="Sideboard/DessertDisplay"]
+[node name="Edge" type="ColorRect" parent="Sideboard/DessertDisplay" unique_id=1701640172]
 offset_left = 2.0
 offset_top = 28.0
 offset_right = 106.0
@@ -534,7 +530,7 @@ offset_bottom = 30.0
 mouse_filter = 2
 color = Color(0.866667, 0.67451, 0.470588, 1)
 
-[node name="Glass" type="ColorRect" parent="Sideboard/DessertDisplay"]
+[node name="Glass" type="ColorRect" parent="Sideboard/DessertDisplay" unique_id=2139951122]
 offset_left = 5.0
 offset_top = 2.0
 offset_right = 103.0
@@ -542,7 +538,7 @@ offset_bottom = 22.0
 mouse_filter = 2
 color = Color(0.509804, 0.65098, 0.666667, 1)
 
-[node name="Tray" type="ColorRect" parent="Sideboard/DessertDisplay"]
+[node name="Tray" type="ColorRect" parent="Sideboard/DessertDisplay" unique_id=1217527729]
 offset_left = 8.0
 offset_top = 13.0
 offset_right = 99.0
@@ -550,7 +546,7 @@ offset_bottom = 19.0
 mouse_filter = 2
 color = Color(0.337255, 0.427451, 0.466667, 1)
 
-[node name="GlassHighlight" type="ColorRect" parent="Sideboard/DessertDisplay"]
+[node name="GlassHighlight" type="ColorRect" parent="Sideboard/DessertDisplay" unique_id=1847938943]
 offset_left = 6.0
 offset_top = 4.0
 offset_right = 101.0
@@ -558,11 +554,11 @@ offset_bottom = 5.0
 mouse_filter = 2
 color = Color(0.831373, 0.835294, 0.780392, 1)
 
-[node name="Cake0" type="Polygon2D" parent="Sideboard/DessertDisplay"]
+[node name="Cake0" type="Polygon2D" parent="Sideboard/DessertDisplay" unique_id=967415520]
 color = Color(0.717647, 0.470588, 0.407843, 1)
 polygon = PackedVector2Array(16, 10, 21, 10, 23, 12, 23, 16, 21, 18, 16, 18, 14, 16, 14, 12)
 
-[node name="Glaze0" type="ColorRect" parent="Sideboard/DessertDisplay"]
+[node name="Glaze0" type="ColorRect" parent="Sideboard/DessertDisplay" unique_id=495725481]
 offset_left = 16.0
 offset_top = 10.0
 offset_right = 21.0
@@ -570,11 +566,11 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.901961, 0.803922, 0.658824, 1)
 
-[node name="Cake1" type="Polygon2D" parent="Sideboard/DessertDisplay"]
+[node name="Cake1" type="Polygon2D" parent="Sideboard/DessertDisplay" unique_id=1585747437]
 color = Color(0.839216, 0.686275, 0.462745, 1)
 polygon = PackedVector2Array(34, 10, 39, 10, 41, 12, 41, 16, 39, 18, 34, 18, 32, 16, 32, 12)
 
-[node name="Glaze1" type="ColorRect" parent="Sideboard/DessertDisplay"]
+[node name="Glaze1" type="ColorRect" parent="Sideboard/DessertDisplay" unique_id=185940771]
 offset_left = 34.0
 offset_top = 10.0
 offset_right = 39.0
@@ -582,11 +578,11 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.901961, 0.803922, 0.658824, 1)
 
-[node name="Cake2" type="Polygon2D" parent="Sideboard/DessertDisplay"]
+[node name="Cake2" type="Polygon2D" parent="Sideboard/DessertDisplay" unique_id=1651061847]
 color = Color(0.733333, 0.529412, 0.329412, 1)
 polygon = PackedVector2Array(54, 10, 59, 10, 61, 12, 61, 16, 59, 18, 54, 18, 52, 16, 52, 12)
 
-[node name="Glaze2" type="ColorRect" parent="Sideboard/DessertDisplay"]
+[node name="Glaze2" type="ColorRect" parent="Sideboard/DessertDisplay" unique_id=1066244779]
 offset_left = 54.0
 offset_top = 10.0
 offset_right = 59.0
@@ -594,11 +590,11 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.901961, 0.803922, 0.658824, 1)
 
-[node name="Cake3" type="Polygon2D" parent="Sideboard/DessertDisplay"]
+[node name="Cake3" type="Polygon2D" parent="Sideboard/DessertDisplay" unique_id=8890349]
 color = Color(0.862745, 0.607843, 0.513725, 1)
 polygon = PackedVector2Array(75, 10, 80, 10, 82, 12, 82, 16, 80, 18, 75, 18, 73, 16, 73, 12)
 
-[node name="Glaze3" type="ColorRect" parent="Sideboard/DessertDisplay"]
+[node name="Glaze3" type="ColorRect" parent="Sideboard/DessertDisplay" unique_id=2079389905]
 offset_left = 75.0
 offset_top = 10.0
 offset_right = 80.0
@@ -606,11 +602,11 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.901961, 0.803922, 0.658824, 1)
 
-[node name="Cake4" type="Polygon2D" parent="Sideboard/DessertDisplay"]
+[node name="Cake4" type="Polygon2D" parent="Sideboard/DessertDisplay" unique_id=443977017]
 color = Color(0.729412, 0.462745, 0.337255, 1)
 polygon = PackedVector2Array(89, 10, 94, 10, 96, 12, 96, 16, 94, 18, 89, 18, 87, 16, 87, 12)
 
-[node name="Glaze4" type="ColorRect" parent="Sideboard/DessertDisplay"]
+[node name="Glaze4" type="ColorRect" parent="Sideboard/DessertDisplay" unique_id=2141275216]
 offset_left = 89.0
 offset_top = 10.0
 offset_right = 94.0
@@ -618,10 +614,10 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.901961, 0.803922, 0.658824, 1)
 
-[node name="WallSeat" type="Node2D" parent="Sideboard"]
+[node name="WallSeat" type="Node2D" parent="Sideboard" unique_id=698420868]
 position = Vector2(380, 163)
 
-[node name="Shadow" type="ColorRect" parent="Sideboard/WallSeat"]
+[node name="Shadow" type="ColorRect" parent="Sideboard/WallSeat" unique_id=1477459510]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 153.0
@@ -629,19 +625,18 @@ offset_bottom = 31.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="Sideboard/WallSeat"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="Sideboard/WallSeat" unique_id=1309898153]
 offset_top = 21.0
 offset_right = 150.0
 offset_bottom = 27.0
 mouse_filter = 2
 color = Color(0.317647, 0.188235, 0.211765, 1)
 
-[node name="Top" type="Polygon2D" parent="Sideboard/WallSeat"]
+[node name="Top" type="Polygon2D" parent="Sideboard/WallSeat" unique_id=1234500318]
 color = Color(0.509804, 0.27451, 0.294118, 1)
 polygon = PackedVector2Array(2, 0, 148, 0, 150, 2, 150, 19, 148, 21, 2, 21, 0, 19, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="Sideboard/WallSeat"]
+[node name="Edge" type="ColorRect" parent="Sideboard/WallSeat" unique_id=2080061136]
 offset_left = 2.0
 offset_top = 19.0
 offset_right = 148.0
@@ -649,7 +644,7 @@ offset_bottom = 21.0
 mouse_filter = 2
 color = Color(0.772549, 0.470588, 0.376471, 1)
 
-[node name="Seat" type="ColorRect" parent="Sideboard/WallSeat"]
+[node name="Seat" type="ColorRect" parent="Sideboard/WallSeat" unique_id=1722986855]
 offset_left = 4.0
 offset_top = 12.0
 offset_right = 146.0
@@ -657,7 +652,7 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.658824, 0.34902, 0.368627, 1)
 
-[node name="Seam40" type="ColorRect" parent="Sideboard/WallSeat"]
+[node name="Seam40" type="ColorRect" parent="Sideboard/WallSeat" unique_id=2094216927]
 offset_left = 40.0
 offset_top = 2.0
 offset_right = 41.0
@@ -665,7 +660,7 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.780392, 0.458824, 0.407843, 1)
 
-[node name="Seam78" type="ColorRect" parent="Sideboard/WallSeat"]
+[node name="Seam78" type="ColorRect" parent="Sideboard/WallSeat" unique_id=1381839300]
 offset_left = 78.0
 offset_top = 2.0
 offset_right = 79.0
@@ -673,7 +668,7 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.780392, 0.458824, 0.407843, 1)
 
-[node name="Seam116" type="ColorRect" parent="Sideboard/WallSeat"]
+[node name="Seam116" type="ColorRect" parent="Sideboard/WallSeat" unique_id=1811928272]
 offset_left = 116.0
 offset_top = 2.0
 offset_right = 117.0
@@ -681,13 +676,13 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.780392, 0.458824, 0.407843, 1)
 
-[node name="WindowDining" type="Node2D" parent="."]
+[node name="WindowDining" type="Node2D" parent="." unique_id=1625521215]
 position = Vector2(135, 248)
 
-[node name="NorthChair" type="Node2D" parent="WindowDining"]
+[node name="NorthChair" type="Node2D" parent="WindowDining" unique_id=1004364495]
 position = Vector2(17, -13)
 
-[node name="Shadow" type="ColorRect" parent="WindowDining/NorthChair"]
+[node name="Shadow" type="ColorRect" parent="WindowDining/NorthChair" unique_id=1002520046]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 20.0
@@ -695,19 +690,18 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="WindowDining/NorthChair"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="WindowDining/NorthChair" unique_id=1721859189]
 offset_top = 12.0
 offset_right = 17.0
 offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.443137, 0.239216, 0.203922, 1)
 
-[node name="Top" type="Polygon2D" parent="WindowDining/NorthChair"]
+[node name="Top" type="Polygon2D" parent="WindowDining/NorthChair" unique_id=2077023912]
 color = Color(0.705882, 0.466667, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 15, 0, 17, 2, 17, 10, 15, 12, 2, 12, 0, 10, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="WindowDining/NorthChair"]
+[node name="Edge" type="ColorRect" parent="WindowDining/NorthChair" unique_id=859949723]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 15.0
@@ -715,7 +709,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.87451, 0.623529, 0.447059, 1)
 
-[node name="Cushion" type="ColorRect" parent="WindowDining/NorthChair"]
+[node name="Cushion" type="ColorRect" parent="WindowDining/NorthChair" unique_id=375872976]
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 14.0
@@ -723,10 +717,10 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.635294, 0.34902, 0.360784, 1)
 
-[node name="SouthChair" type="Node2D" parent="WindowDining"]
+[node name="SouthChair" type="Node2D" parent="WindowDining" unique_id=707657078]
 position = Vector2(17, 39)
 
-[node name="Shadow" type="ColorRect" parent="WindowDining/SouthChair"]
+[node name="Shadow" type="ColorRect" parent="WindowDining/SouthChair" unique_id=762457828]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 20.0
@@ -734,19 +728,18 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="WindowDining/SouthChair"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="WindowDining/SouthChair" unique_id=1473610380]
 offset_top = 12.0
 offset_right = 17.0
 offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.443137, 0.239216, 0.203922, 1)
 
-[node name="Top" type="Polygon2D" parent="WindowDining/SouthChair"]
+[node name="Top" type="Polygon2D" parent="WindowDining/SouthChair" unique_id=532654022]
 color = Color(0.705882, 0.466667, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 15, 0, 17, 2, 17, 10, 15, 12, 2, 12, 0, 10, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="WindowDining/SouthChair"]
+[node name="Edge" type="ColorRect" parent="WindowDining/SouthChair" unique_id=620330100]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 15.0
@@ -754,7 +747,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.87451, 0.623529, 0.447059, 1)
 
-[node name="Cushion" type="ColorRect" parent="WindowDining/SouthChair"]
+[node name="Cushion" type="ColorRect" parent="WindowDining/SouthChair" unique_id=1852760578]
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 14.0
@@ -762,10 +755,10 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.635294, 0.34902, 0.360784, 1)
 
-[node name="WestChair" type="Node2D" parent="WindowDining"]
+[node name="WestChair" type="Node2D" parent="WindowDining" unique_id=361529054]
 position = Vector2(-12, 11)
 
-[node name="Shadow" type="ColorRect" parent="WindowDining/WestChair"]
+[node name="Shadow" type="ColorRect" parent="WindowDining/WestChair" unique_id=688422662]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 20.0
@@ -773,19 +766,18 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="WindowDining/WestChair"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="WindowDining/WestChair" unique_id=1686091523]
 offset_top = 12.0
 offset_right = 17.0
 offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.443137, 0.239216, 0.203922, 1)
 
-[node name="Top" type="Polygon2D" parent="WindowDining/WestChair"]
+[node name="Top" type="Polygon2D" parent="WindowDining/WestChair" unique_id=1975278810]
 color = Color(0.705882, 0.466667, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 15, 0, 17, 2, 17, 10, 15, 12, 2, 12, 0, 10, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="WindowDining/WestChair"]
+[node name="Edge" type="ColorRect" parent="WindowDining/WestChair" unique_id=1749798914]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 15.0
@@ -793,7 +785,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.87451, 0.623529, 0.447059, 1)
 
-[node name="Cushion" type="ColorRect" parent="WindowDining/WestChair"]
+[node name="Cushion" type="ColorRect" parent="WindowDining/WestChair" unique_id=1646539789]
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 14.0
@@ -801,10 +793,10 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.635294, 0.34902, 0.360784, 1)
 
-[node name="EastChair" type="Node2D" parent="WindowDining"]
+[node name="EastChair" type="Node2D" parent="WindowDining" unique_id=539581576]
 position = Vector2(47, 11)
 
-[node name="Shadow" type="ColorRect" parent="WindowDining/EastChair"]
+[node name="Shadow" type="ColorRect" parent="WindowDining/EastChair" unique_id=2138286280]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 20.0
@@ -812,19 +804,18 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="WindowDining/EastChair"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="WindowDining/EastChair" unique_id=407717057]
 offset_top = 12.0
 offset_right = 17.0
 offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.443137, 0.239216, 0.203922, 1)
 
-[node name="Top" type="Polygon2D" parent="WindowDining/EastChair"]
+[node name="Top" type="Polygon2D" parent="WindowDining/EastChair" unique_id=1319348658]
 color = Color(0.705882, 0.466667, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 15, 0, 17, 2, 17, 10, 15, 12, 2, 12, 0, 10, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="WindowDining/EastChair"]
+[node name="Edge" type="ColorRect" parent="WindowDining/EastChair" unique_id=1947374463]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 15.0
@@ -832,7 +823,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.87451, 0.623529, 0.447059, 1)
 
-[node name="Cushion" type="ColorRect" parent="WindowDining/EastChair"]
+[node name="Cushion" type="ColorRect" parent="WindowDining/EastChair" unique_id=1005082751]
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 14.0
@@ -840,9 +831,9 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.635294, 0.34902, 0.360784, 1)
 
-[node name="OakTable" type="Node2D" parent="WindowDining"]
+[node name="OakTable" type="Node2D" parent="WindowDining" unique_id=1188986118]
 
-[node name="Shadow" type="ColorRect" parent="WindowDining/OakTable"]
+[node name="Shadow" type="ColorRect" parent="WindowDining/OakTable" unique_id=479127125]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 55.0
@@ -850,19 +841,18 @@ offset_bottom = 47.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="WindowDining/OakTable"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="WindowDining/OakTable" unique_id=142190151]
 offset_top = 36.0
 offset_right = 52.0
 offset_bottom = 43.0
 mouse_filter = 2
 color = Color(0.396078, 0.235294, 0.2, 1)
 
-[node name="Top" type="Polygon2D" parent="WindowDining/OakTable"]
+[node name="Top" type="Polygon2D" parent="WindowDining/OakTable" unique_id=1971679187]
 color = Color(0.631373, 0.407843, 0.313725, 1)
 polygon = PackedVector2Array(2, 0, 50, 0, 52, 2, 52, 34, 50, 36, 2, 36, 0, 34, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="WindowDining/OakTable"]
+[node name="Edge" type="ColorRect" parent="WindowDining/OakTable" unique_id=1008290638]
 offset_left = 2.0
 offset_top = 34.0
 offset_right = 50.0
@@ -870,7 +860,7 @@ offset_bottom = 36.0
 mouse_filter = 2
 color = Color(0.87451, 0.619608, 0.431373, 1)
 
-[node name="TableLinen" type="ColorRect" parent="WindowDining/OakTable"]
+[node name="TableLinen" type="ColorRect" parent="WindowDining/OakTable" unique_id=851314746]
 offset_left = 17.0
 offset_top = 1.0
 offset_right = 35.0
@@ -878,7 +868,7 @@ offset_bottom = 34.0
 mouse_filter = 2
 color = Color(0.627451, 0.27451, 0.294118, 1)
 
-[node name="LinenPatternLeft" type="ColorRect" parent="WindowDining/OakTable"]
+[node name="LinenPatternLeft" type="ColorRect" parent="WindowDining/OakTable" unique_id=1367273460]
 offset_left = 18.0
 offset_top = 1.0
 offset_right = 20.0
@@ -886,7 +876,7 @@ offset_bottom = 34.0
 mouse_filter = 2
 color = Color(0.85098, 0.52549, 0.501961, 1)
 
-[node name="LinenPatternRight" type="ColorRect" parent="WindowDining/OakTable"]
+[node name="LinenPatternRight" type="ColorRect" parent="WindowDining/OakTable" unique_id=235309988]
 offset_left = 31.0
 offset_top = 1.0
 offset_right = 33.0
@@ -894,23 +884,23 @@ offset_bottom = 34.0
 mouse_filter = 2
 color = Color(0.85098, 0.52549, 0.501961, 1)
 
-[node name="Dish0" type="Polygon2D" parent="WindowDining/OakTable"]
+[node name="Dish0" type="Polygon2D" parent="WindowDining/OakTable" unique_id=1890063014]
 color = Color(0.937255, 0.898039, 0.796078, 1)
 polygon = PackedVector2Array(16, 10, 14, 14, 10, 15, 6, 14, 4, 10, 6, 6, 10, 5, 14, 6)
 
-[node name="Meal0" type="Polygon2D" parent="WindowDining/OakTable"]
+[node name="Meal0" type="Polygon2D" parent="WindowDining/OakTable" unique_id=1355943503]
 color = Color(0.729412, 0.384314, 0.278431, 1)
 polygon = PackedVector2Array(13, 10, 12, 11, 10, 12, 8, 11, 7, 10, 8, 9, 10, 8, 12, 9)
 
-[node name="Dish1" type="Polygon2D" parent="WindowDining/OakTable"]
+[node name="Dish1" type="Polygon2D" parent="WindowDining/OakTable" unique_id=438138813]
 color = Color(0.937255, 0.898039, 0.796078, 1)
 polygon = PackedVector2Array(47, 25, 45, 29, 41, 30, 37, 29, 35, 25, 37, 21, 41, 20, 45, 21)
 
-[node name="Meal1" type="Polygon2D" parent="WindowDining/OakTable"]
+[node name="Meal1" type="Polygon2D" parent="WindowDining/OakTable" unique_id=1904368826]
 color = Color(0.729412, 0.384314, 0.278431, 1)
 polygon = PackedVector2Array(44, 25, 43, 26, 41, 27, 39, 26, 38, 25, 39, 24, 41, 23, 43, 24)
 
-[node name="VaseShadow" type="ColorRect" parent="WindowDining/OakTable"]
+[node name="VaseShadow" type="ColorRect" parent="WindowDining/OakTable" unique_id=948199887]
 offset_left = 24.0
 offset_top = 18.0
 offset_right = 32.0
@@ -918,7 +908,7 @@ offset_bottom = 23.0
 mouse_filter = 2
 color = Color(0.443137, 0.223529, 0.266667, 1)
 
-[node name="Vase" type="ColorRect" parent="WindowDining/OakTable"]
+[node name="Vase" type="ColorRect" parent="WindowDining/OakTable" unique_id=1943384450]
 offset_left = 24.0
 offset_top = 13.0
 offset_right = 30.0
@@ -926,7 +916,7 @@ offset_bottom = 22.0
 mouse_filter = 2
 color = Color(0.25098, 0.505882, 0.462745, 1)
 
-[node name="Stem" type="ColorRect" parent="WindowDining/OakTable"]
+[node name="Stem" type="ColorRect" parent="WindowDining/OakTable" unique_id=199761081]
 offset_left = 27.0
 offset_top = 10.0
 offset_right = 28.0
@@ -934,17 +924,17 @@ offset_bottom = 15.0
 mouse_filter = 2
 color = Color(0.203922, 0.454902, 0.32549, 1)
 
-[node name="Blossom" type="Polygon2D" parent="WindowDining/OakTable"]
+[node name="Blossom" type="Polygon2D" parent="WindowDining/OakTable" unique_id=936361714]
 color = Color(1, 0.843137, 0.694118, 1)
 polygon = PackedVector2Array(25, 6, 29, 6, 30, 7, 30, 11, 29, 12, 25, 12, 24, 11, 24, 7)
 
-[node name="MiddleDining" type="Node2D" parent="."]
+[node name="MiddleDining" type="Node2D" parent="." unique_id=761879107]
 position = Vector2(286, 244)
 
-[node name="NorthChair" type="Node2D" parent="MiddleDining"]
+[node name="NorthChair" type="Node2D" parent="MiddleDining" unique_id=1278115979]
 position = Vector2(17, -13)
 
-[node name="Shadow" type="ColorRect" parent="MiddleDining/NorthChair"]
+[node name="Shadow" type="ColorRect" parent="MiddleDining/NorthChair" unique_id=2013766982]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 20.0
@@ -952,19 +942,18 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="MiddleDining/NorthChair"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="MiddleDining/NorthChair" unique_id=1030797234]
 offset_top = 12.0
 offset_right = 17.0
 offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.443137, 0.239216, 0.203922, 1)
 
-[node name="Top" type="Polygon2D" parent="MiddleDining/NorthChair"]
+[node name="Top" type="Polygon2D" parent="MiddleDining/NorthChair" unique_id=1398447713]
 color = Color(0.705882, 0.466667, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 15, 0, 17, 2, 17, 10, 15, 12, 2, 12, 0, 10, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="MiddleDining/NorthChair"]
+[node name="Edge" type="ColorRect" parent="MiddleDining/NorthChair" unique_id=322384839]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 15.0
@@ -972,7 +961,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.87451, 0.623529, 0.447059, 1)
 
-[node name="Cushion" type="ColorRect" parent="MiddleDining/NorthChair"]
+[node name="Cushion" type="ColorRect" parent="MiddleDining/NorthChair" unique_id=484585759]
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 14.0
@@ -980,10 +969,10 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.635294, 0.34902, 0.360784, 1)
 
-[node name="SouthChair" type="Node2D" parent="MiddleDining"]
+[node name="SouthChair" type="Node2D" parent="MiddleDining" unique_id=581988267]
 position = Vector2(17, 39)
 
-[node name="Shadow" type="ColorRect" parent="MiddleDining/SouthChair"]
+[node name="Shadow" type="ColorRect" parent="MiddleDining/SouthChair" unique_id=439926469]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 20.0
@@ -991,19 +980,18 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="MiddleDining/SouthChair"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="MiddleDining/SouthChair" unique_id=563082986]
 offset_top = 12.0
 offset_right = 17.0
 offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.443137, 0.239216, 0.203922, 1)
 
-[node name="Top" type="Polygon2D" parent="MiddleDining/SouthChair"]
+[node name="Top" type="Polygon2D" parent="MiddleDining/SouthChair" unique_id=309832110]
 color = Color(0.705882, 0.466667, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 15, 0, 17, 2, 17, 10, 15, 12, 2, 12, 0, 10, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="MiddleDining/SouthChair"]
+[node name="Edge" type="ColorRect" parent="MiddleDining/SouthChair" unique_id=1641131089]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 15.0
@@ -1011,7 +999,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.87451, 0.623529, 0.447059, 1)
 
-[node name="Cushion" type="ColorRect" parent="MiddleDining/SouthChair"]
+[node name="Cushion" type="ColorRect" parent="MiddleDining/SouthChair" unique_id=2050832556]
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 14.0
@@ -1019,10 +1007,10 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.635294, 0.34902, 0.360784, 1)
 
-[node name="WestChair" type="Node2D" parent="MiddleDining"]
+[node name="WestChair" type="Node2D" parent="MiddleDining" unique_id=853699889]
 position = Vector2(-12, 11)
 
-[node name="Shadow" type="ColorRect" parent="MiddleDining/WestChair"]
+[node name="Shadow" type="ColorRect" parent="MiddleDining/WestChair" unique_id=202694295]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 20.0
@@ -1030,19 +1018,18 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="MiddleDining/WestChair"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="MiddleDining/WestChair" unique_id=1790301407]
 offset_top = 12.0
 offset_right = 17.0
 offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.443137, 0.239216, 0.203922, 1)
 
-[node name="Top" type="Polygon2D" parent="MiddleDining/WestChair"]
+[node name="Top" type="Polygon2D" parent="MiddleDining/WestChair" unique_id=45844982]
 color = Color(0.705882, 0.466667, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 15, 0, 17, 2, 17, 10, 15, 12, 2, 12, 0, 10, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="MiddleDining/WestChair"]
+[node name="Edge" type="ColorRect" parent="MiddleDining/WestChair" unique_id=62029149]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 15.0
@@ -1050,7 +1037,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.87451, 0.623529, 0.447059, 1)
 
-[node name="Cushion" type="ColorRect" parent="MiddleDining/WestChair"]
+[node name="Cushion" type="ColorRect" parent="MiddleDining/WestChair" unique_id=1486680474]
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 14.0
@@ -1058,10 +1045,10 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.635294, 0.34902, 0.360784, 1)
 
-[node name="EastChair" type="Node2D" parent="MiddleDining"]
+[node name="EastChair" type="Node2D" parent="MiddleDining" unique_id=1569070246]
 position = Vector2(47, 11)
 
-[node name="Shadow" type="ColorRect" parent="MiddleDining/EastChair"]
+[node name="Shadow" type="ColorRect" parent="MiddleDining/EastChair" unique_id=1623470533]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 20.0
@@ -1069,19 +1056,18 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="MiddleDining/EastChair"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="MiddleDining/EastChair" unique_id=1600528536]
 offset_top = 12.0
 offset_right = 17.0
 offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.443137, 0.239216, 0.203922, 1)
 
-[node name="Top" type="Polygon2D" parent="MiddleDining/EastChair"]
+[node name="Top" type="Polygon2D" parent="MiddleDining/EastChair" unique_id=2059433283]
 color = Color(0.705882, 0.466667, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 15, 0, 17, 2, 17, 10, 15, 12, 2, 12, 0, 10, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="MiddleDining/EastChair"]
+[node name="Edge" type="ColorRect" parent="MiddleDining/EastChair" unique_id=980349913]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 15.0
@@ -1089,7 +1075,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.87451, 0.623529, 0.447059, 1)
 
-[node name="Cushion" type="ColorRect" parent="MiddleDining/EastChair"]
+[node name="Cushion" type="ColorRect" parent="MiddleDining/EastChair" unique_id=138497483]
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 14.0
@@ -1097,9 +1083,9 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.635294, 0.34902, 0.360784, 1)
 
-[node name="OakTable" type="Node2D" parent="MiddleDining"]
+[node name="OakTable" type="Node2D" parent="MiddleDining" unique_id=409660050]
 
-[node name="Shadow" type="ColorRect" parent="MiddleDining/OakTable"]
+[node name="Shadow" type="ColorRect" parent="MiddleDining/OakTable" unique_id=309284254]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 55.0
@@ -1107,19 +1093,18 @@ offset_bottom = 47.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="MiddleDining/OakTable"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="MiddleDining/OakTable" unique_id=1250122295]
 offset_top = 36.0
 offset_right = 52.0
 offset_bottom = 43.0
 mouse_filter = 2
 color = Color(0.396078, 0.235294, 0.2, 1)
 
-[node name="Top" type="Polygon2D" parent="MiddleDining/OakTable"]
+[node name="Top" type="Polygon2D" parent="MiddleDining/OakTable" unique_id=1114334531]
 color = Color(0.631373, 0.407843, 0.313725, 1)
 polygon = PackedVector2Array(2, 0, 50, 0, 52, 2, 52, 34, 50, 36, 2, 36, 0, 34, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="MiddleDining/OakTable"]
+[node name="Edge" type="ColorRect" parent="MiddleDining/OakTable" unique_id=78293578]
 offset_left = 2.0
 offset_top = 34.0
 offset_right = 50.0
@@ -1127,7 +1112,7 @@ offset_bottom = 36.0
 mouse_filter = 2
 color = Color(0.87451, 0.619608, 0.431373, 1)
 
-[node name="TableLinen" type="ColorRect" parent="MiddleDining/OakTable"]
+[node name="TableLinen" type="ColorRect" parent="MiddleDining/OakTable" unique_id=1165582952]
 offset_left = 17.0
 offset_top = 1.0
 offset_right = 35.0
@@ -1135,7 +1120,7 @@ offset_bottom = 34.0
 mouse_filter = 2
 color = Color(0.627451, 0.27451, 0.294118, 1)
 
-[node name="LinenPatternLeft" type="ColorRect" parent="MiddleDining/OakTable"]
+[node name="LinenPatternLeft" type="ColorRect" parent="MiddleDining/OakTable" unique_id=627676699]
 offset_left = 18.0
 offset_top = 1.0
 offset_right = 20.0
@@ -1143,7 +1128,7 @@ offset_bottom = 34.0
 mouse_filter = 2
 color = Color(0.85098, 0.52549, 0.501961, 1)
 
-[node name="LinenPatternRight" type="ColorRect" parent="MiddleDining/OakTable"]
+[node name="LinenPatternRight" type="ColorRect" parent="MiddleDining/OakTable" unique_id=338579478]
 offset_left = 31.0
 offset_top = 1.0
 offset_right = 33.0
@@ -1151,23 +1136,23 @@ offset_bottom = 34.0
 mouse_filter = 2
 color = Color(0.85098, 0.52549, 0.501961, 1)
 
-[node name="Dish0" type="Polygon2D" parent="MiddleDining/OakTable"]
+[node name="Dish0" type="Polygon2D" parent="MiddleDining/OakTable" unique_id=1687752272]
 color = Color(0.937255, 0.898039, 0.796078, 1)
 polygon = PackedVector2Array(16, 10, 14, 14, 10, 15, 6, 14, 4, 10, 6, 6, 10, 5, 14, 6)
 
-[node name="Meal0" type="Polygon2D" parent="MiddleDining/OakTable"]
+[node name="Meal0" type="Polygon2D" parent="MiddleDining/OakTable" unique_id=1461712456]
 color = Color(0.509804, 0.584314, 0.321569, 1)
 polygon = PackedVector2Array(13, 10, 12, 11, 10, 12, 8, 11, 7, 10, 8, 9, 10, 8, 12, 9)
 
-[node name="Dish1" type="Polygon2D" parent="MiddleDining/OakTable"]
+[node name="Dish1" type="Polygon2D" parent="MiddleDining/OakTable" unique_id=1019393536]
 color = Color(0.937255, 0.898039, 0.796078, 1)
 polygon = PackedVector2Array(47, 25, 45, 29, 41, 30, 37, 29, 35, 25, 37, 21, 41, 20, 45, 21)
 
-[node name="Meal1" type="Polygon2D" parent="MiddleDining/OakTable"]
+[node name="Meal1" type="Polygon2D" parent="MiddleDining/OakTable" unique_id=219653767]
 color = Color(0.509804, 0.584314, 0.321569, 1)
 polygon = PackedVector2Array(44, 25, 43, 26, 41, 27, 39, 26, 38, 25, 39, 24, 41, 23, 43, 24)
 
-[node name="VaseShadow" type="ColorRect" parent="MiddleDining/OakTable"]
+[node name="VaseShadow" type="ColorRect" parent="MiddleDining/OakTable" unique_id=224333443]
 offset_left = 24.0
 offset_top = 18.0
 offset_right = 32.0
@@ -1175,7 +1160,7 @@ offset_bottom = 23.0
 mouse_filter = 2
 color = Color(0.443137, 0.223529, 0.266667, 1)
 
-[node name="Vase" type="ColorRect" parent="MiddleDining/OakTable"]
+[node name="Vase" type="ColorRect" parent="MiddleDining/OakTable" unique_id=1306677445]
 offset_left = 24.0
 offset_top = 13.0
 offset_right = 30.0
@@ -1183,7 +1168,7 @@ offset_bottom = 22.0
 mouse_filter = 2
 color = Color(0.25098, 0.505882, 0.462745, 1)
 
-[node name="Stem" type="ColorRect" parent="MiddleDining/OakTable"]
+[node name="Stem" type="ColorRect" parent="MiddleDining/OakTable" unique_id=628156382]
 offset_left = 27.0
 offset_top = 10.0
 offset_right = 28.0
@@ -1191,17 +1176,17 @@ offset_bottom = 15.0
 mouse_filter = 2
 color = Color(0.203922, 0.454902, 0.32549, 1)
 
-[node name="Blossom" type="Polygon2D" parent="MiddleDining/OakTable"]
+[node name="Blossom" type="Polygon2D" parent="MiddleDining/OakTable" unique_id=1789185328]
 color = Color(1, 0.843137, 0.694118, 1)
 polygon = PackedVector2Array(25, 6, 29, 6, 30, 7, 30, 11, 29, 12, 25, 12, 24, 11, 24, 7)
 
-[node name="EastDining" type="Node2D" parent="."]
+[node name="EastDining" type="Node2D" parent="." unique_id=1638819991]
 position = Vector2(441, 246)
 
-[node name="NorthChair" type="Node2D" parent="EastDining"]
+[node name="NorthChair" type="Node2D" parent="EastDining" unique_id=2002977141]
 position = Vector2(17, -13)
 
-[node name="Shadow" type="ColorRect" parent="EastDining/NorthChair"]
+[node name="Shadow" type="ColorRect" parent="EastDining/NorthChair" unique_id=904996678]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 20.0
@@ -1209,19 +1194,18 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="EastDining/NorthChair"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="EastDining/NorthChair" unique_id=547220172]
 offset_top = 12.0
 offset_right = 17.0
 offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.443137, 0.239216, 0.203922, 1)
 
-[node name="Top" type="Polygon2D" parent="EastDining/NorthChair"]
+[node name="Top" type="Polygon2D" parent="EastDining/NorthChair" unique_id=1981211892]
 color = Color(0.705882, 0.466667, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 15, 0, 17, 2, 17, 10, 15, 12, 2, 12, 0, 10, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="EastDining/NorthChair"]
+[node name="Edge" type="ColorRect" parent="EastDining/NorthChair" unique_id=1368189142]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 15.0
@@ -1229,7 +1213,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.87451, 0.623529, 0.447059, 1)
 
-[node name="Cushion" type="ColorRect" parent="EastDining/NorthChair"]
+[node name="Cushion" type="ColorRect" parent="EastDining/NorthChair" unique_id=99070971]
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 14.0
@@ -1237,10 +1221,10 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.635294, 0.34902, 0.360784, 1)
 
-[node name="SouthChair" type="Node2D" parent="EastDining"]
+[node name="SouthChair" type="Node2D" parent="EastDining" unique_id=650621033]
 position = Vector2(17, 39)
 
-[node name="Shadow" type="ColorRect" parent="EastDining/SouthChair"]
+[node name="Shadow" type="ColorRect" parent="EastDining/SouthChair" unique_id=502739651]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 20.0
@@ -1248,19 +1232,18 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="EastDining/SouthChair"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="EastDining/SouthChair" unique_id=1224859480]
 offset_top = 12.0
 offset_right = 17.0
 offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.443137, 0.239216, 0.203922, 1)
 
-[node name="Top" type="Polygon2D" parent="EastDining/SouthChair"]
+[node name="Top" type="Polygon2D" parent="EastDining/SouthChair" unique_id=682803719]
 color = Color(0.705882, 0.466667, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 15, 0, 17, 2, 17, 10, 15, 12, 2, 12, 0, 10, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="EastDining/SouthChair"]
+[node name="Edge" type="ColorRect" parent="EastDining/SouthChair" unique_id=1586686885]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 15.0
@@ -1268,7 +1251,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.87451, 0.623529, 0.447059, 1)
 
-[node name="Cushion" type="ColorRect" parent="EastDining/SouthChair"]
+[node name="Cushion" type="ColorRect" parent="EastDining/SouthChair" unique_id=1430490810]
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 14.0
@@ -1276,10 +1259,10 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.635294, 0.34902, 0.360784, 1)
 
-[node name="WestChair" type="Node2D" parent="EastDining"]
+[node name="WestChair" type="Node2D" parent="EastDining" unique_id=35623715]
 position = Vector2(-12, 11)
 
-[node name="Shadow" type="ColorRect" parent="EastDining/WestChair"]
+[node name="Shadow" type="ColorRect" parent="EastDining/WestChair" unique_id=1319802921]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 20.0
@@ -1287,19 +1270,18 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="EastDining/WestChair"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="EastDining/WestChair" unique_id=291800643]
 offset_top = 12.0
 offset_right = 17.0
 offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.443137, 0.239216, 0.203922, 1)
 
-[node name="Top" type="Polygon2D" parent="EastDining/WestChair"]
+[node name="Top" type="Polygon2D" parent="EastDining/WestChair" unique_id=43368]
 color = Color(0.705882, 0.466667, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 15, 0, 17, 2, 17, 10, 15, 12, 2, 12, 0, 10, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="EastDining/WestChair"]
+[node name="Edge" type="ColorRect" parent="EastDining/WestChair" unique_id=2062659151]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 15.0
@@ -1307,7 +1289,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.87451, 0.623529, 0.447059, 1)
 
-[node name="Cushion" type="ColorRect" parent="EastDining/WestChair"]
+[node name="Cushion" type="ColorRect" parent="EastDining/WestChair" unique_id=975813770]
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 14.0
@@ -1315,10 +1297,10 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.635294, 0.34902, 0.360784, 1)
 
-[node name="EastChair" type="Node2D" parent="EastDining"]
+[node name="EastChair" type="Node2D" parent="EastDining" unique_id=59317432]
 position = Vector2(47, 11)
 
-[node name="Shadow" type="ColorRect" parent="EastDining/EastChair"]
+[node name="Shadow" type="ColorRect" parent="EastDining/EastChair" unique_id=1592717374]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 20.0
@@ -1326,19 +1308,18 @@ offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="EastDining/EastChair"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="EastDining/EastChair" unique_id=1413341141]
 offset_top = 12.0
 offset_right = 17.0
 offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.443137, 0.239216, 0.203922, 1)
 
-[node name="Top" type="Polygon2D" parent="EastDining/EastChair"]
+[node name="Top" type="Polygon2D" parent="EastDining/EastChair" unique_id=2142234301]
 color = Color(0.705882, 0.466667, 0.34902, 1)
 polygon = PackedVector2Array(2, 0, 15, 0, 17, 2, 17, 10, 15, 12, 2, 12, 0, 10, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="EastDining/EastChair"]
+[node name="Edge" type="ColorRect" parent="EastDining/EastChair" unique_id=30659245]
 offset_left = 2.0
 offset_top = 10.0
 offset_right = 15.0
@@ -1346,7 +1327,7 @@ offset_bottom = 12.0
 mouse_filter = 2
 color = Color(0.87451, 0.623529, 0.447059, 1)
 
-[node name="Cushion" type="ColorRect" parent="EastDining/EastChair"]
+[node name="Cushion" type="ColorRect" parent="EastDining/EastChair" unique_id=1009887347]
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 14.0
@@ -1354,9 +1335,9 @@ offset_bottom = 9.0
 mouse_filter = 2
 color = Color(0.635294, 0.34902, 0.360784, 1)
 
-[node name="OakTable" type="Node2D" parent="EastDining"]
+[node name="OakTable" type="Node2D" parent="EastDining" unique_id=809826517]
 
-[node name="Shadow" type="ColorRect" parent="EastDining/OakTable"]
+[node name="Shadow" type="ColorRect" parent="EastDining/OakTable" unique_id=874739793]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 55.0
@@ -1364,19 +1345,18 @@ offset_bottom = 47.0
 mouse_filter = 2
 color = Color(0.101961, 0.066667, 0.078431, 0.498039)
 
-[node name="Front" type="ColorRect" parent="EastDining/OakTable"]
-offset_left = 0.0
+[node name="Front" type="ColorRect" parent="EastDining/OakTable" unique_id=1995316182]
 offset_top = 36.0
 offset_right = 52.0
 offset_bottom = 43.0
 mouse_filter = 2
 color = Color(0.396078, 0.235294, 0.2, 1)
 
-[node name="Top" type="Polygon2D" parent="EastDining/OakTable"]
+[node name="Top" type="Polygon2D" parent="EastDining/OakTable" unique_id=323778707]
 color = Color(0.631373, 0.407843, 0.313725, 1)
 polygon = PackedVector2Array(2, 0, 50, 0, 52, 2, 52, 34, 50, 36, 2, 36, 0, 34, 0, 2)
 
-[node name="Edge" type="ColorRect" parent="EastDining/OakTable"]
+[node name="Edge" type="ColorRect" parent="EastDining/OakTable" unique_id=315141031]
 offset_left = 2.0
 offset_top = 34.0
 offset_right = 50.0
@@ -1384,7 +1364,7 @@ offset_bottom = 36.0
 mouse_filter = 2
 color = Color(0.87451, 0.619608, 0.431373, 1)
 
-[node name="TableLinen" type="ColorRect" parent="EastDining/OakTable"]
+[node name="TableLinen" type="ColorRect" parent="EastDining/OakTable" unique_id=593011938]
 offset_left = 17.0
 offset_top = 1.0
 offset_right = 35.0
@@ -1392,7 +1372,7 @@ offset_bottom = 34.0
 mouse_filter = 2
 color = Color(0.627451, 0.27451, 0.294118, 1)
 
-[node name="LinenPatternLeft" type="ColorRect" parent="EastDining/OakTable"]
+[node name="LinenPatternLeft" type="ColorRect" parent="EastDining/OakTable" unique_id=845344983]
 offset_left = 18.0
 offset_top = 1.0
 offset_right = 20.0
@@ -1400,7 +1380,7 @@ offset_bottom = 34.0
 mouse_filter = 2
 color = Color(0.85098, 0.52549, 0.501961, 1)
 
-[node name="LinenPatternRight" type="ColorRect" parent="EastDining/OakTable"]
+[node name="LinenPatternRight" type="ColorRect" parent="EastDining/OakTable" unique_id=290814682]
 offset_left = 31.0
 offset_top = 1.0
 offset_right = 33.0
@@ -1408,23 +1388,23 @@ offset_bottom = 34.0
 mouse_filter = 2
 color = Color(0.85098, 0.52549, 0.501961, 1)
 
-[node name="Dish0" type="Polygon2D" parent="EastDining/OakTable"]
+[node name="Dish0" type="Polygon2D" parent="EastDining/OakTable" unique_id=677058364]
 color = Color(0.937255, 0.898039, 0.796078, 1)
 polygon = PackedVector2Array(16, 10, 14, 14, 10, 15, 6, 14, 4, 10, 6, 6, 10, 5, 14, 6)
 
-[node name="Meal0" type="Polygon2D" parent="EastDining/OakTable"]
+[node name="Meal0" type="Polygon2D" parent="EastDining/OakTable" unique_id=1269812724]
 color = Color(0.772549, 0.470588, 0.282353, 1)
 polygon = PackedVector2Array(13, 10, 12, 11, 10, 12, 8, 11, 7, 10, 8, 9, 10, 8, 12, 9)
 
-[node name="Dish1" type="Polygon2D" parent="EastDining/OakTable"]
+[node name="Dish1" type="Polygon2D" parent="EastDining/OakTable" unique_id=1608935173]
 color = Color(0.937255, 0.898039, 0.796078, 1)
 polygon = PackedVector2Array(47, 25, 45, 29, 41, 30, 37, 29, 35, 25, 37, 21, 41, 20, 45, 21)
 
-[node name="Meal1" type="Polygon2D" parent="EastDining/OakTable"]
+[node name="Meal1" type="Polygon2D" parent="EastDining/OakTable" unique_id=845451461]
 color = Color(0.772549, 0.470588, 0.282353, 1)
 polygon = PackedVector2Array(44, 25, 43, 26, 41, 27, 39, 26, 38, 25, 39, 24, 41, 23, 43, 24)
 
-[node name="VaseShadow" type="ColorRect" parent="EastDining/OakTable"]
+[node name="VaseShadow" type="ColorRect" parent="EastDining/OakTable" unique_id=1443703150]
 offset_left = 24.0
 offset_top = 18.0
 offset_right = 32.0
@@ -1432,7 +1412,7 @@ offset_bottom = 23.0
 mouse_filter = 2
 color = Color(0.443137, 0.223529, 0.266667, 1)
 
-[node name="Vase" type="ColorRect" parent="EastDining/OakTable"]
+[node name="Vase" type="ColorRect" parent="EastDining/OakTable" unique_id=19872313]
 offset_left = 24.0
 offset_top = 13.0
 offset_right = 30.0
@@ -1440,7 +1420,7 @@ offset_bottom = 22.0
 mouse_filter = 2
 color = Color(0.25098, 0.505882, 0.462745, 1)
 
-[node name="Stem" type="ColorRect" parent="EastDining/OakTable"]
+[node name="Stem" type="ColorRect" parent="EastDining/OakTable" unique_id=1215416705]
 offset_left = 27.0
 offset_top = 10.0
 offset_right = 28.0
@@ -1448,30 +1428,30 @@ offset_bottom = 15.0
 mouse_filter = 2
 color = Color(0.203922, 0.454902, 0.32549, 1)
 
-[node name="Blossom" type="Polygon2D" parent="EastDining/OakTable"]
+[node name="Blossom" type="Polygon2D" parent="EastDining/OakTable" unique_id=374134486]
 color = Color(1, 0.843137, 0.694118, 1)
 polygon = PackedVector2Array(25, 6, 29, 6, 30, 7, 30, 11, 29, 12, 25, 12, 24, 11, 24, 7)
 
-[node name="EntranceMat" type="Node2D" parent="."]
+[node name="EntranceMat" type="Node2D" parent="." unique_id=1522279089]
 
-[node name="Mat" type="Polygon2D" parent="EntranceMat"]
+[node name="Mat" type="Polygon2D" parent="EntranceMat" unique_id=1505945756]
 color = Color(0.521569, 0.317647, 0.32549, 1)
 polygon = PackedVector2Array(285, 310, 347, 310, 351, 314, 351, 321, 347, 325, 285, 325, 281, 321, 281, 314)
 
-[node name="Thread" type="Line2D" parent="EntranceMat"]
+[node name="Thread" type="Line2D" parent="EntranceMat" unique_id=660856757]
 points = PackedVector2Array(287, 312, 345, 312, 348, 315, 348, 320, 345, 323, 287, 323, 284, 320, 284, 315)
+closed = true
 width = 1.0
 default_color = Color(0.768627, 0.494118, 0.447059, 1)
-closed = true
 
-[node name="Lamp0" type="Node2D" parent="."]
+[node name="Lamp0" type="Node2D" parent="." unique_id=1714359653]
 position = Vector2(80, 77)
 
-[node name="WarmHalo" type="Polygon2D" parent="Lamp0"]
+[node name="WarmHalo" type="Polygon2D" parent="Lamp0" unique_id=942993369]
 color = Color(0.952941, 0.772549, 0.454902, 0.188235)
 polygon = PackedVector2Array(14, 1, 10, 9, 0, 12, -10, 9, -14, 1, -10, -7, 0, -10, 10, -7)
 
-[node name="Stem" type="ColorRect" parent="Lamp0"]
+[node name="Stem" type="ColorRect" parent="Lamp0" unique_id=1916298522]
 offset_left = -1.0
 offset_top = -6.0
 offset_right = 1.0
@@ -1479,11 +1459,11 @@ offset_bottom = -1.0
 mouse_filter = 2
 color = Color(0.737255, 0.545098, 0.356863, 1)
 
-[node name="Casing" type="Polygon2D" parent="Lamp0"]
+[node name="Casing" type="Polygon2D" parent="Lamp0" unique_id=1359840477]
 color = Color(0.403922, 0.262745, 0.2, 1)
 polygon = PackedVector2Array(-3, -1, 3, -1, 5, 1, 5, 6, 3, 8, -3, 8, -5, 6, -5, 1)
 
-[node name="Flame" type="ColorRect" parent="Lamp0"]
+[node name="Flame" type="ColorRect" parent="Lamp0" unique_id=329915658]
 offset_left = -3.0
 offset_top = 1.0
 offset_right = 3.0
@@ -1491,14 +1471,14 @@ offset_bottom = 6.0
 mouse_filter = 2
 color = Color(0.984314, 0.780392, 0.466667, 1)
 
-[node name="Lamp1" type="Node2D" parent="."]
+[node name="Lamp1" type="Node2D" parent="." unique_id=290977710]
 position = Vector2(564, 77)
 
-[node name="WarmHalo" type="Polygon2D" parent="Lamp1"]
+[node name="WarmHalo" type="Polygon2D" parent="Lamp1" unique_id=1973107170]
 color = Color(0.952941, 0.772549, 0.454902, 0.188235)
 polygon = PackedVector2Array(14, 1, 10, 9, 0, 12, -10, 9, -14, 1, -10, -7, 0, -10, 10, -7)
 
-[node name="Stem" type="ColorRect" parent="Lamp1"]
+[node name="Stem" type="ColorRect" parent="Lamp1" unique_id=251493421]
 offset_left = -1.0
 offset_top = -6.0
 offset_right = 1.0
@@ -1506,11 +1486,11 @@ offset_bottom = -1.0
 mouse_filter = 2
 color = Color(0.737255, 0.545098, 0.356863, 1)
 
-[node name="Casing" type="Polygon2D" parent="Lamp1"]
+[node name="Casing" type="Polygon2D" parent="Lamp1" unique_id=910827288]
 color = Color(0.403922, 0.262745, 0.2, 1)
 polygon = PackedVector2Array(-3, -1, 3, -1, 5, 1, 5, 6, 3, 8, -3, 8, -5, 6, -5, 1)
 
-[node name="Flame" type="ColorRect" parent="Lamp1"]
+[node name="Flame" type="ColorRect" parent="Lamp1" unique_id=1144215079]
 offset_left = -3.0
 offset_top = 1.0
 offset_right = 3.0
@@ -1518,14 +1498,14 @@ offset_bottom = 6.0
 mouse_filter = 2
 color = Color(0.984314, 0.780392, 0.466667, 1)
 
-[node name="Lamp2" type="Node2D" parent="."]
+[node name="Lamp2" type="Node2D" parent="." unique_id=568227941]
 position = Vector2(345, 150)
 
-[node name="WarmHalo" type="Polygon2D" parent="Lamp2"]
+[node name="WarmHalo" type="Polygon2D" parent="Lamp2" unique_id=747120748]
 color = Color(0.952941, 0.772549, 0.454902, 0.188235)
 polygon = PackedVector2Array(14, 1, 10, 9, 0, 12, -10, 9, -14, 1, -10, -7, 0, -10, 10, -7)
 
-[node name="Stem" type="ColorRect" parent="Lamp2"]
+[node name="Stem" type="ColorRect" parent="Lamp2" unique_id=482337954]
 offset_left = -1.0
 offset_top = -6.0
 offset_right = 1.0
@@ -1533,11 +1513,11 @@ offset_bottom = -1.0
 mouse_filter = 2
 color = Color(0.737255, 0.545098, 0.356863, 1)
 
-[node name="Casing" type="Polygon2D" parent="Lamp2"]
+[node name="Casing" type="Polygon2D" parent="Lamp2" unique_id=1098901518]
 color = Color(0.403922, 0.262745, 0.2, 1)
 polygon = PackedVector2Array(-3, -1, 3, -1, 5, 1, 5, 6, 3, 8, -3, 8, -5, 6, -5, 1)
 
-[node name="Flame" type="ColorRect" parent="Lamp2"]
+[node name="Flame" type="ColorRect" parent="Lamp2" unique_id=2118467913]
 offset_left = -3.0
 offset_top = 1.0
 offset_right = 3.0
@@ -1545,10 +1525,32 @@ offset_bottom = 6.0
 mouse_filter = 2
 color = Color(0.984314, 0.780392, 0.466667, 1)
 
-[node name="Interface" type="CanvasLayer" parent="."]
+[node name="Interface" type="CanvasLayer" parent="." unique_id=358033353]
 
-[node name="FacilityHUD" parent="Interface" instance=ExtResource("3_hud")]
+[node name="FacilityHUD" parent="Interface" unique_id=1034613440 instance=ExtResource("3_hud")]
 facility_title = "餐馆"
 title_color = Color(0.972549, 0.894118, 0.729412, 1)
 detail_color = Color(0.803922, 0.690196, 0.592157, 1)
 
+[node name="ActorLayer" type="Node2D" parent="." unique_id=1181592743]
+
+[node name="NpcRoute" type="Node2D" parent="ActorLayer" unique_id=470777282]
+script = ExtResource("5_f8wjk")
+speed = null
+
+[node name="W0" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=1142793394]
+position = Vector2(467, 240)
+
+[node name="W1" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=834747087]
+position = Vector2(359, 240)
+
+[node name="W2" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=1318178247]
+position = Vector2(359, 112)
+
+[node name="W3" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=1130278462]
+position = Vector2(177, 163)
+
+[node name="NpcActor" parent="ActorLayer" unique_id=1007591517 instance=ExtResource("6_jqho0")]
+position = Vector2(247, 249)
+scale = Vector2(3, 3)
+route = NodePath("../NpcRoute")

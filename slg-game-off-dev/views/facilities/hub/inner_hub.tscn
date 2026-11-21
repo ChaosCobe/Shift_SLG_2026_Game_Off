@@ -1,279 +1,284 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene format=4]
 
 [ext_resource type="Script" path="res://views/facilities/hub/hub_room.gd" id="1_hub"]
 [ext_resource type="TileSet" path="res://assets/tilesets/station_floors.tres" id="2_floors"]
 [ext_resource type="PackedScene" path="res://views/facilities/facility_hud.tscn" id="3_hud"]
 [ext_resource type="PackedScene" path="res://views/facilities/facility_actor.tscn" id="4_actor"]
+[ext_resource type="Script" path="res://views/interactions/sprite_hotspot.gd" id="5_qa7uc"]
 [ext_resource type="Texture2D" path="res://assets/third_party/ninja_adventure/characters/researcher_inner.png" id="5_researcher"]
+[ext_resource type="Script" path="res://views/facilities/facility_hud.gd" id="7_auyx6"]
+[ext_resource type="Script" path="res://actors/npc_route.gd" id="8_gqfml"]
+[ext_resource type="PackedScene" path="res://actors/npc_actor.tscn" id="9_ttebq"]
+[ext_resource type="Script" path="res://actors/npc_actor.gd" id="10_mmsqy"]
 
 [sub_resource type="AtlasTexture" id="ResearcherIdle"]
 atlas = ExtResource("5_researcher")
 region = Rect2(0, 0, 16, 16)
 filter_clip = true
 
-[node name="InnerHub" type="Node2D"]
+[node name="InnerHub" type="Node2D" unique_id=471353387]
 texture_filter = 1
 script = ExtResource("1_hub")
+npc_id = &"researcher"
 facility_id = &"hub"
 world = 1
-npc_id = &"researcher"
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1552523499]
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
 color = Color(0.055, 0.084, 0.119, 1)
 
-[node name="Chamber" type="Node2D" parent="."]
+[node name="Chamber" type="Node2D" parent="." unique_id=1369201539]
 
-[node name="DeckShadow" type="Polygon2D" parent="Chamber"]
+[node name="DeckShadow" type="Polygon2D" parent="Chamber" unique_id=430205331]
 color = Color(0.016, 0.032, 0.049, 1)
 polygon = PackedVector2Array(208, 67, 432, 67, 432, 163, 464, 163, 464, 131, 560, 131, 560, 259, 464, 259, 464, 227, 432, 227, 432, 323, 208, 323, 208, 227, 176, 227, 176, 259, 80, 259, 80, 131, 176, 131, 176, 163, 208, 163)
 
-[node name="PlatformEdge" type="Polygon2D" parent="Chamber"]
+[node name="PlatformEdge" type="Polygon2D" parent="Chamber" unique_id=910634392]
 color = Color(0.16, 0.23, 0.23, 1)
 polygon = PackedVector2Array(208, 61, 432, 61, 432, 157, 464, 157, 464, 125, 560, 125, 560, 253, 464, 253, 464, 221, 432, 221, 432, 317, 208, 317, 208, 221, 176, 221, 176, 253, 80, 253, 80, 125, 176, 125, 176, 157, 208, 157)
 
-[node name="PlatformRim" type="Line2D" parent="Chamber"]
+[node name="PlatformRim" type="Line2D" parent="Chamber" unique_id=1533575909]
 points = PackedVector2Array(208, 56, 432, 56, 432, 152, 464, 152, 464, 120, 560, 120, 560, 248, 464, 248, 464, 216, 432, 216, 432, 312, 208, 312, 208, 216, 176, 216, 176, 248, 80, 248, 80, 120, 176, 120, 176, 152, 208, 152)
-width = 5.0
-default_color = Color(0.30, 0.43, 0.38, 1)
 closed = true
+width = 5.0
+default_color = Color(0.3, 0.43, 0.38, 1)
 
-[node name="GreenFloor" type="TileMapLayer" parent="Chamber"]
+[node name="GreenFloor" type="TileMapLayer" parent="Chamber" unique_id=402961970]
 position = Vector2(48, 56)
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray(0, 0, 5, 0, 0, 0, 0, 0, 11, 0, 6, 0, 0, 0, 6, 0, 0, 0, 0, 0, 12, 0, 6, 0, 0, 0, 7, 0, 0, 0, 0, 0, 12, 0, 6, 0, 0, 0, 8, 0, 0, 0, 0, 0, 12, 0, 6, 0, 0, 0, 9, 0, 0, 0, 0, 0, 12, 0, 6, 0, 0, 0, 10, 0, 0, 0, 0, 0, 12, 0, 6, 0, 0, 0, 11, 0, 0, 0, 0, 0, 13, 0, 6, 0, 0, 0, 5, 0, 1, 0, 0, 0, 11, 0, 7, 0, 0, 0, 6, 0, 1, 0, 0, 0, 12, 0, 7, 0, 0, 0, 7, 0, 1, 0, 0, 0, 12, 0, 7, 0, 0, 0, 8, 0, 1, 0, 0, 0, 12, 0, 7, 0, 0, 0, 9, 0, 1, 0, 0, 0, 12, 0, 7, 0, 0, 0, 10, 0, 1, 0, 0, 0, 12, 0, 7, 0, 0, 0, 11, 0, 1, 0, 0, 0, 13, 0, 7, 0, 0, 0, 1, 0, 2, 0, 0, 0, 11, 0, 6, 0, 0, 0, 2, 0, 2, 0, 0, 0, 12, 0, 6, 0, 0, 0, 3, 0, 2, 0, 0, 0, 13, 0, 6, 0, 0, 0, 5, 0, 2, 0, 0, 0, 11, 0, 7, 0, 0, 0, 6, 0, 2, 0, 0, 0, 12, 0, 7, 0, 0, 0, 7, 0, 2, 0, 0, 0, 12, 0, 7, 0, 0, 0, 8, 0, 2, 0, 0, 0, 12, 0, 7, 0, 0, 0, 9, 0, 2, 0, 0, 0, 12, 0, 7, 0, 0, 0, 10, 0, 2, 0, 0, 0, 12, 0, 7, 0, 0, 0, 11, 0, 2, 0, 0, 0, 13, 0, 7, 0, 0, 0, 13, 0, 2, 0, 0, 0, 11, 0, 6, 0, 0, 0, 14, 0, 2, 0, 0, 0, 12, 0, 6, 0, 0, 0, 15, 0, 2, 0, 0, 0, 13, 0, 6, 0, 0, 0, 1, 0, 3, 0, 0, 0, 11, 0, 7, 0, 0, 0, 2, 0, 3, 0, 0, 0, 12, 0, 7, 0, 0, 0, 3, 0, 3, 0, 0, 0, 16, 0, 8, 0, 0, 0, 4, 0, 3, 0, 0, 0, 12, 0, 6, 0, 0, 0, 5, 0, 3, 0, 0, 0, 17, 0, 8, 0, 0, 0, 6, 0, 3, 0, 0, 0, 12, 0, 7, 0, 0, 0, 7, 0, 3, 0, 0, 0, 12, 0, 7, 0, 0, 0, 8, 0, 3, 0, 0, 0, 12, 0, 7, 0, 0, 0, 9, 0, 3, 0, 0, 0, 12, 0, 7, 0, 0, 0, 10, 0, 3, 0, 0, 0, 12, 0, 7, 0, 0, 0, 11, 0, 3, 0, 0, 0, 16, 0, 8, 0, 0, 0, 12, 0, 3, 0, 0, 0, 12, 0, 6, 0, 0, 0, 13, 0, 3, 0, 0, 0, 17, 0, 8, 0, 0, 0, 14, 0, 3, 0, 0, 0, 12, 0, 7, 0, 0, 0, 15, 0, 3, 0, 0, 0, 13, 0, 7, 0, 0, 0, 1, 0, 4, 0, 0, 0, 11, 0, 7, 0, 0, 0, 2, 0, 4, 0, 0, 0, 12, 0, 7, 0, 0, 0, 3, 0, 4, 0, 0, 0, 16, 0, 7, 0, 0, 0, 4, 0, 4, 0, 0, 0, 12, 0, 8, 0, 0, 0, 5, 0, 4, 0, 0, 0, 17, 0, 7, 0, 0, 0, 6, 0, 4, 0, 0, 0, 12, 0, 7, 0, 0, 0, 7, 0, 4, 0, 0, 0, 12, 0, 7, 0, 0, 0, 8, 0, 4, 0, 0, 0, 12, 0, 7, 0, 0, 0, 9, 0, 4, 0, 0, 0, 12, 0, 7, 0, 0, 0, 10, 0, 4, 0, 0, 0, 12, 0, 7, 0, 0, 0, 11, 0, 4, 0, 0, 0, 16, 0, 7, 0, 0, 0, 12, 0, 4, 0, 0, 0, 12, 0, 8, 0, 0, 0, 13, 0, 4, 0, 0, 0, 17, 0, 7, 0, 0, 0, 14, 0, 4, 0, 0, 0, 12, 0, 7, 0, 0, 0, 15, 0, 4, 0, 0, 0, 13, 0, 7, 0, 0, 0, 1, 0, 5, 0, 0, 0, 11, 0, 8, 0, 0, 0, 2, 0, 5, 0, 0, 0, 12, 0, 8, 0, 0, 0, 3, 0, 5, 0, 0, 0, 13, 0, 8, 0, 0, 0, 5, 0, 5, 0, 0, 0, 11, 0, 7, 0, 0, 0, 6, 0, 5, 0, 0, 0, 12, 0, 7, 0, 0, 0, 7, 0, 5, 0, 0, 0, 12, 0, 7, 0, 0, 0, 8, 0, 5, 0, 0, 0, 12, 0, 7, 0, 0, 0, 9, 0, 5, 0, 0, 0, 12, 0, 7, 0, 0, 0, 10, 0, 5, 0, 0, 0, 12, 0, 7, 0, 0, 0, 11, 0, 5, 0, 0, 0, 13, 0, 7, 0, 0, 0, 13, 0, 5, 0, 0, 0, 11, 0, 8, 0, 0, 0, 14, 0, 5, 0, 0, 0, 12, 0, 8, 0, 0, 0, 15, 0, 5, 0, 0, 0, 13, 0, 8, 0, 0, 0, 5, 0, 6, 0, 0, 0, 11, 0, 7, 0, 0, 0, 6, 0, 6, 0, 0, 0, 12, 0, 7, 0, 0, 0, 7, 0, 6, 0, 0, 0, 12, 0, 7, 0, 0, 0, 8, 0, 6, 0, 0, 0, 12, 0, 7, 0, 0, 0, 9, 0, 6, 0, 0, 0, 12, 0, 7, 0, 0, 0, 10, 0, 6, 0, 0, 0, 12, 0, 7, 0, 0, 0, 11, 0, 6, 0, 0, 0, 13, 0, 7, 0, 0, 0, 5, 0, 7, 0, 0, 0, 11, 0, 8, 0, 0, 0, 6, 0, 7, 0, 0, 0, 12, 0, 8, 0, 0, 0, 7, 0, 7, 0, 0, 0, 12, 0, 8, 0, 0, 0, 8, 0, 7, 0, 0, 0, 12, 0, 8, 0, 0, 0, 9, 0, 7, 0, 0, 0, 12, 0, 8, 0, 0, 0, 10, 0, 7, 0, 0, 0, 12, 0, 8, 0, 0, 0, 11, 0, 7, 0, 0, 0, 13, 0, 8, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAFAAAAAAALAAYAAAAGAAAAAAAMAAYAAAAHAAAAAAAMAAYAAAAIAAAAAAAMAAYAAAAJAAAAAAAMAAYAAAAKAAAAAAAMAAYAAAALAAAAAAANAAYAAAAFAAEAAAALAAcAAAAGAAEAAAAMAAcAAAAHAAEAAAAMAAcAAAAIAAEAAAAMAAcAAAAJAAEAAAAMAAcAAAAKAAEAAAAMAAcAAAALAAEAAAANAAcAAAABAAIAAAALAAYAAAACAAIAAAAMAAYAAAADAAIAAAANAAYAAAAFAAIAAAALAAcAAAAGAAIAAAAMAAcAAAAHAAIAAAAMAAcAAAAIAAIAAAAMAAcAAAAJAAIAAAAMAAcAAAAKAAIAAAAMAAcAAAALAAIAAAANAAcAAAANAAIAAAALAAYAAAAOAAIAAAAMAAYAAAAPAAIAAAANAAYAAAABAAMAAAALAAcAAAACAAMAAAAMAAcAAAADAAMAAAAQAAgAAAAEAAMAAAAMAAYAAAAFAAMAAAARAAgAAAAGAAMAAAAMAAcAAAAHAAMAAAAMAAcAAAAIAAMAAAAMAAcAAAAJAAMAAAAMAAcAAAAKAAMAAAAMAAcAAAALAAMAAAAQAAgAAAAMAAMAAAAMAAYAAAANAAMAAAARAAgAAAAOAAMAAAAMAAcAAAAPAAMAAAANAAcAAAABAAQAAAALAAcAAAACAAQAAAAMAAcAAAADAAQAAAAQAAcAAAAEAAQAAAAMAAgAAAAFAAQAAAARAAcAAAAGAAQAAAAMAAcAAAAHAAQAAAAMAAcAAAAIAAQAAAAMAAcAAAAJAAQAAAAMAAcAAAAKAAQAAAAMAAcAAAALAAQAAAAQAAcAAAAMAAQAAAAMAAgAAAANAAQAAAARAAcAAAAOAAQAAAAMAAcAAAAPAAQAAAANAAcAAAABAAUAAAALAAgAAAACAAUAAAAMAAgAAAADAAUAAAANAAgAAAAFAAUAAAALAAcAAAAGAAUAAAAMAAcAAAAHAAUAAAAMAAcAAAAIAAUAAAAMAAcAAAAJAAUAAAAMAAcAAAAKAAUAAAAMAAcAAAALAAUAAAANAAcAAAANAAUAAAALAAgAAAAOAAUAAAAMAAgAAAAPAAUAAAANAAgAAAAFAAYAAAALAAcAAAAGAAYAAAAMAAcAAAAHAAYAAAAMAAcAAAAIAAYAAAAMAAcAAAAJAAYAAAAMAAcAAAAKAAYAAAAMAAcAAAALAAYAAAANAAcAAAAFAAcAAAALAAgAAAAGAAcAAAAMAAgAAAAHAAcAAAAMAAgAAAAIAAcAAAAMAAgAAAAJAAcAAAAMAAgAAAAKAAcAAAAMAAgAAAALAAcAAAANAAgAAAA=")
 tile_set = ExtResource("2_floors")
 collision_enabled = false
 navigation_enabled = false
 
-[node name="ArrivalCircle" type="Node2D" parent="Chamber"]
+[node name="ArrivalCircle" type="Node2D" parent="Chamber" unique_id=1114864317]
 position = Vector2(320, 184)
 
-[node name="StoneBaseShadow" type="Polygon2D" parent="Chamber/ArrivalCircle"]
-color = Color(0.10, 0.18, 0.18, 1)
+[node name="StoneBaseShadow" type="Polygon2D" parent="Chamber/ArrivalCircle" unique_id=195024265]
+color = Color(0.1, 0.18, 0.18, 1)
 polygon = PackedVector2Array(77, 4, 74, 18, 67, 31, 54, 43, 39, 52, 20, 57, 0, 59, -20, 57, -38, 52, -54, 43, -67, 31, -74, 18, -77, 4, -74, -10, -67, -23, -54, -35, -39, -44, -20, -49, 0, -51, 20, -49, 39, -44, 54, -35, 67, -24, 74, -10)
 
-[node name="StoneBase" type="Polygon2D" parent="Chamber/ArrivalCircle"]
-color = Color(0.18, 0.31, 0.30, 1)
+[node name="StoneBase" type="Polygon2D" parent="Chamber/ArrivalCircle" unique_id=341162983]
+color = Color(0.18, 0.31, 0.3, 1)
 polygon = PackedVector2Array(77, 0, 74, 14, 67, 27, 54, 39, 39, 48, 20, 53, 0, 55, -20, 53, -38, 48, -54, 39, -67, 27, -74, 14, -77, 0, -74, -14, -67, -27, -54, -39, -39, -48, -20, -53, 0, -55, 20, -53, 39, -48, 54, -39, 67, -28, 74, -14)
 
-[node name="StoneRim" type="Line2D" parent="Chamber/ArrivalCircle"]
+[node name="StoneRim" type="Line2D" parent="Chamber/ArrivalCircle" unique_id=1118822113]
 points = PackedVector2Array(77, 0, 74, 14, 67, 27, 54, 39, 39, 48, 20, 53, 0, 55, -20, 53, -38, 48, -54, 39, -67, 27, -74, 14, -77, 0, -74, -14, -67, -27, -54, -39, -39, -48, -20, -53, 0, -55, 20, -53, 39, -48, 54, -39, 67, -28, 74, -14)
-width = 2.0
-default_color = Color(0.29, 0.47, 0.40, 1)
 closed = true
+width = 2.0
+default_color = Color(0.29, 0.47, 0.4, 1)
 
-[node name="OuterInlay" type="Line2D" parent="Chamber/ArrivalCircle"]
+[node name="OuterInlay" type="Line2D" parent="Chamber/ArrivalCircle" unique_id=460935543]
 points = PackedVector2Array(66, 0, 64, 12, 57, 23, 47, 33, 33, 40, 17, 44, 0, 46, -17, 44, -33, 40, -47, 33, -57, 23, -64, 12, -66, 0, -64, -12, -57, -23, -47, -33, -33, -40, -17, -44, 0, -46, 17, -44, 33, -40, 47, -33, 57, -23, 64, -12)
-width = 2.0
-default_color = Color(0.45, 0.76, 0.60, 1)
 closed = true
+width = 2.0
+default_color = Color(0.45, 0.76, 0.6, 1)
 
-[node name="InnerInlay" type="Line2D" parent="Chamber/ArrivalCircle"]
+[node name="InnerInlay" type="Line2D" parent="Chamber/ArrivalCircle" unique_id=358317163]
 points = PackedVector2Array(57, 0, 55, 10, 49, 19, 40, 27, 29, 33, 15, 37, 0, 38, -15, 37, -28, 33, -40, 27, -49, 19, -55, 10, -57, 0, -55, -10, -49, -19, -40, -27, -29, -33, -15, -37, 0, -38, 15, -37, 29, -33, 40, -27, 49, -19, 55, -10)
+closed = true
 width = 1.0
 default_color = Color(0.32, 0.58, 0.49, 1)
-closed = true
 
-[node name="CardinalSeal" type="Line2D" parent="Chamber/ArrivalCircle"]
+[node name="CardinalSeal" type="Line2D" parent="Chamber/ArrivalCircle" unique_id=1610083231]
 points = PackedVector2Array(0, -42, 58, 0, 0, 42, -58, 0)
+closed = true
 width = 2.0
 default_color = Color(0.51, 0.82, 0.63, 1)
-closed = true
 
-[node name="DiagonalSeal" type="Line2D" parent="Chamber/ArrivalCircle"]
+[node name="DiagonalSeal" type="Line2D" parent="Chamber/ArrivalCircle" unique_id=942476793]
 points = PackedVector2Array(-44, -28, 44, -28, 44, 28, -44, 28)
+closed = true
 width = 1.0
 default_color = Color(0.32, 0.63, 0.51, 1)
-closed = true
 
-[node name="CoreLight" type="Polygon2D" parent="Chamber/ArrivalCircle"]
+[node name="CoreLight" type="Polygon2D" parent="Chamber/ArrivalCircle" unique_id=1170427897]
 color = Color(0.25, 0.52, 0.43, 1)
 polygon = PackedVector2Array(0, -23, 24, 0, 0, 23, -24, 0)
 
-[node name="CoreRim" type="Line2D" parent="Chamber/ArrivalCircle"]
+[node name="CoreRim" type="Line2D" parent="Chamber/ArrivalCircle" unique_id=667411435]
 points = PackedVector2Array(0, -16, 17, 0, 0, 16, -17, 0)
+closed = true
 width = 2.0
 default_color = Color(0.74, 0.94, 0.69, 1)
-closed = true
 
-[node name="CoreGlyph" type="Polygon2D" parent="Chamber/ArrivalCircle"]
+[node name="CoreGlyph" type="Polygon2D" parent="Chamber/ArrivalCircle" unique_id=813233445]
 color = Color(0.81, 0.94, 0.68, 1)
 polygon = PackedVector2Array(0, -10, 4, -4, 11, 0, 4, 4, 0, 10, -4, 4, -11, 0, -4, -4)
 
-[node name="Rune1" type="Polygon2D" parent="Chamber/ArrivalCircle"]
-color = Color(0.80, 0.92, 0.68, 1)
+[node name="Rune1" type="Polygon2D" parent="Chamber/ArrivalCircle" unique_id=794277155]
+color = Color(0.8, 0.92, 0.68, 1)
 polygon = PackedVector2Array(0, -54, 4, -50, 0, -46, -4, -50)
 
-[node name="Rune2" type="Polygon2D" parent="Chamber/ArrivalCircle"]
-color = Color(0.80, 0.92, 0.68, 1)
+[node name="Rune2" type="Polygon2D" parent="Chamber/ArrivalCircle" unique_id=123270021]
+color = Color(0.8, 0.92, 0.68, 1)
 polygon = PackedVector2Array(0, 46, 4, 50, 0, 54, -4, 50)
 
-[node name="Rune3" type="Polygon2D" parent="Chamber/ArrivalCircle"]
-color = Color(0.80, 0.92, 0.68, 1)
+[node name="Rune3" type="Polygon2D" parent="Chamber/ArrivalCircle" unique_id=1542192228]
+color = Color(0.8, 0.92, 0.68, 1)
 polygon = PackedVector2Array(-71, -4, -67, 0, -71, 4, -75, 0)
 
-[node name="Rune4" type="Polygon2D" parent="Chamber/ArrivalCircle"]
-color = Color(0.80, 0.92, 0.68, 1)
+[node name="Rune4" type="Polygon2D" parent="Chamber/ArrivalCircle" unique_id=1813831819]
+color = Color(0.8, 0.92, 0.68, 1)
 polygon = PackedVector2Array(71, -4, 75, 0, 71, 4, 67, 0)
 
-[node name="Rune5" type="Polygon2D" parent="Chamber/ArrivalCircle"]
+[node name="Rune5" type="Polygon2D" parent="Chamber/ArrivalCircle" unique_id=1130223816]
 color = Color(0.54, 0.77, 0.58, 1)
 polygon = PackedVector2Array(48, -41, 52, -37, 48, -33, 44, -37)
 
-[node name="Rune6" type="Polygon2D" parent="Chamber/ArrivalCircle"]
+[node name="Rune6" type="Polygon2D" parent="Chamber/ArrivalCircle" unique_id=373937064]
 color = Color(0.54, 0.77, 0.58, 1)
 polygon = PackedVector2Array(48, 33, 52, 37, 48, 41, 44, 37)
 
-[node name="Rune7" type="Polygon2D" parent="Chamber/ArrivalCircle"]
+[node name="Rune7" type="Polygon2D" parent="Chamber/ArrivalCircle" unique_id=177622162]
 color = Color(0.54, 0.77, 0.58, 1)
 polygon = PackedVector2Array(-48, 33, -44, 37, -48, 41, -52, 37)
 
-[node name="Rune8" type="Polygon2D" parent="Chamber/ArrivalCircle"]
+[node name="Rune8" type="Polygon2D" parent="Chamber/ArrivalCircle" unique_id=1694941236]
 color = Color(0.54, 0.77, 0.58, 1)
 polygon = PackedVector2Array(-48, -41, -44, -37, -48, -33, -52, -37)
 
-[node name="NorthWestPylon" type="Node2D" parent="Chamber"]
+[node name="NorthWestPylon" type="Node2D" parent="Chamber" unique_id=299564375]
 position = Vector2(247, 125)
 
-[node name="Shadow" type="Polygon2D" parent="Chamber/NorthWestPylon"]
+[node name="Shadow" type="Polygon2D" parent="Chamber/NorthWestPylon" unique_id=338215056]
 color = Color(0.12, 0.19, 0.18, 1)
 polygon = PackedVector2Array(-11, -1, 7, -1, 13, 3, 9, 7, -9, 7, -13, 4)
 
-[node name="Plinth" type="Polygon2D" parent="Chamber/NorthWestPylon"]
-color = Color(0.26, 0.35, 0.30, 1)
+[node name="Plinth" type="Polygon2D" parent="Chamber/NorthWestPylon" unique_id=998867728]
+color = Color(0.26, 0.35, 0.3, 1)
 polygon = PackedVector2Array(-10, 1, -7, -3, 7, -3, 10, 1, 7, 5, -7, 5)
 
-[node name="Stone" type="Polygon2D" parent="Chamber/NorthWestPylon"]
+[node name="Stone" type="Polygon2D" parent="Chamber/NorthWestPylon" unique_id=443372732]
 color = Color(0.35, 0.45, 0.36, 1)
 polygon = PackedVector2Array(-7, 0, -7, -10, -4, -13, 4, -13, 7, -10, 7, 0, 3, 3, -3, 3)
 
-[node name="Light" type="Polygon2D" parent="Chamber/NorthWestPylon"]
+[node name="Light" type="Polygon2D" parent="Chamber/NorthWestPylon" unique_id=389443084]
 color = Color(0.65, 0.83, 0.67, 1)
 polygon = PackedVector2Array(0, -17, 5, -10, 2, -6, -2, -6, -5, -10)
 
-[node name="Highlight" type="Polygon2D" parent="Chamber/NorthWestPylon"]
+[node name="Highlight" type="Polygon2D" parent="Chamber/NorthWestPylon" unique_id=1392303965]
 color = Color(0.85, 0.93, 0.72, 1)
 polygon = PackedVector2Array(0, -16, 1, -10, 0, -8, -2, -10)
 
-[node name="NorthEastPylon" type="Node2D" parent="Chamber"]
+[node name="NorthEastPylon" type="Node2D" parent="Chamber" unique_id=1273226656]
 position = Vector2(393, 125)
 
-[node name="Shadow" type="Polygon2D" parent="Chamber/NorthEastPylon"]
+[node name="Shadow" type="Polygon2D" parent="Chamber/NorthEastPylon" unique_id=535698874]
 color = Color(0.12, 0.19, 0.18, 1)
 polygon = PackedVector2Array(-11, -1, 7, -1, 13, 3, 9, 7, -9, 7, -13, 4)
 
-[node name="Plinth" type="Polygon2D" parent="Chamber/NorthEastPylon"]
-color = Color(0.26, 0.35, 0.30, 1)
+[node name="Plinth" type="Polygon2D" parent="Chamber/NorthEastPylon" unique_id=1301834255]
+color = Color(0.26, 0.35, 0.3, 1)
 polygon = PackedVector2Array(-10, 1, -7, -3, 7, -3, 10, 1, 7, 5, -7, 5)
 
-[node name="Stone" type="Polygon2D" parent="Chamber/NorthEastPylon"]
+[node name="Stone" type="Polygon2D" parent="Chamber/NorthEastPylon" unique_id=2137127855]
 color = Color(0.35, 0.45, 0.36, 1)
 polygon = PackedVector2Array(-7, 0, -7, -10, -4, -13, 4, -13, 7, -10, 7, 0, 3, 3, -3, 3)
 
-[node name="Light" type="Polygon2D" parent="Chamber/NorthEastPylon"]
+[node name="Light" type="Polygon2D" parent="Chamber/NorthEastPylon" unique_id=957342933]
 color = Color(0.65, 0.83, 0.67, 1)
 polygon = PackedVector2Array(0, -17, 5, -10, 2, -6, -2, -6, -5, -10)
 
-[node name="Highlight" type="Polygon2D" parent="Chamber/NorthEastPylon"]
+[node name="Highlight" type="Polygon2D" parent="Chamber/NorthEastPylon" unique_id=1468112239]
 color = Color(0.85, 0.93, 0.72, 1)
 polygon = PackedVector2Array(0, -16, 1, -10, 0, -8, -2, -10)
 
-[node name="SouthWestPylon" type="Node2D" parent="Chamber"]
+[node name="SouthWestPylon" type="Node2D" parent="Chamber" unique_id=1732332621]
 position = Vector2(247, 254)
 
-[node name="Shadow" type="Polygon2D" parent="Chamber/SouthWestPylon"]
+[node name="Shadow" type="Polygon2D" parent="Chamber/SouthWestPylon" unique_id=49794580]
 color = Color(0.12, 0.19, 0.18, 1)
 polygon = PackedVector2Array(-11, -1, 7, -1, 13, 3, 9, 7, -9, 7, -13, 4)
 
-[node name="Plinth" type="Polygon2D" parent="Chamber/SouthWestPylon"]
-color = Color(0.26, 0.35, 0.30, 1)
+[node name="Plinth" type="Polygon2D" parent="Chamber/SouthWestPylon" unique_id=1311795242]
+color = Color(0.26, 0.35, 0.3, 1)
 polygon = PackedVector2Array(-10, 1, -7, -3, 7, -3, 10, 1, 7, 5, -7, 5)
 
-[node name="Stone" type="Polygon2D" parent="Chamber/SouthWestPylon"]
+[node name="Stone" type="Polygon2D" parent="Chamber/SouthWestPylon" unique_id=1479901061]
 color = Color(0.35, 0.45, 0.36, 1)
 polygon = PackedVector2Array(-7, 0, -7, -10, -4, -13, 4, -13, 7, -10, 7, 0, 3, 3, -3, 3)
 
-[node name="Light" type="Polygon2D" parent="Chamber/SouthWestPylon"]
+[node name="Light" type="Polygon2D" parent="Chamber/SouthWestPylon" unique_id=1967943243]
 color = Color(0.65, 0.83, 0.67, 1)
 polygon = PackedVector2Array(0, -17, 5, -10, 2, -6, -2, -6, -5, -10)
 
-[node name="Highlight" type="Polygon2D" parent="Chamber/SouthWestPylon"]
+[node name="Highlight" type="Polygon2D" parent="Chamber/SouthWestPylon" unique_id=519655833]
 color = Color(0.85, 0.93, 0.72, 1)
 polygon = PackedVector2Array(0, -16, 1, -10, 0, -8, -2, -10)
 
-[node name="SouthEastPylon" type="Node2D" parent="Chamber"]
+[node name="SouthEastPylon" type="Node2D" parent="Chamber" unique_id=1182843866]
 position = Vector2(393, 254)
 
-[node name="Shadow" type="Polygon2D" parent="Chamber/SouthEastPylon"]
+[node name="Shadow" type="Polygon2D" parent="Chamber/SouthEastPylon" unique_id=1150266646]
 color = Color(0.12, 0.19, 0.18, 1)
 polygon = PackedVector2Array(-11, -1, 7, -1, 13, 3, 9, 7, -9, 7, -13, 4)
 
-[node name="Plinth" type="Polygon2D" parent="Chamber/SouthEastPylon"]
-color = Color(0.26, 0.35, 0.30, 1)
+[node name="Plinth" type="Polygon2D" parent="Chamber/SouthEastPylon" unique_id=633922814]
+color = Color(0.26, 0.35, 0.3, 1)
 polygon = PackedVector2Array(-10, 1, -7, -3, 7, -3, 10, 1, 7, 5, -7, 5)
 
-[node name="Stone" type="Polygon2D" parent="Chamber/SouthEastPylon"]
+[node name="Stone" type="Polygon2D" parent="Chamber/SouthEastPylon" unique_id=504576912]
 color = Color(0.35, 0.45, 0.36, 1)
 polygon = PackedVector2Array(-7, 0, -7, -10, -4, -13, 4, -13, 7, -10, 7, 0, 3, 3, -3, 3)
 
-[node name="Light" type="Polygon2D" parent="Chamber/SouthEastPylon"]
+[node name="Light" type="Polygon2D" parent="Chamber/SouthEastPylon" unique_id=162567774]
 color = Color(0.65, 0.83, 0.67, 1)
 polygon = PackedVector2Array(0, -17, 5, -10, 2, -6, -2, -6, -5, -10)
 
-[node name="Highlight" type="Polygon2D" parent="Chamber/SouthEastPylon"]
+[node name="Highlight" type="Polygon2D" parent="Chamber/SouthEastPylon" unique_id=1894745081]
 color = Color(0.85, 0.93, 0.72, 1)
 polygon = PackedVector2Array(0, -16, 1, -10, 0, -8, -2, -10)
 
-[node name="WestBeacon" type="Node2D" parent="Chamber"]
+[node name="WestBeacon" type="Node2D" parent="Chamber" unique_id=1900204841]
 position = Vector2(128, 192)
 
-[node name="Shadow" type="Polygon2D" parent="Chamber/WestBeacon"]
+[node name="Shadow" type="Polygon2D" parent="Chamber/WestBeacon" unique_id=1677634578]
 color = Color(0.12, 0.19, 0.18, 1)
 polygon = PackedVector2Array(-22, -2, 14, -2, 26, 6, 18, 14, -18, 14, -26, 8)
 
-[node name="Plinth" type="Polygon2D" parent="Chamber/WestBeacon"]
-color = Color(0.26, 0.35, 0.30, 1)
+[node name="Plinth" type="Polygon2D" parent="Chamber/WestBeacon" unique_id=1630814988]
+color = Color(0.26, 0.35, 0.3, 1)
 polygon = PackedVector2Array(-20, 2, -14, -6, 14, -6, 20, 2, 14, 10, -14, 10)
 
-[node name="Stone" type="Polygon2D" parent="Chamber/WestBeacon"]
+[node name="Stone" type="Polygon2D" parent="Chamber/WestBeacon" unique_id=2089665883]
 color = Color(0.35, 0.45, 0.36, 1)
 polygon = PackedVector2Array(-14, 0, -14, -20, -8, -26, 8, -26, 14, -20, 14, 0, 6, 6, -6, 6)
 
-[node name="Light" type="Polygon2D" parent="Chamber/WestBeacon"]
+[node name="Light" type="Polygon2D" parent="Chamber/WestBeacon" unique_id=1588987008]
 color = Color(0.65, 0.83, 0.67, 1)
 polygon = PackedVector2Array(0, -34, 10, -20, 4, -12, -4, -12, -10, -20)
 
-[node name="Highlight" type="Polygon2D" parent="Chamber/WestBeacon"]
+[node name="Highlight" type="Polygon2D" parent="Chamber/WestBeacon" unique_id=1471092076]
 color = Color(0.85, 0.93, 0.72, 1)
 polygon = PackedVector2Array(0, -32, 2, -20, 0, -16, -4, -20)
 
-[node name="EastBeacon" type="Node2D" parent="Chamber"]
+[node name="EastBeacon" type="Node2D" parent="Chamber" unique_id=1352351769]
 position = Vector2(512, 192)
 
-[node name="Shadow" type="Polygon2D" parent="Chamber/EastBeacon"]
+[node name="Shadow" type="Polygon2D" parent="Chamber/EastBeacon" unique_id=1428144742]
 color = Color(0.12, 0.19, 0.18, 1)
 polygon = PackedVector2Array(-22, -2, 14, -2, 26, 6, 18, 14, -18, 14, -26, 8)
 
-[node name="Plinth" type="Polygon2D" parent="Chamber/EastBeacon"]
-color = Color(0.26, 0.35, 0.30, 1)
+[node name="Plinth" type="Polygon2D" parent="Chamber/EastBeacon" unique_id=177456838]
+color = Color(0.26, 0.35, 0.3, 1)
 polygon = PackedVector2Array(-20, 2, -14, -6, 14, -6, 20, 2, 14, 10, -14, 10)
 
-[node name="Stone" type="Polygon2D" parent="Chamber/EastBeacon"]
+[node name="Stone" type="Polygon2D" parent="Chamber/EastBeacon" unique_id=971790379]
 color = Color(0.35, 0.45, 0.36, 1)
 polygon = PackedVector2Array(-14, 0, -14, -20, -8, -26, 8, -26, 14, -20, 14, 0, 6, 6, -6, 6)
 
-[node name="Light" type="Polygon2D" parent="Chamber/EastBeacon"]
+[node name="Light" type="Polygon2D" parent="Chamber/EastBeacon" unique_id=578883841]
 color = Color(0.65, 0.83, 0.67, 1)
 polygon = PackedVector2Array(0, -34, 10, -20, 4, -12, -4, -12, -10, -20)
 
-[node name="Highlight" type="Polygon2D" parent="Chamber/EastBeacon"]
+[node name="Highlight" type="Polygon2D" parent="Chamber/EastBeacon" unique_id=1730282345]
 color = Color(0.85, 0.93, 0.72, 1)
 polygon = PackedVector2Array(0, -32, 2, -20, 0, -16, -4, -20)
 
-[node name="Relay1" type="ColorRect" parent="Chamber"]
+[node name="Relay1" type="ColorRect" parent="Chamber" unique_id=1930351930]
 offset_left = 148.0
 offset_top = 183.0
 offset_right = 151.0
@@ -281,7 +286,7 @@ offset_bottom = 186.0
 mouse_filter = 2
 color = Color(0.53, 0.74, 0.56, 1)
 
-[node name="Relay2" type="ColorRect" parent="Chamber"]
+[node name="Relay2" type="ColorRect" parent="Chamber" unique_id=1659126755]
 offset_left = 168.0
 offset_top = 183.0
 offset_right = 171.0
@@ -289,7 +294,7 @@ offset_bottom = 186.0
 mouse_filter = 2
 color = Color(0.53, 0.74, 0.56, 1)
 
-[node name="Relay3" type="ColorRect" parent="Chamber"]
+[node name="Relay3" type="ColorRect" parent="Chamber" unique_id=2122817688]
 offset_left = 188.0
 offset_top = 183.0
 offset_right = 191.0
@@ -297,7 +302,7 @@ offset_bottom = 186.0
 mouse_filter = 2
 color = Color(0.53, 0.74, 0.56, 1)
 
-[node name="Relay4" type="ColorRect" parent="Chamber"]
+[node name="Relay4" type="ColorRect" parent="Chamber" unique_id=32052662]
 offset_left = 208.0
 offset_top = 183.0
 offset_right = 211.0
@@ -305,7 +310,7 @@ offset_bottom = 186.0
 mouse_filter = 2
 color = Color(0.53, 0.74, 0.56, 1)
 
-[node name="Relay5" type="ColorRect" parent="Chamber"]
+[node name="Relay5" type="ColorRect" parent="Chamber" unique_id=70088411]
 offset_left = 228.0
 offset_top = 183.0
 offset_right = 231.0
@@ -313,7 +318,7 @@ offset_bottom = 186.0
 mouse_filter = 2
 color = Color(0.53, 0.74, 0.56, 1)
 
-[node name="Relay6" type="ColorRect" parent="Chamber"]
+[node name="Relay6" type="ColorRect" parent="Chamber" unique_id=416464917]
 offset_left = 410.0
 offset_top = 183.0
 offset_right = 413.0
@@ -321,7 +326,7 @@ offset_bottom = 186.0
 mouse_filter = 2
 color = Color(0.53, 0.74, 0.56, 1)
 
-[node name="Relay7" type="ColorRect" parent="Chamber"]
+[node name="Relay7" type="ColorRect" parent="Chamber" unique_id=986655907]
 offset_left = 430.0
 offset_top = 183.0
 offset_right = 433.0
@@ -329,7 +334,7 @@ offset_bottom = 186.0
 mouse_filter = 2
 color = Color(0.53, 0.74, 0.56, 1)
 
-[node name="Relay8" type="ColorRect" parent="Chamber"]
+[node name="Relay8" type="ColorRect" parent="Chamber" unique_id=552307281]
 offset_left = 450.0
 offset_top = 183.0
 offset_right = 453.0
@@ -337,7 +342,7 @@ offset_bottom = 186.0
 mouse_filter = 2
 color = Color(0.53, 0.74, 0.56, 1)
 
-[node name="Relay9" type="ColorRect" parent="Chamber"]
+[node name="Relay9" type="ColorRect" parent="Chamber" unique_id=1393299487]
 offset_left = 470.0
 offset_top = 183.0
 offset_right = 473.0
@@ -345,7 +350,7 @@ offset_bottom = 186.0
 mouse_filter = 2
 color = Color(0.53, 0.74, 0.56, 1)
 
-[node name="Relay10" type="ColorRect" parent="Chamber"]
+[node name="Relay10" type="ColorRect" parent="Chamber" unique_id=1456698182]
 offset_left = 490.0
 offset_top = 183.0
 offset_right = 493.0
@@ -353,7 +358,7 @@ offset_bottom = 186.0
 mouse_filter = 2
 color = Color(0.53, 0.74, 0.56, 1)
 
-[node name="Relay11" type="ColorRect" parent="Chamber"]
+[node name="Relay11" type="ColorRect" parent="Chamber" unique_id=1222668883]
 offset_left = 319.0
 offset_top = 102.0
 offset_right = 322.0
@@ -361,7 +366,7 @@ offset_bottom = 105.0
 mouse_filter = 2
 color = Color(0.53, 0.74, 0.56, 1)
 
-[node name="Relay12" type="ColorRect" parent="Chamber"]
+[node name="Relay12" type="ColorRect" parent="Chamber" unique_id=1428141445]
 offset_left = 319.0
 offset_top = 264.0
 offset_right = 322.0
@@ -369,25 +374,25 @@ offset_bottom = 267.0
 mouse_filter = 2
 color = Color(0.53, 0.74, 0.56, 1)
 
-[node name="OriginGate" type="Polygon2D" parent="Chamber"]
-color = Color(0.21, 0.34, 0.30, 1)
+[node name="OriginGate" type="Polygon2D" parent="Chamber" unique_id=1788808290]
+color = Color(0.21, 0.34, 0.3, 1)
 polygon = PackedVector2Array(289, 81, 289, 70, 296, 64, 344, 64, 351, 70, 351, 81, 340, 86, 300, 86)
 
-[node name="OriginGateRim" type="Line2D" parent="Chamber"]
+[node name="OriginGateRim" type="Line2D" parent="Chamber" unique_id=1594141932]
 points = PackedVector2Array(289, 81, 289, 70, 296, 64, 344, 64, 351, 70, 351, 81, 340, 86, 300, 86)
-width = 2.0
-default_color = Color(0.47, 0.60, 0.43, 1)
 closed = true
+width = 2.0
+default_color = Color(0.47, 0.6, 0.43, 1)
 
-[node name="GateInlay" type="ColorRect" parent="Chamber"]
+[node name="GateInlay" type="ColorRect" parent="Chamber" unique_id=1177054760]
 offset_left = 304.0
 offset_top = 73.0
 offset_right = 336.0
 offset_bottom = 76.0
 mouse_filter = 2
-color = Color(0.62, 0.81, 0.60, 1)
+color = Color(0.62, 0.81, 0.6, 1)
 
-[node name="StoneStud1" type="ColorRect" parent="Chamber"]
+[node name="StoneStud1" type="ColorRect" parent="Chamber" unique_id=754813784]
 offset_left = 119.0
 offset_top = 124.0
 offset_right = 123.0
@@ -395,7 +400,7 @@ offset_bottom = 127.0
 mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
-[node name="StoneStud2" type="ColorRect" parent="Chamber"]
+[node name="StoneStud2" type="ColorRect" parent="Chamber" unique_id=434901455]
 offset_left = 137.0
 offset_top = 124.0
 offset_right = 141.0
@@ -403,7 +408,7 @@ offset_bottom = 127.0
 mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
-[node name="StoneStud3" type="ColorRect" parent="Chamber"]
+[node name="StoneStud3" type="ColorRect" parent="Chamber" unique_id=338479609]
 offset_left = 503.0
 offset_top = 124.0
 offset_right = 507.0
@@ -411,7 +416,7 @@ offset_bottom = 127.0
 mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
-[node name="StoneStud4" type="ColorRect" parent="Chamber"]
+[node name="StoneStud4" type="ColorRect" parent="Chamber" unique_id=1724683926]
 offset_left = 521.0
 offset_top = 124.0
 offset_right = 525.0
@@ -419,7 +424,7 @@ offset_bottom = 127.0
 mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
-[node name="StoneStud5" type="ColorRect" parent="Chamber"]
+[node name="StoneStud5" type="ColorRect" parent="Chamber" unique_id=1352222096]
 offset_left = 119.0
 offset_top = 238.0
 offset_right = 123.0
@@ -427,7 +432,7 @@ offset_bottom = 241.0
 mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
-[node name="StoneStud6" type="ColorRect" parent="Chamber"]
+[node name="StoneStud6" type="ColorRect" parent="Chamber" unique_id=1891737877]
 offset_left = 137.0
 offset_top = 238.0
 offset_right = 141.0
@@ -435,7 +440,7 @@ offset_bottom = 241.0
 mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
-[node name="StoneStud7" type="ColorRect" parent="Chamber"]
+[node name="StoneStud7" type="ColorRect" parent="Chamber" unique_id=1591259288]
 offset_left = 503.0
 offset_top = 238.0
 offset_right = 507.0
@@ -443,7 +448,7 @@ offset_bottom = 241.0
 mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
-[node name="StoneStud8" type="ColorRect" parent="Chamber"]
+[node name="StoneStud8" type="ColorRect" parent="Chamber" unique_id=1450689356]
 offset_left = 521.0
 offset_top = 238.0
 offset_right = 525.0
@@ -451,7 +456,7 @@ offset_bottom = 241.0
 mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
-[node name="StoneStud9" type="ColorRect" parent="Chamber"]
+[node name="StoneStud9" type="ColorRect" parent="Chamber" unique_id=793672319]
 offset_left = 283.0
 offset_top = 285.0
 offset_right = 287.0
@@ -459,7 +464,7 @@ offset_bottom = 288.0
 mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
-[node name="StoneStud10" type="ColorRect" parent="Chamber"]
+[node name="StoneStud10" type="ColorRect" parent="Chamber" unique_id=70222857]
 offset_left = 301.0
 offset_top = 285.0
 offset_right = 305.0
@@ -467,7 +472,7 @@ offset_bottom = 288.0
 mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
-[node name="StoneStud11" type="ColorRect" parent="Chamber"]
+[node name="StoneStud11" type="ColorRect" parent="Chamber" unique_id=553958210]
 offset_left = 337.0
 offset_top = 285.0
 offset_right = 341.0
@@ -475,7 +480,7 @@ offset_bottom = 288.0
 mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
-[node name="StoneStud12" type="ColorRect" parent="Chamber"]
+[node name="StoneStud12" type="ColorRect" parent="Chamber" unique_id=1840368203]
 offset_left = 355.0
 offset_top = 285.0
 offset_right = 359.0
@@ -483,19 +488,55 @@ offset_bottom = 288.0
 mouse_filter = 2
 color = Color(0.39, 0.47, 0.36, 1)
 
-[node name="Interface" type="CanvasLayer" parent="."]
+[node name="Interface" type="CanvasLayer" parent="." unique_id=475470827]
 
-[node name="Researcher" parent="Interface" instance=ExtResource("4_actor")]
+[node name="Researcher" type="TextureRect" parent="Interface" unique_id=679338230 instance=ExtResource("4_actor")]
 unique_name_in_owner = true
+texture_filter = 1
 offset_left = 296.0
 offset_top = 246.0
 offset_right = 344.0
 offset_bottom = 294.0
+focus_mode = 2
+mouse_default_cursor_shape = 2
 texture = SubResource("ResearcherIdle")
+expand_mode = 1
+script = ExtResource("5_qa7uc")
 display_name = "年轻研究者"
 
-[node name="FacilityHUD" parent="Interface" instance=ExtResource("3_hud")]
+[node name="FacilityHUD" type="Control" parent="Interface" unique_id=1715257818 instance=ExtResource("3_hud")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_auyx6")
 facility_title = "法阵中枢"
 title_color = Color(0.86, 0.96, 0.79, 1)
 detail_color = Color(0.54, 0.73, 0.67, 1)
 
+[node name="ActorLayer" type="Node2D" parent="." unique_id=1404759036]
+
+[node name="NpcRoute" type="Node2D" parent="ActorLayer" unique_id=1403688182]
+script = ExtResource("8_gqfml")
+
+[node name="W0" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=451630444]
+position = Vector2(270, 300)
+
+[node name="W1" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=1311957671]
+position = Vector2(370, 300)
+
+[node name="W2" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=1377971663]
+position = Vector2(370, 240)
+
+[node name="W3" type="Marker2D" parent="ActorLayer/NpcRoute" unique_id=607075818]
+position = Vector2(270, 240)
+
+[node name="NpcActor" type="CharacterBody2D" parent="ActorLayer" unique_id=1007591517 instance=ExtResource("9_ttebq")]
+position = Vector2(270, 300)
+scale = Vector2(3, 3)
+motion_mode = 1
+script = ExtResource("10_mmsqy")
+route = NodePath("../NpcRoute")
